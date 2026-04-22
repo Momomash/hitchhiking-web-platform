@@ -1,792 +1,585 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Под капотом веба — Codefest 2026</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автостопом по веб-платформе</title>
 
-  <!-- Reveal.js CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
-
-  <!-- Custom Retro Dark Theme -->
-  <style>
-    /* Retro Dark Theme Overrides */
-    :root {
-      --retro-bg: #1a1a2e;
-      --retro-primary: #e94560;
-      --retro-secondary: #0f3460;
-      --retro-accent: #16213e;
-      --retro-text: #eee;
-      --retro-yellow: #f4d35e;
-      --retro-green: #00ff9d;
-      --retro-cyan: #00d4ff;
-    }
-
-    .reveal {
-      background: linear-gradient(135deg, var(--retro-bg) 0%, var(--retro-accent) 100%);
-    }
-
-    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-      color: var(--retro-primary);
-      text-transform: none;
-      font-family: 'Courier New', 'Consolas', monospace;
-      text-shadow: 2px 2px 0px rgba(233, 69, 96, 0.3);
-    }
-
-    .reveal h1 { font-size: 2.5em; }
-    .reveal h2 { font-size: 1.8em; }
-    .reveal h3 { font-size: 1.3em; }
-
-    .reveal p, .reveal li {
-      color: var(--retro-text);
-      font-size: 0.9em;
-      line-height: 1.6;
-    }
-
-    .reveal strong {
-      color: var(--retro-yellow);
-    }
-
-    .reveal a {
-      color: var(--retro-cyan);
-    }
-
-    .reveal blockquote {
-      background: rgba(15, 52, 96, 0.5);
-      border-left: 4px solid var(--retro-primary);
-      color: var(--retro-text);
-      font-family: 'Courier New', monospace;
-      font-size: 0.85em;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .reveal code {
-      background: var(--retro-secondary);
-      color: var(--retro-green);
-      padding: 2px 6px;
-      border-radius: 3px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .reveal pre code {
-      background: var(--retro-accent);
-      color: var(--retro-green);
-      padding: 15px;
-      border-radius: 5px;
-      font-size: 0.75em;
-      line-height: 1.4;
-    }
-
-    .reveal .slides section {
-      padding: 20px 0;
-    }
-
-    /* Retro scanline effect */
-    .reveal::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.1),
-        rgba(0, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 2px
-      );
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    /* Image placeholder styling */
-    .image-placeholder {
-      background: var(--retro-secondary);
-      border: 2px dashed var(--retro-primary);
-      border-radius: 10px;
-      padding: 40px;
-      text-align: center;
-      color: var(--retro-text);
-      margin: 20px auto;
-      max-width: 80%;
-    }
-
-    .image-placeholder::before {
-      content: "[PLACEHOLDER: ";
-      color: var(--retro-primary);
-    }
-
-    .image-placeholder::after {
-      content: "]";
-      color: var(--retro-primary);
-    }
-
-    /* Timing indicator */
-    .timing {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.4em;
-      color: var(--retro-primary);
-      opacity: 0.7;
-      z-index: 1001;
-    }
-
-    /* Section dividers */
-    .section-divider {
-      background: var(--retro-secondary) !important;
-      padding: 60px !important;
-    }
-
-    .section-divider h2 {
-      font-size: 2em !important;
-      border-bottom: 3px solid var(--retro-primary);
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-
-    /* Lists with retro bullets */
-    .reveal ul {
-      list-style-type: none;
-    }
-
-    .reveal ul li::before {
-      content: "► ";
-      color: var(--retro-primary);
-    }
-
-    /* Two column layout */
-    .columns {
-      display: flex;
-      gap: 40px;
-      justify-content: space-between;
-    }
-
-    .columns .column {
-      flex: 1;
-    }
-
-    /* Quote styling */
-    .retro-quote {
-      font-family: 'Courier New', monospace;
-      font-size: 0.8em;
-      color: var(--retro-cyan);
-      padding: 20px;
-      border-left: 4px solid var(--retro-yellow);
-      background: rgba(244, 211, 94, 0.1);
-      margin: 20px 0;
-    }
-  </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
 </head>
 <body>
 
-  <div class="timing">45 min talk</div>
-
-  <div class="reveal">
+<div class="reveal">
     <div class="slides">
-
-      <!-- ==================== TITLE SLIDE ==================== -->
-      <!-- 0:00-0:30 — Intro -->
-      <section>
-        <h1>Под капотом веба</h1>
-        <h3>Прогулка по экосистеме браузера</h3>
-        <br>
-        <p style="color: var(--retro-cyan);">Codefest 2026</p>
-        <br>
-        <p style="font-size: 0.7em; opacity: 0.7;">
-          [YOUR NAME]<br>
-          [YOUR TALK / SOCIAL]
-        </p>
-      </section>
-
-
-      <!-- ==================== SECTION 1: INTRODUCTION ==================== -->
-      <!-- 0:30-3:00 — Заход и постановка темы -->
-      <section class="section-divider">
-        <h2>1. Введение</h2>
-      </section>
-
-      <section>
-        <h3>От простых страниц к сложной платформе</h3>
-        <br>
-        <ul>
-          <li>Когда-то веб казался <strong>простым</strong>:<br>
-            <span style="font-size: 0.8em; opacity: 0.8;">странички, ссылки, картинки</span>
-          </li>
-          <li>Сейчас — <strong>огромная экосистема</strong>:<br>
-            <span style="font-size: 0.8em; opacity: 0.8;">стандарты, API, тесты, соглашения, комитеты</span>
-          </li>
-          <li>Доклад — <strong>прогулка</strong> по этому миру<br>
-            <span style="font-size: 0.8em; opacity: 0.8;">с ностальгией и фокусом на многослойности</span>
-          </li>
-        </ul>
-      </section>
-
-
-      <!-- ==================== SECTION 2: EARLY WEB ==================== -->
-      <!-- 3:00-8:00 — Ранний веб и ностальгия -->
-      <section class="section-divider">
-        <h2>2. Ранний веб и ностальгия</h2>
-      </section>
-
-      <section>
-        <h3>Первый браузер WorldWideWeb</h3>
-        <br>
-        <div class="image-placeholder">
-          Screenshot of WorldWideWeb browser (1990)<br>
-          или изображение Тима Бернерс-Ли
-        </div>
-        <br>
-        <p>Изначальная идея веба как <strong>гипертекстовой системы</strong><br>
-        для обмена знаниями</p>
-      </section>
-
-      <section>
-        <h3>«Невинный» веб</h3>
-        <br>
-        <ul>
-          <li>Статичные HTML-страницы</li>
-          <li>Документы, ссылки, немного картинок</li>
-          <li>Табличная вёрстка</li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Пример старого сайта (1990s)<br>
-          или скриншот табличной вёрстки
-        </div>
-      </section>
-
-      <section>
-        <h3>Ностальгический блок</h3>
-        <br>
-        <div class="columns">
-          <div class="column">
-            <h4>Million Dollar Homepage</h4>
-            <div class="image-placeholder">
-              Скриншот Million Dollar Homepage<br>
-              (стенка из пикселей)
+        <section>
+            <h1 style="font-size: 1.7em">Автостопом по веб-платформе</h1>
+            <br>
+            <br>
+            <div style="display: flex; flex-direction: row; align-items: center">
+                <img
+                        src="assets/img/me.jpg"
+                        width="120"
+                        alt="Мария Кондаурова"
+                        style="border-radius: 50%; border: 5px solid white"
+                />
+                <div
+                        style="margin-left: 30px; display: flex; flex-direction: column; align-items: start"
+                >
+                    <b>Мария Кондаурова</b>
+                    <small style="color: #44b882">BIOCAD</small>
+                </div>
             </div>
-          </div>
-          <div class="column">
-            <h4>Space Jam / Flash-эра</h4>
+        </section>
+        <section class="section-divider">
+            <h2>1. Введение</h2>
+        </section>
+
+        <section>
+            <h3>От простых страниц к сложной платформе</h3>
+            <br>
+            <ul>
+                <li>Когда-то веб казался <strong>простым</strong>:<br>
+                    <span style="font-size: 0.8em; opacity: 0.8;">странички, ссылки, картинки</span>
+                </li>
+                <li>Сейчас — <strong>огромная экосистема</strong>:<br>
+                    <span style="font-size: 0.8em; opacity: 0.8;">стандарты, API, тесты, соглашения, комитеты</span>
+                </li>
+                <li>Доклад — <strong>прогулка</strong> по этому миру<br>
+                    <span style="font-size: 0.8em; opacity: 0.8;">с ностальгией и фокусом на многослойности</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-divider">
+            <h2>2. Ранний веб и ностальгия</h2>
+        </section>
+
+        <section>
+            <h3>Первый браузер WorldWideWeb</h3>
+            <br>
             <div class="image-placeholder">
-              Скриншот Space Jam сайта<br>
-              или Flash-анимации
+                Screenshot of WorldWideWeb browser (1990)<br>
+                или изображение Тима Бернерс-Ли
             </div>
-          </div>
-        </div>
-      </section>
+            <br>
+            <p>Изначальная идея веба как <strong>гипертекстовой системы</strong><br>
+                для обмена знаниями</p>
+        </section>
 
-      <section>
-        <h3>Зачем это вспоминать?</h3>
-        <br>
-        <p>Зацепить <strong>эмоциями</strong> и показать,<br>
-        как «наивный» веб выглядел</p>
-        <br>
-        <p style="color: var(--retro-primary);">
-          [ADD MORE NOSTALGIC EXAMPLES HERE]
-        </p>
-      </section>
+        <section>
+            <h3>«Невинный» веб</h3>
+            <br>
+            <ul>
+                <li>Статичные HTML-страницы</li>
+                <li>Документы, ссылки, немного картинок</li>
+                <li>Табличная вёрстка</li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Пример старого сайта (1990s)<br>
+                или скриншот табличной вёрстки
+            </div>
+        </section>
 
+        <section>
+            <h3>Ностальгический блок</h3>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <h4>Million Dollar Homepage</h4>
+                    <div class="image-placeholder">
+                        Скриншот Million Dollar Homepage<br>
+                        (стенка из пикселей)
+                    </div>
+                </div>
+                <div class="column">
+                    <h4>Space Jam / Flash-эра</h4>
+                    <div class="image-placeholder">
+                        Скриншот Space Jam сайта<br>
+                        или Flash-анимации
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- ==================== SECTION 3: PARADIGM SHIFTS ==================== -->
-      <!-- 8:00-18:00 — Скачки во фронтенде -->
-      <section class="section-divider">
-        <h2>3. Скачки во фронтенде</h2>
-        <p style="font-size: 0.6em;">Смены парадигм</p>
-      </section>
+        <section>
+            <h3>Зачем это вспоминать?</h3>
+            <br>
+            <p>Зацепить <strong>эмоциями</strong> и показать,<br>
+                как «наивный» веб выглядел</p>
+            <br>
+            <p style="color: var(--retro-primary);">
+                [ADD MORE NOSTALGIC EXAMPLES HERE]
+            </p>
+        </section>
 
-      <section>
-        <h3>Фронтенд развивается <strong>скачкообразно</strong></h3>
-        <br>
-        <p style="font-size: 0.8em;">
-          Быстрее, чем бэкенд
-        </p>
-        <br>
-        <div class="image-placeholder">
-          График/диаграмма скорости изменений<br>
-          фронтенд vs бэкенд
-        </div>
-      </section>
+        <section class="section-divider">
+            <h2>3. Скачки во фронтенде</h2>
+            <p style="font-size: 0.6em;">Смены парадигм</p>
+        </section>
 
-      <!-- Jump 1 -->
-      <section>
-        <h4>Скачок 1</h4>
-        <h3>Статичный HTML → Динамический веб</h3>
-        <br>
-        <ul>
-          <li>От полных перезагрузок к <strong>AJAX</strong></li>
-          <li><strong>Gmail</strong>, <strong>Google Maps</strong></li>
-          <li>Частичное обновление страниц</li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Сравнение: старый Gmail vs новый<br>
-          или пример AJAX в действии
-        </div>
-      </section>
+        <section>
+            <h3>Фронтенд развивается <strong>скачкообразно</strong></h3>
+            <br>
+            <p style="font-size: 0.8em;">
+                Быстрее, чем бэкенд
+            </p>
+            <br>
+            <div class="image-placeholder">
+                График/диаграмма скорости изменений<br>
+                фронтенд vs бэкенд
+            </div>
+        </section>
 
-      <!-- Jump 2 -->
-      <section>
-        <h4>Скачок 2</h4>
-        <h3>Страницы → SPA и фреймворки</h3>
-        <br>
-        <ul>
-          <li>Angular / React / Vue / Svelte</li>
-          <li>Клиент как <strong>UI-машина</strong></li>
-          <li>Сервер как <strong>API</strong></li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Архитектура SPA vs Multi-page<br>
-          схема сравнения
-        </div>
-      </section>
+        <section>
+            <h4>Скачок 1</h4>
+            <h3>Статичный HTML → Динамический веб</h3>
+            <br>
+            <ul>
+                <li>От полных перезагрузок к <strong>AJAX</strong></li>
+                <li><strong>Gmail</strong>, <strong>Google Maps</strong></li>
+                <li>Частичное обновление страниц</li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Сравнение: старый Gmail vs новый<br>
+                или пример AJAX в действии
+            </div>
+        </section>
 
-      <!-- Jump 3 -->
-      <section>
-        <h4>Скачок 3</h4>
-        <h3>Десктопный веб → Mobile-first</h3>
-        <br>
-        <ul>
-          <li>Адаптивность</li>
-          <li>Touch интерфейсы</li>
-          <li>Производительность</li>
-          <li>Разная скорость сети</li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Mobile-first примеры<br>
-          адаптивная вёрстка
-        </div>
-      </section>
+        <section>
+            <h4>Скачок 2</h4>
+            <h3>Страницы → SPA и фреймворки</h3>
+            <br>
+            <ul>
+                <li>Angular / React / Vue / Svelte</li>
+                <li>Клиент как <strong>UI-машина</strong></li>
+                <li>Сервер как <strong>API</strong></li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Архитектура SPA vs Multi-page<br>
+                схема сравнения
+            </div>
+        </section>
 
-      <!-- Jump 4 -->
-      <section>
-        <h4>Скачок 4</h4>
-        <h3>Веб → PWA</h3>
-        <br>
-        <ul>
-          <li>Offline-first</li>
-          <li>Установка как приложение</li>
-          <li>Push-уведомления</li>
-          <li>Service Workers</li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          PWA схема работы<br>
-          или пример install prompt
-        </div>
-      </section>
+        <section>
+            <h4>Скачок 3</h4>
+            <h3>Десктопный веб → Mobile-first</h3>
+            <br>
+            <ul>
+                <li>Адаптивность</li>
+                <li>Touch интерфейсы</li>
+                <li>Производительность</li>
+                <li>Разная скорость сети</li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Mobile-first примеры<br>
+                адаптивная вёрстка
+            </div>
+        </section>
+        <section>
+            <h4>Скачок 4</h4>
+            <h3>Веб → PWA</h3>
+            <br>
+            <ul>
+                <li>Offline-first</li>
+                <li>Установка как приложение</li>
+                <li>Push-уведомления</li>
+                <li>Service Workers</li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                PWA схема работы<br>
+                или пример install prompt
+            </div>
+        </section>
+        <section>
+            <h4>Скачок 5</h4>
+            <h3>Классический клиент/сервер → RSC</h3>
+            <br>
+            <ul>
+                <li>React Server Components</li>
+                <li>Современные гибриды</li>
+                <li>Часть рендеринга на сервере</li>
+                <li>Часть на клиенте</li>
+                <li><strong>Новый слой сложности</strong></li>
+            </ul>
+        </section>
 
-      <!-- Jump 5 -->
-      <section>
-        <h4>Скачок 5</h4>
-        <h3>Классический клиент/сервер → RSC</h3>
-        <br>
-        <ul>
-          <li>React Server Components</li>
-          <li>Современные гибриды</li>
-          <li>Часть рендеринга на сервере</li>
-          <li>Часть на клиенте</li>
-          <li><strong>Новый слой сложности</strong></li>
-        </ul>
-      </section>
+        <section>
+            <h3>Контраст: Бэкенд vs Фронтенд</h3>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <h4 style="color: var(--retro-green);">Бэкенд</h4>
+                    <p style="font-size: 0.8em;">Постепенная эволюция:</p>
+                    <code>HTTP → REST → GraphQL</code>
+                </div>
+                <div class="column">
+                    <h4 style="color: var(--retro-primary);">Фронтенд</h4>
+                    <p style="font-size: 0.8em;">Серия резких смен модели:</p>
+                    <code>HTML → AJAX → SPA → PWA → RSC</code>
+                </div>
+            </div>
+        </section>
 
-      <section>
-        <h3>Контраст: Бэкенд vs Фронтенд</h3>
-        <br>
-        <div class="columns">
-          <div class="column">
-            <h4 style="color: var(--retro-green);">Бэкенд</h4>
-            <p style="font-size: 0.8em;">Постепенная эволюция:</p>
-            <code>HTTP → REST → GraphQL</code>
-          </div>
-          <div class="column">
-            <h4 style="color: var(--retro-primary);">Фронтенд</h4>
-            <p style="font-size: 0.8em;">Серия резких смен модели:</p>
-            <code>HTML → AJAX → SPA → PWA → RSC</code>
-          </div>
-        </div>
-      </section>
+        <section class="section-divider">
+            <h2>4. Современный Web Platform</h2>
+            <p style="font-size: 0.6em;">Браузер как платформа</p>
+        </section>
 
+        <section>
+            <h3>Браузер — не «рендерилка HTML»</h3>
+            <br>
+            <p>Это <strong>полноценная платформа</strong></p>
+            <br>
+            <div class="image-placeholder">
+                Схема: браузер как мини-ОС<br>
+                доступ к железу, офлайн, пуши
+            </div>
+        </section>
 
-      <!-- ==================== SECTION 4: MODERN WEB PLATFORM ==================== -->
-      <!-- 18:00-23:00 — Современный Web Platform -->
-      <section class="section-divider">
-        <h2>4. Современный Web Platform</h2>
-        <p style="font-size: 0.6em;">Браузер как платформа</p>
-      </section>
+        <section>
+            <h3>Современные Web API</h3>
+            <br>
+            <ul>
+                <li><strong>WebGPU</strong> — графика и вычисления</li>
+                <li><strong>WebAssembly</strong> — нативная производительность</li>
+                <li><strong>WebRTC</strong> — реальное время</li>
+                <li><strong>Web Bluetooth</strong> — IoT</li>
+                <li>[ADD MORE: File System, Notifications, etc.]</li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Логотипы/иконки Web API<br>
+                или примеры использования
+            </div>
+        </section>
 
-      <section>
-        <h3>Браузер — не «рендерилка HTML»</h3>
-        <br>
-        <p>Это <strong>полноценная платформа</strong></p>
-        <br>
-        <div class="image-placeholder">
-          Схема: браузер как мини-ОС<br>
-          доступ к железу, офлайн, пуши
-        </div>
-      </section>
+        <section>
+            <h3>Браузер как мини-ОС</h3>
+            <br>
+            <ul>
+                <li>Доступ к железу</li>
+                <li>Офлайн-режим</li>
+                <li>Push-уведомления</li>
+                <li>Фоновые процессы</li>
+                <li>File System Access</li>
+            </ul>
+        </section>
 
-      <section>
-        <h3>Современные Web API</h3>
-        <br>
-        <ul>
-          <li><strong>WebGPU</strong> — графика и вычисления</li>
-          <li><strong>WebAssembly</strong> — нативная производительность</li>
-          <li><strong>WebRTC</strong> — реальное время</li>
-          <li><strong>Web Bluetooth</strong> — IoT</li>
-          <li>[ADD MORE: File System, Notifications, etc.]</li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Логотипы/иконки Web API<br>
-          или примеры использования
-        </div>
-      </section>
+        <section>
+            <h3>Как читать спецификацию HTML</h3>
+            <br>
+            <div class="retro-quote">
+                Эту спецификацию следует читать так же, как и все другие спецификации.<br><br>
+                Сначала от корки до корки несколько раз.<br>
+                Потом в обратном направлении, минимум один раз.<br>
+                Затем нужно прочитать ее, выбирая случайные разделы в оглавлении<br>
+                и переходя по всем перекрёстным ссылкам.
+            </div>
+            <br>
+            <p style="font-size: 0.7em; opacity: 0.7;">
+                — HTML Specification
+            </p>
+        </section>
 
-      <section>
-        <h3>Браузер как мини-ОС</h3>
-        <br>
-        <ul>
-          <li>Доступ к железу</li>
-          <li>Офлайн-режим</li>
-          <li>Push-уведомления</li>
-          <li>Фоновые процессы</li>
-          <li>File System Access</li>
-        </ul>
-      </section>
+        <section class="section-divider">
+            <h2>5. Кто управляет вебом?</h2>
+            <p style="font-size: 0.6em;">Зоопарк комитетов</p>
+        </section>
 
-      <section>
-        <h3>Как читать спецификацию HTML</h3>
-        <br>
-        <div class="retro-quote">
-          Эту спецификацию следует читать так же, как и все другие спецификации.<br><br>
-          Сначала от корки до корки несколько раз.<br>
-          Потом в обратном направлении, минимум один раз.<br>
-          Затем нужно прочитать ее, выбирая случайные разделы в оглавлении<br>
-          и переходя по всем перекрёстным ссылкам.
-        </div>
-        <br>
-        <p style="font-size: 0.7em; opacity: 0.7;">
-          — HTML Specification
-        </p>
-      </section>
+        <section>
+            <h3>Кто разрабатывает веб</h3>
+            <br>
+            <ul>
+                <li><strong>W3C</strong> — World Wide Web Consortium</li>
+                <li><strong>WHATWG</strong> — Living Standard</li>
+                <li><strong>TC39</strong> — JavaScript</li>
+                <li><strong>WICG</strong> — инкубация идей</li>
+                <li><strong>OpenJS Foundation</strong></li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Логотипы организаций<br>
+                W3C, WHATWG, TC39, WICG
+            </div>
+        </section>
 
+        <section>
+            <h3>Браузерные вендоры</h3>
+            <br>
+            <ul>
+                <li><strong>Chrome</strong> (Google)</li>
+                <li><strong>Firefox</strong> (Mozilla)</li>
+                <li><strong>Safari</strong> (Apple)</li>
+                <li><strong>Edge</strong> (Microsoft)</li>
+            </ul>
+            <br>
+            <p style="font-size: 0.8em;">
+                Они — реальные <strong>implementers</strong>
+            </p>
+        </section>
 
-      <!-- ==================== SECTION 5: COMMITTEES ==================== -->
-      <!-- 23:00-28:00 — Зоопарк комитетов -->
-      <section class="section-divider">
-        <h2>5. Кто управляет вебом?</h2>
-        <p style="font-size: 0.6em;">Зоопарк комитетов</p>
-      </section>
+        <section>
+            <h3>W3C vs WHATWG</h3>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <h4 style="color: var(--retro-secondary);">W3C</h4>
+                    <p style="font-size: 0.8em;">Снапшоты стандартов</p>
+                    <p style="font-size: 0.7em; opacity: 0.7;">Исторический подход</p>
+                </div>
+                <div class="column">
+                    <h4 style="color: var(--retro-primary);">WHATWG</h4>
+                    <p style="font-size: 0.8em;">Living Standard</p>
+                    <p style="font-size: 0.7em; opacity: 0.7;">«Живой» стандарт</p>
+                </div>
+            </div>
+            <br>
+            <p style="font-size: 0.8em;">
+                Расхождение философий: <strong>стабильность</strong> vs <strong>эволюция</strong>
+            </p>
+        </section>
 
-      <section>
-        <h3>Кто разрабатывает веб</h3>
-        <br>
-        <ul>
-          <li><strong>W3C</strong> — World Wide Web Consortium</li>
-          <li><strong>WHATWG</strong> — Living Standard</li>
-          <li><strong>TC39</strong> — JavaScript</li>
-          <li><strong>WICG</strong> — инкубация идей</li>
-          <li><strong>OpenJS Foundation</strong></li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Логотипы организаций<br>
-          W3C, WHATWG, TC39, WICG
-        </div>
-      </section>
+        <section>
+            <h3>Новые центры влияния</h3>
+            <br>
+            <ul>
+                <li><strong>React</strong>, <strong>Next.js</strong></li>
+                <li><strong>Vercel</strong>, <strong>Netlify</strong></li>
+                <li>Крупные платформы</li>
+            </ul>
+            <br>
+            <p style="font-size: 0.8em;">
+                Сообщество, которое реагирует на изменения<br>
+                и иногда конфликтует с вендорами
+            </p>
+        </section>
 
-      <section>
-        <h3>Браузерные вендоры</h3>
-        <br>
-        <ul>
-          <li><strong>Chrome</strong> (Google)</li>
-          <li><strong>Firefox</strong> (Mozilla)</li>
-          <li><strong>Safari</strong> (Apple)</li>
-          <li><strong>Edge</strong> (Microsoft)</li>
-        </ul>
-        <br>
-        <p style="font-size: 0.8em;">
-          Они — реальные <strong>implementers</strong>
-        </p>
-      </section>
+        <section class="section-divider">
+            <h2>6. Interop & Web Platform Tests</h2>
+            <p style="font-size: 0.6em;">Выравнивание браузеров</p>
+        </section>
 
-      <section>
-        <h3>W3C vs WHATWG</h3>
-        <br>
-        <div class="columns">
-          <div class="column">
-            <h4 style="color: var(--retro-secondary);">W3C</h4>
-            <p style="font-size: 0.8em;">Снапшоты стандартов</p>
-            <p style="font-size: 0.7em; opacity: 0.7;">Исторический подход</p>
-          </div>
-          <div class="column">
-            <h4 style="color: var(--retro-primary);">WHATWG</h4>
-            <p style="font-size: 0.8em;">Living Standard</p>
-            <p style="font-size: 0.7em; opacity: 0.7;">«Живой» стандарт</p>
-          </div>
-        </div>
-        <br>
-        <p style="font-size: 0.8em;">
-          Расхождение философий: <strong>стабильность</strong> vs <strong>эволюция</strong>
-        </p>
-      </section>
+        <section>
+            <h3>Проблема: историческая несовместимость</h3>
+            <br>
+            <ul>
+                <li>Браузерные войны</li>
+                <li>Разное поведение CSS</li>
+                <li>Разные реализации API</li>
+                <li><strong>Боль разработчиков</strong></li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Meme: «It works on my machine»<br>
+                или схема различий браузеров
+            </div>
+        </section>
 
-      <section>
-        <h3>Новые центры влияния</h3>
-        <br>
-        <ul>
-          <li><strong>React</strong>, <strong>Next.js</strong></li>
-          <li><strong>Vercel</strong>, <strong>Netlify</strong></li>
-          <li>Крупные платформы</li>
-        </ul>
-        <br>
-        <p style="font-size: 0.8em;">
-          Сообщество, которое реагирует на изменения<br>
-          и иногда конфликтует с вендорами
-        </p>
-      </section>
+        <section>
+            <h3>Web Platform Tests</h3>
+            <br>
+            <p>Общая база тестов для всех браузеров</p>
+            <br>
+            <div class="image-placeholder">
+                Скриншот wpt.fyi<br>
+                или примеры тестов
+            </div>
+            <br>
+            <code>https://wpt.fyi/</code>
+        </section>
 
+        <section>
+            <h3>Результаты тестов (июнь 2021)</h3>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <h4 style="color: var(--retro-green);">Chrome</h4>
+                    <p style="font-size: 1.2em;"><strong>510</strong> тестов не проходят</p>
+                    <p style="font-size: 0.7em; opacity: 0.7;">из 41,761</p>
+                </div>
+                <div class="column">
+                    <h4 style="color: var(--retro-yellow);">Firefox</h4>
+                    <p style="font-size: 1.2em;"><strong>1,377</strong> тестов не проходят</p>
+                </div>
+                <div class="column">
+                    <h4 style="color: var(--retro-primary);">Safari</h4>
+                    <p style="font-size: 1.2em;"><strong>3,859</strong> тестов не проходят</p>
+                </div>
+            </div>
+        </section>
 
-      <!-- ==================== SECTION 6: INTEROP & WPT ==================== -->
-      <!-- 28:00-35:00 — Interop и Web Platform Tests -->
-      <section class="section-divider">
-        <h2>6. Interop & Web Platform Tests</h2>
-        <p style="font-size: 0.6em;">Выравнивание браузеров</p>
-      </section>
+        <section>
+            <h3>Пример: CSS Grid</h3>
+            <br>
+            <div class="image-placeholder">
+                Скриншот wpt.fyi результаты Grid<br>
+                https://wpt.fyi/results/css/css-grid
+            </div>
+            <br>
+            <code>https://wpt.fyi/results/css/css-grid</code>
+        </section>
 
-      <section>
-        <h3>Проблема: историческая несовместимость</h3>
-        <br>
-        <ul>
-          <li>Браузерные войны</li>
-          <li>Разное поведение CSS</li>
-          <li>Разные реализации API</li>
-          <li><strong>Боль разработчиков</strong></li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Meme: «It works on my machine»<br>
-          или схема различий браузеров
-        </div>
-      </section>
+        <section>
+            <h3>Interop</h3>
+            <br>
+            <ul>
+                <li>Совместная инициатива</li>
+                <li>Выравнивание поведения</li>
+                <li>Приоритизация областей:<br>
+                    <span style="font-size: 0.8em;">CSS, forms, scrolling и т.д.</span>
+                </li>
+            </ul>
+            <br>
+            <p style="color: var(--retro-primary);">
+                [ADD WPT EXAMPLES: compare two browsers]
+            </p>
+        </section>
 
-      <section>
-        <h3>Web Platform Tests</h3>
-        <br>
-        <p>Общая база тестов для всех браузеров</p>
-        <br>
-        <div class="image-placeholder">
-          Скриншот wpt.fyi<br>
-          или примеры тестов
-        </div>
-        <br>
-        <code>https://wpt.fyi/</code>
-      </section>
+        <section>
+            <h3>Месседж</h3>
+            <br>
+            <p>Мы уже стандартизируем не только <strong>текст спецификаций</strong>,<br>
+                но и <strong>фактическое поведение</strong></p>
+            <br>
+            <p>Веб становится более предсказуемым,<br>
+                но цена — <strong>огромная координация</strong></p>
+            <br>
+            <p style="color: var(--retro-yellow); font-size: 1.2em;">
+                «Не ломайте веб»
+            </p>
+        </section>
 
-      <section>
-        <h3>Результаты тестов (июнь 2021)</h3>
-        <br>
-        <div class="columns">
-          <div class="column">
-            <h4 style="color: var(--retro-green);">Chrome</h4>
-            <p style="font-size: 1.2em;"><strong>510</strong> тестов не проходят</p>
-            <p style="font-size: 0.7em; opacity: 0.7;">из 41,761</p>
-          </div>
-          <div class="column">
-            <h4 style="color: var(--retro-yellow);">Firefox</h4>
-            <p style="font-size: 1.2em;"><strong>1,377</strong> тестов не проходят</p>
-          </div>
-          <div class="column">
-            <h4 style="color: var(--retro-primary);">Safari</h4>
-            <p style="font-size: 1.2em;"><strong>3,859</strong> тестов не проходят</p>
-          </div>
-        </div>
-      </section>
+        <section class="section-divider">
+            <h2>7. Веб как конструкция</h2>
+            <p style="font-size: 0.6em;">Политико-правовой аспект</p>
+        </section>
 
-      <section>
-        <h3>Пример: CSS Grid</h3>
-        <br>
-        <div class="image-placeholder">
-          Скриншот wpt.fyi результаты Grid<br>
-          https://wpt.fyi/results/css/css-grid
-        </div>
-        <br>
-        <code>https://wpt.fyi/results/css/css-grid</code>
-      </section>
-
-      <section>
-        <h3>Interop</h3>
-        <br>
-        <ul>
-          <li>Совместная инициатива</li>
-          <li>Выравнивание поведения</li>
-          <li>Приоритизация областей:<br>
-            <span style="font-size: 0.8em;">CSS, forms, scrolling и т.д.</span>
-          </li>
-        </ul>
-        <br>
-        <p style="color: var(--retro-primary);">
-          [ADD WPT EXAMPLES: compare two browsers]
-        </p>
-      </section>
-
-      <section>
-        <h3>Месседж</h3>
-        <br>
-        <p>Мы уже стандартизируем не только <strong>текст спецификаций</strong>,<br>
-        но и <strong>фактическое поведение</strong></p>
-        <br>
-        <p>Веб становится более предсказуемым,<br>
-        но цена — <strong>огромная координация</strong></p>
-        <br>
-        <p style="color: var(--retro-yellow); font-size: 1.2em;">
-          «Не ломайте веб»
-        </p>
-      </section>
-
-
-      <!-- ==================== SECTION 7: WEB AS POLITICAL ==================== -->
-      <!-- 35:00-37:00 — Веб как политико-правовая конструкция -->
-      <section class="section-divider">
-        <h2>7. Веб как конструкция</h2>
-        <p style="font-size: 0.6em;">Политико-правовой аспект</p>
-      </section>
-
-      <section>
-        <h3>Патентная политика W3C</h3>
-        <br>
-        <ul>
-          <li>Стремление к <strong>royalty-free</strong> стандартам</li>
-          <li>Веб должен быть <strong>юридически свободным</strong><br>
-            для реализации
-          </li>
-        </ul>
-        <br>
-        <div class="retro-quote">
-          Сложность веба — не только в коде,<br>
-          но и в договорённостях
-        </div>
-      </section>
-
-
-      <!-- ==================== SECTION 8: FUTURE ==================== -->
-      <!-- 37:00-41:00 — Следующий виток: A2UI -->
-      <section class="section-divider">
-        <h2>8. Будущее</h2>
-        <p style="font-size: 0.6em;">A2UI и что дальше?</p>
-      </section>
-
-      <section>
-        <h3>Итоги эволюции</h3>
-        <br>
-        <code>
-          HTML → Динамика → SPA → Мобильный → PWA → Гибриды
-        </code>
-        <br><br>
-        <div class="image-placeholder">
-          Таймлайн эволюции веба<br>
-          от 1990 до наших дней
-        </div>
-      </section>
-
-      <section>
-        <h3>A2UI — AI-Adaptative UI</h3>
-        <br>
-        <ul>
-          <li>Интерфейсы, которые строятся и адаптируются<br>
-            с участием <strong>ИИ-моделей</strong>
-          </li>
-          <li>Браузер как фронтенд для <strong>ИИ-агентов</strong></li>
-          <li>Новый слой абстракции</li>
-        </ul>
-        <br>
-        <div class="image-placeholder">
-          Концепт A2UI<br>
-          или схема взаимодействия ИИ-агента с браузером
-        </div>
-      </section>
-
-      <section>
-        <h3>Вопросы для размышления</h3>
-        <br>
-        <ul>
-          <li>Какие новые <strong>Web API</strong> понадобятся?</li>
-          <li>Как снова поменяется роль браузера?</li>
-          <li>Как изменится фронтенд?</li>
-        </ul>
-      </section>
+        <section>
+            <h3>Патентная политика W3C</h3>
+            <br>
+            <ul>
+                <li>Стремление к <strong>royalty-free</strong> стандартам</li>
+                <li>Веб должен быть <strong>юридически свободным</strong><br>
+                    для реализации
+                </li>
+            </ul>
+            <br>
+            <div class="retro-quote">
+                Сложность веба — не только в коде,<br>
+                но и в договорённостях
+            </div>
+        </section>
 
 
-      <!-- ==================== SECTION 9: CONCLUSION ==================== -->
-      <!-- 41:00-44:00 — Финальный месседж -->
-      <section class="section-divider">
-        <h2>9. Финал</h2>
-      </section>
+        <section class="section-divider">
+            <h2>8. Будущее</h2>
+            <p style="font-size: 0.6em;">A2UI и что дальше?</p>
+        </section>
 
-      <section>
-        <h3>Ключевые мысли</h3>
-        <br>
-        <ul>
-          <li>Веб давно перестал быть <strong>«просто сайтами»</strong></li>
-          <li>Браузер — одна из самых <strong>сложных</strong> и<br>
-            самых <strong>согласованных</strong> систем
-          </li>
-          <li>Каждый новый слой добавляет сложность,<br>
-            но остаётся в том же окне — вкладке браузера
-          </li>
-        </ul>
-      </section>
+        <section>
+            <h3>Итоги эволюции</h3>
+            <br>
+            <code>
+                HTML → Динамика → SPA → Мобильный → PWA → Гибриды
+            </code>
+            <br><br>
+            <div class="image-placeholder">
+                Таймлайн эволюции веба<br>
+                от 1990 до наших дней
+            </div>
+        </section>
 
-      <section>
-        <h3>Напоследок</h3>
-        <br>
-        <div class="retro-quote">
-          Если вы в какой-то момент поймаете себя на рефлексии<br>
-          типа «мне скучно»,<br><br>
-          вспомните, с какой <strong>ахренительно сложной системой</strong><br>
-          вы работаете :)
-        </div>
-      </section>
+        <section>
+            <h3>A2UI — AI-Adaptative UI</h3>
+            <br>
+            <ul>
+                <li>Интерфейсы, которые строятся и адаптируются<br>
+                    с участием <strong>ИИ-моделей</strong>
+                </li>
+                <li>Браузер как фронтенд для <strong>ИИ-агентов</strong></li>
+                <li>Новый слой абстракции</li>
+            </ul>
+            <br>
+            <div class="image-placeholder">
+                Концепт A2UI<br>
+                или схема взаимодействия ИИ-агента с браузером
+            </div>
+        </section>
 
+        <section>
+            <h3>Вопросы для размышления</h3>
+            <br>
+            <ul>
+                <li>Какие новые <strong>Web API</strong> понадобятся?</li>
+                <li>Как снова поменяется роль браузера?</li>
+                <li>Как изменится фронтенд?</li>
+            </ul>
+        </section>
 
-      <!-- ==================== Q&A ==================== -->
-      <!-- 44:00-45:00 — Вопросы -->
-      <section>
-        <h2 style="color: var(--retro-green);">Спасибо!</h2>
-        <br>
-        <h3>Вопросы?</h3>
-        <br>
-        <br>
-        <br>
-        <p style="font-size: 0.8em; opacity: 0.7;">
-          [YOUR CONTACT]<br>
-          [YOUR SOCIAL / GITHUB / TWITTER]<br>
-          [LINKS TO RESOURCES]
-        </p>
-      </section>
+        <section class="section-divider">
+            <h2>9. Финал</h2>
+        </section>
+
+        <section>
+            <h3>Ключевые мысли</h3>
+            <br>
+            <ul>
+                <li>Веб давно перестал быть <strong>«просто сайтами»</strong></li>
+                <li>Браузер — одна из самых <strong>сложных</strong> и<br>
+                    самых <strong>согласованных</strong> систем
+                </li>
+                <li>Каждый новый слой добавляет сложность,<br>
+                    но остаётся в том же окне — вкладке браузера
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Напоследок</h3>
+            <br>
+            <div class="retro-quote">
+                Если вы в какой-то момент поймаете себя на рефлексии<br>
+                типа «мне скучно»,<br><br>
+                вспомните, с какой <strong>ахренительно сложной системой</strong><br>
+                вы работаете :)
+            </div>
+        </section>
+
+        <section>
+            <h2 style="color: var(--retro-green);">Спасибо!</h2>
+            <br>
+            <h3>Вопросы?</h3>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 0.8em; opacity: 0.7;">
+                [YOUR CONTACT]<br>
+                [YOUR SOCIAL / GITHUB / TWITTER]<br>
+                [LINKS TO RESOURCES]
+            </p>
+        </section>
 
     </div>
-  </div>
+</div>
 
-  <!-- Reveal.js Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-  <script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<script>
     Reveal.initialize({
-      hash: true,
-      slideNumber: true,
-      transition: 'none', // none/fade/slide/convex/concave/zoom
-      backgroundTransition: 'fade',
-      center: true,
-      width: 1200,
-      height: 800,
+        hash: true,
+        slideNumber: true,
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+        backgroundTransition: 'fade',
+        center: true,
+        width: 1200,
+        height: 800,
     });
-  </script>
+</script>
 </body>
 </html>
