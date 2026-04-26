@@ -167,3 +167,39 @@
   background: rgba(244, 211, 94, 0.1);
   margin: 20px 0;
 }
+
+.crumb-chain {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px 10px;
+}
+.crumb-chain::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b 0%, #4ecdc4 33%, #45b7d1 66%, #6ee7ff 100%);
+  border-radius: 2px;
+}
+.crumb {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 0 4px;
+  position: relative;
+  top: 2px;
+  font-size: 0.7em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.crumb-1 { background: #ff6b6b; }
+.crumb-2 { background: #4ecdc4; }
+.crumb-3 { background: #45b7d1; }
+.crumb-4 { background: #6ee7ff; }
+.crumb-5 { background: #a78bfa; }

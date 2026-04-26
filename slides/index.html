@@ -97,8 +97,8 @@
                 </tr>
                 <tr>
                     <td>Память</td>
-                    <td><b style="color: #f4d35e">20 слов</b> (10‑разрядные десятичные числа)</td>
-                    <td><b style="color: #f4d35e">6–8&nbsp;ГБ</b> ОЗУ, до 1&nbsp;ТБ постоянной памяти</td>
+                    <td><b style="color: var(--retro-yellow)">20 слов</b> (10‑разрядные десятичные числа)</td>
+                    <td><b style="color: var(--retro-yellow)">6–8&nbsp;ГБ</b> ОЗУ, до 1&nbsp;ТБ постоянной памяти</td>
                 </tr>
                 <tr>
                     <td>Потребление энергии</td>
@@ -113,7 +113,7 @@
         </section>
         <section>
             <img src="img/tim.png">
-            <p>Первый браузер в <b style="color: #f4d35e">1990 году</b> создал Тим Бернерс-Ли.</p>
+            <p>Первый браузер в <b style="color: var(--retro-yellow)">1990 году</b> создал Тим Бернерс-Ли.</p>
         </section>
         <section>
             <img src="img/first_brows.png">
@@ -165,21 +165,22 @@
                 <li>Карты и навигация (Google Maps)</li>
                 <li>Соцсети, мессенджеры, онлайн-документы</li>
             </ul>
-            <p style="font-size: 0.7em; color: #aaa;">
-                Веб перестаёт быть просто страницами и становится средой для жизни.
-            </p>
         </section>
         <section>
-            <h3>Браузер уже не тянет «старым способом»</h3>
-            <p>Появляется запрос на:</p>
+            <h3 style="color: var(--retro-green)">Веб перестаёт быть просто страницами и становится средой для
+                жизни</h3>
+            <div class="fragment">
+                <h3>️↓</h3>
+                <h3>Браузер уже не тянет «старым способом»</h3>
+            </div>
+        </section>
+        <section>
+            <h3>Появляется запрос на</h3>
             <ul>
                 <li>Быструю реакцию без полной перезагрузки</li>
                 <li>Сложные интерфейсы, как в десктопных приложениях</li>
                 <li>Работу с большим количеством данных прямо в браузере</li>
             </ul>
-            <p style="font-size: 0.7em; color: #aaa;">
-                Здесь и начинается история про скачки фронтенда.
-            </p>
         </section>
         <section class="section-divider">
             <h2>Глава 2. Эволюция веб-платформы</h2>
@@ -187,63 +188,149 @@
         </section>
         <section>
             <h3>Фронтенд развивается <strong>скачкообразно</strong></h3>
-            <br>
-            <p style="font-size: 0.8em;">
-                Быстрее, чем бэкенд
-            </p>
-            <br>
-            <div class="image-placeholder">
-                График/диаграмма скорости изменений<br>
-                фронтенд vs бэкенд
-            </div>
         </section>
-
         <section>
             <h4>Скачок 1</h4>
             <h3>Статичный HTML → Динамический веб</h3>
             <br>
-            <ul>
-                <li>От полных перезагрузок к <strong>AJAX</strong></li>
-                <li><strong>Gmail</strong>, <strong>Google Maps</strong></li>
-                <li>Частичное обновление страниц</li>
-            </ul>
-            <br>
-            <div class="image-placeholder">
-                Сравнение: старый Gmail vs новый<br>
-                или пример AJAX в действии
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; align-items: start;">
+                <div class="fragment fade-in">
+                    <h5 style="color: #ff6b6b; margin-bottom: 15px;">До (2004)</h5>
+                    <ul style="font-size: 0.85em; line-height: 1.3;" class="fragment">
+                        <li>Каждое действие — новая страница</li>
+                        <li>Обновить статус — рефреш</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in">
+                    <h5 style="color: #4ecdc4; margin-bottom: 15px;">Gmail + AJAX</h5>
+                    <ul style="font-size: 0.85em; line-height: 1.3;" class="fragment">
+                        <li>Частичное обновление страницы</li>
+                        <li><strong>Мгновенные ответы</strong></li>
+                    </ul>
+                </div>
             </div>
         </section>
-
+        <section>
+            <h3>AJAX решил скорость,<br>но создал новые проблемы</h3>
+            <div class="fragment">
+                <ul style="font-size: 0.9em;">
+                    <li><strong>"Спагетти"‑код</strong> повсюду <i>(привет, jquery!)</i></li>
+                    <li>Состояние вручную</li>
+                    <li>Каждый разработчик делает свой велосипед</li>
+                </ul>
+            </div>
+            <p class="fragment"
+               style="text-align: center; font-size: 1.2em; color: #6ee7ff; margin-top: 30px; font-weight: 500;">
+                <strong>Нужна реиспользуемость</strong>
+            </p>
+        </section>
         <section>
             <h4>Скачок 2</h4>
             <h3>Страницы → SPA и фреймворки</h3>
             <br>
-            <ul>
-                <li>Angular / React / Vue / Svelte</li>
-                <li>Клиент как <strong>UI-машина</strong></li>
-                <li>Сервер как <strong>API</strong></li>
-            </ul>
-            <br>
-            <div class="image-placeholder">
-                Архитектура SPA vs Multi-page<br>
-                схема сравнения
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div class="fragment fade-in">
+                    <h5 style="color: #ff6b6b; margin-bottom: 12px;">Было (MPA)</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li>Каждый экран — отдельный HTML</li>
+                        <li>Сервер рендерит всю страницу</li>
+                        <li>Ограниченная интерактивность</li>
+                        <li>Много кода</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in">
+                    <h5 style="color: #4ecdc4; margin-bottom: 12px;">Стало (SPA)</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li><strong>Angular/React/Vue/Svelte</strong></li>
+                        <li>Клиент — <strong>UI-машина</strong></li>
+                        <li>Сервер — <strong>только API</strong></li>
+                    </ul>
+                </div>
             </div>
         </section>
-
+        <section data-background="#0f0f23">
+            <h3>Но телефоны не стояли на месте</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+                align-items: center; max-width: 1100px; margin: 60px auto;">
+                <div class="fragment">
+                    <h4 style="color: #ff6b6b; margin-bottom: 25px;">Кнопочные (2000–2007)</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/0e51efb2dfb8ab377bd62ee0834d61ab41438ec9.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/75a9b6cf69a7460c964eb7f51b9d69a0625170f2.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/efbafb25bb6b1fe4c14474f92a97d1b0764f7bc9.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/2ebb7a6b6e9decc9e0970a57113085fe8dcd1aeb.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                    </div>
+                </div>
+                <div class="fragment">
+                    <h4 style="color: #4ecdc4; margin-bottom: 25px;">Сенсорные (2007+)</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/9b31d915696cf86d18ff3d263c29414d38302d46.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/7eb0ec7a47fce1a2bb6c5f114d38adec2778a2d8.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/LG_KE850_Prada_Hauptmen%C3%BC.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6daaaff713b0597ca30a6002709ff6be99359952.jpg"
+                             style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Мобильные телефоны развиваются</h3>
+            <div style="max-width: 800px; margin: 50px auto;">
+                <div class="fragment fade-in">
+                    <ul style="font-size: 0.95em; margin-top: 15px;">
+                        <li><strong>Тяжёлый JS</strong> тормозит на слабых устройствах</li>
+                        <li><strong>Touch UI</strong> вместо hover/click</li>
+                        <li><strong>3G/4G</strong> вместо оптоволокна</li>
+                        <li>Экраны <strong>от 320px до 4K</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <section>
             <h4>Скачок 3</h4>
             <h3>Десктопный веб → Mobile-first</h3>
             <br>
-            <ul>
-                <li>Адаптивность</li>
-                <li>Touch интерфейсы</li>
-                <li>Производительность</li>
-                <li>Разная скорость сети</li>
-            </ul>
-            <br>
-            <div class="image-placeholder">
-                Mobile-first примеры<br>
-                адаптивная вёрстка
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div class="fragment fade-in">
+                    <h5 style="color: #ff6b6b; margin-bottom: 12px;">Десктоп‑first (2010)</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li>Фиксированная ширина 1024px</li>
+                        <li>Hover и курсор мыши</li>
+                        <li>Быстрый интернет (DSL)</li>
+                        <li>Мощные ПК</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in">
+                    <h5 style="color: #4ecdc4; margin-bottom: 12px;">Mobile-first (2012+)</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li><strong>Адаптивность</strong> 320px–4K</li>
+                        <li><strong>Touch</strong> интерфейсы</li>
+                        <li><strong>Производительность</strong> (lazy load)</li>
+                        <li>Сети <strong>3G/4G</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fragment fade-in" style="text-align: center; margin-top: 25px;">
+                <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f894c58668b904c348215a29c86c5295848e7366.jpg"
+                     style="max-height: 240px; border-radius: 8px;">
+                <p style="font-size: 0.8em; color: #aaa; margin-top: 8px;">
+                    Breakpoints: 320px → 768px → 1024px → 1440px+
+                </p>
             </div>
         </section>
         <section>
@@ -277,17 +364,17 @@
 
         <section>
             <h3>Контраст: Бэкенд vs Фронтенд</h3>
-            <br>
+            <br/>
             <div class="columns">
                 <div class="column">
                     <h4 style="color: var(--retro-green);">Бэкенд</h4>
-                    <p style="font-size: 0.8em;">Постепенная эволюция:</p>
-                    <code>HTTP → REST → GraphQL</code>
+                    <p><code>HTTP → REST → GraphQL</code></p>
+                    <p style="font-size: 0.7em;">~3 эволюционных шага</p>
                 </div>
                 <div class="column">
-                    <h4 style="color: var(--retro-primary);">Фронтенд</h4>
-                    <p style="font-size: 0.8em;">Серия резких смен модели:</p>
-                    <code>HTML → AJAX → SPA → PWA → RSC</code>
+                    <h4 style="color: var(--retro-green);">Фронтенд</h4>
+                    <p><code>HTML → AJAX → SPA → PWA → RSC</code></p>
+                    <p style="font-size: 0.7em;"><strong>5+ парадигменных скачков</strong></p>
                 </div>
             </div>
         </section>
