@@ -255,16 +255,16 @@
                 <div class="fragment">
                     <h4 style="color: #ff6b6b; margin-bottom: 25px;">Кнопочные (2000–2007)</h4>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/0e51efb2dfb8ab377bd62ee0834d61ab41438ec9.jpg"
+                        <img src="img/nokia.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/75a9b6cf69a7460c964eb7f51b9d69a0625170f2.jpg"
+                        <img src="img/moto.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/efbafb25bb6b1fe4c14474f92a97d1b0764f7bc9.jpg"
+                        <img src="img/sams.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/2ebb7a6b6e9decc9e0970a57113085fe8dcd1aeb.jpg"
+                        <img src="img/burb.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
                     </div>
@@ -272,16 +272,16 @@
                 <div class="fragment">
                     <h4 style="color: #4ecdc4; margin-bottom: 25px;">Сенсорные (2007+)</h4>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/9b31d915696cf86d18ff3d263c29414d38302d46.jpg"
+                        <img src="img/experia.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/7eb0ec7a47fce1a2bb6c5f114d38adec2778a2d8.jpg"
+                        <img src="img/iphone.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/LG_KE850_Prada_Hauptmen%C3%BC.jpg"
+                        <img src="img/lg.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6daaaff713b0597ca30a6002709ff6be99359952.jpg"
+                        <img src="img/galaxy.png"
                              style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;
                             box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
                     </div>
@@ -325,43 +325,98 @@
                     </ul>
                 </div>
             </div>
-            <div class="fragment fade-in" style="text-align: center; margin-top: 25px;">
-                <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f894c58668b904c348215a29c86c5295848e7366.jpg"
-                     style="max-height: 240px; border-radius: 8px;">
-                <p style="font-size: 0.8em; color: #aaa; margin-top: 8px;">
-                    Breakpoints: 320px → 768px → 1024px → 1440px+
-                </p>
+        </section>
+        <section>
+            <h3>Mobile-first решили адаптивность,<br>но..</h3>
+            <div style="max-width: 800px; margin: 50px auto;">
+                <div class="fragment fade-in">
+                    <h4 style="color: #ffaa00;">Боли нативных приложений</h4>
+                    <ul style="font-size: 0.95em; margin-top: 15px;">
+                        <li><strong>App Store</strong> модерация (недели)</li>
+                        <li><strong>Обновления</strong> только через стор</li>
+                        <li><strong>Офлайн</strong> недоступен</li>
+                        <li>Push только <strong>через натив</strong></li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section>
             <h4>Скачок 4</h4>
             <h3>Веб → PWA</h3>
             <br>
-            <ul>
-                <li>Offline-first</li>
-                <li>Установка как приложение</li>
-                <li>Push-уведомления</li>
-                <li>Service Workers</li>
-            </ul>
-            <br>
-            <div class="image-placeholder">
-                PWA схема работы<br>
-                или пример install prompt
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div class="fragment fade-in">
+                    <h5 style="color: #ff6b6b; margin-bottom: 12px;">Обычный веб</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li>Только онлайн</li>
+                        <li>Не устанавливается</li>
+                        <li>Нет push</li>
+                        <li>Зависит от сети</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in">
+                    <h5 style="color: #4ecdc4; margin-bottom: 12px;">PWA</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li><strong>Offline-first</strong></li>
+                        <li><strong>Установка</strong> без стора</li>
+                        <li><strong>Push</strong> нативные</li>
+                        <li>Кэш + Service Workers</li>
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <div class="fragment fade-in" style="text-align: center; margin-top: 25px;">
+                <p style="font-size: 0.8em; color: #aaa; margin-top: 8px;">
+                    Service Worker = прокси между сетью и кэшем
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>...но вылезли рендерные боли (опять)</h3>
+            <div style="max-width: 800px; margin: 50px auto;">
+                <div class="fragment fade-in">
+                    <div style="font-size: 3em; color: #ffaa00; display: inline-block; margin-right: 15px;">⚠️</div>
+                    <h4 style="color: #ffaa00;">Рендерные боли</h4>
+                    <ul style="font-size: 0.95em; margin-top: 15px;">
+                        <li><strong>Тяжёлый JS</strong> на клиенте</li>
+                        <li><strong>SEO</strong> страдает (SPA)</li>
+                        <li><strong>TTFB</strong> медленный</li>
+                        <li>Сложно <strong>гибрид</strong> сервер/клиент</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section>
             <h4>Скачок 5</h4>
-            <h3>Классический клиент/сервер → RSC</h3>
+            <h3>Классический клиент/сервер → serverComponents</h3>
             <br>
-            <ul>
-                <li>React Server Components</li>
-                <li>Современные гибриды</li>
-                <li>Часть рендеринга на сервере</li>
-                <li>Часть на клиенте</li>
-                <li><strong>Новый слой сложности</strong></li>
-            </ul>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div class="fragment fade-in">
+                    <h5 style="color: #ff6b6b; margin-bottom: 12px;">Классика</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li>Всё на <strong>клиенте</strong> (SPA)</li>
+                        <li>Или всё на <strong>сервере</strong> (MPA)</li>
+                        <li>Два <strong>кода</strong></li>
+                        <li>SEO или <strong>скорость</strong></li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in">
+                    <h5 style="color: #4ecdc4; margin-bottom: 12px;">RSC (React Server Components)</h5>
+                    <ul style="font-size: 0.88em; line-height: 1.3;">
+                        <li><strong>Серверный</strong> рендер статичного</li>
+                        <li><strong>Клиентский</strong> только интерактив</li>
+                        <li><strong>Один код</strong> (async/await)</li>
+                        <li>SEO + <strong>скорость</strong> + PWA</li>
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <div class="fragment fade-in" style="text-align: center; margin-top: 25px;">
+                <p style="font-size: 0.8em; color: #aaa; margin-top: 8px;">
+                    Сервер рендерит → Streaming → Клиент "оживляет"
+                </p>
+            </div>
         </section>
-
         <section>
             <h3>Контраст: Бэкенд vs Фронтенд</h3>
             <br/>
