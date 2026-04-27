@@ -183,7 +183,7 @@
             </ul>
         </section>
         <section class="section-divider">
-            <h2>Глава 2. Эволюция веб-платформы</h2>
+            <h2>Глава 2.<br/> Эволюция веб-платформы</h2>
             <p style="color: lightblue"><i>(или как веб пытался догнать ожидания пользователей)</i></p>
         </section>
         <section>
@@ -375,8 +375,6 @@
             <h3>...но вылезли рендерные боли (опять)</h3>
             <div style="max-width: 800px; margin: 50px auto;">
                 <div class="fragment fade-in">
-                    <div style="font-size: 3em; color: #ffaa00; display: inline-block; margin-right: 15px;">⚠️</div>
-                    <h4 style="color: #ffaa00;">Рендерные боли</h4>
                     <ul style="font-size: 0.95em; margin-top: 15px;">
                         <li><strong>Тяжёлый JS</strong> на клиенте</li>
                         <li><strong>SEO</strong> страдает (SPA)</li>
@@ -389,7 +387,6 @@
         <section>
             <h4>Скачок 5</h4>
             <h3>Классический клиент/сервер → serverComponents</h3>
-            <br>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
                 <div class="fragment fade-in">
                     <h5 style="color: #ff6b6b; margin-bottom: 12px;">Классика</h5>
@@ -410,28 +407,50 @@
                     </ul>
                 </div>
             </div>
-            <br/>
             <div class="fragment fade-in" style="text-align: center; margin-top: 25px;">
-                <p style="font-size: 0.8em; color: #aaa; margin-top: 8px;">
+                <p style="font-size: 0.8em; color: #aaa;">
                     Сервер рендерит → Streaming → Клиент "оживляет"
                 </p>
             </div>
         </section>
-        <section>
-            <h3>Контраст: Бэкенд vs Фронтенд</h3>
-            <br/>
-            <div class="columns">
-                <div class="column">
+        <section data-background="#0f0f23">
+            <h3>За <span style="color: var(--retro-yellow)">25 лет</span> существования браузера</h3>
+            <p style="text-align: left">
+                2007: iPhone → мобильные боли (320px, touch, 3G)<br/>
+                ├ 2007-2012: Mobile-first подход (адаптив, responsive)<br/>
+                └ 2010-2013: SPA бум (AngularJS 2010, React 2013) →<br/>
+                <span style="margin-left: 30px">├ SPA + мобильные боли</span></br>
+                <span style="margin-left: 30px">├ → PWA (2015+)</span><br/>
+                <span style="margin-left: 30px">└ → RSC (2023+)</span>
+            </p>
+        </section>
+        <section data-background="#0f0f23">
+            <!-- TODO: пересобрать красиво-->
+            <h3 style="color: #fff;">Контраст: Бэкенд vs Фронтенд</h3>
+            <div class="columns" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+                               max-width: 900px; margin: 60px auto;">
+                <div style="text-align: center;">
                     <h4 style="color: var(--retro-green);">Бэкенд</h4>
-                    <p><code>HTTP → REST → GraphQL</code></p>
-                    <p style="font-size: 0.7em;">~3 эволюционных шага</p>
+                    <p style="font-size: 1.4em; font-family: 'Courier New', monospace;
+                      background: rgba(0,255,0,0.1); padding: 20px; border-radius: 8px;">
+                        <code>HTTP → REST → GraphQL</code>
+                    </p>
+                    <p style="font-size: 0.85em; color: #aaa;">~3 эволюционных шага</p>
                 </div>
-                <div class="column">
+                <div style="text-align: center;">
                     <h4 style="color: var(--retro-green);">Фронтенд</h4>
-                    <p><code>HTML → AJAX → SPA → PWA → RSC</code></p>
-                    <p style="font-size: 0.7em;"><strong>5+ парадигменных скачков</strong></p>
+                    <p style="font-size: 1.4em; font-family: 'Courier New', monospace;
+                      background: rgba(0,255,0,0.1); padding: 20px; border-radius: 8px;">
+                        <code>HTML → AJAX → SPA → PWA → RSC</code>
+                    </p>
+                    <p style="font-size: 0.85em; color: #4ecdc4; font-weight: bold;">
+                        <strong>5+ парадигменных скачков</strong>
+                    </p>
                 </div>
             </div>
+            <p style="text-align: center; font-size: 1.2em; color: #6ee7ff; margin-top: 30px;">
+                Фронтенд эволюционирует <strong>быстрее</strong>
+            </p>
         </section>
 
         <section class="section-divider">
