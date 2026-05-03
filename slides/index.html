@@ -146,24 +146,22 @@
             <video src="mov/cameron1.mov" data-autoplay playbackRate="3"/>
         </section>
         <section>
-            <h4>Сайт — как пиар компания фильма. Space Jam(1996)</h4>
+            <h4>Сайт — как пиар компания фильма:<br/> Space Jam(1996)</h4>
             <img src="img/jam.png">
         </section>
         <section>
-            <h4>Сайт — как заработок. The million dollars homepage (2005)</h4>
+            <h4>Сайт — как заработок: <br/> The million dollars homepage (2005)</h4>
             <img src="img/one_million.png"/>
         </section>
         <section>
-            <h3>Интернет взрослеет</h3>
-            <!--            <p>От «сайта-витрины» и самовыражения<br>-->
-            <!--                к сервисам и полноценным приложениям в браузере.</p>-->
+            <h2>Интернет взрослеет</h2>
         </section>
         <section>
             <h4>Самовыражение → сервис</h4>
             <ul>
-                <li>Почта в браузере (Gmail)</li>
-                <li>Карты и навигация (Google Maps)</li>
-                <li>Соцсети, мессенджеры, онлайн-документы</li>
+                <li class="fragment">Почта в браузере (Gmail)</li>
+                <li class="fragment">Карты и навигация (Google Maps)</li>
+                <li class="fragment">Соцсети, мессенджеры, онлайн-документы</li>
             </ul>
         </section>
         <section>
@@ -177,9 +175,9 @@
         <section>
             <h3>Появляется запрос на</h3>
             <ul>
-                <li>Быструю реакцию без полной перезагрузки</li>
-                <li>Сложные интерфейсы, как в десктопных приложениях</li>
-                <li>Работу с большим количеством данных прямо в браузере</li>
+                <li class="fragment">Быструю реакцию без полной перезагрузки</li>
+                <li class="fragment">Сложные интерфейсы (как в десктопных приложениях)</li>
+                <li class="fragment">Работу с большим количеством данных прямо в браузере</li>
             </ul>
         </section>
         <section class="section-divider">
@@ -414,7 +412,7 @@
             </div>
         </section>
         <section data-background="#0f0f23">
-            <h3>За <span style="color: var(--retro-yellow)">25 лет</span> существования браузера</h3>
+            <h3>За <span style="color: var(--retro-yellow)">20 лет</span> 5 скачков</h3>
             <p style="text-align: left">
                 2007: iPhone → мобильные боли (320px, touch, 3G)<br/>
                 ├ 2007-2012: Mobile-first подход (адаптив, responsive)<br/>
@@ -424,82 +422,30 @@
                 <span style="margin-left: 30px">└ → RSC (2023+)</span>
             </p>
         </section>
-        <section data-background="#0f0f23">
-            <!-- TODO: пересобрать красиво-->
-            <h3 style="color: #fff;">Контраст: Бэкенд vs Фронтенд</h3>
-            <div class="columns" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-                               max-width: 900px; margin: 60px auto;">
-                <div style="text-align: center;">
-                    <h4 style="color: var(--retro-green);">Бэкенд</h4>
-                    <p style="font-size: 1.4em; font-family: 'Courier New', monospace;
-                      background: rgba(0,255,0,0.1); padding: 20px; border-radius: 8px;">
-                        <code>HTTP → REST → GraphQL</code>
-                    </p>
-                    <p style="font-size: 0.85em; color: #aaa;">~3 эволюционных шага</p>
+        <section>
+            <div style="display: flex; flex-direction: row">
+                <div style="text-align: left">
+                    <h3><strong>150</strong> Web API в браузере</h3>
+                    <p>Это полноценная <strong>платформа</strong> с доступом к железу, офлайну, пушам.</p>
                 </div>
-                <div style="text-align: center;">
-                    <h4 style="color: var(--retro-green);">Фронтенд</h4>
-                    <p style="font-size: 1.4em; font-family: 'Courier New', monospace;
-                      background: rgba(0,255,0,0.1); padding: 20px; border-radius: 8px;">
-                        <code>HTML → AJAX → SPA → PWA → RSC</code>
-                    </p>
-                    <p style="font-size: 0.85em; color: #4ecdc4; font-weight: bold;">
-                        <strong>5+ парадигменных скачков</strong>
-                    </p>
-                </div>
+                <video src="mov/mdn.mov" autoplay loop muted
+                       style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;"></video>
             </div>
-            <p style="text-align: center; font-size: 1.2em; color: #6ee7ff; margin-top: 30px;">
-                Фронтенд эволюционирует <strong>быстрее</strong>
-            </p>
         </section>
-
+        <section>
+            <h3><strong>3D музей</strong> в браузере (React и Three.js)</h3>
+            <video src="mov/samokat.mov" autoplay loop muted
+                   style="width: 100%; height: 500px; border-radius: 12px;"></video>
+            <a href="https://museum.samokat.ru/">https://museum.samokat.ru/</a>
+        </section>
+        <section>
+            <h3>Многопользовательская игра в браузере (webGL)</h3>
+            <video src="mov/messanger.mov" autoplay loop muted
+                   style="width: 100%; height: 500px; border-radius: 12px;"></video>
+            <a href="https://messenger.abeto.co/">https://messenger.abeto.co/</a>
+        </section>
         <section class="section-divider">
-            <h2>Глава 3. Современный Web Platform</h2>
-            <p style="color: lightblue"><i>(или зоопарк технологий)</i></p>
-        </section>
-
-        <section>
-            <h3>Браузер — не «рендерилка HTML»</h3>
-            <br>
-            <p>Это <strong>полноценная платформа</strong></p>
-            <br>
-            <div class="image-placeholder">
-                Схема: браузер как мини-ОС<br>
-                доступ к железу, офлайн, пуши
-            </div>
-        </section>
-
-        <section>
-            <h3>Современные Web API</h3>
-            <br>
-            <ul>
-                <li><strong>WebGPU</strong> — графика и вычисления</li>
-                <li><strong>WebAssembly</strong> — нативная производительность</li>
-                <li><strong>WebRTC</strong> — реальное время</li>
-                <li><strong>Web Bluetooth</strong> — IoT</li>
-                <li>[ADD MORE: File System, Notifications, etc.]</li>
-            </ul>
-            <br>
-            <div class="image-placeholder">
-                Логотипы/иконки Web API<br>
-                или примеры использования
-            </div>
-        </section>
-
-        <section>
-            <h3>Браузер как мини-ОС</h3>
-            <br>
-            <ul>
-                <li>Доступ к железу</li>
-                <li>Офлайн-режим</li>
-                <li>Push-уведомления</li>
-                <li>Фоновые процессы</li>
-                <li>File System Access</li>
-            </ul>
-        </section>
-
-        <section class="section-divider">
-            <h2>Глава 4. Кто управляет вебом?</h2>
+            <h2>Глава 3. Кто делает веб?</h2>
             <p style="color: lightblue"><i>(или зоопарк комитетов)</i></p>
         </section>
 
@@ -700,7 +646,7 @@
 
 
         <section class="section-divider">
-            <h2>Глава 5. Будущее</h2>
+            <h2>Глава 4. Будущее</h2>
             <p style="color: lightblue"><i>(никто точно не знает)</i></p>
         </section>
 
