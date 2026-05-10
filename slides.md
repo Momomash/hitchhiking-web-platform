@@ -248,9 +248,13 @@ sectionNumber: '2'
 
 ## AJAX принес скорость,<br>но создал новые проблемы
 
+<v-clicks>
+
 - Управление состоянием вручную
-- **"Спагетти"‑код** повсюду  **(привет, jquery!)**
+- "Спагетти‑код" повсюду  **(привет, jquery!)**
 - Каждый разработчик делает свой велосипед
+  
+</v-clicks>
 
 <v-click>
 
@@ -263,258 +267,294 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-## Скачок 2
+## Скачок 2: Страницы → SPA и фреймворки
 
-### Страницы → SPA и фреймворки
+<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+  <div
+    v-click
+    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
+      Было (MPA)
+    </div>
 
-<br>
+      - Каждый экран — отдельный HTML
+      - Сервер рендерит всю страницу
+      - Ограниченная интерактивность
+      - Много кода
 
-<div grid="cols-2 gap-8" items-start>
+  </div>
+  <div
+    v-click
+    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
+      Стало (SPA)
+    </div>
 
-<div v-click>
+      - Angular/React/Vue/Svelte
+      - Клиент — UI-машина
+      - Сервер — только API
 
-<h5 style="color: #ff6b6b">Было (MPA)</h5>
-
-- Каждый экран — отдельный HTML
-- Сервер рендерит всю страницу
-- Ограниченная интерактивность
-- Много кода
-
-</div>
-
-<div v-click>
-
-<h5 style="color: #4ecdc4">Стало (SPA)</h5>
-
-- **Angular/React/Vue/Svelte**
-- Клиент — **UI-машина**
-- Сервер — **только API**
-
-</div>
-
-</div>
-
----
-sectionNumber: '2'
-background: #0f0f23
----
-
-### Но телефоны не стояли на месте
-
-<div grid="cols-2 gap-10" items-center>
-
-<div v-click>
-
-<h4 style="color: #ff6b6b">Кнопочные (2000–2007)</h4>
-
-<div grid="cols-2 gap-5">
-  <img src="./img/nokia.png" w-40 h-40 rounded-xl/>
-  <img src="./img/moto.png" w-40 h-40 rounded-xl/>
-  <img src="./img/sams.png" w-40 h-40 rounded-xl/>
-  <img src="./img/burb.png" w-40 h-40 rounded-xl/>
-</div>
-
-</div>
-
-<div v-click>
-
-<h4 style="color: #4ecdc4">Сенсорные (2007+)</h4>
-
-<div grid="cols-2 gap-5">
-  <img src="./img/experia.png" w-40 h-40 rounded-xl/>
-  <img src="./img/iphone.png" w-40 h-40 rounded-xl/>
-  <img src="./img/lg.png" w-40 h-40 rounded-xl/>
-  <img src="./img/galaxy.png" w-40 h-40 rounded-xl/>
-</div>
-
-</div>
-
+  </div>
 </div>
 
 ---
 sectionNumber: '2'
 ---
 
-### Мобильные телефоны развиваются
+## Но телефоны не стоят на месте
 
-<div max-w-200 mx-auto>
+<div class="grid grid-cols-2 gap-10 mt-10 items-center">
+  <div v-click class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5">
+    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
+      Кнопочные (2000–2007)
+    </div>
 
-<div v-click>
+    <div class="grid grid-cols-2 gap-5 mt-4">
+      <img src="./img/nokia.png" class="rounded-xl" />
+      <img src="./img/moto.png" class="rounded-xl" />
+      <img src="./img/sams.png" class="rounded-xl" />
+      <img src="./img/burb.png" class="rounded-xl" />
+    </div>
+  </div>
 
-- **Тяжёлый JS** тормозит на слабых устройствах
-- **Touch UI** вместо hover/click
-- **3G/4G** вместо оптоволокна
-- Экраны **от 320px до 4K**
+  <div v-click class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5">
+    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
+      Сенсорные (2007+)
+    </div>
 
-</div>
-
-</div>
-
----
-sectionNumber: '2'
----
-
-## Скачок 3
-
-### Десктопный веб → Mobile-first
-
-<br>
-
-<div grid="cols-2 gap-8" items-start>
-
-<div v-click>
-
-<h5 style="color: #ff6b6b">Десктоп‑first (2010)</h5>
-
-- Фиксированная ширина 1024px
-- Hover и курсор мыши
-- Быстрый интернет (DSL)
-- Мощные ПК
-
-</div>
-
-<div v-click>
-
-<h5 style="color: #4ecdc4">Mobile-first (2012+)</h5>
-
-- **Адаптивность** 320px–4K
-- **Touch** интерфейсы
-- **Производительность** (lazy load)
-- Сети **3G/4G**
-
-</div>
-
+    <div class="grid grid-cols-2 gap-5 mt-4">
+      <img src="./img/experia.png" class="rounded-xl" />
+      <img src="./img/iphone.png" class="rounded-xl" />
+      <img src="./img/lg.png" class="rounded-xl" />
+      <img src="./img/galaxy.png" class="rounded-xl" />
+    </div>
+  </div>
 </div>
 
 ---
 sectionNumber: '2'
 ---
 
-### Mobile-first решили адаптивность,<br>но..
+## Контекст: Мобильные телефоны развиваются
 
-<div max-w-200 mx-auto>
-
-<div v-click>
-
-#### Боли нативных приложений
-
-- **App Store** модерация (недели)
-- **Обновления** только через стор
-- **Офлайн** недоступен
-- Push только **через натив**
-
-</div>
-
+<div class="max-w-[600px] mx-auto mt-6">
+  <div v-click class="rounded-xl border border-amber-200/60 bg-amber-50/40 px-6 py-4">
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>Тяжёлый JS</strong> тормозит на слабых устройствах</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>Touch UI</strong> вместо hover/click</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>3G/4G</strong> вместо оптоволокна</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span>Экраны <strong>от 320px до 4K</strong></span>
+      </li>
+    </ul>
+  </div>
 </div>
 
 ---
 sectionNumber: '2'
 ---
 
-## Скачок 4
+## Скачок 4: Десктоп → Mobile-first
 
-### Веб → PWA
+<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+  <div
+    v-click
+    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
+      Десктоп-first (2010)
+    </div>
 
-<br>
+      - Фиксированная ширина 1024px
+      - Hover и курсор мыши
+      - Быстрый интернет (DSL)
+      - Мощные ПК
 
-<div grid="cols-2 gap-8" items-start>
+  </div>
+  <div
+    v-click
+    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
+      Mobile-first (2012+)
+    </div>
 
-<div v-click>
+      - **Адаптивность** 320px–4K
+      - **Touch** интерфейсы
+      - **Производительность** (lazy load)
+      - Сети **3G/4G**
 
-<h5 style="color: #ff6b6b">Обычный веб</h5>
-
-- Только онлайн
-- Не устанавливается
-- Нет push
-- Зависит от сети
-
+  </div>
 </div>
 
-<div v-click>
+---
+sectionNumber: '2'
+---
 
-<h5 style="color: #4ecdc4">PWA</h5>
+## Mobile-first решили адаптивность, но...
 
-- **Offline-first**
-- **Установка** без стора
-- **Push** нативные
-- Кэш + Service Workers
-
+<div class="max-w-[600px] mx-auto mt-6">
+  <div v-click class="rounded-xl border border-amber-200/60 bg-amber-50/40 px-6 py-4">
+    <div class="text-sm uppercase tracking-widest text-amber-600 font-bold mb-3">
+      Боли нативных приложений
+    </div>
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>App Store</strong> модерация (недели)</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>Обновления</strong> только через стор</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>Офлайн</strong> недоступен</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span>Push только <strong>через натив</strong></span>
+      </li>
+    </ul>
+  </div>
 </div>
 
+---
+sectionNumber: '2'
+---
+
+## Скачок 5: Веб → PWA
+
+<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+  <div
+    v-click
+    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
+      Обычный веб
+    </div>
+
+      - Только онлайн
+      - Не устанавливается
+      - Нет push
+      - Зависит от сети
+
+  </div>
+  <div
+    v-click
+    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
+      PWA
+    </div>
+
+      - **Offline-first**
+      - **Установка** без стора
+      - **Push** уведомления
+      - Кэш + Service Workers
+
+  </div>
 </div>
 
-<br/>
+<v-click>
 
-<div v-click text-center mt-6>
-<p text="0.8em" color="#aaa" mt-2>
+<div class="mt-8 text-center text-sm text-gray-400">
 Service Worker = прокси между сетью и кэшем
-</p>
+</div>
+
+</v-click>
+
+---
+sectionNumber: '2'
+---
+
+## ...но вылезли рендерные боли (опять)
+
+<div class="max-w-[600px] mx-auto mt-6">
+  <div v-click class="rounded-xl border border-amber-200/60 bg-amber-50/40 px-6 py-4">
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>Тяжёлый JS</strong> на клиенте</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>SEO</strong> страдает (SPA)</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span><strong>TTFB</strong> медленный</span>
+      </li>
+      <li class="flex items-start">
+        <span class="mr-2 text-amber-600">•</span>
+        <span>Сложно <strong>гибрид</strong> сервер/клиент</span>
+      </li>
+    </ul>
+  </div>
 </div>
 
 ---
 sectionNumber: '2'
 ---
 
-### ...но вылезли рендерные боли (опять)
+## Скачок 6: Клиент/Сервер → Server Components
 
-<div max-w-200 mx-auto>
+<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+  <div
+    v-click
+    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
+      Классика
+    </div>
 
-<div v-click>
+      - Всё на **клиенте** (SPA)
+      - Или всё на **сервере** (MPA)
+      - Два **кода**
+      - SEO или **скорость**
 
-- **Тяжёлый JS** на клиенте
-- **SEO** страдает (SPA)
-- **TTFB** медленный
-- Сложно **гибрид** сервер/клиент
+  </div>
+  <div
+    v-click
+    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
+      RSC (React Server Components)
+    </div>
 
+      - **Серверный** рендер статичного
+      - **Клиентский** только интерактив
+      - **Один код** (async/await)
+      - SEO + **скорость** + PWA
+
+  </div>
 </div>
 
-</div>
+<v-click>
 
----
-sectionNumber: '2'
----
-
-## Скачок 5
-
-### Классический клиент/сервер → serverComponents
-
-<div grid="cols-2 gap-8" items-start>
-
-<div v-click>
-
-<h5 style="color: #ff6b6b">Классика</h5>
-
-- Всё на **клиенте** (SPA)
-- Или всё на **сервере** (MPA)
-- Два **кода**
-- SEO или **скорость**
-
-</div>
-
-<div v-click>
-
-<h5 style="color: #4ecdc4">RSC (React Server Components)</h5>
-
-- **Серверный** рендер статичного
-- **Клиентский** только интерактив
-- **Один код** (async/await)
-- SEO + **скорость** + PWA
-
-</div>
-
-</div>
-
-<div v-click text-center mt-6>
-<p text="0.8em" color="#aaa">
+<div class="mt-8 text-center text-sm text-gray-400">
 Сервер рендерит → Streaming → Клиент "оживляет"
-</p>
 </div>
+
+</v-click>
 
 ---
 layout: timeline
-title: A-1. OPERATION SLIDE DRAGON — EVENT SEQUENCE
-sectionNumber: A-1
-docNumber: FM 24-SLIDE
+title: ЭВОЛЮЦИЯ ВЕБА — ХРОНОЛОГИЯ
+sectionNumber: '2'
+docNumber: "Автостопом по веб-платформе"
 direction: horizontal
 ---
 
@@ -522,40 +562,24 @@ direction: horizontal
   <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
   <div class="tl-entry-body">
     <div class="tl-entry-date fm-label">2007</div>
-    <div class="tl-entry-title">Initiation</div>
-    <div class="tl-entry-desc">Brief assigned. Outline drafted.</div>
+    <div class="tl-entry-title">iPhone</div>
+    <div class="tl-entry-desc">Мобильные боли: 320px, touch, 3G</div>
   </div>
 </div>
 <div class="tl-entry">
   <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
   <div class="tl-entry-body">
     <div class="tl-entry-date fm-label">2007-2012</div>
-    <div class="tl-entry-title">Recon</div>
-    <div class="tl-entry-desc">Source material collected. Key messages identified.</div>
+    <div class="tl-entry-title">Mobile-first</div>
+    <div class="tl-entry-desc">Адаптив, responsive дизайн</div>
   </div>
 </div>
 <div class="tl-entry">
   <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
   <div class="tl-entry-body">
     <div class="tl-entry-date fm-label">2010-2013</div>
-    <div class="tl-entry-title">Build</div>
-    <div class="tl-entry-desc">Slides constructed. Graphics inserted.</div>
-  </div>
-</div>
-<div class="tl-entry">
-  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
-  <div class="tl-entry-body">
-    <div class="tl-entry-date fm-label">D-1</div>
-    <div class="tl-entry-title">Rehearsal</div>
-    <div class="tl-entry-desc">Timed run-through. Corrections applied.</div>
-  </div>
-</div>
-<div class="tl-entry">
-  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
-  <div class="tl-entry-body">
-    <div class="tl-entry-date fm-label">D-Day</div>
-    <div class="tl-entry-title">Execution</div>
-    <div class="tl-entry-desc">Brief delivered. Commander satisfied.</div>
+    <div class="tl-entry-title">SPA бум</div>
+    <div class="tl-entry-desc">AngularJS, React —> PWA —> RSC</div>
   </div>
 </div>
 
