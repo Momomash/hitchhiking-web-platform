@@ -169,11 +169,9 @@ layout: statement
 
 # Самовыражение → сервис
 
-
 - Почта в браузере (Gmail)
 - Карты и навигация (Google Maps)
 - Соцсети, мессенджеры, онлайн-документы
-
 
 ---
 layout: statement
@@ -216,45 +214,50 @@ layout: statement
 
 ---
 
-## Скачок 1
+## Скачок 1:  Статичный HTML → Динамический веб
 
-### Статичный HTML → Динамический веб
+<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+  <div
+    v-click
+    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
+      До 2004
+    </div>
 
-<div grid="cols-2 gap-8" items-start>
+      - Каждое действие — новая страница
+      - Обновить статус — рефреш
 
-<div v-click>
+  </div>
+  <div
+    v-click
+    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
+  >
+    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
+      Gmail + AJAX
+    </div>
 
-<h5 style="color: #ff6b6b">До (2004)</h5>
+      - Частичное обновление страницы
+      - Мгновенные ответы
 
-- Каждое действие — новая страница
-- Обновить статус — рефреш
-
+  </div>
 </div>
-
-<div v-click>
-
-<h5 style="color: #4ecdc4">Gmail + AJAX</h5>
-
-- Частичное обновление страницы
-- **Мгновенные ответы**
-
-</div>
-
-</div>
-
 ---
 sectionNumber: '2'
 ---
 
-### AJAX решил скорость,<br>но создал новые проблемы
+## AJAX принес скорость,<br>но создал новые проблемы
 
-- **"Спагетти"‑код** повсюду **(привет, jquery!)***
-- Состояние вручную
+- Управление состоянием вручную
+- **"Спагетти"‑код** повсюду  **(привет, jquery!)**
 - Каждый разработчик делает свой велосипед
 
-<p v-click text-center text="1.2em" color="#6ee7ff" font-weight="500" mt-8>
-**Нужна реиспользуемость**
-</p>
+<v-click>
+
+### Нужна реиспользуемость
+
+</v-click>
+
 
 ---
 sectionNumber: '2'
