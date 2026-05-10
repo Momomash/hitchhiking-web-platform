@@ -2,6 +2,7 @@
 theme: slidev-theme-field-manual
 highlighter: shiki
 lineNumbers: false
+layout: center
 
 # aspect ratio for the slides
 aspectRatio: 16/9
@@ -50,21 +51,26 @@ docNumber: "Автостопом по веб-платформе"
 <p v-click style="margin: 0 auto">Веб-платформа = Браузер + API + стандарты + тесты + комитеты</p>
 
 ---
-
-### Но с чего всё началось?
-
+layout: statement
 ---
 
-<img src="./img/first_comp.png"/>
-
-Первый в мире компьютер ENIAC (1945 год)
-
+# Но с чего всё начиналось?
 ---
+layout: image-full
+---
+<template v-slot:image>
+<img src="./img/first_comp.png"  />
+</template>
 
+# Первый в мире компьютер Eniac
+---
+layout: image-full
+---
+<template v-slot:image>
 <img src="./img/actual_comp.png"/>
+</template>
 
-Современный компьютер
-
+# Современный компьютер
 ---
 
 | Параметр            | ENIAC (1945)                                | iPhone 17 Pro (2025)                      |
@@ -74,9 +80,9 @@ docNumber: "Автостопом по веб-платформе"
 | Потребление энергии | ≈174 кВт                                    | ~10 Вт (пиковая нагрузка SoC)             |
 
 ---
-
-### Интернет (World Wide Web)
-
+layout: statement
+---
+## World Wide Web
 ---
 layout: image-right
 figNumber: 1-1
@@ -93,86 +99,105 @@ figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
 
 ---
 
-<img src="./img/first_brows.png"/>
+<img src="./img/first_brows.png" height="500"/>
+## Первый в мире сайт
 
-Первый в мире сайт
+---
+layout: statement
+---
+## Изначальная идея веба как **гипертекстовой системы** для обмена знаниями
+---
+
+<img src="./img/mac.png" height="80%"/>
+
+## ПК —> Веб стал доступен каждому
+
+---
+layout: image-right
+figNumber: 1-1
+figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
+---
+
+## Эра «Невинного» веба
+
+- Статичные HTML-страницы
+- Документы, ссылки, немного картинок
+- Табличная вёрстка
+
+<template v-slot:image>
+<img src="./img/tablelayout.png"  />
+</template>
+
+---
+layout: statement
+---
+
+## Люди стали генерировать контент и самовыражаться
 
 ---
 
-Изначальная идея веба как **гипертекстовой системы**<br>
-для обмена знаниями
+<SlidevVideo autoplay>
+  <source src="./mov/cameron1.mov"  />
+</SlidevVideo>
 
 ---
+layout: image-full
+---
+<template v-slot:image>
+<img src="./img/jam.png"  />
+</template>
 
-<img src="./img/mac.png"/>
-
-ПК —> Веб стал доступен каждому
+# Сайт — как пиар компания фильма: Space Jam(1996)
 
 ---
-
-### Эра «Невинного» веба
-
-<div flex="row items-center">
-
-<ul font-size="0.9em">
-  <li>Статичные HTML-страницы</li>
-  <li>Документы, ссылки, немного картинок</li>
-  <li>Табличная вёрстка</li>
-</ul>
-
-<br>
-
-<img src="./img/tablelayout.png" w-150/>
-
-</div>
-
+layout: image-full
 ---
 
-### Люди стали генерировать контент и самовыражаться
-
----
-
-<video src="./mov/cameron1.mov" autoplay playbackRate="3"/>
-
----
-
-#### Сайт — как пиар компания фильма:<br/> Space Jam(1996)
-
-<img src="./img/jam.png"/>
-
----
-
-#### Сайт — как заработок: <br/> The million dollars homepage (2005)
-
+<template v-slot:image>
 <img src="./img/one_million.png"/>
+</template>
+
+# Сайт — как заработок: The million dollars homepage (2005)
+
+---
+layout: statement
+---
+
+## Интернет взрослеет
 
 ---
 
-# Интернет взрослеет
+# Самовыражение → сервис
 
----
-
-#### Самовыражение → сервис
+<v-clicks>
 
 - Почта в браузере (Gmail)
 - Карты и навигация (Google Maps)
 - Соцсети, мессенджеры, онлайн-документы
+  
+</v-clicks>
 
+---
+layout: statement
 ---
 
 ### Веб перестаёт быть просто страницами и становится средой для жизни
 
-### ↓
+<v-click>
 
-### Браузер уже не тянет «старым способом»
+## Браузер уже не тянет «старым» способом
+</v-click>
 
 ---
 
 ### Появляется запрос на
 
+<v-clicks>
+
 - Быструю реакцию без полной перезагрузки
 - Сложные интерфейсы (как в десктопных приложениях)
 - Работу с большим количеством данных прямо в браузере
+</v-clicks>
 
 ---
 layout: section
@@ -188,13 +213,11 @@ sectionNumber: '2'
 </template>
 
 ---
-sectionNumber: '2'
+layout: statement
 ---
 
 ### Фронтенд развивается **скачкообразно**
 
----
-sectionNumber: '2'
 ---
 
 #### Скачок 1
@@ -526,22 +549,24 @@ docNumber: FM 00-0
 ---
 
 
-
-
 [//]: # (sectionNumber: '2')
 
 [//]: # (---)
 
 [//]: # ()
+
 [//]: # (### **150** Web API в браузере)
 
 [//]: # ()
+
 [//]: # (Это полноценная **платформа** с доступом к железу, офлайну, пушам.)
 
 [//]: # ()
+
 [//]: # (<video src="./mov/mdn.mov" autoplay loop muted rounded-xl/>)
 
 [//]: # ()
+
 [//]: # (---)
 
 [//]: # (sectionNumber: '2')
@@ -549,15 +574,19 @@ docNumber: FM 00-0
 [//]: # (---)
 
 [//]: # ()
+
 [//]: # (### **3D музей** в браузере &#40;React и Three.js&#41;)
 
 [//]: # ()
+
 [//]: # (<video src="./mov/samokat.mov" autoplay loop muted rounded-xl/>)
 
 [//]: # ()
+
 [//]: # ([https://museum.samokat.ru/]&#40;https://museum.samokat.ru/&#41;)
 
 [//]: # ()
+
 [//]: # (---)
 
 [//]: # (sectionNumber: '2')
@@ -565,9 +594,11 @@ docNumber: FM 00-0
 [//]: # (---)
 
 [//]: # ()
+
 [//]: # (### Многопользовательская игра в браузере &#40;webGL&#41;)
 
 [//]: # ()
+
 [//]: # (<video src="./mov/messanger.mov" autoplay loop muted rounded-xl/>)
 
 [//]: # ([https://messenger.abeto.co/]&#40;https://messenger.abeto.co/&#41;)
