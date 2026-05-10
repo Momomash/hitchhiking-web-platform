@@ -107,12 +107,6 @@ layout: statement
 ---
 ## Изначальная идея веба как **гипертекстовой системы** для обмена знаниями
 ---
-
-<img src="./img/mac.png" height="80%"/>
-
-## ПК —> Веб стал доступен каждому
-
----
 layout: image-right
 figNumber: 1-1
 figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
@@ -127,6 +121,12 @@ figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
 <template v-slot:image>
 <img src="./img/tablelayout.png"  />
 </template>
+
+---
+
+<img src="./img/mac.png" height="80%"/>
+
+## ПК —> Веб стал доступен каждому
 
 ---
 layout: statement
@@ -169,13 +169,11 @@ layout: statement
 
 # Самовыражение → сервис
 
-<v-clicks>
 
 - Почта в браузере (Gmail)
 - Карты и навигация (Google Maps)
 - Соцсети, мессенджеры, онлайн-документы
-  
-</v-clicks>
+
 
 ---
 layout: statement
@@ -186,18 +184,16 @@ layout: statement
 <v-click>
 
 ## Браузер уже не тянет «старым» способом
+
 </v-click>
 
 ---
 
 ### Появляется запрос на
 
-<v-clicks>
-
 - Быструю реакцию без полной перезагрузки
 - Сложные интерфейсы (как в десктопных приложениях)
 - Работу с большим количеством данных прямо в браузере
-</v-clicks>
 
 ---
 layout: section
@@ -216,15 +212,13 @@ sectionNumber: '2'
 layout: statement
 ---
 
-### Фронтенд развивается **скачкообразно**
+### "Фронтенд развивается скачкообразно"
 
 ---
 
-#### Скачок 1
+## Скачок 1
 
 ### Статичный HTML → Динамический веб
-
-<br>
 
 <div grid="cols-2 gap-8" items-start>
 
@@ -266,7 +260,7 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-#### Скачок 2
+## Скачок 2
 
 ### Страницы → SPA и фреймворки
 
@@ -357,7 +351,7 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-#### Скачок 3
+## Скачок 3
 
 ### Десктопный веб → Mobile-first
 
@@ -414,7 +408,7 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-#### Скачок 4
+## Скачок 4
 
 ### Веб → PWA
 
@@ -477,7 +471,7 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-#### Скачок 5
+## Скачок 5
 
 ### Классический клиент/сервер → serverComponents
 
@@ -514,23 +508,53 @@ sectionNumber: '2'
 </div>
 
 ---
-sectionNumber: '2'
-background: #0f0f23
+layout: timeline
+title: A-1. OPERATION SLIDE DRAGON — EVENT SEQUENCE
+sectionNumber: A-1
+docNumber: FM 24-SLIDE
+direction: horizontal
 ---
 
-### За **20 лет** 5 скачков
-
-<div text-left>
-
-2007: iPhone → мобильные боли (320px, touch, 3G)<br/>
-├ 2007-2012: Mobile-first подход (адаптив, responsive)<br/>
-└ 2010-2013: SPA бум (AngularJS 2010, React 2013) →<br/>
-<span ml-6>├ SPA + мобильные боли</span><br/>
-<span ml-6>├ → PWA (2015+)</span><br/>
-<span ml-6>└ → RSC (2023+)</span>
-
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2007</div>
+    <div class="tl-entry-title">Initiation</div>
+    <div class="tl-entry-desc">Brief assigned. Outline drafted.</div>
+  </div>
 </div>
-
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2007-2012</div>
+    <div class="tl-entry-title">Recon</div>
+    <div class="tl-entry-desc">Source material collected. Key messages identified.</div>
+  </div>
+</div>
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2010-2013</div>
+    <div class="tl-entry-title">Build</div>
+    <div class="tl-entry-desc">Slides constructed. Graphics inserted.</div>
+  </div>
+</div>
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">D-1</div>
+    <div class="tl-entry-title">Rehearsal</div>
+    <div class="tl-entry-desc">Timed run-through. Corrections applied.</div>
+  </div>
+</div>
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">D-Day</div>
+    <div class="tl-entry-title">Execution</div>
+    <div class="tl-entry-desc">Brief delivered. Commander satisfied.</div>
+  </div>
+</div>
 
 ---
 layout: section
@@ -781,3 +805,23 @@ docNumber: FM 00-0
 [//]: # (BIOCAD)
 
 [//]: # (</template>)
+
+---
+layout: end
+docNumber: FM 24-SLIDE
+classification: FOR TRAINING USE ONLY
+unit: HQ, DEPT OF THE PRESENTATION
+photo: ./img/me.jpg
+---
+
+<template v-slot:title>Спасибо</template>
+
+<template v-slot:contact>
+
+**Мария Кондаурова**
+
+BIOCAD
+
+t.me/Momomash
+
+</template>

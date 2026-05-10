@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "slidev --open",
+    "demo": "slidev example.md --port 2020 --open",
     "build": "slidev build",
     "export": "slidev export",
     "test": "echo \"Error: no test specified\" && exit 1"
