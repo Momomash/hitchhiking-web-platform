@@ -1,6 +1,5 @@
 ---
 theme: slidev-theme-field-manual
-class: text-center
 highlighter: shiki
 lineNumbers: false
 
@@ -12,11 +11,17 @@ canvasWidth: 960
 info: |
   Автостопом по веб-платформе
   Мария Кондаурова, BIOCAD
+
+# Theme-specific props
+docNumber: "Автостопом по веб-платформе"
+date: 2026
+unit: CodeFest ’16
+classification: UNCLASSIFIED
 ---
 
 # Автостопом по веб-платформе
 
-<div style="display: flex; flex-direction: row; align-items:center">
+<div style="display: flex; flex-direction: row; align-items:center; margin-top: 2rem">
   <img src="./img/me.jpg" w-30 rounded-full border-5 border-white />
   <div ml-4 style="display: flex; flex-direction: column; align-items: start">
     <p>Мария Кондаурова</p>
@@ -25,46 +30,22 @@ info: |
 </div>
 
 ---
-
-# Дисклеймер
-
-<br/>
-
-<div grid="cols-2 gap-4">
-
-<div v-click>
-
-### Чего не будет
-
-- кода
-- практикоприменимости
-- паттернов и вот этого всего
-
-</div>
-
-<div v-click>
-
-### Что будет
-
-- много ностальгии
-- немного схем
-- ..и еще немного ностальгии
-
-</div>
-
-</div>
-
+layout: section
+sectionNumber: '1'
+docNumber: "Автостопом по веб-платформе"
 ---
 
-# Глава 1. Что такое веб-платформа?
+# Глава 1
+
+## Что такое веб-платформа?
 
 <i>(или как зарождался веб)</i>
 
 ---
 
-<img src="./img/web.png"/>
+<img src="./img/web.png" width="300" style="margin: 0 auto" />
 
-<i>Веб-платформа = Браузер + API + стандарты + тесты + комитеты</i>
+<p v-click style="margin: 0 auto">Веб-платформа = Браузер + API + стандарты + тесты + комитеты</p>
 
 ---
 
@@ -80,23 +61,32 @@ info: |
 
 <img src="./img/actual_comp.png"/>
 
+Современный компьютер
+
 ---
 
-| Параметр | ENIAC (1945) | iPhone 17 Pro (2025) |
-| :--- | :--- | :--- |
-| Операций в секунду | ≈5 000 сложений/сек<br>≈357 умножений/сек | ≥6 000 000 000 000 операций/сек |
-| Память | **20 слов** (10‑разрядные десятичные числа) | **6–8 ГБ** ОЗУ, до 1 ТБ постоянной памяти |
-| Потребление энергии | ≈174 кВт | ~10 Вт (пиковая нагрузка SoC) |
+| Параметр            | ENIAC (1945)                                | iPhone 17 Pro (2025)                      |
+|:--------------------|:--------------------------------------------|:------------------------------------------|
+| Операций в секунду  | ≈5 000 сложений/сек<br>≈357 умножений/сек   | ≥6 000 000 000 000 операций/сек           |
+| Память              | **20 слов** (10‑разрядные десятичные числа) | **6–8 ГБ** ОЗУ, до 1 ТБ постоянной памяти |
+| Потребление энергии | ≈174 кВт                                    | ~10 Вт (пиковая нагрузка SoC)             |
 
 ---
 
 ### Интернет (World Wide Web)
 
 ---
+layout: image-right
+figNumber: 1-1
+figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
+---
 
-<img src="./img/tim.png"/>
+# Тим Бернерс-Ли
+## Создал первый браузер в **1990 году**
 
-Первый браузер в **1990 году** создал Тим Бернерс-Ли.
+<template v-slot:image>
+<img src="./img/tim.png"  />
+</template>
 
 ---
 
@@ -182,15 +172,24 @@ info: |
 - Работу с большим количеством данных прямо в браузере
 
 ---
+layout: section
+sectionNumber: '2'
+---
 
-# Глава 2. Эволюция веб-платформы
+# Глава 2
+
+## Эволюция веб-платформы
 
 <i>(или как веб пытался догнать ожидания пользователей)</i>
 
 ---
+sectionNumber: '2'
+---
 
 ### Фронтенд развивается **скачкообразно**
 
+---
+sectionNumber: '2'
 ---
 
 #### Скачок 1
@@ -222,6 +221,8 @@ info: |
 </div>
 
 ---
+sectionNumber: '2'
+---
 
 ### AJAX решил скорость,<br>но создал новые проблемы
 
@@ -233,6 +234,8 @@ info: |
 **Нужна реиспользуемость**
 </p>
 
+---
+sectionNumber: '2'
 ---
 
 #### Скачок 2
@@ -267,6 +270,7 @@ info: |
 </div>
 
 ---
+sectionNumber: '2'
 background: #0f0f23
 ---
 
@@ -303,6 +307,8 @@ background: #0f0f23
 </div>
 
 ---
+sectionNumber: '2'
+---
 
 ### Мобильные телефоны развиваются
 
@@ -319,6 +325,8 @@ background: #0f0f23
 
 </div>
 
+---
+sectionNumber: '2'
 ---
 
 #### Скачок 3
@@ -354,6 +362,8 @@ background: #0f0f23
 </div>
 
 ---
+sectionNumber: '2'
+---
 
 ### Mobile-first решили адаптивность,<br>но..
 
@@ -372,6 +382,8 @@ background: #0f0f23
 
 </div>
 
+---
+sectionNumber: '2'
 ---
 
 #### Скачок 4
@@ -415,6 +427,8 @@ Service Worker = прокси между сетью и кэшем
 </div>
 
 ---
+sectionNumber: '2'
+---
 
 ### ...но вылезли рендерные боли (опять)
 
@@ -431,6 +445,8 @@ Service Worker = прокси между сетью и кэшем
 
 </div>
 
+---
+sectionNumber: '2'
 ---
 
 #### Скачок 5
@@ -470,6 +486,7 @@ Service Worker = прокси между сетью и кэшем
 </div>
 
 ---
+sectionNumber: '2'
 background: #0f0f23
 ---
 
@@ -487,6 +504,8 @@ background: #0f0f23
 </div>
 
 ---
+sectionNumber: '2'
+---
 
 ### **150** Web API в браузере
 
@@ -494,6 +513,8 @@ background: #0f0f23
 
 <video src="./mov/mdn.mov" autoplay loop muted rounded-xl/>
 
+---
+sectionNumber: '2'
 ---
 
 ### **3D музей** в браузере (React и Three.js)
@@ -503,6 +524,8 @@ background: #0f0f23
 [https://museum.samokat.ru/](https://museum.samokat.ru/)
 
 ---
+sectionNumber: '2'
+---
 
 ### Многопользовательская игра в браузере (webGL)
 
@@ -511,11 +534,19 @@ background: #0f0f23
 [https://messenger.abeto.co/](https://messenger.abeto.co/)
 
 ---
+layout: section
+sectionNumber: '3'
+docNumber: "Автостопом по веб-платформе"
+---
 
-# Глава 3. Кто делает веб?
+# Глава 3
+
+## Кто делает веб?
 
 <i>(или зоопарк комитетов)</i>
 
+---
+sectionNumber: '3'
 ---
 
 ### Кто разрабатывает веб
@@ -533,6 +564,8 @@ background: #0f0f23
 Логотипы организаций: W3C, WHATWG, TC39, WICG
 
 ---
+sectionNumber: '3'
+---
 
 ### Браузерные вендоры
 
@@ -547,6 +580,8 @@ background: #0f0f23
 
 Они — реальные **implementers**
 
+---
+sectionNumber: '3'
 ---
 
 ### W3C vs WHATWG
@@ -582,6 +617,8 @@ Living Standard
 Расхождение философий: **стабильность** vs **эволюция**
 
 ---
+sectionNumber: '3'
+---
 
 ### Новые центры влияния
 
@@ -597,11 +634,15 @@ Living Standard
 и иногда конфликтует с вендорами
 
 ---
+sectionNumber: '3'
+---
 
 # 6. Interop & Web Platform Tests
 
 Выравнивание браузеров
 
+---
+sectionNumber: '3'
 ---
 
 ### Проблема: историческая несовместимость
@@ -619,6 +660,8 @@ Meme: «It works on my machine»<br>
 или схема различий браузеров
 
 ---
+sectionNumber: '3'
+---
 
 ### Web Platform Tests
 
@@ -634,6 +677,8 @@ Meme: «It works on my machine»<br>
 
 `https://wpt.fyi/`
 
+---
+sectionNumber: '3'
 ---
 
 ### Результаты тестов (июнь 2021)
@@ -671,6 +716,8 @@ Meme: «It works on my machine»<br>
 </div>
 
 ---
+sectionNumber: '3'
+---
 
 ### Пример: CSS Grid
 
@@ -683,6 +730,8 @@ https://wpt.fyi/results/css/css-grid
 
 `https://wpt.fyi/results/css/css-grid`
 
+---
+sectionNumber: '3'
 ---
 
 ### Interop
@@ -698,6 +747,8 @@ https://wpt.fyi/results/css/css-grid
 
 [ADD WPT EXAMPLES: compare two browsers]
 
+---
+sectionNumber: '3'
 ---
 
 ### Месседж
@@ -717,8 +768,14 @@ https://wpt.fyi/results/css/css-grid
 **«Не ломайте веб»**
 
 ---
+layout: section
+sectionNumber: '4'
+docNumber: "Автостопом по веб-платформе"
+---
 
-# Глава 4. Будущее
+# Глава 4
+
+## Будущее
 
 <i>(никто точно не знает)</i>
 
@@ -762,6 +819,10 @@ https://wpt.fyi/results/css/css-grid
 - Как изменится фронтенд?
 
 ---
+layout: section
+sectionNumber: '5'
+docNumber: "Автостопом по веб-платформе"
+---
 
 # Эпилог
 
@@ -789,17 +850,15 @@ https://wpt.fyi/results/css/css-grid
 вы работаете :)
 
 ---
+layout: end
+docNumber: "Автостопом по веб-платформе"
+classification: UNCLASSIFIED
+photo: ./img/me.jpg
+---
 
-# Спасибо!
+<template v-slot:title>Вопросы?</template>
 
-<br>
-
-### Вопросы?
-
-<br>
-<br>
-<br>
-
-[YOUR CONTACT]<br>
-[YOUR SOCIAL / GITHUB / TWITTER]<br>
-[LINKS TO RESOURCES]
+<template v-slot:contact>
+Мария Кондаурова<br>
+BIOCAD
+</template>
