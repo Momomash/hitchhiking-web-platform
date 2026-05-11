@@ -701,196 +701,345 @@ docNumber: FM 00-0
 </template>
 
 ---
-
-
-[//]: # ()
-
-[//]: # (### Многопользовательская игра в браузере &#40;webGL&#41;)
-
-[//]: # ()
-
-[//]: # (<video src="./mov/messanger.mov" autoplay loop muted rounded-xl/>)
-
-[//]: # ([https://messenger.abeto.co/]&#40;https://messenger.abeto.co/&#41;)
-
-
-[//]: # (# Глава 4)
-
-[//]: # ()
-
-[//]: # (## Будущее)
-
-[//]: # ()
-
-[//]: # (<i>&#40;никто точно не знает&#41;</i>)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### Итоги эволюции)
-
-[//]: # ()
-
-[//]: # (<br>)
-
-[//]: # ()
-
-[//]: # (`HTML → Динамика → SPA → Мобильный → PWA → Гибриды`)
-
-[//]: # ()
-
-[//]: # (<br><br>)
-
-[//]: # ()
-
-[//]: # (Таймлайн эволюции веба<br>)
-
-[//]: # (от 1990 до наших дней)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### A2UI — AI-Adaptative UI)
-
-[//]: # ()
-
-[//]: # (<br>)
-
-[//]: # ()
-
-[//]: # (- Интерфейсы, которые строятся и адаптируются<br>)
-
-[//]: # (  с участием **ИИ-моделей**)
-
-[//]: # (- Браузер как фронтенд для **ИИ-агентов**)
-
-[//]: # (- Новый слой абстракции)
-
-[//]: # ()
-
-[//]: # (<br>)
-
-[//]: # ()
-
-[//]: # (Концепт A2UI<br>)
-
-[//]: # (или схема взаимодействия ИИ-агента с браузером)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### Вопросы для размышления)
-
-[//]: # ()
-
-[//]: # (<br>)
-
-[//]: # ()
-
-[//]: # (- Какие новые **Web API** понадобятся?)
-
-[//]: # (- Как снова поменяется роль браузера?)
-
-[//]: # (- Как изменится фронтенд?)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # (layout: section)
-
-[//]: # (sectionNumber: '5')
-
-[//]: # (docNumber: "Автостопом по веб-платформе")
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (# Эпилог)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### Ключевые мысли)
-
-[//]: # ()
-
-[//]: # (<br>)
-
-[//]: # ()
-
-[//]: # (- Веб давно перестал быть **«просто сайтами»**)
-
-[//]: # (- Браузер — одна из самых **сложных** и<br>)
-
-[//]: # (  самых **согласованных** систем)
-
-[//]: # (- Каждый новый слой добавляет сложность,<br>)
-
-[//]: # (  но остаётся в том же окне — вкладке браузера)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### Напоследок)
-
-[//]: # ()
-
-[//]: # (<br>)
-
-[//]: # ()
-
-[//]: # (Если вы в какой-то момент поймаете себя на рефлексии<br>)
-
-[//]: # (типа «мне скучно»,<br><br>)
-
-[//]: # (вспомните, с какой **ахренительно сложной системой**<br>)
-
-[//]: # (вы работаете :&#41;)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # (layout: end)
-
-[//]: # (docNumber: "Автостопом по веб-платформе")
-
-[//]: # (classification: UNCLASSIFIED)
-
-[//]: # (photo: ./img/me.jpg)
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (<template v-slot:title>Вопросы?</template>)
-
-[//]: # ()
-
-[//]: # (<template v-slot:contact>)
-
-[//]: # (Мария Кондаурова<br>)
-
-[//]: # (BIOCAD)
-
-[//]: # (</template>)
+layout: chart-full
+title: КАРТА ВЛИЯНИЯ
+sectionNumber: "3-1"
+docNumber: FM 00-0
+figNumber: 3-1
+figLabel: КТО КОНТРИБЬЮТИТ В WEB PLATFORM
+transition: fade
+---
+<template v-slot:chart>
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 10, 'rankSpacing': 45}}}%%
+
+flowchart TD
+
+  WEB["WEB PLATFORM"]
+
+  subgraph STDS["СТАНДАРТЫ И СПЕЦИФИКАЦИИ"]
+    W3C["W3C"]
+    WHATWG["WHATWG"]
+    TC39["TC39 / Ecma"]
+    IETF["IETF"]
+    KHR["Khronos Group"]
+    WINTER["WinterCG / WinterTC"]
+  end
+
+  subgraph IMPL["РЕАЛИЗАЦИИ"]
+    CHROME["Google / Chromium / Chrome"]
+    WEBKIT["Apple / WebKit / Safari"]
+    MOZ["Mozilla / Gecko / Firefox"]
+    EDGE["Microsoft / Edge"]
+    NODE["Node.js"]
+    DENO["Deno"]
+    CF["Cloudflare Workers"]
+    BUN["Bun"]
+  end
+
+  subgraph TESTS["ТЕСТЫ И ИНТЕРОП"]
+    WPT["Web Platform Tests"]
+    TEST262["Test262"]
+    INTEROP["Interop"]
+    MDNBCD["MDN BCD"]
+  end
+
+  subgraph ECO["ЭКОСИСТЕМА И ДАВЛЕНИЕ"]
+    WICG["WICG"]
+    VERCEL["Vercel / Next.js"]
+    META["Meta / React"]
+    OSS["Open source / community"]
+    DEVS["Разработчики"]
+    ANTH["Anthropic / AI use-cases"]
+  end
+
+  WEB --> W3C
+  WEB --> WHATWG
+  WEB --> TC39
+  WEB --> IETF
+  WEB --> KHR
+  WEB --> WINTER
+
+  W3C --> CHROME
+  W3C --> WEBKIT
+  W3C --> MOZ
+  W3C --> EDGE
+
+  WHATWG --> CHROME
+  WHATWG --> WEBKIT
+  WHATWG --> MOZ
+  WHATWG --> EDGE
+
+  TC39 --> CHROME
+  TC39 --> WEBKIT
+  TC39 --> MOZ
+  TC39 --> EDGE
+
+  W3C --> WPT
+  WHATWG --> WPT
+  TC39 --> TEST262
+  WPT --> INTEROP
+  TEST262 --> INTEROP
+
+  WICG --> W3C
+  DEVS --> OSS
+  OSS --> WICG
+  META --> TC39
+  VERCEL --> WEB
+  ANTH --> WEB
+  WINTER --> NODE
+  WINTER --> DENO
+  WINTER --> CF
+  WINTER --> BUN
+
+  classDef main fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
+  classDef standards fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
+  classDef impl fill:#f5f0e0,stroke:#7a7a45,color:#1a1a14;
+  classDef tests fill:#c8b87a,stroke:#8a7a50,color:#1a1a14;
+  classDef eco fill:#e0d8be,stroke:#b05e10,color:#1a1a14;
+
+  class WEB main;
+  class W3C,WHATWG,TC39,IETF,KHR,WINTER standards;
+  class CHROME,WEBKIT,MOZ,EDGE,NODE,DENO,CF,BUN impl;
+  class WPT,TEST262,INTEROP,MDNBCD tests;
+  class WICG,VERCEL,META,OSS,DEVS,ANTH eco;
+```
+
+</template>
+
+<template v-slot:source>
+ОБЗОР: стандарты, реализации, тесты и экосистема на одной карте. [web:423][web:429][web:424][web:353]
+</template>
+
+---
+layout: chart-full
+title: СЛОЙ 1 — СТАНДАРТЫ
+sectionNumber: "3-2"
+docNumber: FM 00-0
+figNumber: 3-2
+figLabel: ОСНОВНЫЕ ПЛОЩАДКИ СТАНДАРТИЗАЦИИ
+transition: fade-out
+---
+
+<template v-slot:chart>
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 10, 'rankSpacing': 10}}}%%
+flowchart LR
+
+  W3C["W3C"] -->|CSS, WebAuthn, WebRTC,\nWeb Apps| WEB["WEB PLATFORM"]
+  WHATWG["WHATWG"] -->|HTML, DOM, Fetch| WEB
+  TC39["TC39 / Ecma"] -->|ECMAScript, Temporal| WEB
+  IETF["IETF"] -->|HTTP, QUIC, Transport| WEB
+  WINTER["WinterCG"] -->|server runtimes| WEB
+
+  classDef web fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
+  classDef org fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
+
+  class WEB web;
+  class W3C,WHATWG,TC39,IETF,WINTER org;
+```
+
+</template>
+
+<template v-slot:source>
+WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W3C и IETF покрывают значительную часть веб-платформы и сетевого стека. [web:429][web:421][web:424]
+</template>
+
+---
+layout: chart-full
+title: СЛОЙ 2 — W3C И ИНКУБАЦИЯ
+sectionNumber: "3-3"
+docNumber: FM 00-0
+figNumber: 3-3
+figLabel: ВНУТРЕННЯЯ СТРУКТУРА W3C
+transition: slide-left
+---
+
+<template v-slot:chart>
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 15, 'rankSpacing': 15}}}%%
+
+flowchart TD
+
+  W3C["W3C"]
+
+  TAG["TAG"]
+  WEBAPPS["Web Applications WG"]
+  CSSWG["CSS WG"]
+  BTT["Browser Testing and Tools WG"]
+  DAS["Devices and Sensors WG"]
+  WEBRTCWG["WebRTC WG"]
+  APA["Accessible Platform Architectures WG"]
+  WAI["WAI"]
+  PATWG["Privacy / PING"]
+  MEIG["Media & Entertainment IG"]
+  WICG["WICG"]
+  WASMCG["WebAssembly CG"]
+
+  W3C --> TAG
+  W3C --> WEBAPPS
+  W3C --> CSSWG
+  W3C --> BTT
+  W3C --> DAS
+  W3C --> WEBRTCWG
+  W3C --> APA
+  W3C --> WAI
+  W3C --> PATWG
+  W3C --> MEIG
+  W3C --> WICG
+  W3C --> WASMCG
+
+  WICG -->|инкубация новых идей| WEBAPPS
+  WICG --> CSSWG
+  WICG --> DAS
+  WICG --> WEBRTCWG
+
+  classDef core fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
+  classDef group fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
+  classDef incubator fill:#c8b87a,stroke:#b05e10,color:#1a1a14,stroke-width:2px;
+
+  class W3C core;
+  class TAG,WEBAPPS,CSSWG,BTT,DAS,WEBRTCWG,APA,WAI,PATWG,MEIG,WASMCG group;
+  class WICG incubator;
+```
+
+</template>
+
+<template v-slot:source>
+WICG — инкубатор новых веб-идей; внутри W3C множество рабочих и community groups с разной ответственностью. [web:423][web:422][web:421]
+</template>
+
+---
+layout: chart-full
+title: СЛОЙ 3 — ТЕСТЫ И INTEROP
+sectionNumber: "3-4"
+docNumber: FM 00-0
+figNumber: 3-4
+figLabel: КАК ПРОВЕРЯЮТ СОВМЕСТИМОСТЬ
+transition: slide-up
+---
+
+<template v-slot:chart>
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 15, 'rankSpacing': 15}}}%%
+
+flowchart TD
+
+  SPECS["СПЕЦИФИКАЦИИ"]
+  WPT["Web Platform Tests"]
+  TEST262["Test262"]
+  INTEROP["Interop"]
+  CHROME["Chromium"]
+  SAFARI["WebKit / Safari"]
+  FIREFOX["Gecko / Firefox"]
+  EDGE["Edge"]
+  DEVS["Разработчики"]
+  MDN["MDN compat data"]
+
+  SPECS --> WPT
+  SPECS --> TEST262
+  WPT --> INTEROP
+  TEST262 --> INTEROP
+
+  CHROME --> WPT
+  SAFARI --> WPT
+  FIREFOX --> WPT
+  EDGE --> WPT
+
+  INTEROP --> CHROME
+  INTEROP --> SAFARI
+  INTEROP --> FIREFOX
+  INTEROP --> EDGE
+
+  MDN --> DEVS
+
+  classDef spec fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
+  classDef tests fill:#c8b87a,stroke:#bf2020,color:#1a1a14,stroke-width:2px;
+  classDef impl fill:#f5f0e0,stroke:#7a7a45,color:#1a1a14;
+  classDef dev fill:#e0d8be,stroke:#b05e10,color:#1a1a14;
+
+  class SPECS spec;
+  class WPT,TEST262,INTEROP tests;
+  class CHROME,SAFARI,FIREFOX,EDGE impl;
+  class DEVS,MDN dev;
+```
+
+</template>
+
+<template v-slot:source>
+Interop использует WPT как измеримую основу для совместимости браузеров; TC39-экосистема использует Test262 для ECMAScript. [web:352][web:353][web:362]
+</template>
+
+---
+layout: chart-full
+title: СЛОЙ 4 — ДАВЛЕНИЕ ЭКОСИСТЕМЫ
+sectionNumber: "3-5"
+docNumber: FM 00-0
+figNumber: 3-5
+figLabel: КОМПАНИИ, ФРЕЙМВОРКИ И РАНТАЙМЫ
+transition: slide-right
+---
+
+<template v-slot:chart>
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 1, 'rankSpacing': 3}}}%%
+flowchart LR
+
+  DEVS["Разработчики"]
+  OSS["Open source"]
+  META["Meta / React"]
+  VERCEL["Vercel / Next.js"]
+  CF["Cloudflare"]
+  NODE["Node.js"]
+  DENO["Deno"]
+  BUN["Bun"]
+  WINTER["WinterCG / WinterTC"]
+  ANTH["Anthropic"]
+  OPENAI["OpenAI"]
+  AI["AI SDKs / browser AI use-cases"]
+  WEB["WEB PLATFORM"]
+
+  DEVS --> OSS
+  OSS --> META
+  OSS --> VERCEL
+  OSS --> WEB
+
+  META --> WEB
+  VERCEL --> WEB
+  CF --> WEB
+
+  NODE --> WINTER
+  DENO --> WINTER
+  BUN --> WINTER
+  CF --> WINTER
+  WINTER --> WEB
+
+  ANTH --> AI
+  OPENAI --> AI
+  AI --> WEB
+  AI --> VERCEL
+
+  classDef dev fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
+  classDef product fill:#c8b87a,stroke:#b05e10,color:#1a1a14,stroke-width:2px;
+  classDef runtime fill:#e0d8be,stroke:#7a7a45,color:#1a1a14;
+  classDef web fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
+
+  class DEVS,OSS dev;
+  class META,VERCEL,CF,ANTH,OPENAI,AI product;
+  class NODE,DENO,BUN,WINTER runtime;
+  class WEB web;
+```
+
+</template>
+
+<template v-slot:source>
+Компании и рантаймы влияют на ожидания от платформы; WinterCG/WinterTC работает над web-interoperable runtimes за пределами браузера. [web:424][web:427][web:425]
+</template>
 
 ---
 layout: end
@@ -898,16 +1047,22 @@ docNumber: FM 24-SLIDE
 classification: FOR TRAINING USE ONLY
 unit: HQ, DEPT OF THE PRESENTATION
 photo: ./img/me.jpg
+
 ---
+
 
 <template v-slot:title>Спасибо</template>
 
 <template v-slot:contact>
 
+
 **Мария Кондаурова**
+
 
 BIOCAD
 
+
 t.me/Momomash
+
 
 </template>
