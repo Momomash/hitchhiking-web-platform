@@ -253,7 +253,7 @@ sectionNumber: '2'
 - Управление состоянием вручную
 - "Спагетти‑код" повсюду  **(привет, jquery!)**
 - Каждый разработчик делает свой велосипед
-  
+
 </v-clicks>
 
 <v-click>
@@ -303,32 +303,73 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-## Но телефоны не стоят на месте
+---
+layout: default
+---
 
-<div class="grid grid-cols-2 gap-10 mt-10 items-center">
-  <div v-click class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5">
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      Кнопочные (2000–2007)
-    </div>
+## Но телефоны не стояли на месте
 
-    <div class="grid grid-cols-2 gap-5 mt-4">
-      <img src="./img/nokia.png" class="rounded-xl" />
-      <img src="./img/moto.png" class="rounded-xl" />
-      <img src="./img/sams.png" class="rounded-xl" />
-      <img src="./img/burb.png" class="rounded-xl" />
+<div class="grid grid-cols-2 gap-12 mt-10 items-start">
+
+  <div
+    v-click
+    class="flex flex-col gap-1"
+  >
+    <h2 class="text-2xl font-bold text-rose-400">
+      Кнопочные <span class="opacity-70">(2000–2007)</span>
+    </h2>
+    <div class="grid grid-cols-2 gap-1">
+      <img style="width: 100px; height: 100px"
+        src="./img/nokia.png"
+        alt="Nokia 3310"
+        class="shadow-lg rounded-2xl"
+      />
+      <img
+        src="./img/moto.png" style="width: 100px; height: 100px"
+        alt="Motorola Razr"
+        class="shadow-lg rounded-2xl"
+      />
+      <img
+        src="./img/sams.png" style="width: 100px; height: 100px"
+        alt="Samsung clamshell phone"
+        class="shadow-lg rounded-2xl"
+      />
+      <img
+        src="./img/burb.png" style="width: 100px; height: 100px"
+        alt="BlackBerry phone"
+        class="shadow-lg rounded-2xl"
+      />
     </div>
   </div>
 
-  <div v-click class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5">
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      Сенсорные (2007+)
-    </div>
-
-    <div class="grid grid-cols-2 gap-5 mt-4">
-      <img src="./img/experia.png" class="rounded-xl" />
-      <img src="./img/iphone.png" class="rounded-xl" />
-      <img src="./img/lg.png" class="rounded-xl" />
-      <img src="./img/galaxy.png" class="rounded-xl" />
+  <div
+    v-click
+    class="flex flex-col gap-1"
+  >
+    <h2 class="text-2xl font-bold text-cyan-300">
+      Сенсорные <span class="opacity-70">(2007+)</span>
+    </h2>
+    <div class="grid grid-cols-2 gap-1">
+      <img
+        src="./img/experia.png" style="width: 100px; height: 100px"
+        alt="Sony Ericsson Xperia"
+        class="shadow-lg rounded-2xl"
+      />
+      <img
+        src="./img/iphone.png" style="width: 100px; height: 100px"
+        alt="iPhone"
+        class="shadow-lg rounded-2xl"
+      />
+      <img
+        src="./img/lg.png" style="width: 100px; height: 100px"
+        alt="LG Android phone"
+        class="shadow-lg rounded-2xl"
+      />
+      <img
+        src="./img/galaxy.png" style="width: 100px; height: 100px"
+        alt="Samsung Galaxy"
+        class="shadow-lg rounded-2xl"
+      />
     </div>
   </div>
 </div>
@@ -337,36 +378,22 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-## Контекст: Мобильные телефоны развиваются
+## С мобильностью пришли новые вызовы
 
-<div class="max-w-[600px] mx-auto mt-6">
-  <div v-click class="rounded-xl border border-amber-200/60 bg-amber-50/40 px-6 py-4">
-    <ul class="space-y-2 text-sm">
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>Тяжёлый JS</strong> тормозит на слабых устройствах</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>Touch UI</strong> вместо hover/click</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>3G/4G</strong> вместо оптоволокна</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span>Экраны <strong>от 320px до 4K</strong></span>
-      </li>
-    </ul>
-  </div>
-</div>
+<v-clicks>
+
+- Тяжёлый JS тормозит на слабых устройствах
+- Touch UI вместо hover/click
+- 3G/4G вместо оптоволокна
+- Экраны от 320px до 4K
+
+</v-clicks>
 
 ---
 sectionNumber: '2'
 ---
 
-## Скачок 4: Десктоп → Mobile-first
+## Скачок 3: Десктоп → Mobile-first
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -391,10 +418,10 @@ sectionNumber: '2'
       Mobile-first (2012+)
     </div>
 
-      - **Адаптивность** 320px–4K
-      - **Touch** интерфейсы
-      - **Производительность** (lazy load)
-      - Сети **3G/4G**
+      - Адаптивность 320px–4K
+      - Touch интерфейсы
+      - Производительность (lazy load)
+      - Сети 3G/4G
 
   </div>
 </div>
@@ -403,39 +430,22 @@ sectionNumber: '2'
 sectionNumber: '2'
 ---
 
-## Mobile-first решили адаптивность, но...
+## Mobile-first решили адаптивность, но наследство нативных приложений
 
-<div class="max-w-[600px] mx-auto mt-6">
-  <div v-click class="rounded-xl border border-amber-200/60 bg-amber-50/40 px-6 py-4">
-    <div class="text-sm uppercase tracking-widest text-amber-600 font-bold mb-3">
-      Боли нативных приложений
-    </div>
-    <ul class="space-y-2 text-sm">
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>App Store</strong> модерация (недели)</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>Обновления</strong> только через стор</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>Офлайн</strong> недоступен</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span>Push только <strong>через натив</strong></span>
-      </li>
-    </ul>
-  </div>
-</div>
+<v-clicks>
+
+- App Store модерация (недели)
+- Обновления только через стор
+- Офлайн недоступен
+- Push только через натив
+
+</v-clicks>
 
 ---
 sectionNumber: '2'
 ---
 
-## Скачок 5: Веб → PWA
+## Скачок 4: Веб → PWA
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -460,9 +470,9 @@ sectionNumber: '2'
       PWA
     </div>
 
-      - **Offline-first**
-      - **Установка** без стора
-      - **Push** уведомления
+      - Offline-first
+      - Установка без стора
+      - Push уведомления
       - Кэш + Service Workers
 
   </div>
@@ -470,9 +480,9 @@ sectionNumber: '2'
 
 <v-click>
 
-<div class="mt-8 text-center text-sm text-gray-400">
+<p class="text-center pt-5">
 Service Worker = прокси между сетью и кэшем
-</div>
+</p>
 
 </v-click>
 
@@ -482,34 +492,20 @@ sectionNumber: '2'
 
 ## ...но вылезли рендерные боли (опять)
 
-<div class="max-w-[600px] mx-auto mt-6">
-  <div v-click class="rounded-xl border border-amber-200/60 bg-amber-50/40 px-6 py-4">
-    <ul class="space-y-2 text-sm">
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>Тяжёлый JS</strong> на клиенте</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>SEO</strong> страдает (SPA)</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span><strong>TTFB</strong> медленный</span>
-      </li>
-      <li class="flex items-start">
-        <span class="mr-2 text-amber-600">•</span>
-        <span>Сложно <strong>гибрид</strong> сервер/клиент</span>
-      </li>
-    </ul>
-  </div>
-</div>
+<v-clicks>
+
+- Тяжёлый JS на клиенте
+- SEO страдает (SPA)
+- TTFB медленный
+- Сложно гибрид сервер/клиент
+
+</v-clicks>
 
 ---
 sectionNumber: '2'
 ---
 
-## Скачок 6: Клиент/Сервер → Server Components
+## Скачок 5: Клиент/Сервер → Server Components
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -544,9 +540,9 @@ sectionNumber: '2'
 
 <v-click>
 
-<div class="mt-8 text-center text-sm text-gray-400">
+<p class="mt-16 text-center">
 Сервер рендерит → Streaming → Клиент "оживляет"
-</div>
+</p>
 
 </v-click>
 
@@ -561,37 +557,144 @@ direction: horizontal
 <div class="tl-entry">
   <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
   <div class="tl-entry-body">
-    <div class="tl-entry-date fm-label">2007</div>
-    <div class="tl-entry-title">iPhone</div>
-    <div class="tl-entry-desc">Мобильные боли: 320px, touch, 3G</div>
+    <div class="tl-entry-date fm-label">1990</div>
+    <div class="tl-entry-title">Статичный веб</div>
   </div>
 </div>
+
 <div class="tl-entry">
   <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
   <div class="tl-entry-body">
-    <div class="tl-entry-date fm-label">2007-2012</div>
-    <div class="tl-entry-title">Mobile-first</div>
-    <div class="tl-entry-desc">Адаптив, responsive дизайн</div>
+    <div class="tl-entry-date fm-label">2004</div>
+    <div class="tl-entry-title">Ajax</div>
+    <div class="tl-entry-desc">Gmail заложил тренд веба как сервиса</div>
   </div>
 </div>
+
 <div class="tl-entry">
   <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
   <div class="tl-entry-body">
-    <div class="tl-entry-date fm-label">2010-2013</div>
-    <div class="tl-entry-title">SPA бум</div>
-    <div class="tl-entry-desc">AngularJS, React —> PWA —> RSC</div>
+    <div class="tl-entry-date fm-label">2010</div>
+    <div class="tl-entry-title">SPA‑бум</div>
+    <div class="tl-entry-desc">AngularJS (2010), React(2013), Vue(2014)</div>
   </div>
 </div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2010</div>
+    <div class="tl-entry-title">First-mobile</div>
+    <div class="tl-entry-desc">Развитие смартфонов</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2015+</div>
+    <div class="tl-entry-title">PWA</div>
+    <div class="tl-entry-desc">Офлайн, установка, пуш‑уведомления</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2020-2023</div>
+    <div class="tl-entry-title">Server Components</div>
+    <div class="tl-entry-desc">Гибрид сервер/клиент</div>
+  </div>
+</div>
+
+---
+layout: statement
+---
+
+# Всего за 20 лет
+
+---
+layout: two-column
+title: "Web API в действии"
+sectionNumber: "3-4"
+docNumber: FM 00-0
+---
+
+<template v-slot:left>
+
+### 150+ браузерных Web API с доступом к
+
+<v-clicks>
+
+- телефону (контакты, вибрация, bluetooth, уведомления)
+- железу (GPU)
+- AI (конец 2025-го)
+- и тд
+
+</v-clicks>
+
+</template>
+
+<template v-slot:right>
+
+<div style="width: 100%;">
+  <video
+    src="./mov/mdn.mov"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls={false}
+    style="width: 100%; height: auto; display: block;"
+  ></video>
+</div>
+
+</template>
+
+---
+layout: statement
+---
+# Это уже полноценная платформа
+---
+
+<div style="width: 100%; border-radius: 12px; overflow: hidden;">
+  <video
+    src="./mov/samokat.mov"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls={false}
+    style="width: 100%; height: auto; display: block;"
+  ></video>
+</div>
+<p class="text-center">3D музей в браузере &#40;React и Three.js) <a href="https://museum.samokat.ru">https://museum.samokat.ru</a></p>
+
+---
+
+<div style="width: 100%; border-radius: 12px; overflow: hidden;">
+  <video
+    src="./mov/messanger.mov"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls={false}
+    style="width: 100%; height: auto; display: block;"
+  ></video>
+</div>
+<p class="text-center">Многопользовательская игра в браузере (webGL) <a href="https://messenger.abeto.co">https://messenger.abeto.co</a></p>
 
 ---
 layout: section
 sectionNumber: '3'
 docNumber: FM 00-0
+
 ---
 
 # Глава 3
 
-## Современная Web Platform
+## Кто делает веб? 
 
 <template v-slot:descriptor>
 Или зоопарк комитетов
@@ -599,50 +702,6 @@ docNumber: FM 00-0
 
 ---
 
-
-[//]: # (sectionNumber: '2')
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### **150** Web API в браузере)
-
-[//]: # ()
-
-[//]: # (Это полноценная **платформа** с доступом к железу, офлайну, пушам.)
-
-[//]: # ()
-
-[//]: # (<video src="./mov/mdn.mov" autoplay loop muted rounded-xl/>)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # (sectionNumber: '2')
-
-[//]: # (---)
-
-[//]: # ()
-
-[//]: # (### **3D музей** в браузере &#40;React и Three.js&#41;)
-
-[//]: # ()
-
-[//]: # (<video src="./mov/samokat.mov" autoplay loop muted rounded-xl/>)
-
-[//]: # ()
-
-[//]: # ([https://museum.samokat.ru/]&#40;https://museum.samokat.ru/&#41;)
-
-[//]: # ()
-
-[//]: # (---)
-
-[//]: # (sectionNumber: '2')
-
-[//]: # (---)
 
 [//]: # ()
 
