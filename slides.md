@@ -809,7 +809,7 @@ flowchart TD
 </template>
 
 <template v-slot:source>
-ОБЗОР: стандарты, реализации, тесты и экосистема на одной карте. [web:423][web:429][web:424][web:353]
+ОБЗОР: стандарты, реализации, тесты и экосистема на одной карте. 
 </template>
 
 ---
@@ -844,7 +844,7 @@ flowchart LR
 </template>
 
 <template v-slot:source>
-WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W3C и IETF покрывают значительную часть веб-платформы и сетевого стека. [web:429][web:421][web:424]
+WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W3C и IETF покрывают значительную часть веб-платформы и сетевого стека. 
 </template>
 
 ---
@@ -909,7 +909,7 @@ flowchart TD
 </template>
 
 <template v-slot:source>
-WICG — инкубатор новых веб-идей; внутри W3C множество рабочих и community groups с разной ответственностью. [web:423][web:422][web:421]
+WICG — инкубатор новых веб-идей; внутри W3C множество рабочих и community groups с разной ответственностью. 
 </template>
 
 ---
@@ -971,7 +971,7 @@ flowchart TD
 </template>
 
 <template v-slot:source>
-Interop использует WPT как измеримую основу для совместимости браузеров; TC39-экосистема использует Test262 для ECMAScript. [web:352][web:353][web:362]
+Interop использует WPT как измеримую основу для совместимости браузеров; TC39-экосистема использует Test262 для ECMAScript.
 </template>
 
 ---
@@ -1038,7 +1038,7 @@ flowchart LR
 </template>
 
 <template v-slot:source>
-Компании и рантаймы влияют на ожидания от платформы; WinterCG/WinterTC работает над web-interoperable runtimes за пределами браузера. [web:424][web:427][web:425]
+Компании и рантаймы влияют на ожидания от платформы; WinterCG/WinterTC работает над web-interoperable runtimes за пределами браузера.
 </template>
 
 ---
