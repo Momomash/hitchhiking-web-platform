@@ -1042,6 +1042,52 @@ flowchart LR
 </template>
 
 ---
+
+### Про дележку HTML между комитетами
+#### + Цитата из спецификации про прочитать три раза вдоль
+
+---
+
+### Про браузерные войны и Interop
+#### - Ирония что понадобилось почти 30 лет чтобы начать стандартизировать
+
+---
+
+### Про test 262 
+
+---
+
+### Про влияние Versel
+
+---
+
+### Откуда берутся новые web API
+#### + про продавливание API Хромом
+
+---
+
+
+### Про основные принципы развития
+#### web платформа как больше легаси
+
+- **Don’t break the Web.**
+- Make it work everywhere.
+- Enhance, don’t replace.
+- **Secure by default.**
+- Accessible by default.
+- Open by design.
+- **royalty-free patent policy**
+
+---
+
+### Немного про будущее — A2UI, webMCP
+#### Вброс Хрома про The Prompt API и несогласие других вендоров
+
+---
+
+### Выводы
+
+---
 layout: end
 docNumber: FM 24-SLIDE
 classification: FOR TRAINING USE ONLY
@@ -1055,14 +1101,10 @@ photo: ./img/me.jpg
 
 <template v-slot:contact>
 
-
 **Мария Кондаурова**
-
 
 BIOCAD
 
-
 t.me/Momomash
-
 
 </template>
