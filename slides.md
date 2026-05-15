@@ -688,7 +688,7 @@ layout: chart-full
 title: КАРТА ВЛИЯНИЯ
 figNumber: 3-1
 figLabel: КТО КОНТРИБЬЮТИТ В WEB PLATFORM
-transition: fade
+transition: slide-left
 ---
 <template v-slot:chart>
 
@@ -794,6 +794,8 @@ flowchart TD
 </template>
 
 ---
+transition: slide-left
+---
 
 <img src="./img/pepe.png">
 
@@ -803,7 +805,7 @@ layout: chart-full
 title: СЛОЙ 1 — СТАНДАРТЫ
 figNumber: 3-2
 figLabel: ОСНОВНЫЕ ПЛОЩАДКИ СТАНДАРТИЗАЦИИ
-transition: fade-out
+transition: slide-left
 ---
 
 <template v-slot:chart>
@@ -899,7 +901,7 @@ layout: chart-full
 title: СЛОЙ 3 — ТЕСТЫ И INTEROP
 figNumber: 3-4
 figLabel: КАК ПРОВЕРЯЮТ СОВМЕСТИМОСТЬ
-transition: slide-up
+transition: slide-left
 ---
 
 <template v-slot:chart>
@@ -959,7 +961,7 @@ layout: chart-full
 title: СЛОЙ 4 — ДАВЛЕНИЕ ЭКОСИСТЕМЫ
 figNumber: 3-5
 figLabel: КОМПАНИИ, ФРЕЙМВОРКИ, COMMUNITY
-transition: slide-right
+transition: slide-left
 ---
 
 <template v-slot:chart>
@@ -1020,6 +1022,40 @@ flowchart LR
 </template>
 
 ---
+layout: statement
+---
+
+# Спецификации
+
+---
+layout: two-column
+title: История HTML как стандарта
+sectionNumber: "2-5"
+docNumber: FM 00-0
+transition: fade
+---
+
+<template v-slot:left>
+
+### Краткая история HTML
+
+<v-clicks>
+
+- **1989–1991** — HTML рождается в CERN вместе с Web.
+- **1994–1999** — W3C формализует HTML как набор версий и рекомендаций.
+- **2004** — WHATWG возникает как реакция браузерных вендоров на отрыв стандарта от реального веба.
+- **2012** — у индустрии фактически две линии HTML: W3C и WHATWG.
+- **2019** — W3C и WHATWG договариваются о единой версии HTML и DOM, HTML как living standard.
+
+</v-clicks>
+
+</template>
+
+<template v-slot:right>
+<img src="./img/html.png">
+</template>
+
+---
 layout: default
 title: Как читать спецификации
 ---
@@ -1036,10 +1072,6 @@ title: Как читать спецификации
 - Затем — выбирая случайные разделы в оглавлении и переходя по всем перекрёстным ссылкам.
 
 </v-clicks>
-
----
-
-### Про дележку HTML между комитетами
 
 ---
 
