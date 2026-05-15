@@ -32,6 +32,27 @@ classification: UNCLASSIFIED
 </div>
 
 ---
+layout: two-column
+title: Обо мне
+transition: fade
+---
+
+## Обо мне
+
+<v-clicks>
+
+- FrontLead в Департаменте Вычислительной Биологии в BIOCAD
+- Член программного комитета HolyJS
+- Соорганизовывала SPB Frontend
+- Живу в Питере, крашу Warhammer и занимаюсь фехтованием
+
+</v-clicks>
+
+::right::
+
+  <img src="./img/llama.png"/>
+
+---
 layout: section
 docNumber: "Автостопом по веб-платформе"
 ---
@@ -62,7 +83,7 @@ layout: image-full
 <img src="./img/first_comp.png"  />
 </template>
 
-# Первый в мире компьютер Eniac
+# Первый в мире компьютер Eniac (1946)
 ---
 layout: image-full
 ---
@@ -73,7 +94,7 @@ layout: image-full
 # Современный компьютер
 ---
 
-| Параметр            | ENIAC (1945)                                | iPhone 17 Pro (2025)                      |
+| Параметр            | ENIAC (1946)                                | iPhone 17 Pro (2025)                      |
 |:--------------------|:--------------------------------------------|:------------------------------------------|
 | Операций в секунду  | ≈5 000 сложений/сек<br>≈357 умножений/сек   | ≥6 000 000 000 000 операций/сек           |
 | Память              | **20 слов** (10‑разрядные десятичные числа) | **6–8 ГБ** ОЗУ, до 1 ТБ постоянной памяти |
@@ -202,8 +223,18 @@ layout: statement
 ### "Фронтенд развивается скачкообразно"
 
 ---
+layout: image-full
+---
+
+<template v-slot:image>
+<img src="./img/./since.png">
+</template>
+
+---
 
 ## Скачок 1:  Статичный HTML → Динамический веб
+
+[//]: # (TODO: добавить анимацию клика для всего)
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -233,7 +264,7 @@ layout: statement
 </div>
 ---
 
-## AJAX принес скорость,<br>но создал новые проблемы
+## AJAX дал скорость,<br>но создал свои проблемы
 
 <v-clicks>
 
@@ -277,7 +308,7 @@ layout: statement
       Стало (SPA)
     </div>
 
-      - Angular/React/Vue/Svelte
+      - Angular/React/Vue
       - Клиент — UI-машина
       - Сервер — только API
 
@@ -407,7 +438,9 @@ layout: default
 
 ---
 
-## Mobile-first решили адаптивность, но наследство нативных приложений
+[//]: # (TODO: добавить про развитие мобильных приложений &#40;бизнес хочет приложение для всего, есть стереотип что приложение стабильнее и тд)
+
+## Mobile-first дал адаптивность, но хотелось нативности
 
 <v-clicks>
 
@@ -628,6 +661,10 @@ layout: statement
   ></video>
 </div>
 <p class="text-center">Многопользовательская игра в браузере (webGL) <a href="https://messenger.abeto.co">https://messenger.abeto.co</a></p>
+
+---
+
+(Здесь будет гифка с 3д структурой антитела на webGL в браузере)
 
 ---
 layout: two-column
@@ -1037,7 +1074,7 @@ transition: fade
 
 <template v-slot:left>
 
-### Краткая история HTML
+### Краткая история спеки
 
 <v-clicks>
 
@@ -1056,9 +1093,6 @@ transition: fade
 </template>
 
 ---
-layout: default
-title: Как читать спецификации
----
 
 ## HTML Living Standard (Last Updated 11 May 2026)
 
@@ -1067,15 +1101,67 @@ title: Как читать спецификации
 <v-clicks>
 
 - **Эту спецификацию следует читать так же, как и все другие спецификации.**
-- Сначала — от корки до корки, несколько раз.
-- Потом — в обратном направлении, как минимум один раз.
+- Сначала — **от корки до корки**, несколько раз.
+- Потом — в **обратном** направлении, как минимум один раз.
 - Затем — выбирая случайные разделы в оглавлении и переходя по всем перекрёстным ссылкам.
 
 </v-clicks>
 
 ---
 
-### Про CSS v4
+## Раскол CSS
+
+```mermaid
+flowchart TD
+    A["CSS1<br/>1996"] --> B["CSS2<br/>1998"]
+    B --> C["CSS2.1"]
+
+    C --> D["Модульная модель CSS"]
+
+    D --> S1
+
+    subgraph S1["Layout"]
+        direction TB
+        I["Flexbox<br/>Level 1"]
+        J["Grid<br/>Level 1 → 2"]
+        K["Multi-column<br/>Level 1"]
+    end
+
+    D --> S2
+
+    subgraph S2["Styling"]
+        direction TB
+        E["Selectors<br/>Level 3 → 4"]
+        F["Color<br/>Level 3 → 4 → 5"]
+        G["Backgrounds & Borders<br/>Level 3 → 4"]
+    end
+
+    D --> S3
+
+    subgraph S3["Behavior"]
+        direction TB
+        H["Media Queries<br/>Level 3 → 4 → 5"]
+        L["Animations<br/>Level 1"]
+        M["Transforms<br/>Level 1"]
+    end
+
+    S1 --> N["CSS Snapshot"]
+    S2 --> N
+    S3 --> N
+
+    style D fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style N fill:#16a34a,stroke:#15803d,color:#fff
+```
+
+---
+layout: statement
+---
+
+# CSS изобрели микросервисы
+
+---
+
+### Про пропоузалы и как почти 10 лет время чинили
 
 ---
 
@@ -1115,11 +1201,14 @@ title: Как читать спецификации
 
 ### Немного про будущее — A2UI, webMCP
 
-#### Вброс Хрома про The Prompt API и несогласие других вендоров
+#### Prompt API от Chrome и несогласие других вендоров
 
 ---
 
 ### Выводы
+
+- Веб-платформа — это огромный легаси проект
+- 
 
 ---
 layout: end
