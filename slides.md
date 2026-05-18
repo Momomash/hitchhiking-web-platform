@@ -444,7 +444,7 @@ layout: default
     </div>
 
       - Адаптивность 320px–4K
-      - Touch интерфейсы
+      - Touch интерфейсы (Material UI)
       - Производительность (lazy load)
       - Сети 3G/4G
 
@@ -1123,6 +1123,30 @@ transition: fade
 </v-clicks>
 
 ---
+layout: statement
+---
+
+Кто из вас читал спецификации по JS/HTML/CSS? 
+
+<v-click>
+
+### и не сбежал через минуту? 
+
+</v-click>
+
+---
+
+<img src="./img/html_spec_1.png">
+
+---
+
+<img src="./img/html_spec_2.png">
+
+---
+
+<img src="./img/html_spec_3.png">
+
+---
 
 ## Раскол CSS
 
@@ -1176,7 +1200,7 @@ layout: statement
 
 ---
 
-### Про пропоузалы и как почти 10 лет время чинили
+### Про TC39, пропоузалы и как почти 10 лет время чинили
 
 ---
 
@@ -1186,11 +1210,15 @@ layout: statement
 
 ---
 
-### Про test 262
+### Про test 262 и web platform tests
 
 ---
 
-### Про влияние Versel
+### Про влияние Versel и Antropic как новых драйверов развития веба
+
+---
+
+### Про то, как обычному разработчику влиять на веб
 
 ---
 
@@ -1202,7 +1230,7 @@ layout: statement
 
 ### Про основные принципы развития
 
-#### web платформа как больше легаси
+#### web платформа как большое легаси
 
 - **Don’t break the Web.**
 - Make it work everywhere.
@@ -1214,16 +1242,15 @@ layout: statement
 
 ---
 
-### Немного про будущее — A2UI, webMCP
+### Немного про будущее:
 
-#### Prompt API от Chrome и несогласие других вендоров
+#### webMCP
+#### Prompt API (от Chrome и несогласие других вендоров)
+#### A2UI
 
 ---
 
 ### Выводы
-
-- Веб-платформа — это огромный легаси проект
-- 
 
 ---
 layout: end
