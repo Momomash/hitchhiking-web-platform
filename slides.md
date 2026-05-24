@@ -848,13 +848,6 @@ flowchart TD
 </template>
 
 ---
-transition: slide-left
----
-
-<img src="./img/pepe.png">
-
-
----
 layout: chart-full
 title: СЛОЙ 1 — СТАНДАРТЫ
 figNumber: 3-2
@@ -951,128 +944,36 @@ WICG — инкубатор новых веб-идей; внутри W3C мно�
 </template>
 
 ---
-layout: chart-full
-title: СЛОЙ 3 — ТЕСТЫ И INTEROP
-figNumber: 3-4
-figLabel: КАК ПРОВЕРЯЮТ СОВМЕСТИМОСТЬ
 transition: slide-left
 ---
 
-<template v-slot:chart>
-
-```mermaid
-%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 15, 'rankSpacing': 15}}}%%
-
-flowchart TD
-
-  SPECS["СПЕЦИФИКАЦИИ"]
-  WPT["Web Platform Tests"]
-  TEST262["Test262"]
-  INTEROP["Interop"]
-  CHROME["Chromium"]
-  SAFARI["WebKit / Safari"]
-  FIREFOX["Gecko / Firefox"]
-  EDGE["Edge"]
-  DEVS["Разработчики"]
-  MDN["MDN compat data"]
-
-  SPECS --> WPT
-  SPECS --> TEST262
-  WPT --> INTEROP
-  TEST262 --> INTEROP
-
-  CHROME --> WPT
-  SAFARI --> WPT
-  FIREFOX --> WPT
-  EDGE --> WPT
-
-  INTEROP --> CHROME
-  INTEROP --> SAFARI
-  INTEROP --> FIREFOX
-  INTEROP --> EDGE
-
-  MDN --> DEVS
-
-  classDef spec fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
-  classDef tests fill:#c8b87a,stroke:#bf2020,color:#1a1a14,stroke-width:2px;
-  classDef impl fill:#f5f0e0,stroke:#7a7a45,color:#1a1a14;
-  classDef dev fill:#e0d8be,stroke:#b05e10,color:#1a1a14;
-
-  class SPECS spec;
-  class WPT,TEST262,INTEROP tests;
-  class CHROME,SAFARI,FIREFOX,EDGE impl;
-  class DEVS,MDN dev;
-```
-
-</template>
-
-<template v-slot:source>
-Interop использует WPT как измеримую основу для совместимости браузеров; TC39-экосистема использует Test262 для ECMAScript.
-</template>
+<img src="./img/pepe.png">
 
 ---
-layout: chart-full
-title: СЛОЙ 4 — ДАВЛЕНИЕ ЭКОСИСТЕМЫ
-figNumber: 3-5
-figLabel: КОМПАНИИ, ФРЕЙМВОРКИ, COMMUNITY
-transition: slide-left
+layout: two-column
+title: История HTML как стандарта
+sectionNumber: "2-5"
+docNumber: FM 00-0
+transition: fade
 ---
 
-<template v-slot:chart>
+<template v-slot:left>
 
-```mermaid
-%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 1, 'rankSpacing': 3}}}%%
-flowchart LR
+# Если кратко
 
-  DEVS["Разработчики"]
-  OSS["Open source"]
-  META["Meta / React"]
-  VERCEL["Vercel / Next.js"]
-  CF["Cloudflare"]
-  NODE["Node.js"]
-  DENO["Deno"]
-  BUN["Bun"]
-  WINTER["WinterCG / WinterTC"]
-  ANTH["Anthropic"]
-  OPENAI["OpenAI"]
-  AI["AI SDKs / browser AI use-cases"]
-  WEB["WEB PLATFORM"]
+<v-clicks>
 
-  DEVS --> OSS
-  OSS --> META
-  OSS --> VERCEL
-  OSS --> WEB
+- очень много комитетов и рабочих групп
+- в том числе поставщики браузеров
+- не всегда прозрачные обязанности
+- внутренняя "кухня" и политика
 
-  META --> WEB
-  VERCEL --> WEB
-  CF --> WEB
-
-  NODE --> WINTER
-  DENO --> WINTER
-  BUN --> WINTER
-  CF --> WINTER
-  WINTER --> WEB
-
-  ANTH --> AI
-  OPENAI --> AI
-  AI --> WEB
-  AI --> VERCEL
-
-  classDef dev fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
-  classDef product fill:#c8b87a,stroke:#b05e10,color:#1a1a14,stroke-width:2px;
-  classDef runtime fill:#e0d8be,stroke:#7a7a45,color:#1a1a14;
-  classDef web fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
-
-  class DEVS,OSS dev;
-  class META,VERCEL,CF,ANTH,OPENAI,AI product;
-  class NODE,DENO,BUN,WINTER runtime;
-  class WEB web;
-```
+</v-clicks>
 
 </template>
 
-<template v-slot:source>
-Компании влияют на ожидания от платформы; WinterCG/WinterTC работает над web-interoperable runtimes за пределами браузера.
+<template v-slot:right>
+<img src="./img/game_of.png">
 </template>
 
 ---
@@ -1080,6 +981,18 @@ layout: statement
 ---
 
 # Спецификации
+
+---
+layout: statement
+---
+
+Кто из вас читал спецификации по JS/HTML/CSS?
+
+<v-click>
+
+### (и не сбежал через минуту?)
+
+</v-click>
 
 ---
 layout: two-column
@@ -1097,9 +1010,9 @@ transition: fade
 
 - **1989–1991** — HTML рождается в CERN вместе с Web.
 - **1994–1999** — W3C формализует HTML как набор версий и рекомендаций.
-- **2004** — WHATWG возникает как реакция браузерных вендоров на отрыв стандарта от реального веба.
-- **2012** — у индустрии фактически две линии HTML: W3C и WHATWG.
-- **2019** — W3C и WHATWG договариваются о единой версии HTML и DOM, HTML как living standard.
+- **2004** — **реализация опередила стандарт** и появился комитет WHATWG — как реакция браузерных вендоров.
+- **2012** — у индустрии **две версии** HTML: W3C и WHATWG.
+- **2019** — W3C и WHATWG договариваются о единой версии HTML и DOM, HTML как **living standard**.
 
 </v-clicks>
 
@@ -1108,6 +1021,18 @@ transition: fade
 <template v-slot:right>
 <img src="./img/html.png">
 </template>
+
+---
+
+<img src="./img/html_spec_1.png">
+
+---
+
+<img src="./img/html_spec_2.png">
+
+---
+
+<img src="./img/html_spec_3.png">
 
 ---
 
@@ -1123,30 +1048,6 @@ transition: fade
 - Затем — выбирая случайные разделы в оглавлении и переходя по всем перекрёстным ссылкам.
 
 </v-clicks>
-
----
-layout: statement
----
-
-Кто из вас читал спецификации по JS/HTML/CSS? 
-
-<v-click>
-
-### (и не сбежал через минуту?)
-
-</v-click>
-
----
-
-<img src="./img/html_spec_1.png">
-
----
-
-<img src="./img/html_spec_2.png">
-
----
-
-<img src="./img/html_spec_3.png">
 
 ---
 
@@ -1253,6 +1154,16 @@ layout: statement
 ---
 
 ### Выводы
+
+<v-clicks>
+
+- веб-платформа — это живой организм, быстро реагирующий на развитие технологий
+- веб платформа — это самое большое **легаси** интернета
+- нормально договариваться браузеры и комитеты начали только лет 7 назад
+- Chrome всё равно "грешит" и проталкивает своё влияние при помощи API
+- 
+
+</v-clicks>
 
 ---
 layout: end
