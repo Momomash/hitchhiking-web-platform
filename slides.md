@@ -4,6 +4,8 @@ highlighter: shiki
 lineNumbers: false
 #colorSchema: dark
 layout: center
+style: |
+  @import url('./styles/index.css');
 
 # aspect ratio for the slides
 aspectRatio: 16/9
