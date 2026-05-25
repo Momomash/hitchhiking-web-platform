@@ -334,6 +334,7 @@ layout: image-full
 
 ---
 
+
 ---
 layout: default
 ---
@@ -641,7 +642,7 @@ layout: statement
 
 <img src="./img/gonki.png" />
 
---- 
+---
 
 <img src="./img/turyga.png" />
 
@@ -990,7 +991,7 @@ layout: statement
 
 <v-click>
 
-### (и не сбежал через минуту?)
+### ...и не сбежал через минуту?
 
 </v-click>
 
@@ -1096,59 +1097,142 @@ flowchart TD
 ```
 
 ---
+layout: two-column
+title: TC39 и proposal-driven JavaScript
+---
+
+<template v-slot:left>  
+
+### Javascript
+
+<v-clicks>
+
+- **ECMAScript 6** — последняя большая версия
+- Новые фичи теперь проходят через **proposal stages**
+- Cовременный JavaScript —  **непрерывный поток улучшений** c ежегодными мини-релизами
+- Почти **10 лет** понадобилось чтобы "починить время" в вебе
+
+</v-clicks>
+</template>
+
+<template v-slot:right>
+  <img src="./img/js_logo.png" height="70%" >
+</template>
+
+---
+layout: statement
+---
+Все спецификации пришли к философии микрорелизов
+
+---
 layout: statement
 ---
 
-# CSS изобрели микросервисы
+Браузерные войны
+
+---
+layout: two-column
+---
+<template v-slot:left>
+
+## Браузерные войны
+
+### Анархия и отсутствие стандартов между браузерами
+
+</template>
+
+<template v-slot:right>
+<img src="./img/war.png">
+</template>
+
+---
+layout: image-top
+---
+
+<template v-slot:image>
+<img src="./img/canI.png" />
+</template>
+
+<v-clicks>
+
+- Узнаешь из статьи/доклада про новую крутую фичу
+- Пробуешь внедрить — не работает
+- Плачешь в подушку / пишешь полифилл / загоняешь юзеров в один браузер
+- ...Хорошо если года через 3 станет доступно везде
+
+</v-clicks>
+
+---
+layout: statement
+---
+
+# Прошло **32** года
+
+---
+layout: two-column
+---
+
+<template v-slot:left>
+
+# Interop
+
+#### Google, Mozilla, Microsoft, Apple, Bocoup и Igalia — объединились для борьбы с проблемами несовместимости браузеров и стандартизации
+
+<v-click>
+<img src="./img/inter_progress.png">
+</v-click>
+
+</template>
+
+<template v-slot:right>
+<img src="./img/interop.png">
+</template>
+
+---
+layout: statement
+---
+
+# но почему так сложно?
+
+---
+layout: statement
+---
+
+# Для чего создавался веб?
+
+---
+layout: image-full
+---
+
+<template v-slot:image>
+
+<img src="./img/library.png"  />
+
+</template>
 
 ---
 
-### Про TC39, пропоузалы и как почти 10 лет время чинили
+### Принципы развития веб-платформы
 
----
+<v-clicks>
 
-### Про браузерные войны и Interop
+- **Не ломай веб.**
+- **Интероперабельность** — должно работать везде и одинаково
+- **Расширяй**, а не заменяй.
+- **Безопасность по умолчанию.**
+- **Доступность по умолчанию.**
+- Патентная политика без роялти.
 
-#### - Ирония что понадобилось почти 30 лет чтобы начать стандартизировать
-
----
-
-### Про test 262 и web platform tests
-
----
-
-### Про влияние Versel и Antropic как новых драйверов развития веба
-
----
-
-### Про то, как обычному разработчику влиять на веб
-
----
-
-### Откуда берутся новые web API
-
-#### + про продавливание API Хромом
-
----
-
-### Про основные принципы развития
-
-#### web платформа как большое легаси
-
-- **Don’t break the Web.**
-- Make it work everywhere.
-- Enhance, don’t replace.
-- **Secure by default.**
-- Accessible by default.
-- Open by design.
-- **royalty-free patent policy**
+</v-clicks>
 
 ---
 
 ### Немного про будущее:
 
 #### webMCP
+
 #### Prompt API (от Chrome и несогласие других вендоров)
+
 #### A2UI
 
 ---
@@ -1159,9 +1243,10 @@ layout: statement
 
 - веб-платформа — это живой организм, быстро реагирующий на развитие технологий
 - веб платформа — это самое большое **легаси** интернета
+- в веб-платформе много хаоса — зоопарк комитетов, тенхологий
 - нормально договариваться браузеры и комитеты начали только лет 7 назад
 - Chrome всё равно "грешит" и проталкивает своё влияние при помощи API
-- 
+- Но эта система уже существует более 36 лет и развивается
 
 </v-clicks>
 
