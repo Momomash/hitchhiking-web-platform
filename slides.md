@@ -13,7 +13,7 @@ canvasWidth: 960
 layout: cover
 title: Автостопом по веб-платформе
 author: Мария Кондаурова, BIOCAD
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 date: 2026
 unit: CodeFest '16
 classification: CODEFEST
@@ -33,7 +33,7 @@ classification: CODEFEST
 layout: two-column
 title: Обо мне
 sectionNumber: 0-1
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 transition: fade
 ---
 
@@ -67,7 +67,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 sectionNumber: 1-1
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
+
 ---
 
 <img src="./img/web.png" width="300" style="margin: 0 auto" />
@@ -77,14 +78,14 @@ docNumber: "Автостопом по веб-платформе"
 ---
 layout: statement
 sectionNumber: 1-2
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 ---
 
 # Но с чего всё начиналось?
 ---
 layout: image-full
 sectionNumber: 1-2
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 ---
 <template v-slot:image>
 <img src="./img/first_comp.png"  />
@@ -94,8 +95,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 title: ENIAC
-sectionNumber: 1-3
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-4
+docNumber: "CODE FEST"
 ---
 
 ## ENIAC: фан-факты
@@ -110,8 +111,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: image-full
-sectionNumber: 1-4
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-5
+docNumber: "CODE FEST"
 ---
 <template v-slot:image>
 <img src="./img/actual_comp.png"/>
@@ -119,8 +120,8 @@ docNumber: "Автостопом по веб-платформе"
 
 # Современный компьютер
 ---
-sectionNumber: 1-4
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-6
+docNumber: "CODE FEST"
 ---
 
 | Параметр            | ENIAC (1946)                                | iPhone 17 Pro (2025)                      |
@@ -131,14 +132,14 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 1-5
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-7
+docNumber: "CODE FEST"
 ---
 ## World Wide Web
 ---
 layout: image-right
-sectionNumber: 1-5
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-8
+docNumber: "CODE FEST"
 figNumber: 1-1
 figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ---
@@ -152,20 +153,23 @@ figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 </template>
 
 ---
+docNumber: "CODE FEST"
+sectionNumber: 1-9
+---
 
 <img src="./img/first_brows.png" height="500"/>
 ## Первый в мире сайт
 
 ---
 layout: statement
-sectionNumber: 1-6
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-10
+docNumber: "CODE FEST"
 ---
 ## Изначальная идея веба как **гипертекстовой системы** для обмена знаниями
 ---
 layout: image-right
-sectionNumber: 1-6
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-11
+docNumber: "CODE FEST"
 figNumber: 1-2
 figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 ---
@@ -185,8 +189,8 @@ figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 </template>
 
 ---
-sectionNumber: 1-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-12
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/mac.png" height="80%"/>
@@ -195,12 +199,14 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 1-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-13
+docNumber: "CODE FEST"
 ---
 
 ## Люди стали генерировать контент и самовыражаться
 
+---
+sectionNumber: 1-14
 ---
 
 <SlidevVideo autoplay>
@@ -209,8 +215,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: image-full
-sectionNumber: 1-8
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-15
+docNumber: "CODE FEST"
 ---
 <template v-slot:image>
 <img src="./img/jam.png"  />
@@ -220,8 +226,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: image-full
-sectionNumber: 1-8
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-16
+docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
@@ -232,8 +238,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 1-9
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-17
+docNumber: "CODE FEST"
 ---
 
 ## Интернет взрослеет
@@ -242,8 +248,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 1-9
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 1-18
+docNumber: "CODE FEST"
 ---
 
 ## Веб перестаёт быть просто страницами и становится средой для жизни
@@ -271,7 +277,7 @@ docNumber: "Автостопом по веб-платформе"
 ---
 layout: statement
 sectionNumber: 2-1
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 ---
 
 ### "Фронтенд развивается скачкообразно"
@@ -285,8 +291,8 @@ layout: image-full
 </template>
 
 ---
-sectionNumber: 2-1
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-2
+docNumber: "CODE FEST"
 ---
 
 ## Скачок 1:  Статичный HTML → Динамический веб
@@ -320,8 +326,8 @@ docNumber: "Автостопом по веб-платформе"
   </div>
 </div>
 ---
-sectionNumber: 2-2
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-3
+docNumber: "CODE FEST"
 ---
 
 ## AJAX дал скорость,<br>но создал свои проблемы
@@ -342,8 +348,8 @@ docNumber: "Автостопом по веб-платформе"
 
 
 ---
-sectionNumber: 2-3
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-4
+docNumber: "CODE FEST"
 ---
 
 ## Скачок 2: Страницы → SPA и фреймворки
@@ -379,12 +385,9 @@ docNumber: "Автостопом по веб-платформе"
 </div>
 
 ---
-
-
----
 layout: default
-sectionNumber: 2-4
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-5
+docNumber: "CODE FEST"
 ---
 
 ## Но телефоны не стояли на месте
@@ -455,8 +458,8 @@ docNumber: "Автостопом по веб-платформе"
 </div>
 
 ---
-sectionNumber: 2-5
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-6
+docNumber: "CODE FEST"
 ---
 
 ## С мобильностью пришли новые вызовы
@@ -471,10 +474,14 @@ docNumber: "Автостопом по веб-платформе"
 </v-clicks>
 
 ---
+sectionNumber: 2-7
+
+---
 
 ## Скачок 3: Десктоп → Mobile-first
-sectionNumber: 2-6
-docNumber: "Автостопом по веб-платформе"
+
+sectionNumber: 2-7
+docNumber: "CODE FEST"
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -508,8 +515,8 @@ docNumber: "Автостопом по веб-платформе"
 </div>
 
 ---
-sectionNumber: 2-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-8
+docNumber: "CODE FEST"
 ---
 
 [//]: # (TODO: добавить про развитие мобильных приложений &#40;бизнес хочет приложение для всего, есть стереотип что приложение стабильнее и тд)
@@ -526,8 +533,8 @@ docNumber: "Автостопом по веб-платформе"
 </v-clicks>
 
 ---
-sectionNumber: 2-8
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-9
+docNumber: "CODE FEST"
 ---
 
 ## Скачок 4: Веб → PWA
@@ -572,8 +579,8 @@ Service Worker = прокси между сетью и кэшем
 </v-click>
 
 ---
-sectionNumber: 2-9
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-10
+docNumber: "CODE FEST"
 ---
 
 ## ...но вылезли рендерные боли (опять)
@@ -588,8 +595,8 @@ docNumber: "Автостопом по веб-платформе"
 </v-clicks>
 
 ---
-sectionNumber: 2-10
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-11
+docNumber: "CODE FEST"
 ---
 
 ## Скачок 5: Клиент/Сервер → Server Components
@@ -635,8 +642,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: timeline
-sectionNumber: 2-11
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-12
+docNumber: "CODE FEST"
 title: ЭВОЛЮЦИЯ ВЕБА — ХРОНОЛОГИЯ
 direction: horizontal
 ---
@@ -696,36 +703,36 @@ direction: horizontal
 
 ---
 layout: statement
-sectionNumber: 2-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-13
+docNumber: "CODE FEST"
 ---
 
 # Всего за 20 лет
 
 ---
-sectionNumber: 2-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-14
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/vk.png" />
 
 ---
-sectionNumber: 2-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-15
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/gonki.png" />
 
 ---
-sectionNumber: 2-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-16
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/zaycev.png" />
 
 ---
-sectionNumber: 2-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-17
+docNumber: "CODE FEST"
 ---
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
@@ -742,8 +749,8 @@ docNumber: "Автостопом по веб-платформе"
 <p class="text-center">3D музей в браузере &#40;React и Three.js) <a href="https://museum.samokat.ru">https://museum.samokat.ru</a></p>
 
 ---
-sectionNumber: 2-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-18
+docNumber: "CODE FEST"
 ---
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
@@ -759,6 +766,9 @@ docNumber: "Автостопом по веб-платформе"
 </div>
 <p class="text-center">Многопользовательская игра в браузере (webGL) <a href="https://messenger.abeto.co">https://messenger.abeto.co</a></p>
 
+---
+sectionNumber: 2-19
+docNumber: "CODE FEST"
 ---
 
 
@@ -778,8 +788,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: two-column
-sectionNumber: 2-13
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-20
+docNumber: "CODE FEST"
 title: "Web API в действии"
 ---
 
@@ -816,8 +826,8 @@ title: "Web API в действии"
 
 ---
 layout: statement
-sectionNumber: 2-14
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 2-21
+docNumber: "CODE FEST"
 ---
 
 # Это уже полноценная платформа
@@ -839,7 +849,7 @@ docNumber: "Автостопом по веб-платформе"
 ---
 layout: chart-full
 sectionNumber: 3-1
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 title: КАРТА ВЛИЯНИЯ
 figNumber: 3-1
 figLabel: КТО КОНТРИБЬЮТИТ В WEB PLATFORM
@@ -951,7 +961,7 @@ flowchart TD
 ---
 layout: chart-full
 sectionNumber: 3-2
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 title: СЛОЙ 1 — СТАНДАРТЫ
 figNumber: 3-2
 figLabel: ОСНОВНЫЕ ПЛОЩАДКИ СТАНДАРТИЗАЦИИ
@@ -986,7 +996,7 @@ WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W
 ---
 layout: chart-full
 sectionNumber: 3-3
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 title: СЛОЙ 2 — W3C И ИНКУБАЦИЯ
 figNumber: 3-3
 figLabel: ВНУТРЕННЯЯ СТРУКТУРА W3C
@@ -1051,7 +1061,7 @@ WICG — инкубатор новых веб-идей; внутри W3C мно�
 ---
 transition: slide-left
 sectionNumber: 3-4
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/pepe.png">
@@ -1059,7 +1069,7 @@ docNumber: "Автостопом по веб-платформе"
 ---
 layout: two-column
 sectionNumber: 3-5
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 title: История HTML как стандарта
 transition: fade
 ---
@@ -1086,7 +1096,7 @@ transition: fade
 ---
 layout: statement
 sectionNumber: 3-6
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 ---
 
 # Спецификации
@@ -1094,7 +1104,7 @@ docNumber: "Автостопом по веб-платформе"
 ---
 layout: statement
 sectionNumber: 3-6
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 ---
 
 Кто из вас читал спецификации по JS/HTML/CSS?
@@ -1108,7 +1118,7 @@ docNumber: "Автостопом по веб-платформе"
 ---
 layout: two-column
 sectionNumber: 3-7
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
 title: История HTML как стандарта
 transition: fade
 ---
@@ -1134,29 +1144,29 @@ transition: fade
 </template>
 
 ---
-sectionNumber: 3-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-8
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/html_spec_1.png">
 
 ---
-sectionNumber: 3-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-9
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/html_spec_2.png">
 
 ---
-sectionNumber: 3-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-10
+docNumber: "CODE FEST"
 ---
 
 <img src="./img/html_spec_3.png">
 
 ---
-sectionNumber: 3-8
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-11
+docNumber: "CODE FEST"
 ---
 
 ## HTML Living Standard (Last Updated 11 May 2026)
@@ -1173,8 +1183,8 @@ docNumber: "Автостопом по веб-платформе"
 </v-clicks>
 
 ---
-sectionNumber: 3-9
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-12
+docNumber: "CODE FEST"
 ---
 
 ## Раскол CSS
@@ -1227,8 +1237,8 @@ flowchart TD
 
 ---
 layout: two-column
-sectionNumber: 3-10
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-13
+docNumber: "CODE FEST"
 title: TC39 и proposal-driven JavaScript
 ---
 
@@ -1252,23 +1262,23 @@ title: TC39 и proposal-driven JavaScript
 
 ---
 layout: statement
-sectionNumber: 3-11
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-14
+docNumber: "CODE FEST"
 ---
 Все спецификации пришли к философии микрорелизов
 
 ---
 layout: statement
-sectionNumber: 3-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-15
+docNumber: "CODE FEST"
 ---
 
 Браузерные войны
 
 ---
 layout: two-column
-sectionNumber: 3-12
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-16
+docNumber: "CODE FEST"
 ---
 <template v-slot:left>
 
@@ -1284,8 +1294,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: image-top
-sectionNumber: 3-13
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-17
+docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
@@ -1303,16 +1313,16 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 3-14
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-18
+docNumber: "CODE FEST"
 ---
 
 # Прошло **32** года
 
 ---
 layout: two-column
-sectionNumber: 3-15
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-19
+docNumber: "CODE FEST"
 ---
 
 <template v-slot:left>
@@ -1333,16 +1343,16 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 3-16
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-20
+docNumber: "CODE FEST"
 ---
 
 # но почему так сложно?
 
 ---
 layout: image-full
-sectionNumber: 3-16
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-21
+docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
@@ -1353,16 +1363,16 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 3-17
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-22
+docNumber: "CODE FEST"
 ---
 
 # Для чего создавался веб?
 
 ---
 layout: image-full
-sectionNumber: 3-17
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 3-23
+docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
@@ -1371,6 +1381,8 @@ docNumber: "Автостопом по веб-платформе"
 
 </template>
 
+---
+sectionNumber: 3-24
 ---
 
 ### Принципы развития веб-платформы
@@ -1403,9 +1415,19 @@ docNumber: "Автостопом по веб-платформе"
 </template>
 
 ---
-layout: two-column
+layout: statement
 sectionNumber: 4-1
-docNumber: "Автостопом по веб-платформе"
+docNumber: "CODE FEST"
+---
+
+## web MCP
+
+### (не путать с MCP)
+
+---
+layout: two-column
+sectionNumber: 4-2
+docNumber: "CODE FEST"
 title: WebMCP
 ---
 
@@ -1443,9 +1465,17 @@ title: WebMCP
 </template>
 
 ---
+layout: statement
+sectionNumber: 4-3
+docNumber: "CODE FEST"
+---
+
+## A2UI
+
+---
 layout: image-full
-sectionNumber: 4-2
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 4-4
+docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
@@ -1454,16 +1484,32 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 4-3
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 4-5
+docNumber: "CODE FEST"
 ---
 
 JSON — как описание интерфейса
 
 ---
+sectionNumber: 4-6
+---
+
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
+<div style="flex-grow: 1; width: 40%">
+<img src="./img/msk_vue.jpg" class="rounded-xl shadow-lg" style="height: 250px" />
+<a href="https://youtu.be/2btBC99seK4?si=jtrum7BTqGnK_E-K">Запись</a>
+</div>
+
+<div style="flex-grow: 1; width: 40%">
+<img src="./img/holy.png" class="rounded-xl shadow-lg" style="height: 250px"  />
+<a href="https://holyjs.ru/archive/2026%20Spring/talks/20009814-ai-driven-ui-how-the-ui-will-look-like-in-the-age-of-agents/" target="_blank" rel="noreferrer">Доклад</a>
+</div>
+</div>
+
+---
 layout: statement
-sectionNumber: 4-4
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 4-7
+docNumber: "CODE FEST"
 ---
 
 # Prompt API
@@ -1480,6 +1526,7 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
+sectionNumber: 4-8
 ---
 
 ## position: **negative**
@@ -1492,16 +1539,30 @@ layout: statement
 
 ---
 layout: image-full
-sectionNumber: 4-5
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 4-9
+docNumber: "CODE FEST"
 ---
 <template v-slot:image>
 <img src="./img/chrome_vs_fire.png"  />
 </template>
 
 ---
-sectionNumber: 4-6
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 4-10
+---
+
+### Совсем кратко
+
+<v-clicks>
+
+- **WebMCP** — сайт становится удобным для AI-агента
+- **A2UI** — интерфейс можно генерировать динамически под задачу на основе json
+- **Prompt API** — возможность вызова модели из браузера/js
+
+</v-clicks>
+
+---
+sectionNumber: 4-11
+docNumber: "CODE FEST"
 ---
 
 ### Выводы
@@ -1519,16 +1580,16 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
-sectionNumber: 4-7
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 4-12
+docNumber: "CODE FEST"
 ---
 
 ## Послесловие
 
 ---
 layout: end
-sectionNumber: 4-8
-docNumber: "Автостопом по веб-платформе"
+sectionNumber: 5
+docNumber: "CODE FEST"
 classification: CODEFEST
 unit: HQ, DEPT OF THE PRESENTATION
 photo: ./img/qr.png
