@@ -678,7 +678,20 @@ layout: statement
 
 ---
 
-(Здесь будет гифка с 3д структурой антитела на webGL в браузере)
+
+<div style="width: 100%; border-radius: 12px; overflow: hidden;">
+  <video
+    src="./mov/doom.mov"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls={false}
+    style="width: 100%; height: auto; display: block;"
+  ></video>
+</div>
+<p class="text-center">DOOM на CSS и JS <a href="https://cssdoom.wtf/">https://cssdoom.wtf/</a></p>
+
 
 ---
 layout: two-column
@@ -1251,6 +1264,58 @@ docNumber: "Автостопом по веб-платформе"
 </template>
 
 ---
+layout: two-column
+title: WebMCP
+---
+
+### WebMCP (не путать просто с MCP)
+
+<template v-slot:left>
+
+#### без WebMCP
+
+<v-clicks>
+
+- Робот/агент идет на сайт
+- парсит его
+- протыкивает все кнопки и добивается результата "стучась в каждую дверь"
+-
+- ... хорошо если еще верстка семантическая
+
+</v-clicks>
+
+</template>
+
+<template v-slot:right>
+
+#### WebMCP
+
+<v-clicks>
+
+- Мы описываем декларативно/императивно агенту как пользоваться сайтом
+- Убираем хрупкую автоматизацию кликов
+- AI — как новый "потребитель" веб-интерфейсов
+- экономия токенов (профит)
+
+</v-clicks>
+
+</template>
+
+---
+layout: image-full
+---
+
+<template v-slot:image>
+<img src="./img/A2UI.jpg"  />
+</template>
+
+---
+layout: statement
+---
+
+JSON — как описание интерфейса
+
+---
 
 # Prompt API
 
@@ -1263,13 +1328,6 @@ docNumber: "Автостопом по веб-платформе"
 - можно использовать **только** Gemini Nano
 
 </v-clicks>
-
----
-layout: image-full
----
-<template v-slot:image>
-<img src="./img/prompt.png"  />
-</template>
 
 ---
 layout: statement
@@ -1292,18 +1350,11 @@ layout: image-full
 
 ---
 
-#### webMCP
-
-
-#### A2UI
-
----
-
 ### Выводы
 
 <v-clicks>
 
-- веб-платформа — это живой организм, **быстро** реагирующий на развитие технологий и потребности пользователей
+- веб-платформа — это **зеркало**. Отражает то, как мы хотим жить, работать и взаимодействовать с интернетом.
 - веб платформа — это самое большое **легаси** интернета
 - в веб-платформе много хаоса — зоопарк комитетов и технологий
 - нормально **договариваться** браузеры и комитеты начали только лет **7 назад** (условно)
@@ -1311,6 +1362,12 @@ layout: image-full
 - Но эта система существует более **36 лет** и развивается
 
 </v-clicks>
+
+---
+layout: statement
+---
+
+## Послесловие
 
 ---
 layout: end
