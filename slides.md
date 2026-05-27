@@ -2,8 +2,6 @@
 theme: slidev-theme-field-manual
 highlighter: shiki
 lineNumbers: false
-#colorSchema: dark
-layout: center
 style: |
   @import url('./styles/index.css');
 
@@ -12,26 +10,24 @@ aspectRatio: 16/9
 # real width of the canvas, unit in px
 canvasWidth: 960
 
-info: |
-  Автостопом по веб-платформе
-  Мария Кондаурова, BIOCAD
-
-# Theme-specific props
+layout: cover
+title: Автостопом по веб-платформе
+author: Мария Кондаурова, BIOCAD
 docNumber: "Автостопом по веб-платформе"
 date: 2026
-unit: CodeFest ’16
-classification: UNCLASSIFIED
+unit: CodeFest '16
+classification: CODEFEST
 ---
 
 # Автостопом по веб-платформе
 
-<div style="display: flex; flex-direction: row; align-items:center; margin-top: 2rem">
-  <img src="./img/me.jpg" w-30 rounded-full border-5 border-white />
-  <div ml-4 style="display: flex; flex-direction: column; align-items: start">
-    <p>Мария Кондаурова</p>
-    <p style="color: #44b882">BIOCAD</p>
-  </div>
-</div>
+<template v-slot:subtitle>
+Мария Кондаурова · BIOCAD
+</template>
+
+<template v-slot:image>
+<img src="./img/me.jpg" w-30 rounded-full border-5 border-white />
+</template>
 
 ---
 layout: two-column
