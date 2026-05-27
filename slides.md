@@ -32,6 +32,8 @@ classification: CODEFEST
 ---
 layout: two-column
 title: Обо мне
+sectionNumber: 0-1
+docNumber: "Автостопом по веб-платформе"
 transition: fade
 ---
 
@@ -64,6 +66,9 @@ docNumber: "Автостопом по веб-платформе"
 </template>
 
 ---
+sectionNumber: 1-1
+docNumber: "Автостопом по веб-платформе"
+---
 
 <img src="./img/web.png" width="300" style="margin: 0 auto" />
 
@@ -71,11 +76,15 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: statement
+sectionNumber: 1-2
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Но с чего всё начиналось?
 ---
 layout: image-full
+sectionNumber: 1-2
+docNumber: "Автостопом по веб-платформе"
 ---
 <template v-slot:image>
 <img src="./img/first_comp.png"  />
@@ -85,6 +94,8 @@ layout: image-full
 
 ---
 title: ENIAC
+sectionNumber: 1-3
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## ENIAC: фан-факты
@@ -99,12 +110,17 @@ title: ENIAC
 
 ---
 layout: image-full
+sectionNumber: 1-4
+docNumber: "Автостопом по веб-платформе"
 ---
 <template v-slot:image>
 <img src="./img/actual_comp.png"/>
 </template>
 
 # Современный компьютер
+---
+sectionNumber: 1-4
+docNumber: "Автостопом по веб-платформе"
 ---
 
 | Параметр            | ENIAC (1946)                                | iPhone 17 Pro (2025)                      |
@@ -115,12 +131,16 @@ layout: image-full
 
 ---
 layout: statement
+sectionNumber: 1-5
+docNumber: "Автостопом по веб-платформе"
 ---
 ## World Wide Web
 ---
 layout: image-right
+sectionNumber: 1-5
+docNumber: "Автостопом по веб-платформе"
 figNumber: 1-1
-figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
+figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ---
 
 # Тим Бернерс-Ли
@@ -138,12 +158,16 @@ figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
 
 ---
 layout: statement
+sectionNumber: 1-6
+docNumber: "Автостопом по веб-платформе"
 ---
 ## Изначальная идея веба как **гипертекстовой системы** для обмена знаниями
 ---
 layout: image-right
-figNumber: 1-1
-figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
+sectionNumber: 1-6
+docNumber: "Автостопом по веб-платформе"
+figNumber: 1-2
+figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 ---
 
 ## Эра «Невинного» веба
@@ -161,6 +185,9 @@ figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
 </template>
 
 ---
+sectionNumber: 1-7
+docNumber: "Автостопом по веб-платформе"
+---
 
 <img src="./img/mac.png" height="80%"/>
 
@@ -168,6 +195,8 @@ figLabel: BRIEFING ROOM — STANDARD CONFIGURATION
 
 ---
 layout: statement
+sectionNumber: 1-7
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Люди стали генерировать контент и самовыражаться
@@ -180,6 +209,8 @@ layout: statement
 
 ---
 layout: image-full
+sectionNumber: 1-8
+docNumber: "Автостопом по веб-платформе"
 ---
 <template v-slot:image>
 <img src="./img/jam.png"  />
@@ -189,6 +220,8 @@ layout: image-full
 
 ---
 layout: image-full
+sectionNumber: 1-8
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <template v-slot:image>
@@ -199,6 +232,8 @@ layout: image-full
 
 ---
 layout: statement
+sectionNumber: 1-9
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Интернет взрослеет
@@ -207,6 +242,8 @@ layout: statement
 
 ---
 layout: statement
+sectionNumber: 1-9
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Веб перестаёт быть просто страницами и становится средой для жизни
@@ -219,6 +256,8 @@ layout: statement
 
 ---
 layout: section
+sectionNumber: '2'
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Глава 2
@@ -231,6 +270,8 @@ layout: section
 
 ---
 layout: statement
+sectionNumber: 2-1
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ### "Фронтенд развивается скачкообразно"
@@ -243,6 +284,9 @@ layout: image-full
 <img src="./img/./since.png">
 </template>
 
+---
+sectionNumber: 2-1
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Скачок 1:  Статичный HTML → Динамический веб
@@ -276,6 +320,9 @@ layout: image-full
   </div>
 </div>
 ---
+sectionNumber: 2-2
+docNumber: "Автостопом по веб-платформе"
+---
 
 ## AJAX дал скорость,<br>но создал свои проблемы
 
@@ -294,6 +341,9 @@ layout: image-full
 </v-click>
 
 
+---
+sectionNumber: 2-3
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Скачок 2: Страницы → SPA и фреймворки
@@ -333,6 +383,8 @@ layout: image-full
 
 ---
 layout: default
+sectionNumber: 2-4
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Но телефоны не стояли на месте
@@ -403,6 +455,9 @@ layout: default
 </div>
 
 ---
+sectionNumber: 2-5
+docNumber: "Автостопом по веб-платформе"
+---
 
 ## С мобильностью пришли новые вызовы
 
@@ -418,6 +473,8 @@ layout: default
 ---
 
 ## Скачок 3: Десктоп → Mobile-first
+sectionNumber: 2-6
+docNumber: "Автостопом по веб-платформе"
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -451,6 +508,9 @@ layout: default
 </div>
 
 ---
+sectionNumber: 2-7
+docNumber: "Автостопом по веб-платформе"
+---
 
 [//]: # (TODO: добавить про развитие мобильных приложений &#40;бизнес хочет приложение для всего, есть стереотип что приложение стабильнее и тд)
 
@@ -465,6 +525,9 @@ layout: default
 
 </v-clicks>
 
+---
+sectionNumber: 2-8
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Скачок 4: Веб → PWA
@@ -509,6 +572,9 @@ Service Worker = прокси между сетью и кэшем
 </v-click>
 
 ---
+sectionNumber: 2-9
+docNumber: "Автостопом по веб-платформе"
+---
 
 ## ...но вылезли рендерные боли (опять)
 
@@ -521,6 +587,9 @@ Service Worker = прокси между сетью и кэшем
 
 </v-clicks>
 
+---
+sectionNumber: 2-10
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Скачок 5: Клиент/Сервер → Server Components
@@ -566,8 +635,9 @@ Service Worker = прокси между сетью и кэшем
 
 ---
 layout: timeline
-title: ЭВОЛЮЦИЯ ВЕБА — ХРОНОЛОГИЯ
+sectionNumber: 2-11
 docNumber: "Автостопом по веб-платформе"
+title: ЭВОЛЮЦИЯ ВЕБА — ХРОНОЛОГИЯ
 direction: horizontal
 ---
 
@@ -626,22 +696,36 @@ direction: horizontal
 
 ---
 layout: statement
+sectionNumber: 2-12
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Всего за 20 лет
 
 ---
+sectionNumber: 2-12
+docNumber: "Автостопом по веб-платформе"
+---
 
 <img src="./img/vk.png" />
 
+---
+sectionNumber: 2-12
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <img src="./img/gonki.png" />
 
 ---
+sectionNumber: 2-12
+docNumber: "Автостопом по веб-платформе"
+---
 
 <img src="./img/zaycev.png" />
 
+---
+sectionNumber: 2-12
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
@@ -657,6 +741,9 @@ layout: statement
 </div>
 <p class="text-center">3D музей в браузере &#40;React и Three.js) <a href="https://museum.samokat.ru">https://museum.samokat.ru</a></p>
 
+---
+sectionNumber: 2-12
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
@@ -691,6 +778,8 @@ layout: statement
 
 ---
 layout: two-column
+sectionNumber: 2-13
+docNumber: "Автостопом по веб-платформе"
 title: "Web API в действии"
 ---
 
@@ -727,12 +816,16 @@ title: "Web API в действии"
 
 ---
 layout: statement
+sectionNumber: 2-14
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Это уже полноценная платформа
 
 ---
 layout: section
+sectionNumber: '3'
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Глава 3
@@ -745,6 +838,8 @@ layout: section
 
 ---
 layout: chart-full
+sectionNumber: 3-1
+docNumber: "Автостопом по веб-платформе"
 title: КАРТА ВЛИЯНИЯ
 figNumber: 3-1
 figLabel: КТО КОНТРИБЬЮТИТ В WEB PLATFORM
@@ -855,6 +950,8 @@ flowchart TD
 
 ---
 layout: chart-full
+sectionNumber: 3-2
+docNumber: "Автостопом по веб-платформе"
 title: СЛОЙ 1 — СТАНДАРТЫ
 figNumber: 3-2
 figLabel: ОСНОВНЫЕ ПЛОЩАДКИ СТАНДАРТИЗАЦИИ
@@ -888,6 +985,8 @@ WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W
 
 ---
 layout: chart-full
+sectionNumber: 3-3
+docNumber: "Автостопом по веб-платформе"
 title: СЛОЙ 2 — W3C И ИНКУБАЦИЯ
 figNumber: 3-3
 figLabel: ВНУТРЕННЯЯ СТРУКТУРА W3C
@@ -951,15 +1050,17 @@ WICG — инкубатор новых веб-идей; внутри W3C мно�
 
 ---
 transition: slide-left
+sectionNumber: 3-4
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <img src="./img/pepe.png">
 
 ---
 layout: two-column
+sectionNumber: 3-5
+docNumber: "Автостопом по веб-платформе"
 title: История HTML как стандарта
-sectionNumber: "2-5"
-docNumber: FM 00-0
 transition: fade
 ---
 
@@ -984,12 +1085,16 @@ transition: fade
 
 ---
 layout: statement
+sectionNumber: 3-6
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Спецификации
 
 ---
 layout: statement
+sectionNumber: 3-6
+docNumber: "Автостопом по веб-платформе"
 ---
 
 Кто из вас читал спецификации по JS/HTML/CSS?
@@ -1002,9 +1107,9 @@ layout: statement
 
 ---
 layout: two-column
+sectionNumber: 3-7
+docNumber: "Автостопом по веб-платформе"
 title: История HTML как стандарта
-sectionNumber: "2-5"
-docNumber: FM 00-0
 transition: fade
 ---
 
@@ -1029,17 +1134,29 @@ transition: fade
 </template>
 
 ---
+sectionNumber: 3-7
+docNumber: "Автостопом по веб-платформе"
+---
 
 <img src="./img/html_spec_1.png">
 
+---
+sectionNumber: 3-7
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <img src="./img/html_spec_2.png">
 
 ---
+sectionNumber: 3-7
+docNumber: "Автостопом по веб-платформе"
+---
 
 <img src="./img/html_spec_3.png">
 
+---
+sectionNumber: 3-8
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## HTML Living Standard (Last Updated 11 May 2026)
@@ -1055,6 +1172,9 @@ transition: fade
 
 </v-clicks>
 
+---
+sectionNumber: 3-9
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Раскол CSS
@@ -1107,6 +1227,8 @@ flowchart TD
 
 ---
 layout: two-column
+sectionNumber: 3-10
+docNumber: "Автостопом по веб-платформе"
 title: TC39 и proposal-driven JavaScript
 ---
 
@@ -1130,17 +1252,23 @@ title: TC39 и proposal-driven JavaScript
 
 ---
 layout: statement
+sectionNumber: 3-11
+docNumber: "Автостопом по веб-платформе"
 ---
 Все спецификации пришли к философии микрорелизов
 
 ---
 layout: statement
+sectionNumber: 3-12
+docNumber: "Автостопом по веб-платформе"
 ---
 
 Браузерные войны
 
 ---
 layout: two-column
+sectionNumber: 3-12
+docNumber: "Автостопом по веб-платформе"
 ---
 <template v-slot:left>
 
@@ -1156,6 +1284,8 @@ layout: two-column
 
 ---
 layout: image-top
+sectionNumber: 3-13
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <template v-slot:image>
@@ -1173,12 +1303,16 @@ layout: image-top
 
 ---
 layout: statement
+sectionNumber: 3-14
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Прошло **32** года
 
 ---
 layout: two-column
+sectionNumber: 3-15
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <template v-slot:left>
@@ -1199,12 +1333,16 @@ layout: two-column
 
 ---
 layout: statement
+sectionNumber: 3-16
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # но почему так сложно?
 
 ---
 layout: image-full
+sectionNumber: 3-16
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <template v-slot:image>
@@ -1215,12 +1353,16 @@ layout: image-full
 
 ---
 layout: statement
+sectionNumber: 3-17
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Для чего создавался веб?
 
 ---
 layout: image-full
+sectionNumber: 3-17
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <template v-slot:image>
@@ -1246,6 +1388,7 @@ layout: image-full
 
 ---
 layout: section
+sectionNumber: '4'
 docNumber: "Автостопом по веб-платформе"
 ---
 
@@ -1261,6 +1404,8 @@ docNumber: "Автостопом по веб-платформе"
 
 ---
 layout: two-column
+sectionNumber: 4-1
+docNumber: "Автостопом по веб-платформе"
 title: WebMCP
 ---
 
@@ -1299,6 +1444,8 @@ title: WebMCP
 
 ---
 layout: image-full
+sectionNumber: 4-2
+docNumber: "Автостопом по веб-платформе"
 ---
 
 <template v-slot:image>
@@ -1307,10 +1454,16 @@ layout: image-full
 
 ---
 layout: statement
+sectionNumber: 4-3
+docNumber: "Автостопом по веб-платформе"
 ---
 
 JSON — как описание интерфейса
 
+---
+layout: statement
+sectionNumber: 4-4
+docNumber: "Автостопом по веб-платформе"
 ---
 
 # Prompt API
@@ -1339,11 +1492,16 @@ layout: statement
 
 ---
 layout: image-full
+sectionNumber: 4-5
+docNumber: "Автостопом по веб-платформе"
 ---
 <template v-slot:image>
 <img src="./img/chrome_vs_fire.png"  />
 </template>
 
+---
+sectionNumber: 4-6
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ### Выводы
@@ -1361,14 +1519,17 @@ layout: image-full
 
 ---
 layout: statement
+sectionNumber: 4-7
+docNumber: "Автостопом по веб-платформе"
 ---
 
 ## Послесловие
 
 ---
 layout: end
-docNumber: FM 24-SLIDE
-classification: FOR TRAINING USE ONLY
+sectionNumber: 4-8
+docNumber: "Автостопом по веб-платформе"
+classification: CODEFEST
 unit: HQ, DEPT OF THE PRESENTATION
 photo: ./img/qr.png
 
