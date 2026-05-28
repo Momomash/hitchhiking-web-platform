@@ -26,7 +26,7 @@ classification: CODEFEST
 </template>
 
 <template v-slot:image>
-<img src="./img/me.jpg" w-30 rounded-full border-5 border-white />
+<img src="./assets/me.jpg" w-30 rounded-full border-5 border-white />
 </template>
 
 ---
@@ -50,7 +50,7 @@ transition: fade
 
 ::right::
 
-  <img src="./img/llama.png"/>
+  <img src="./assets/llama.png"/>
 
 ---
 layout: section
@@ -71,7 +71,7 @@ docNumber: "CODE FEST"
 
 ---
 
-<img src="./img/web.png" width="300" style="margin: 0 auto" />
+<img src="./assets/web.png" width="300" style="margin: 0 auto" />
 
 <p v-click style="margin: 0 auto">Веб-платформа = Браузер + API + стандарты + тесты + комитеты</p>
 
@@ -88,7 +88,7 @@ sectionNumber: 1-2
 docNumber: "CODE FEST"
 ---
 <template v-slot:image>
-<img src="./img/first_comp.png"  />
+<img src="./assets/first_comp.png"  />
 </template>
 
 # Первый в мире компьютер Eniac (1945)
@@ -115,7 +115,7 @@ sectionNumber: 1-5
 docNumber: "CODE FEST"
 ---
 <template v-slot:image>
-<img src="./img/actual_comp.png"/>
+<img src="./assets/actual_comp.png"/>
 </template>
 
 # Современный компьютер
@@ -149,7 +149,7 @@ figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ## Создал первый браузер в **1990 году**
 
 <template v-slot:image>
-<img src="./img/tim.png"  />
+<img src="./assets/tim.png"  />
 </template>
 
 ---
@@ -157,7 +157,7 @@ docNumber: "CODE FEST"
 sectionNumber: 1-9
 ---
 
-<img src="./img/first_brows.png" height="500"/>
+<img src="./assets/first_brows.png" height="500"/>
 ## Первый в мире сайт
 
 ---
@@ -185,7 +185,7 @@ figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 </v-clicks>
 
 <template v-slot:image>
-<img src="./img/tablelayout.png"  />
+<img src="./assets/tablelayout.png"  />
 </template>
 
 ---
@@ -193,7 +193,7 @@ sectionNumber: 1-12
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/mac.png" height="80%"/>
+<img src="./assets/mac.png" height="80%"/>
 
 ## ПК —> Веб стал доступен каждому
 
@@ -210,7 +210,7 @@ sectionNumber: 1-14
 ---
 
 <SlidevVideo autoplay>
-  <source src="./mov/cameron1.mov"  />
+  <source src="./assets/mov/cameron1.mov"  />
 </SlidevVideo>
 
 ---
@@ -219,7 +219,7 @@ sectionNumber: 1-15
 docNumber: "CODE FEST"
 ---
 <template v-slot:image>
-<img src="./img/jam.png"  />
+<img src="./assets/jam.png"  />
 </template>
 
 # Сайт — как пиар компания фильма: Space Jam(1996)
@@ -231,7 +231,7 @@ docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
-<img src="./img/one_million.png"/>
+<img src="./assets/one_million.png"/>
 </template>
 
 # Сайт — как заработок: The million dollars homepage (2005)
@@ -287,7 +287,7 @@ layout: image-full
 ---
 
 <template v-slot:image>
-<img src="./img/./since.png">
+<img src="./assets/./since.png">
 </template>
 
 ---
@@ -403,22 +403,22 @@ docNumber: "CODE FEST"
     </h2>
     <div class="grid grid-cols-2 gap-1">
       <img style="width: 100px; height: 100px"
-        src="./img/nokia.png"
+        src="./assets/nokia.png"
         alt="Nokia 3310"
         class="shadow-lg rounded-2xl"
       />
       <img
-        src="./img/moto.png" style="width: 100px; height: 100px"
+        src="./assets/moto.png" style="width: 100px; height: 100px"
         alt="Motorola Razr"
         class="shadow-lg rounded-2xl"
       />
       <img
-        src="./img/sams.png" style="width: 100px; height: 100px"
+        src="./assets/sams.png" style="width: 100px; height: 100px"
         alt="Samsung clamshell phone"
         class="shadow-lg rounded-2xl"
       />
       <img
-        src="./img/burb.png" style="width: 100px; height: 100px"
+        src="./assets/burb.png" style="width: 100px; height: 100px"
         alt="BlackBerry phone"
         class="shadow-lg rounded-2xl"
       />
@@ -434,22 +434,22 @@ docNumber: "CODE FEST"
     </h2>
     <div class="grid grid-cols-2 gap-1">
       <img
-        src="./img/experia.png" style="width: 100px; height: 100px"
+        src="./assets/experia.png" style="width: 100px; height: 100px"
         alt="Sony Ericsson Xperia"
         class="shadow-lg rounded-2xl"
       />
       <img
-        src="./img/iphone.png" style="width: 100px; height: 100px"
+        src="./assets/iphone.png" style="width: 100px; height: 100px"
         alt="iPhone"
         class="shadow-lg rounded-2xl"
       />
       <img
-        src="./img/lg.png" style="width: 100px; height: 100px"
+        src="./assets/lg.png" style="width: 100px; height: 100px"
         alt="LG Android phone"
         class="shadow-lg rounded-2xl"
       />
       <img
-        src="./img/galaxy.png" style="width: 100px; height: 100px"
+        src="./assets/galaxy.png" style="width: 100px; height: 100px"
         alt="Samsung Galaxy"
         class="shadow-lg rounded-2xl"
       />
@@ -475,13 +475,10 @@ docNumber: "CODE FEST"
 
 ---
 sectionNumber: 2-7
-
+docNumber: "CODE FEST"
 ---
 
 ## Скачок 3: Десктоп → Mobile-first
-
-sectionNumber: 2-7
-docNumber: "CODE FEST"
 
 <div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
   <div
@@ -714,21 +711,21 @@ sectionNumber: 2-14
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/vk.png" />
+<img src="./assets/vk.png" />
 
 ---
 sectionNumber: 2-15
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/gonki.png" />
+<img src="./assets/gonki.png" />
 
 ---
 sectionNumber: 2-16
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/zaycev.png" />
+<img src="./assets/zaycev.png" />
 
 ---
 sectionNumber: 2-17
@@ -737,7 +734,7 @@ docNumber: "CODE FEST"
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
   <video
-    src="./mov/samokat.mov"
+    src="./assets/mov/samokat.mov"
     autoplay
     muted
     loop
@@ -755,7 +752,7 @@ docNumber: "CODE FEST"
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
   <video
-    src="./mov/messanger.mov"
+    src="./assets/mov/messanger.mov"
     autoplay
     muted
     loop
@@ -774,7 +771,7 @@ docNumber: "CODE FEST"
 
 <div style="width: 100%; border-radius: 12px; overflow: hidden;">
   <video
-    src="./mov/doom.mov"
+    src="./assets/mov/doom.mov"
     autoplay
     muted
     loop
@@ -812,7 +809,7 @@ title: "Web API в действии"
 
 <div style="width: 100%;">
   <video
-    src="./mov/mdn.mov"
+    src="./assets/mov/mdn.mov"
     autoplay
     muted
     loop
@@ -1064,7 +1061,7 @@ sectionNumber: 3-4
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/pepe.png">
+<img src="./assets/pepe.png">
 
 ---
 layout: two-column
@@ -1090,7 +1087,7 @@ transition: fade
 </template>
 
 <template v-slot:right>
-<img src="./img/game_of.png">
+<img src="./assets/game_of.png">
 </template>
 
 ---
@@ -1140,7 +1137,7 @@ transition: fade
 </template>
 
 <template v-slot:right>
-<img src="./img/html.png">
+<img src="./assets/html.png">
 </template>
 
 ---
@@ -1148,21 +1145,21 @@ sectionNumber: 3-8
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/html_spec_1.png">
+<img src="./assets/html_spec_1.png">
 
 ---
 sectionNumber: 3-9
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/html_spec_2.png">
+<img src="./assets/html_spec_2.png">
 
 ---
 sectionNumber: 3-10
 docNumber: "CODE FEST"
 ---
 
-<img src="./img/html_spec_3.png">
+<img src="./assets/html_spec_3.png">
 
 ---
 sectionNumber: 3-11
@@ -1171,7 +1168,7 @@ docNumber: "CODE FEST"
 
 ## HTML Living Standard (Last Updated 11 May 2026)
 
-<img v-click src="./img/html_spec.png" class="mb-8">
+<img v-click src="./assets/html_spec.png" class="mb-8">
 
 <v-clicks>
 
@@ -1257,7 +1254,7 @@ title: TC39 и proposal-driven JavaScript
 </template>
 
 <template v-slot:right>
-  <img src="./img/js_logo.png" height="70%" >
+  <img src="./assets/js_logo.png" height="70%" >
 </template>
 
 ---
@@ -1289,7 +1286,7 @@ docNumber: "CODE FEST"
 </template>
 
 <template v-slot:right>
-<img src="./img/war.png">
+<img src="./assets/war.png">
 </template>
 
 ---
@@ -1299,7 +1296,7 @@ docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
-<img src="./img/canI.png" />
+<img src="./assets/canI.png" />
 </template>
 
 <v-clicks>
@@ -1332,13 +1329,13 @@ docNumber: "CODE FEST"
 #### Google, Mozilla, Microsoft, Apple, Bocoup и Igalia — объединились для борьбы с проблемами несовместимости браузеров и стандартизации
 
 <v-click>
-<img src="./img/inter_progress.png">
+<img src="./assets/inter_progress.png">
 </v-click>
 
 </template>
 
 <template v-slot:right>
-<img src="./img/interop.png">
+<img src="./assets/interop.png">
 </template>
 
 ---
@@ -1357,7 +1354,7 @@ docNumber: "CODE FEST"
 
 <template v-slot:image>
 
-<img src="./img/nelzy.png"  />
+<img src="./assets/nelzy.png"  />
 
 </template>
 
@@ -1377,7 +1374,7 @@ docNumber: "CODE FEST"
 
 <template v-slot:image>
 
-<img src="./img/library.png"  />
+<img src="./assets/library.png"  />
 
 </template>
 
@@ -1479,7 +1476,7 @@ docNumber: "CODE FEST"
 ---
 
 <template v-slot:image>
-<img src="./img/A2UI.jpg"  />
+<img src="./assets/A2UI.jpg"  />
 </template>
 
 ---
@@ -1496,12 +1493,12 @@ sectionNumber: 4-6
 
 <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
 <div style="flex-grow: 1; width: 40%">
-<img src="./img/msk_vue.jpg" class="rounded-xl shadow-lg" style="height: 250px" />
+<img src="./assets/msk_vue.jpg" class="rounded-xl shadow-lg" style="height: 250px" />
 <a href="https://youtu.be/2btBC99seK4?si=jtrum7BTqGnK_E-K">Запись</a>
 </div>
 
 <div style="flex-grow: 1; width: 40%">
-<img src="./img/holy.png" class="rounded-xl shadow-lg" style="height: 250px"  />
+<img src="./assets/holy.png" class="rounded-xl shadow-lg" style="height: 250px"  />
 <a href="https://holyjs.ru/archive/2026%20Spring/talks/20009814-ai-driven-ui-how-the-ui-will-look-like-in-the-age-of-agents/" target="_blank" rel="noreferrer">Доклад</a>
 </div>
 </div>
@@ -1543,7 +1540,7 @@ sectionNumber: 4-9
 docNumber: "CODE FEST"
 ---
 <template v-slot:image>
-<img src="./img/chrome_vs_fire.png"  />
+<img src="./assets/chrome_vs_fire.png"  />
 </template>
 
 ---
@@ -1592,7 +1589,7 @@ sectionNumber: 5
 docNumber: "CODE FEST"
 classification: CODEFEST
 unit: HQ, DEPT OF THE PRESENTATION
-photo: ./img/qr.png
+photo: ./assets/qr.png
 
 ---
 
