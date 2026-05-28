@@ -1589,7 +1589,7 @@ sectionNumber: 5
 docNumber: "CODE FEST"
 classification: CODEFEST
 unit: HQ, DEPT OF THE PRESENTATION
-photo: ./assets/qr.png
+photo: /qr.png
 
 ---
 
