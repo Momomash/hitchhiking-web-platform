@@ -1590,8 +1590,6 @@ docNumber: "CODE FEST"
 classification: CODEFEST
 unit: HQ, DEPT OF THE PRESENTATION
 
-[//]: # (photo: /qr.png)
-
 ---
 
 <template v-slot:title>Спасибо</template>
