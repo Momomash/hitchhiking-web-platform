@@ -1589,8 +1589,13 @@ sectionNumber: 5
 docNumber: "CODE FEST"
 classification: CODEFEST
 unit: HQ, DEPT OF THE PRESENTATION
-photo: /qr.png
+
+[//]: # (photo: /qr.png)
 
 ---
 
 <template v-slot:title>Спасибо</template>
+<template v-slot:contact>
+<img src='./assets/qr.png' width='200' height='200'>
+</template>
+
