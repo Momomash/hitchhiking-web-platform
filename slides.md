@@ -1480,6 +1480,58 @@ docNumber: "CODE FEST"
 </template>
 
 ---
+layout: two-column
+title: A2UI как JSON-интерфейс
+transition: fade
+---
+
+<template v-slot:left>
+
+### Идея
+
+- A2UI описывает UI **через JSON**, а не через JavaScript-код.
+- Агент отдаёт структуру, данные и действия, а клиент рендерит это своими компонентами.
+- Между агентом и клиентом передаётся **данные**, а не код.
+
+</template>
+
+<template v-slot:right>
+
+```json
+{
+  "surfaceId": "booking",
+  "components": [
+    {
+      "id": "title",
+      "component": "Text",
+      "text": "Найдите билеты мечты",
+      "variant": "h1"
+    },
+    {
+      "id": "datetime",
+      "component": "DateTimeInput",
+      "value": {
+        "path": "/booking/date"
+      },
+      "enableDate": true
+    },
+    {
+      "id": "submit-btn",
+      "component": "Button",
+      "variant": "primary",
+      "action": {
+        "event": {
+          "name": "Искать"
+        }
+      }
+    }
+  ]
+}
+```
+
+</template>
+
+---
 layout: statement
 sectionNumber: 4-5
 docNumber: "CODE FEST"
@@ -1556,6 +1608,12 @@ sectionNumber: 4-10
 - **Prompt API** — возможность вызова модели из браузера/js
 
 </v-clicks>
+
+---
+layout: statement
+---
+
+### Мы не хотели семантически верстать и писать документацию для кожаных мешков<v-click>, но хотим это делать для агентов </v-click>
 
 ---
 sectionNumber: 4-11
