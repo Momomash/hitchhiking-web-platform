@@ -1,5 +1,5 @@
 ---
-theme: slidev-theme-field-manual
+theme: ./theme
 highlighter: shiki
 lineNumbers: false
 style: |
@@ -195,11 +195,25 @@ figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ---
 docNumber: "HOLYJS AUTUMN 2026"
 sectionNumber: 1-4
+title: Первый в мире сайт
+status: "1 document · 0 images"
 ---
 
-<img src="./assets/first_brows.png" height="500"/>
+<BrowserFrame
+  url="http://info.cern.ch/hypertext/WWW/TheProject.html"
+  tab="The World Wide Web project"
+  year="1991"
+  status="Done"
+  class="h-full"
+>
+  <img src="./assets/first_brows.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
-## Первый в мире сайт
+<!--
+Картинка теперь внутри окна браузера: зал видит не скриншот из статьи,
+а сам первый сайт — открытый. Год в тулбаре даёт масштаб без слов.
+-->
+
 
 ---
 layout: statement
@@ -372,9 +386,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## Захотели взаимодействовать, а не читать
-### Скачок 1: Статичный HTML → Динамический веб
+<RequirementCard year="2004" demand="Взаимодействовать, а не читать"
+  response="AJAX / XMLHttpRequest" effect="Состояние — вручную, спагетти-код" />
 
-<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
   <div
     v-click
     class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
@@ -429,9 +444,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## Захотели богатый UI и скорость разработки
-### Скачок 2: Страницы → SPA и фреймворки
+<RequirementCard year="2010" demand="Богатый UI и скорость разработки"
+  response="SPA: Angular, React, Vue" effect="Тяжёлый клиент, SEO ломается" />
 
-<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
   <div
     v-click
     class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
@@ -556,9 +572,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## Мир стал мобильным
-### Скачок 3: Десктоп → Mobile-first
+<RequirementCard year="2012" demand="Мир стал мобильным"
+  response="Mobile-first, адаптивность 320px–4K" effect="Хочется нативности" />
 
-<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
   <div
     v-click
     class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
@@ -611,9 +628,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## Захотели возможности приложений
-### Скачок 4: Веб → PWA
+<RequirementCard year="2015" demand="То же, что умеют нативные приложения"
+  response="PWA: Service Workers, offline, push" effect="Рендерные боли — опять" />
 
-<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
   <div
     v-click
     class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
@@ -674,9 +692,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## Нужны интерактив + скорость + SEO
-### Скачок 5: Клиент/Сервер → Server Components
+<RequirementCard year="2020" demand="Интерактив + скорость + SEO сразу"
+  response="React Server Components" effect="Границы сервер/клиент размыты" />
 
-<div class="grid grid-cols-2 gap-8 mt-10 items-stretch">
+<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
   <div
     v-click
     class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
@@ -1108,6 +1127,9 @@ title: Дизайн = документ
 layout: statement
 sectionNumber: 3-5
 docNumber: "HOLYJS AUTUMN 2026"
+title: Табличная вёрстка не умерла
+tone: legacy
+status: "RENDERER: MICROSOFT WORD"
 ---
 
 ## Табличная вёрстка не умерла
@@ -1118,7 +1140,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 #### Outlook с 2007-го рендерит письма движком **Microsoft Word** — поэтому email-вёрстка до сих пор на вложенных `<table>` и inline-стилях
 
-### Это первый legacy-артефакт в докладе: слой, который нельзя выкинуть, потому что на нём кто-то живёт
+<div class="flex items-center justify-center gap-6">
+  <LegacySticker>Deprecated but supported</LegacySticker>
+  <p class="m-0 text-left">Первый legacy-артефакт доклада: слой, который нельзя выкинуть, потому что на нём кто-то живёт</p>
+</div>
 
 </v-clicks>
 
@@ -1371,8 +1396,8 @@ flowchart TD
     S2 --> N
     S3 --> N
 
-    style D fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style N fill:#16a34a,stroke:#15803d,color:#fff
+    style D fill:#1f5da8,stroke:#17436f,color:#fff
+    style N fill:#177a42,stroke:#115c32,color:#fff
 ```
 
 </v-click>
@@ -1698,13 +1723,34 @@ docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 layout: statement
 sectionNumber: 4-1
 docNumber: "HOLYJS AUTUMN 2026"
+title: Global architecture review
+status: "MERGE: PERMISSION DENIED"
 ---
 
 ## В обычном продукте вы собираете architecture review
 
 <v-click>
 
-### В вебе его проводят Chrome, Safari, Firefox, W3C, WHATWG, TC39, IETF, разработчики и пользователи — и ни у кого нет права нажать **Merge**
+<WarningDialog
+  title="GLOBAL ARCHITECTURE REVIEW"
+  tone="platform"
+  icon="⚙"
+  ok="Merge"
+  :ok-disabled="true"
+  cancel="Обсуждать ещё 10 лет"
+  class="text-left"
+>
+
+Participants: Chrome, Safari, Firefox, W3C, WHATWG, TC39, IETF, разработчики, пользователи<br>
+Affected users: **billions** · Rollback: **unavailable**
+
+</WarningDialog>
+
+</v-click>
+
+<v-click>
+
+### Ни у кого нет права нажать **Merge**
 
 </v-click>
 
@@ -1806,11 +1852,11 @@ flowchart TD
   WINTER --> CF
   WINTER --> BUN
 
-  classDef main fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
-  classDef standards fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
-  classDef impl fill:#f5f0e0,stroke:#7a7a45,color:#1a1a14;
-  classDef tests fill:#c8b87a,stroke:#8a7a50,color:#1a1a14;
-  classDef eco fill:#e0d8be,stroke:#b05e10,color:#1a1a14;
+  classDef main fill:#1f5da8,stroke:#17436f,color:#fff,stroke-width:2px;
+  classDef standards fill:#e8edf2,stroke:#7d8b99,color:#17212b;
+  classDef impl fill:#f7f4ed,stroke:#98a8b6,color:#17212b;
+  classDef tests fill:#d8e6f4,stroke:#5d84ad,color:#17212b;
+  classDef eco fill:#f2e8d8,stroke:#c57712,color:#17212b;
 
   class WEB main;
   class W3C,WHATWG,TC39,IETF,KHR,WINTER standards;
@@ -1847,8 +1893,8 @@ flowchart LR
   IETF["IETF"] -->|HTTP, QUIC, Transport| WEB
   WINTER["WinterCG"] -->|server runtimes| WEB
 
-  classDef web fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
-  classDef org fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
+  classDef web fill:#1f5da8,stroke:#17436f,color:#fff,stroke-width:2px;
+  classDef org fill:#e8edf2,stroke:#7d8b99,color:#17212b;
 
   class WEB web;
   class W3C,WHATWG,TC39,IETF,WINTER org;
@@ -1910,9 +1956,9 @@ flowchart TD
   WICG --> DAS
   WICG --> WEBRTCWG
 
-  classDef core fill:#3d4a22,stroke:#bf2020,color:#fff,stroke-width:2px;
-  classDef group fill:#ede8d0,stroke:#8a7a50,color:#1a1a14;
-  classDef incubator fill:#c8b87a,stroke:#b05e10,color:#1a1a14,stroke-width:2px;
+  classDef core fill:#1f5da8,stroke:#17436f,color:#fff,stroke-width:2px;
+  classDef group fill:#e8edf2,stroke:#7d8b99,color:#17212b;
+  classDef incubator fill:#ece5f5,stroke:#7055a8,color:#17212b,stroke-width:2px;
 
   class W3C core;
   class TAG,WEBAPPS,CSSWG,BTT,DAS,WEBRTCWG,APA,WAI,PATWG,MEIG,WASMCG group;
@@ -2104,6 +2150,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 4-17
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
+status: "INTEROPERABILITY: FAILED"
 ---
 
 Браузерные войны
@@ -2112,6 +2160,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: two-column
 sectionNumber: 4-18
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
+status: "INTEROPERABILITY: FAILED"
 ---
 <template v-slot:left>
 
@@ -2129,6 +2179,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: image-top
 sectionNumber: 4-19
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
+status: "FEATURE NOT AVAILABLE"
 ---
 
 <template v-slot:image>
@@ -2347,6 +2399,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: image-full
 sectionNumber: 5-2
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
+status: "REMOVAL STATUS: IMPOSSIBLE"
 ---
 
 <template v-slot:image>
@@ -2364,6 +2418,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 5-3
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
 ---
 
 ## Хотите увидеть, как выглядит legacy, которое нельзя удалить?
@@ -2384,6 +2439,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 sectionNumber: 5-4
 docNumber: "HOLYJS AUTUMN 2026"
 title: Археология User-Agent
+tone: legacy
+status: "COMPATIBILITY MODE ENABLED"
 ---
 
 ## User-Agent: тридцать лет наслоений
@@ -2411,6 +2468,8 @@ Chrome назвался всеми. Каждый следующий врал, п
 layout: statement
 sectionNumber: 5-5
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
+status: "FROZEN SINCE 2013"
 ---
 
 ## А вот что ваш Chrome отправляет сегодня
@@ -2441,6 +2500,8 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 sectionNumber: 5-6
 docNumber: "HOLYJS AUTUMN 2026"
 title: UA починить не смогли
+tone: legacy
+status: "UA REDUCTION 2022-2023"
 ---
 
 ## Починить UA-строку не смогли. Её заморозили.
@@ -2471,6 +2532,8 @@ title: UA починить не смогли
 sectionNumber: 5-7
 docNumber: "HOLYJS AUTUMN 2026"
 title: Браузеры возят патчи под сайты
+tone: legacy
+status: "SITE-SPECIFIC PATCHES LOADED"
 ---
 
 ## Браузеры возят с собой патчи под конкретные сайты
@@ -2499,6 +2562,8 @@ title: Браузеры возят патчи под сайты
 sectionNumber: 5-8
 docNumber: "HOLYJS AUTUMN 2026"
 title: Legacy, записанное в стандарт
+tone: legacy
+status: "COMPATIBILITY EXCEPTION"
 ---
 
 ## И самое красивое: legacy, записанное **в стандарт**
@@ -2515,7 +2580,10 @@ title: Legacy, записанное в стандарт
 
 <v-click>
 
-<p class="text-center pt-4">Устаревание в вебе не удаляют. Его <strong>документируют и поддерживают вечно</strong>.</p>
+<div class="flex items-center justify-center gap-6 pt-4">
+  <LegacySticker>Do not delete</LegacySticker>
+  <p class="m-0">Устаревание в вебе не удаляют. Его <strong>документируют и поддерживают вечно</strong>.</p>
+</div>
 
 </v-click>
 
@@ -2528,15 +2596,26 @@ title: Legacy, записанное в стандарт
 layout: statement
 sectionNumber: 5-9
 docNumber: "HOLYJS AUTUMN 2026"
+title: Space Jam всё ещё открывается
+tone: legacy
+status: "HTTP 200 · 1996"
 ---
 
 ## А ещё Space Jam 1996 года всё ещё открывается
 
 <v-clicks>
 
-### `spacejam.com/1996` — тот же HTML, тот же дизайн, работает в сегодняшнем Chrome
+<BrowserFrame
+  url="https://www.spacejam.com/1996/"
+  tab="Space Jam"
+  year="1996"
+  status="Done — без единой правки"
+  tone="legacy"
+>
+  <img src="./assets/jam.png" class="mx-auto" style="max-height: 190px" />
+</BrowserFrame>
 
-#### Страница, свёрстанная тридцать лет назад под браузер, которого больше нет
+#### Тот же HTML, тот же дизайн — работает в сегодняшнем Chrome. Страница, свёрстанная тридцать лет назад под браузер, которого больше нет.
 
 ### Ни одна другая платформа в мире так не умеет. В этом одновременно её сила и её приговор.
 
@@ -2573,6 +2652,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 5-12
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
 ---
 
 ## Legacy — это не про то, что команда плохо работала
@@ -2591,6 +2671,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 sectionNumber: 5-13
 docNumber: "HOLYJS AUTUMN 2026"
+tone: legacy
 ---
 
 ### Принципы развития веб-платформы
@@ -2774,9 +2855,24 @@ docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 layout: statement
 sectionNumber: 6-1
 docNumber: "HOLYJS AUTUMN 2026"
+title: New user detected
+tone: agent
+status: "NEW USER CLASS DETECTED"
 ---
 
 ## В глобальный продукт пришёл новый пользователь
+
+<v-click>
+
+<AgentPrompt
+  user="AGENT"
+  :permissions="['Read page semantics', 'Call declared actions', 'Render structured UI']"
+  allow="Allow"
+  deny="Deny"
+  class="text-left"
+/>
+
+</v-click>
 
 <v-click>
 
@@ -2794,6 +2890,7 @@ request: новый класс пользователей → новые инт�
 layout: statement
 sectionNumber: 6-2
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 ## web MCP
@@ -2805,6 +2902,7 @@ layout: two-column
 sectionNumber: 6-3
 docNumber: "HOLYJS AUTUMN 2026"
 title: WebMCP
+tone: agent
 ---
 
 ### WebMCP (не путать просто с MCP)
@@ -2844,6 +2942,7 @@ title: WebMCP
 layout: statement
 sectionNumber: 6-4
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 ## A2UI
@@ -2852,6 +2951,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: image-full
 sectionNumber: 6-5
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 <template v-slot:image>
@@ -2864,6 +2964,7 @@ title: A2UI как JSON-интерфейс
 sectionNumber: 6-6
 docNumber: "HOLYJS AUTUMN 2026"
 transition: fade
+tone: agent
 ---
 
 <template v-slot:left>
@@ -2916,6 +3017,7 @@ transition: fade
 layout: statement
 sectionNumber: 6-7
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 JSON — как описание интерфейса
@@ -2941,6 +3043,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 6-9
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 # Prompt API
@@ -2959,6 +3062,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 6-10
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
+status: "CONCERN: INTEROPERABILITY"
 ---
 
 ## position: **negative**
@@ -2978,6 +3083,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: image-full
 sectionNumber: 6-11
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
+status: "VENDOR CONFLICT"
 ---
 <template v-slot:image>
 <img src="./assets/chrome_vs_fire.png"  />
@@ -2986,6 +3093,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 sectionNumber: 6-12
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 ### Совсем кратко
@@ -3002,6 +3110,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 6-13
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 ### Мы не хотели семантически верстать и писать документацию для кожаных мешков<v-click>, но хотим это делать для агентов </v-click>
@@ -3010,6 +3119,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: statement
 sectionNumber: 6-14
 docNumber: "HOLYJS AUTUMN 2026"
+tone: agent
 ---
 
 ## А может, новый веб — это они?

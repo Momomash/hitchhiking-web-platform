@@ -1,22 +1,68 @@
-/* Global monospace font for all slides */
-:root {
-  --slidev-font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+/**
+ * Проектные доработки поверх темы slidev-theme-legacy-web-os.
+ *
+ * Раньше здесь стоял `* { font-family: JetBrains Mono !important }` — он был нужен
+ * прежней теме, но с новой ломает всю типографику: моно должен читаться как
+ * «машинный текст» (UA-строки, спеки, логи), а не как весь дек подряд.
+ * Шрифты теперь задаёт тема: см. theme/styles/index.css.
+ */
+
+/* Ссылки в подписях под медиа — мелкие и не должны перетягивать внимание */
+.slidev-layout p > a {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
 }
 
-/* Apply monospace font to all text elements */
-* {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace !important;
-  font-style: normal !important;
+/* Инлайновые <video> в деке: вписываем в окно и даём ту же «вдавленную» рамку,
+   что у картинок, чтобы медиа-слайды не выбивались из системного языка. */
+.slidev-layout video {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid var(--line);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14);
 }
 
-/* Ensure code blocks use a slightly different monospace variant if needed */
-pre, code, kbd, samp {
-  font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace !important;
+/* Двухколоночные карточки «Было / Стало» в главах 2–3 свёрстаны через
+   UnoCSS-классы с красным и teal. Приводим их к семантике темы:
+   красный = breaking/прошлое, зелёный = compatible/настоящее. */
+.slidev-layout .border-red-200\/60 {
+  border-color: var(--danger) !important;
 }
 
-img.end-photo {
+.slidev-layout .bg-red-50\/40 {
+  background: var(--danger-pale) !important;
+}
+
+.slidev-layout .text-red-500 {
+  color: var(--danger) !important;
+}
+
+.slidev-layout .border-teal-200\/60 {
+  border-color: var(--success) !important;
+}
+
+.slidev-layout .bg-teal-50\/40 {
+  background: var(--success-pale) !important;
+}
+
+.slidev-layout .text-teal-600 {
+  color: var(--success) !important;
+}
+
+/* Эти карточки — маленькие окна внутри окна: убираем скругление в 1rem,
+   оно выбивается из прямоугольной системной геометрии */
+.slidev-layout .rounded-2xl {
+  border-radius: 3px !important;
+}
+
+/* Заголовки внутри карточек не нуждаются в разделительной линии темы */
+.slidev-layout .rounded-2xl h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* QR на финальном слайде — без скругления, как принтскрин из системы */
+img.end-photo,
+.layout-end img {
   border-radius: 0 !important;
 }
-
-/* Import JetBrains Mono from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');

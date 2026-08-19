@@ -1,0 +1,18 @@
+{
+  "name": "slidev-theme-legacy-web-os",
+  "version": "0.1.0",
+  "description": "Веб-платформа как старая операционная система: окна, статус-бары, режимы совместимости и предупреждения, которые нельзя удалить",
+  "keywords": [
+    "slidev-theme",
+    "legacy",
+    "retro",
+    "web-platform",
+    "windows-98",
+    "browser-chrome"
+  ],
+  "license": "MIT",
+  "slidev": {
+    "colorSchema": "light",
+    "highlighter": "shiki"
+  }
+}
