@@ -1035,22 +1035,48 @@ title: Платформа догоняет библиотеки
 
 ## Платформа догоняет. Всегда.
 
-| Мы выжимали из того, что было | Платформа догнала | Разрыв |
-|:---|:---|:---|
-| Вёрстка таблицами | Flexbox (2012), Grid (2017) | ~15 лет |
-| `$('.item')` в jQuery | `querySelector` | ~7 лет |
-| `$.ajax` | `fetch` | ~10 лет |
-| moment.js | `Temporal` | ~10 лет |
-| lodash | нативные методы массивов | ~10 лет |
-| Свой lazy-load на скролле | `loading="lazy"` | ~10 лет |
-| JS-хаки под ширину блока | `@container` (2023) | ~13 лет |
+<div class="lag-chart">
+
+<div class="lag-legend"><span><b style="color: var(--danger)">●</b> наш костыль</span><span><b style="color: var(--platform)">●</b> нативно во всех браузерах</span><span>справа — разрыв в годах</span></div>
+
+<div class="lag-row" style="--from: 74.1%; --to: 86.3%"><div><div class="lag-name">Container queries</div><div class="lag-sub">ResizeObserver → @container</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2020</span><span class="lag-year lag-year--to">2023</span></div><div class="lag-gap">2,6</div></div>
+
+<div class="lag-row" style="--from: 23.6%; --to: 51.2%"><div><div class="lag-name">Flexbox</div><div class="lag-sub">960 Grid System → Flexbox</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2009</span><span class="lag-year lag-year--to">2015</span></div><div class="lag-gap">5,8</div></div>
+
+<div class="lag-row" style="--from: 23.6%; --to: 61.0%"><div><div class="lag-name">CSS Grid</div><div class="lag-sub">Bootstrap grid → Grid</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2009</span><span class="lag-year lag-year--to">2017</span></div><div class="lag-gap">7,8</div></div>
+
+<div class="lag-row" style="--from: 46.9%; --to: 90.3%"><div><div class="lag-name">Ленивая загрузка</div><div class="lag-sub">lazysizes → loading="lazy"</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2014</span><span class="lag-year lag-year--to">2023</span></div><div class="lag-gap">9,1</div></div>
+
+<div class="lag-row" style="--from: 19.3%; --to: 63.6%"><div><div class="lag-name">JS-модули</div><div class="lag-sub">CommonJS → ES Modules</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2009</span><span class="lag-year lag-year--to">2018</span></div><div class="lag-gap">9,3</div></div>
+
+<div class="lag-row" style="--from: 7.9%; --to: 58.3%"><div><div class="lag-name">HTTP-запросы</div><div class="lag-sub">$.ajax → fetch</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2006</span><span class="lag-year lag-year--to">2017</span></div><div class="lag-gap">10,6</div></div>
+
+<div class="lag-row" style="--from: 12.9%; --to: 81.9%"><div><div class="lag-name">Модальные окна</div><div class="lag-sub">jQuery UI Dialog → &lt;dialog&gt;</div></div><div class="lag-track"><span class="lag-bar"></span><span class="lag-dot lag-dot--hack"></span><span class="lag-dot lag-dot--native"></span><span class="lag-year lag-year--from">2007</span><span class="lag-year lag-year--to">2022</span></div><div class="lag-gap">14,5</div></div>
+
+<div class="lag-row lag-axis"><div></div><div class="lag-track"><span class="lag-tick" style="left: 0%">2005</span><span class="lag-tick" style="left: 23.8%">2010</span><span class="lag-tick" style="left: 47.6%">2015</span><span class="lag-tick" style="left: 71.4%">2020</span><span class="lag-tick" style="left: 95.2%">2025</span></div><div></div></div>
+
+</div>
+
+<v-click>
+
+<p class="lag-median">Медиана по 11 измеренным кейсам — <strong>9,1 года</strong></p>
+
+</v-click>
+
+<v-click>
+
+<p class="lag-note">Даты костылей — первая публикация в npm или репозитории, то есть нижняя граница; нативная возможность — дата Baseline newly available (работает во всех основных браузерах). А moment.js → Temporal в этот график не попал: разрыв ещё <strong>открыт</strong>.</p>
+
+</v-click>
 
 <!--
-Вот доказательство. По строкам его читать не нужно — достаточно правой колонки.
+Вот доказательство — достаточно посмотреть на длину линий разрывов. Точка слева — момент, когда потребность стала массовой и мы закрыли её сами. Правая — момент, когда то же самое заработало во всех браузерах.
 
-Вёрстку таблицами придумали не от любви к таблицам, а потому что раскладки в языке не было: Flexbox приехал в 2012-м, Grid — в 2017-м. Разрыв — пятнадцать лет. jQuery-селекторы жили до `querySelector` семь лет, `$.ajax` до `fetch` — десять. А самая сильная строка здесь Temporal: десять лет, чтобы починить в языке работу со временем.
+От jQuery UI Dialog до нативного `<dialog>` — четырнадцать с половиной лет. Самая короткая, наверху, — container queries, два с половиной года, и это единственный кейс, где платформа почти не отставала.
 
-Общее у всех строк одно: сначала это сделали мы, потом — платформа.
+[click] Медиана по одиннадцати измеренным кейсам — девять лет. Не «когда-нибудь», а девять лет от вашего костыля до вашего же решения в стандарте.
+
+[click] И две честные оговорки. Даты слева — это первая публикация библиотеки, то есть нижняя граница: реальное массовое использование начиналось на год-два позже, так что разрывы здесь скорее завышены. А moment.js в график не попал вообще, потому что Temporal получил Stage 4 только в марте 2026-го и до сих пор не отгружен в Safari. То есть этот разрыв ещё открыт — платформа догоняет не всегда.
 -->
 
 ---
@@ -1503,18 +1529,18 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 <v-clicks>
 
-#### `<dialog>` — **2022**. `popover` — **2023**. `appearance: base-select` — **2025**.
+#### `<dialog>` — кроссбраузерно с **2022**. `popover` — с **2025**. `appearance: base-select` — только Chromium, **до сих пор нет**.
 
 ### Двадцать лет индустрия писала свои селекты, потому что платформа не давала стилизовать нативный
 
 </v-clicks>
 
 <!--
-И платформа догнала.
+И платформа догнала. Правда, с оговорками.
 
-[click] `<dialog>` — 2022-й. `popover` — 2023-й. `appearance: base-select`, чтобы наконец стилизовать нативный селект, — 2025-й.
+[click] `<dialog>` стал кроссбраузерным в марте 2022-го. `popover` появился в Chrome в 2023-м, а во всех браузерах — только в январе 2025-го; широко доступным он станет вообще в июле 2027-го. А `appearance: base-select` есть только в Chromium с апреля 2025-го: в Safari — бета, в Firefox — за флагом.
 
-[click] Двадцать лет индустрия писала свои селекты, потому что платформа не давала застилить свой. Та же схема, что во второй главе: сначала костыль, через двадцать лет — стандарт.
+[click] То есть двадцать лет индустрия писала свои селекты. И, утрируя, пишет до сих пор.
 -->
 
 ---
@@ -1832,7 +1858,7 @@ title: Сервер начал отдавать данные
 
 <v-clicks>
 
-- **1999** — XMLHttpRequest. Написан Microsoft **для веб-версии Outlook**
+- **1999** — XMLHTTP. Написан Microsoft **для веб-версии Outlook**
 - **2000** — REST, диссертация Роя Филдинга
 - **2005** — появляется само слово «AJAX»
 
@@ -1847,7 +1873,7 @@ title: Сервер начал отдавать данные
 <!--
 Дальше повторяется история из второй главы, но с другой стороны.
 
-[click] 1999-й: Microsoft пишет XMLHttpRequest — чтобы работала веб-версия Outlook.
+[click] 1999-й: Microsoft пишет XMLHTTP — ActiveX-объект внутри MSXML, чтобы работала веб-версия Outlook. Имя `XMLHttpRequest`, которое мы знаем, придумали в Mozilla три года позже; в W3C эта штука доехала только в 2006-м.
 
 [click] 2000-й: Рой Филдинг защищает диссертацию, из которой индустрия вычитает REST.
 
@@ -1874,7 +1900,7 @@ title: Побочные эффекты AJAX
 <!--
 И два побочных эффекта этого сдвига, которые с нами до сих пор. Первый: XMLHttpRequest написали не визионеры веба, а команда, которой нужно было, чтобы Outlook работал в браузере.
 
-[click] Второй: CORS. Целый механизм безопасности существует только потому, что фронтенд стал отдельным приложением на другом origin. Каждый, кто ловил preflight в пятницу вечером, может благодарить именно этот сдвиг.
+[click] Второй: CORS. Целый механизм безопасности существует только потому, что фронтенд стал отдельным приложением на другом origin.
 -->
 
 ---
@@ -2015,7 +2041,7 @@ title: Веб навязал бэкенду свой API
 - В Node.js из коробки: `fetch`, `Request`, `Response`, `Headers`, `URL`, `AbortController`, Web Streams
 - Это API, спроектированные **для браузера** комитетом WHATWG
 - Deno, Bun, Cloudflare Workers построены на них **изначально**
-- Есть даже комитет, который договаривается, какие браузерные API обязан иметь серверный рантайм — **WinterCG / WinterTC**
+- Есть даже комитет, который договаривается, какие браузерные API обязан иметь серверный рантайм — **WinterCG**, теперь **Ecma TC55**
 
 </v-clicks>
 
@@ -2053,8 +2079,6 @@ export default {
 [click] Это API, спроектированные для браузера комитетом WHATWG. Никто не проектировал их для сервера.
 
 [click] Deno, Bun и Cloudflare Workers построены на них изначально — то есть новый сервер рождается уже совместимым с браузером.
-
-[click] И есть отдельный комитет, который договаривается, какие браузерные API обязан иметь серверный рантайм: WinterCG, теперь WinterTC. Получается, бэкенд-разработчик на Node пишет код по спецификации, написанной для браузера. Платформа дотянулась туда, где браузера нет вообще.
 -->
 
 ---
@@ -2258,7 +2282,9 @@ flowchart TD
 </template>
 
 <!--
-Вот общая карта, и я не жду, что вы её прочитаете. Важна структура: кто пишет стандарты, кто их реализует, кто проверяет, что реализовали одинаково, и кто давит снизу. Дальше разберём по слоям.
+Вот общая карта, и я не жду, что вы её прочитаете. Важна структура: кто пишет стандарты, кто их реализует, кто проверяет, что реализовали одинаково, и кто давит снизу.
+
+Обратите отдельное внимание на слой тестов — это буквально CI веб-платформы.
 -->
 
 ---
@@ -2297,7 +2323,7 @@ WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W
 </template>
 
 <!--
-Слой стандартов. Простой вопрос: кто владеет HTML? Ответ — WHATWG. JavaScript — TC39 при Ecma. CSS и большая часть платформенных API — W3C. Сеть, HTTP и QUIC — IETF, а это вообще другие люди и другая культура. Серверные рантаймы — WinterCG. Единого владельца в этой картинке просто нет.
+Слой стандартов. За каждый кусок веб-платформы отвечает свой комитет. Единого владельца в этой картинке просто нет.
 -->
 
 ---
@@ -2617,7 +2643,7 @@ JavaScript пришёл к тому же, но своим путём.
 
 [click] На выходе — непрерывный поток улучшений и ежегодные мини-релизы.
 
-[click] И вот цена этого процесса: почти десять лет, чтобы починить в языке работу со временем. Десять лет на даты.
+[click] И вот цена этого процесса. Temporal, который просто приводит в порядок работу с датами, получил четвёртую стадию только этой весной —  А в Safari его нет до сих пор.
 -->
 
 ---
@@ -2754,7 +2780,7 @@ JavaScript.
 
 [click] 2009-й: CommonJS и AMD с RequireJS. Модули придумало сообщество, а не платформа.
 
-[click] Дальше Browserify, webpack, Rollup: целая индустрия инструментов вокруг отсутствующей фичи языка.
+[click] Дальше Browserify, webpack (2012 год), Rollup: целая индустрия инструментов вокруг отсутствующей фичи языка. 
 
 [click] 2015-й: ES-модули попадают в стандарт. До браузеров без флагов доезжают к 2017–2018 году.
 
@@ -2773,9 +2799,9 @@ title: CSS без области видимости
 
 - Один глобальный неймспейс на весь документ
 - Каскад, специфичность, `!important` — и `.button` из чужого файла
-- **2009** — BEM: инкапсуляция **через соглашение об именах**
+- **2005–2009** — BEM в Яндексе: инкапсуляция **через соглашение об именах**
 - **2015** — CSS Modules. **2016** — styled-components. **2017** — Tailwind.
-- **2023** — `@scope` в Chrome. Всё ещё не везде.
+- **2023** — `@scope` в Chrome. Во всех браузерах — только с **декабря 2025**.
 
 </v-clicks>
 
@@ -2792,11 +2818,11 @@ title: CSS без области видимости
 
 [click] Каскад, специфичность, `!important` — и `.button`, приехавший из чужого файла в чужой команде.
 
-[click] 2009-й: BEM. Инкапсуляция через соглашение об именах — то есть силой воли, а не языком.
+[click] Дальше BEM. Инкапсуляция через соглашение об именах — то есть силой воли, а не языком.
 
 [click] Дальше CSS Modules, styled-components, Tailwind: три очень разных инструмента, решающих ровно одну задачу.
 
-[click] `@scope` появился в Chrome только в 2023-м, и до сих пор не везде.
+[click] А `@scope` появился в Chrome в 2023-м, и только в декабре 2025-го его закрыл последним Firefox. То есть кроссбраузерным он стал буквально в прошлом году — и на старых устройствах в поле его всё ещё нет.
 
 [click] Отсюда моя формулировка: BEM — это не методология. Это протез отсутствующей в языке инкапсуляции. Пятнадцать лет мы решали именами переменных то, что в любом другом языке решает область видимости.
 -->
@@ -2902,6 +2928,85 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
+layout: timeline
+sectionNumber: 4-26a
+docNumber: "HOLYJS AUTUMN 2026"
+title: МЕХАНИЗМЫ КООРДИНАЦИИ, 1995–2026
+direction: horizontal
+---
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">1995–2001</div>
+    <div class="tl-entry-title">Браузерные войны</div>
+    <div class="tl-entry-desc">Совместимость — через UA-sniffing</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2004</div>
+    <div class="tl-entry-title">WHATWG</div>
+    <div class="tl-entry-desc">Living standard вместо снапшотов</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2011</div>
+    <div class="tl-entry-title">Test262</div>
+    <div class="tl-entry-desc">Тесты соответствия для JS</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2012–2017</div>
+    <div class="tl-entry-title">Web&nbsp;Platform&nbsp;Tests</div>
+    <div class="tl-entry-desc">Один репозиторий тестов на всех</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2022</div>
+    <div class="tl-entry-title">Interop</div>
+    <div class="tl-entry-desc">Общие focus areas всех вендоров</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2023</div>
+    <div class="tl-entry-title">Baseline</div>
+    <div class="tl-entry-desc">Единый сигнал «этим можно пользоваться»</div>
+  </div>
+</div>
+
+<div class="tl-entry">
+  <div class="tl-entry-marker"><div class="tl-entry-dot"></div></div>
+  <div class="tl-entry-body">
+    <div class="tl-entry-date fm-label">2025</div>
+    <div class="tl-entry-title">WinterTC</div>
+    <div class="tl-entry-desc">Рантаймы — в Ecma TC55</div>
+  </div>
+</div>
+
+<!--
+Смотрите, что появилось за эти годы. Это не история фич — это история того, как индустрия училась договариваться.
+
+Слева точка отсчёта: никаких общих правил, совместимость достигается тем, что сайт нюхает User-Agent. Дальше living standard — документ, который меняется постоянно, вместо версий раз в пять лет. Test262 и Web Platform Tests — у платформы впервые появляется то, что у нас называется CI: общий прогон тестов, по которому видно, кто что не реализовал. Interop — публичное обязательство вендоров на год. Baseline — единый ответ на вопрос «этим уже можно пользоваться». И WinterTC — та же схема, но для серверных рантаймов.
+
+Главное: способность договариваться не была дана вебу изначально. Её собирали тридцать лет, по одному механизму.
+-->
+
+---
 layout: two-column
 sectionNumber: 4-27
 docNumber: "HOLYJS AUTUMN 2026"
@@ -2926,7 +3031,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 <!--
 Появился Interop. Google, Mozilla, Microsoft, Apple, Bocoup и Igalia сели за один стол — те самые конкуренты, которые двадцать лет воевали друг с другом.
 
-[click] Каждый год они публикуют общий список приоритетов и измеряют по нему прогресс — вот он на графике. То есть у платформы впервые появилось что-то похожее на общий бэклог. Но почему тогда всё равно так медленно и осторожно? Почему нельзя было просто договориться и переписать?
+[click] Каждый год они публикуют общий список приоритетов и измеряют по нему прогресс — вот он на графике. То есть у платформы впервые появилось что-то похожее на общий бэклог.
+
+А в 2023-м к этому добавился Baseline — единый ответ на вопрос «этим уже можно пользоваться». Там всего три состояния: limited, newly available — заработало во всех основных браузерах, и widely available — прошло тридцать месяцев, можно не думать. Именно поэтому у одной фичи в докладе бывает две разные даты, и обе честные.
+
+Если спросят про Interop 2020 — такого года не было, это путают с Compat 2021, у которого было пять общих зон.
+
+Но почему тогда всё равно так медленно и осторожно? Почему нельзя было просто договориться и переписать?
 -->
 
 ---
@@ -3686,6 +3797,8 @@ tone: agent
 
 <!--
 А вот как это выглядит на практике: JSON, в котором описаны заголовок, поле даты и кнопка со своим действием. Между агентом и клиентом передаются данные, а не код. И это принципиально: код пришлось бы исполнять, данные достаточно отрендерить.
+
+A2UI — открытый проект Google, не имеющий мажорной версии, чисто концепт, и за ним не стоит ни W3C, ни Ecma.
 -->
 
 ---
@@ -3744,7 +3857,7 @@ tone: agent
 <!--
 Третье — Prompt API.
 
-[click] Предложен Google весной.
+[click] Предложен Google и уже отгружен — с мая 2026-го он в стабильном Chrome, не за флагом.
 
 [click] Идея: вызвать модель прямо на сайте из JavaScript.
 
@@ -3772,9 +3885,9 @@ status: "CONCERN: INTEROPERABILITY"
 </v-click>
 
 <!--
-И вот здесь круг замыкается. По этому API официальная позиция — negative.
+И вот здесь круг замыкается. У Mozilla по этому API официальная позиция — negative. У WebKit — oppose.
 
-[click] А основной concern — interoperability. Та самая интероперабельность из принципов предыдущей главы. Это не новая проблема: это старая legacy-боль веба, просто проявившаяся в новом API.
+[click] И основной concern — interoperability. Та самая интероперабельность из принципов предыдущей главы. Это не новая проблема: это старая legacy-боль веба, просто проявившаяся в новом API. Показательная деталь: из всего семейства встроенных AI-интерфейсов рабочая группа W3C приняла только определение языка и переводчик. Prompt API — нет.
 -->
 
 ---

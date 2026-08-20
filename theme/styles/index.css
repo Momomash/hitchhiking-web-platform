@@ -709,6 +709,162 @@ pre {
   margin-bottom: 0;
 }
 
+/* ── Lag-график «костыль → нативная возможность» ─────────────────────────
+ * Dumbbell-диаграмма. Как и .tl-*, разметка приходит из markdown слайда
+ * (см. 2-15), поэтому правила глобальные. Позиция точек — в процентах от
+ * оси 2005–2026, слайд передаёт их инлайново через --from / --to.
+ */
+.lag-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.lag-legend {
+  display: flex;
+  gap: var(--space-5);
+  justify-content: flex-end;
+  font-size: var(--text-xs);
+  color: var(--muted);
+  margin-bottom: var(--space-1);
+}
+
+.lag-legend b {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.lag-row {
+  display: grid;
+  grid-template-columns: 168px 1fr 62px;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.lag-name {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.lag-sub {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.lag-track {
+  position: relative;
+  height: 36px;
+}
+
+/* сама «рельса» оси — чтобы пустые годы читались как расстояние */
+.lag-track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px dotted var(--chrome-line);
+}
+
+.lag-bar {
+  position: absolute;
+  top: 50%;
+  left: var(--from);
+  width: calc(var(--to) - var(--from));
+  height: 3px;
+  transform: translateY(-50%);
+  background: var(--line);
+}
+
+.lag-dot {
+  position: absolute;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.lag-dot--hack {
+  left: var(--from);
+  background: var(--danger);
+}
+
+.lag-dot--native {
+  left: var(--to);
+  background: var(--platform);
+}
+
+.lag-year {
+  position: absolute;
+  top: 50%;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.lag-year--from {
+  left: var(--from);
+  transform: translate(calc(-100% - 9px), -50%);
+  color: var(--danger);
+}
+
+.lag-year--to {
+  left: var(--to);
+  transform: translate(9px, -50%);
+  color: var(--platform);
+}
+
+.lag-gap {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--ink);
+  text-align: right;
+}
+
+.lag-axis .lag-track {
+  height: 14px;
+}
+
+.lag-axis .lag-track::before {
+  border-top: 1px solid var(--chrome-line);
+  top: 0;
+}
+
+.lag-tick {
+  position: absolute;
+  top: 3px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  transform: translateX(-50%);
+}
+
+.slidev-layout p.lag-median {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  text-align: center;
+  color: var(--ink);
+  margin: var(--space-3) 0 0;
+}
+
+.slidev-layout p.lag-median strong {
+  color: var(--platform);
+}
+
+.slidev-layout p.lag-note {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  line-height: 1.35;
+  margin: var(--space-2) 0 0;
+}
+
 /* ── Timeline ────────────────────────────────────────────────────────────
  * Классы .tl-* приходят из markdown слайда (см. слайд 2-12), поэтому правила
  * обязаны быть глобальными.
