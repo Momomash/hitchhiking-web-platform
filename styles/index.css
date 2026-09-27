@@ -13,53 +13,22 @@
   font-size: 0.9em;
 }
 
-/* Инлайновые <video> в деке: вписываем в окно и даём ту же «вдавленную» рамку,
-   что у картинок, чтобы медиа-слайды не выбивались из системного языка. */
+/* Запасная рамка для видео, вставленного в слайд напрямую. Все пять роликов
+   дека живут внутри <BrowserFrame media> или <MediaPlayer>, и там рамку даёт
+   сама сцена окна — эти правила до них не доезжают (у сцены специфичность
+   выше). Правило остаётся на случай нового видео без обёртки: голое видео
+   на белом окне читается как дырка в слайде. */
 .slidev-layout video {
   max-width: 100%;
   max-height: 100%;
-  border: 1px solid var(--line);
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.14);
 }
 
-/* Двухколоночные карточки «Было / Стало» в главах 2–3 свёрстаны через
-   UnoCSS-классы с красным и teal. Приводим их к семантике темы:
-   красный = breaking/прошлое, зелёный = compatible/настоящее. */
-.slidev-layout .border-red-200\/60 {
-  border-color: var(--danger) !important;
-}
-
-.slidev-layout .bg-red-50\/40 {
-  background: var(--danger-pale) !important;
-}
-
-.slidev-layout .text-red-500 {
-  color: var(--danger) !important;
-}
-
-.slidev-layout .border-teal-200\/60 {
-  border-color: var(--success) !important;
-}
-
-.slidev-layout .bg-teal-50\/40 {
-  background: var(--success-pale) !important;
-}
-
-.slidev-layout .text-teal-600 {
-  color: var(--success) !important;
-}
-
-/* Эти карточки — маленькие окна внутри окна: убираем скругление в 1rem,
-   оно выбивается из прямоугольной системной геометрии */
-.slidev-layout .rounded-2xl {
-  border-radius: 3px !important;
-}
-
-/* Заголовки внутри карточек не нуждаются в разделительной линии темы */
-.slidev-layout .rounded-2xl h2 {
-  border-bottom: none;
-  padding-bottom: 0;
-}
+/* Карточки «Было / Стало» в главах 2–3 раньше были свёрстаны utility-классами
+   прошлой темы (red-200/teal-200, rounded-2xl, shadow-lg) и перекрашивались
+   отсюда через !important. Теперь это <OsGroupBox> с тоном danger/success,
+   поэтому перекраска не нужна — семантику задаёт сама тема. */
 
 /* QR на финальном слайде — без скругления, как принтскрин из системы */
 img.end-photo,

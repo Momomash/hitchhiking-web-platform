@@ -10,7 +10,7 @@ const props = defineProps<{
   docNumber?: string
   unit?: string
   status?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   windowTitle?: string
   frontmatter?: Record<string, any>
 }>()
@@ -19,7 +19,7 @@ const barText = useWindowTitle(props)
 </script>
 
 <template>
-  <div class="slidev-layout layout-window layout-default">
+  <div class="slidev-layout layout-window layout-default" :class="tone && `tone-${tone}`">
     <div class="os-window">
       <OsTitleBar :text="barText" :tone="tone" />
       <div class="os-window__body os-window__body--top">

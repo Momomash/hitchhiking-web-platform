@@ -14,7 +14,7 @@ const props = defineProps<{
   docNumber?: string
   unit?: string
   status?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   direction?: 'horizontal' | 'vertical'
   windowTitle?: string
   frontmatter?: Record<string, any>
@@ -24,7 +24,7 @@ const barText = useWindowTitle(props)
 </script>
 
 <template>
-  <div class="slidev-layout layout-window layout-timeline">
+  <div class="slidev-layout layout-window layout-timeline" :class="tone && `tone-${tone}`">
     <div class="os-window">
       <OsTitleBar :text="barText" :tone="tone" />
 

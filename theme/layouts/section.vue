@@ -12,11 +12,29 @@ defineProps<{
   docNumber?: string
   unit?: string
   status?: string
+  /* Разделитель объявляет тон главы: зал видит цвет здесь, а дальше в нём
+     идут все окна главы. Сам разделитель остаётся светлым — цвет уходит
+     только в номер главы, полосу загрузки и заголовок панели. */
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
 }>()
+
+/*
+ * Полоса показывает, сколько доклада уже позади: доля текущей страницы от
+ * общего числа. Раньше ширина была прибита к 72% и на каждой главе выглядела
+ * одинаково — то есть врала.
+ *
+ * `$nav` берём из шаблона, а не импортом: так же делает OsStatusBar, и тема
+ * не завязывается на внутренние пути @slidev/client. В печати и экспорте
+ * навигации может не быть — тогда полоса просто остаётся пустой.
+ */
+function loaded(nav?: { currentPage?: number, total?: number }) {
+  if (!nav?.total) return '0%'
+  return `${Math.round(((nav.currentPage ?? 0) / nav.total) * 100)}%`
+}
 </script>
 
 <template>
-  <div class="slidev-layout layout-section">
+  <div class="slidev-layout layout-section" :class="tone && `tone-${tone}`">
     <div class="sec-panel">
       <div class="sec-panel__bar">
         <span class="sec-panel__icon">◈</span>
@@ -42,9 +60,9 @@ defineProps<{
 
       <div class="sec-panel__foot">
         <div class="sec-bar">
-          <div class="sec-bar__fill" />
+          <div class="sec-bar__fill" :style="{ width: loaded($nav) }" />
         </div>
-        <span class="sec-status">{{ status ?? 'compatibility: required' }}</span>
+        <span class="sec-status">{{ status ?? 'не выключайте компьютер' }}</span>
       </div>
     </div>
   </div>
@@ -118,7 +136,8 @@ defineProps<{
 }
 
 .sec-mod__num {
-  color: var(--success);
+  /* Цвет главы: разделитель объявляет тон, в котором дальше пойдут её окна */
+  color: var(--tb-from, var(--success));
   font-weight: 700;
 }
 
@@ -148,8 +167,8 @@ defineProps<{
   border-top: 1px solid var(--os-face-light);
 }
 
-/* Утопленный «колодец» с блоками прогресса — прогресс декоративный:
-   система всё ещё грузится, тридцать шесть лет. */
+/* Утопленный «колодец» с блоками прогресса. Заполнение задаёт скрипт по
+   номеру текущей страницы — см. loaded() выше. */
 .sec-bar {
   flex: 1;
   height: 11px;
@@ -162,20 +181,24 @@ defineProps<{
 
 .sec-bar__fill {
   height: 100%;
-  width: 72%;
+  width: 0;
+  transition: width 0.3s ease;
   background: repeating-linear-gradient(
     90deg,
-    var(--platform) 0 7px,
+    var(--tb-from, var(--platform)) 0 7px,
     transparent 7px 10px
   );
 }
 
+/* Разрядка уже, чем у остальных статусов: строка длинная и при
+   --tracking-wider упиралась в правый край панели. */
 .sec-status {
   flex-shrink: 0;
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: var(--tracking-wider);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--muted);
+  white-space: nowrap;
 }
 </style>

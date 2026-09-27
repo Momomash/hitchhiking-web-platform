@@ -80,10 +80,28 @@
   --color-fg:      var(--ink);
   --color-accent:  var(--platform);
 
-  /* Типографика */
+  /* Элементы управления — «настоящий» системный хром.
+     --field-line: тот самый сине-серый кант полей и чекбоксов XP.
+     --sel: цвет выделения списка/текста в проводнике. */
+  --field-line:    #7f9db9;
+  --btn-face:      #fbfbfd;
+  --btn-face-lo:   #dcdce6;
+  --btn-line:      #7b7b92;
+  --sel:           #316ac5;
+  --sel-soft:      #d3e1f7;
+
+  /* Типографика.
+     Шрифты разведены по ролям: --font-chrome и --font-title отвечают за «оконность»
+     (тайтлбары, кнопки, чекбоксы, статус-бары, легенды), остальной текст читается
+     45 минут подряд и остаётся на IBM Plex.
+     Trebuchet MS — подпись окна Luna, Tahoma — шрифт диалогов XP. Обоих может не
+     быть на площадке, поэтому fallback'и (Verdana, DejaVu Sans) той же ширины и
+     эпохи: дек не уедет по вёрстке, даже если оба отсутствуют. */
   --font-ui:       'IBM Plex Sans', 'Segoe UI', Tahoma, Verdana, sans-serif;
   --font-display:  'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Segoe UI', Tahoma, sans-serif;
   --font-mono:     'IBM Plex Mono', 'Lucida Console', 'Courier New', monospace;
+  --font-chrome:   Tahoma, Verdana, 'DejaVu Sans', 'Segoe UI', sans-serif;
+  --font-title:    'Trebuchet MS', Tahoma, Verdana, 'DejaVu Sans', sans-serif;
 
   --slidev-font-family: var(--font-ui);
 
@@ -148,6 +166,13 @@
   --os-face-deep:  #918d76;
 
   --line:          #a8a48c;
+
+  --field-line:    #8a9a6f;
+  --btn-face:      #fdfcf4;
+  --btn-face-lo:   #e0dcc6;
+  --btn-line:      #8d8a72;
+  --sel:           #5a7b2e;
+  --sel-soft:      #dfe7c9;
 }
 
 /* ── Рабочий стол ─────────────────────────────────────────────────────────── */
@@ -189,13 +214,16 @@
   margin: 0 0 var(--space-3);
 }
 
-/* Основной заголовок контентного слайда. В деке это `##`. */
+/* Основной заголовок контентного слайда. В деке это `##`.
+   Подчёркивание — «гравированная» линия системного диалога: тёмный штрих
+   и светлый блик под ним. На белом фоне окна она читается как рельеф. */
 .slidev-layout h2 {
   font-size: var(--text-lg);
   font-weight: 700;
   margin: 0 0 var(--space-4);
   padding-bottom: var(--space-2);
-  border-bottom: 1px solid var(--chrome-line);
+  border-bottom: 1px solid var(--os-face-dark);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 .slidev-layout h3 {
@@ -237,8 +265,15 @@ a:visited {
   color: var(--purple);
 }
 
-/* ── Списки ───────────────────────────────────────────────────────────────
- * Маркер — маленький «чекбокс» системного диалога.
+/* ── Списки — настоящие чекбоксы системного диалога ───────────────────────
+ * Маркер списка — не декоративный квадратик, а чекбокс XP: белое поле
+ * 13×13 в сине-сером канте, вдавленная внутренняя тень, тёмная галочка.
+ *
+ * Семантика галочки (цвет = смысл, как и везде в деке):
+ *   по умолчанию  ✔ зелёная   — сделано / поддерживается
+ *   li.is-broken  ✕ красный   — сломано / breaking
+ *   li.is-pending ☐ пусто     — ещё не пришло
+ *   li.is-legacy  ▨ янтарный  — deprecated, но живёт
  */
 .slidev-layout ul,
 .slidev-layout ol {
@@ -257,15 +292,45 @@ a:visited {
 }
 
 .slidev-layout ul li::before {
-  content: '';
+  content: '✔';
   position: absolute;
-  left: -1.15em;
-  top: 0.48em;
-  width: 7px;
-  height: 7px;
+  left: -1.72em;
+  top: 0.22em;
+  width: 13px;
+  height: 13px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-chrome);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--success);
   background: var(--window);
-  border: 1px solid var(--line);
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--field-line);
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.13),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.slidev-layout ul li.is-broken::before {
+  content: '✕';
+  color: var(--danger);
+}
+
+.slidev-layout ul li.is-pending::before {
+  content: '';
+}
+
+/* Заштрихованный чекбокс XP — «включено, но трогать нельзя»: ровно тот вид,
+   который система показывала для смешанного/недоступного состояния. */
+.slidev-layout ul li.is-legacy::before {
+  content: '▨';
+  color: var(--legacy);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--legacy-pale) 0 2px,
+      var(--window) 2px 4px
+    );
 }
 
 .slidev-layout ol {
@@ -289,13 +354,24 @@ a:visited {
   font-size: 0.9em;
 }
 
-/* Вложенные списки не должны наследовать чекбокс-маркер первого уровня */
+/* Вложенные списки — не чекбокс, а обычный маркер: иначе второй уровень
+   спорит с первым за внимание. */
 .slidev-layout ul ul li::before {
+  content: '';
+  top: 0.48em;
   width: 5px;
   height: 5px;
   background: var(--line);
   border-color: var(--line);
+  box-shadow: none;
 }
+
+/* Пункт списка появляется по клику ЦЕЛИКОМ — вместе с уже проставленной
+ * галочкой, стандартным поведением Slidev (`opacity: 0` на скрытом элементе).
+ *
+ * Был вариант, где пустые чекбоксы видны заранее и галочка проставляется в
+ * момент клика. Отказались: зал заранее видит все пункты списка и считает,
+ * сколько ещё осталось, вместо того чтобы слушать. */
 
 /* ── Код и «машинный текст» ───────────────────────────────────────────────
  * Моно = машинный вывод. Именно на этом контрасте держится половина доклада:
@@ -319,38 +395,59 @@ pre {
   overflow-x: auto;
 }
 
+/* Листинг — вдавленная область ввода, а не карточка: система показывает
+   содержимое файла, и рельеф должен читаться «внутрь». */
 .slidev-layout .slidev-code,
 .slidev-layout .shiki {
   font-family: var(--font-mono);
-  border: 1px solid var(--chrome-line);
-  border-radius: 2px;
+  border: 1px solid var(--field-line);
+  border-radius: 0;
   padding: var(--space-3) var(--space-4) !important;
-  background: #f4f7fa !important;
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.06);
+  background: #fbfcfe !important;
+  box-shadow:
+    inset 1px 1px 2px rgba(0, 0, 0, 0.15),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.95);
 }
 
-/* ── Таблицы — «list view» файлового менеджера ───────────────────────────── */
+/* ── Таблицы — «list view» файлового менеджера ───────────────────────────
+ * Заголовок столбца в проводнике — это кнопка сортировки, а не просто
+ * подпись: выпуклая, с тем же градиентом, что у остальных кнопок.
+ * Сама таблица сидит во вдавленном поле, как область списка.
+ */
 .slidev-layout table {
   width: 100%;
   border-collapse: collapse;
   font-size: var(--text-sm);
   background: var(--window);
-  border: 1px solid var(--chrome-line);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.12);
   margin: 0 0 var(--space-3);
 }
 
 .slidev-layout th {
-  background: var(--chrome);
-  border-bottom: 1px solid var(--chrome-line);
-  border-right: 1px solid var(--chrome-line);
+  background: linear-gradient(180deg, var(--btn-face) 0%, var(--btn-face-lo) 100%);
+  border-bottom: 1px solid var(--os-face-dark);
+  border-right: 1px solid var(--os-face-dark);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
   padding: var(--space-2) var(--space-3);
   text-align: left;
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-family: var(--font-chrome);
+  font-weight: 700;
   font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   color: var(--ink-soft);
+}
+
+/* Выделенная строка списка — та же синяя подсветка, что в проводнике.
+   Ставится вручную: <tr class="is-selected"> */
+.slidev-layout tbody tr.is-selected td {
+  background: var(--sel);
+  color: #fff;
+}
+
+.slidev-layout tbody tr.is-selected td strong,
+.slidev-layout tbody tr.is-selected td code {
+  color: #fff;
 }
 
 .slidev-layout td {
@@ -369,18 +466,45 @@ pre {
   background: rgba(232, 237, 242, 0.55);
 }
 
+/* Цитата — информационная панель системы: иконка (i) слева, тело в тоне
+   диалога. Так цитата перестаёт быть «версткой из блога». */
 .slidev-layout blockquote {
+  position: relative;
   margin: 0 0 var(--space-4);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-4) var(--space-3) calc(var(--space-6) + var(--space-3));
   background: var(--chrome);
-  border-left: 3px solid var(--platform);
+  border: 1px solid var(--os-face-dark);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.9);
   color: var(--ink-soft);
   font-size: var(--text-base);
 }
 
+.slidev-layout blockquote::before {
+  content: 'i';
+  position: absolute;
+  left: var(--space-4);
+  top: calc(var(--space-3) + 1px);
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+  background: radial-gradient(circle at 35% 30%, #6fa8e8 0%, var(--platform) 70%);
+  border-radius: 50%;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Разделитель — «гравированная» линия диалога: тёмный штрих и светлый под ним */
 .slidev-layout hr {
   border: none;
-  border-top: 1px solid var(--chrome-line);
+  border-top: 1px solid var(--os-face-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.95);
   margin: var(--space-4) 0;
 }
 
@@ -416,6 +540,320 @@ pre {
   font-family: var(--font-mono);
 }
 
+/* ══ Кит системных контролов ══════════════════════════════════════════════
+ * Скевоморфизм держится не на рамке окна, а на мелочи внутри: выпуклых
+ * кнопках, вдавленных полях, группах с легендой, полосе прогресса.
+ * Всё это — классы, а не компоненты: их можно поставить прямо в markdown
+ * слайда, не заводя Vue-обёртку ради одной кнопки.
+ *
+ * Общее правило рельефа XP: свет падает сверху-слева.
+ *   выпуклое (raised) — светлая кромка сверху-слева, тёмная снизу-справа
+ *   вдавленное (sunken) — наоборот
+ */
+.os-raised {
+  border: 1px solid var(--os-face-deep);
+  background: var(--chrome);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset -1px -1px 0 var(--os-face-dark);
+}
+
+.os-sunken {
+  border: 1px solid var(--os-face-dark);
+  background: var(--window);
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.16),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* ── Кнопка ─────────────────────────────────────────────────────────────── */
+.os-btn {
+  display: inline-grid;
+  place-items: center;
+  min-width: 74px;
+  padding: 3px 14px;
+  font-family: var(--font-chrome);
+  font-size: var(--text-sm);
+  line-height: 1.3;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--btn-face) 0%, var(--btn-face-lo) 100%);
+  border: 1px solid var(--btn-line);
+  border-radius: 3px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 1px 0 rgba(0, 0, 0, 0.10);
+}
+
+/* Кнопка по умолчанию — та, что сработает по Enter. В Luna её обводит
+   синий кант: это самый узнаваемый «фокус» системы. */
+.os-btn--default {
+  border-color: var(--platform);
+  box-shadow:
+    inset 0 0 0 1px rgba(31, 93, 168, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 1px 0 rgba(0, 0, 0, 0.10);
+}
+
+/* Нажатое состояние — рельеф переворачивается и содержимое едет на пиксель */
+.os-btn--pressed {
+  background: linear-gradient(180deg, var(--btn-face-lo) 0%, var(--btn-face) 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.22);
+  padding: 4px 13px 2px 15px;
+}
+
+/* «Ни у кого нет права нажать Merge» — серый текст с белой подсветкой снизу,
+   ровно так система рисовала недоступную кнопку. */
+.os-btn--disabled {
+  color: #9aa6b1;
+  text-shadow: 1px 1px 0 #fff;
+  border-color: #c3c3d2;
+  background: var(--chrome);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.os-btn-row {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-3);
+}
+
+/* ── Группа с легендой (group box) ───────────────────────────────────────
+ * Базовый контейнер для всего, что раньше было «карточкой».
+ * Легенда сидит верхом на рамке и разрывает её — как в настоящем диалоге.
+ */
+.os-groupbox {
+  position: relative;
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  margin-top: 0.62em;
+  border: 1px solid var(--os-face-dark);
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: inset -1px -1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.os-groupbox__legend {
+  position: absolute;
+  top: -0.62em;
+  left: 10px;
+  padding: 0 6px;
+  background: var(--window);
+  font-family: var(--font-chrome);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* Тон группы кодирует смысл теми же цветами, что и весь дек */
+.os-groupbox--danger  { border-color: var(--danger);   background: var(--danger-pale); }
+.os-groupbox--success { border-color: var(--success);  background: var(--success-pale); }
+.os-groupbox--legacy  { border-color: var(--legacy);   background: var(--legacy-pale); }
+.os-groupbox--platform{ border-color: var(--platform); background: var(--platform-pale); }
+.os-groupbox--agent   { border-color: var(--purple);   background: var(--purple-pale); }
+
+.os-groupbox--danger  > .os-groupbox__legend { color: var(--danger); }
+.os-groupbox--success > .os-groupbox__legend { color: var(--success); }
+.os-groupbox--legacy  > .os-groupbox__legend { color: var(--legacy); }
+.os-groupbox--platform> .os-groupbox__legend { color: var(--platform); }
+.os-groupbox--agent   > .os-groupbox__legend { color: var(--purple); }
+
+/* Заголовок внутри группы не тащит за собой разделительную линию темы */
+.os-groupbox h2,
+.os-groupbox h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.os-groupbox > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Сетка для пар и троек групп («Было / Стало»). Живёт здесь, а не в
+   utility-классах Slidev: у карточек дека одна и та же геометрия, и держать
+   её в одном месте дешевле, чем повторять grid-cols-2 на каждом слайде. */
+.os-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+  margin-top: var(--space-4);
+}
+
+.os-cols--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+/* Колонки одной высоты — когда в группах разное число пунктов, но они
+   должны читаться как пара равных вариантов. */
+.os-cols--stretch {
+  align-items: stretch;
+}
+
+/* Сетка занимает всю свободную высоту окна и раздаёт её колонкам.
+   Нужно там, где в колонках стоят окна (<Screenshot>, <BrowserFrame>): им
+   требуется ОПРЕДЕЛЁННАЯ высота контейнера, иначе размер картинки считать
+   не от чего — см. theme/README.md. */
+.os-cols--fill {
+  flex: 1 1 0;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+  align-items: stretch;
+  margin-bottom: var(--space-2);
+}
+
+/* То же, но полосой заданной доли высоты — когда под окнами на слайде есть
+   ещё контент (таблица, вывод) и отдавать сетке всё место нельзя.
+   Доля настраивается: style="--band: 50%" */
+.os-cols--band {
+  flex: 0 0 var(--band, 42%);
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+  align-items: stretch;
+  margin-bottom: var(--space-3);
+}
+
+.os-cols--stretch > .os-groupbox {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Плитка миниатюр — «крупные значки» проводника. Для наборов однотипных
+   картинок (телефоны, логотипы браузеров), где каждой отдельное окно было бы
+   тяжелее самой картинки. */
+.os-thumbs {
+  display: grid;
+  /* Две колонки, а не auto-fit: при автоподборе четыре миниатюры вставали
+     в один ряд и с последнего ряда уже не читались. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.os-thumbs--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.os-thumbs img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  padding: 3px;
+  background: var(--window);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Вдавленное поле ─────────────────────────────────────────────────────
+ * Для «машинного» текста, который система показывает, но не даёт править:
+ * UA-строка, путь к файлу, значение из спеки.
+ */
+.os-field {
+  display: block;
+  padding: 3px 7px;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: var(--window);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.14);
+  overflow-wrap: anywhere;
+}
+
+.os-field--readonly {
+  background: var(--chrome);
+  color: var(--ink-soft);
+}
+
+/* ── Полоса прогресса ────────────────────────────────────────────────────
+ * XP рисовал её сегментами, а не сплошной заливкой. Для «сколько лет
+ * платформа догоняла» это удобнее: сегмент читается как единица времени.
+ * Заполнение задаётся инлайново: style="--value: 62%"
+ */
+.os-progress {
+  height: 16px;
+  padding: 1px;
+  background: var(--window);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+}
+
+.os-progress__fill {
+  height: 100%;
+  width: var(--value, 0%);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--platform) 0 9px,
+      transparent 9px 12px
+    );
+}
+
+.os-progress--legacy .os-progress__fill {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--legacy) 0 9px,
+      transparent 9px 12px
+    );
+}
+
+/* ── Вкладки ─────────────────────────────────────────────────────────────
+ * Активная вкладка «срастается» с панелью под собой — за счёт того, что она
+ * выше соседей на пиксель и перекрывает их общую нижнюю границу.
+ */
+.os-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.os-tab {
+  padding: 3px 12px;
+  font-family: var(--font-chrome);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  background: linear-gradient(180deg, var(--chrome) 0%, var(--chrome-deep) 100%);
+  border: 1px solid var(--os-face-dark);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+.os-tab--active {
+  padding: 5px 12px 4px;
+  color: var(--ink);
+  font-weight: 700;
+  background: var(--window);
+  border-color: var(--os-face-deep);
+}
+
+.os-tabs + * {
+  border-top: 1px solid var(--os-face-deep);
+}
+
+/* ── Выделение ───────────────────────────────────────────────────────────
+ * Синяя подсветка строки в проводнике. Работает как маркер: «вот этот
+ * фрагмент система считает выбранным».
+ */
+.os-sel {
+  background: var(--sel);
+  color: #fff;
+  padding: 0 3px;
+  border-radius: 1px;
+}
+
+.os-sel-soft {
+  background: var(--sel-soft);
+  color: var(--ink);
+  padding: 0 3px;
+}
+
 /* ── Хром окна: тайтлбар / статус-бар ────────────────────────────────────
  * Глобально (а не scoped), потому что этим же хромом пользуются компоненты,
  * вставляемые прямо в markdown слайда.
@@ -439,7 +877,9 @@ pre {
     var(--title-to) 88%,
     var(--title-lip) 100%
   );
-  font-family: var(--font-display);
+  /* Trebuchet MS — подпись окна Luna. Именно она, а не гротеск дека, даёт
+     мгновенное «это Windows» ещё до того, как зал прочитает текст. */
+  font-family: var(--font-title);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
@@ -486,6 +926,96 @@ pre {
   border-bottom-color: #3d2f5e;
 }
 
+/* ── Тон главы ───────────────────────────────────────────────────────────
+ * Цвет окон задаёт ГЛАВА, а не отдельный слайд, и объявляет его разделитель:
+ * зал видит тон на слайде разбивки, а дальше в нём идут все окна главы.
+ *
+ * Имена тонов — по смыслу главы, а не по цвету: так в разметке слайда видно,
+ * почему он такой, и цвет можно поменять, не переименовывая 140 слайдов.
+ *
+ *   origin     1. MVP, который оказался слишком успешным
+ *   growth     2. Требования росли — веб отвечал
+ *   craft      3. Веб переписал не только фронтенд
+ *   standards  4. У мирового продукта нет одного владельца
+ *   legacy     5. Цена успеха — legacy
+ *   agent      6. Новый пользователь: агент
+ *
+ * Пролог и финал остаются серыми: вход и выход из доклада — нейтральные.
+ *
+ * Тона Luna: синий и оливковый — канонические схемы XP, остальные собраны в
+ * той же логике (светлый блик сверху, основной тон, светлая «губа» снизу).
+ * Контраст белой подписи проверен измерением на ОБОИХ краях градиента и нигде
+ * не ниже 4.5 — на глаз это не подбирается.
+ */
+.tone-origin {
+  --tb-hi: #b9d1f0;
+  --tb-from: #3f6fb5;
+  --tb-to: #1e4a8c;
+  --tb-lip: #7ba3d8;
+  --tb-edge: #173a6e;
+}
+
+.tone-growth {
+  --tb-hi: #d5dcc0;
+  --tb-from: #657a40;
+  --tb-to: #4b5c33;
+  --tb-lip: #90a468;
+  --tb-edge: #3f5029;
+}
+
+.tone-craft {
+  --tb-hi: #a9d8d9;
+  --tb-from: #2e7d80;
+  --tb-to: #1d5c5f;
+  --tb-lip: #66aeb0;
+  --tb-edge: #164a4c;
+}
+
+.tone-standards {
+  --tb-hi: #edbdb2;
+  --tb-from: #9a4a3c;
+  --tb-to: #77362b;
+  --tb-lip: #c07f70;
+  --tb-edge: #5e2921;
+}
+
+.tone-legacy {
+  --tb-hi: #e7c489;
+  --tb-from: #9a6414;
+  --tb-to: #7d4b0e;
+  --tb-lip: #c08a35;
+  --tb-edge: #6d4009;
+}
+
+.tone-agent {
+  --tb-hi: #cfc2e8;
+  --tb-from: #6f59a0;
+  --tb-to: #4f3d78;
+  --tb-lip: #8d78bd;
+  --tb-edge: #3d2f5e;
+}
+
+/* Одно правило на все тона — и оно же раздаёт цвет ВЛОЖЕННЫМ окнам и диалогам.
+   Специфичность (0,2,0) перебивает модификаторы --legacy/--agent самих
+   компонентов, поэтому окно внутри окна не может оказаться другого цвета. */
+.tone-origin .os-titlebar,
+.tone-growth .os-titlebar,
+.tone-craft .os-titlebar,
+.tone-standards .os-titlebar,
+.tone-legacy .os-titlebar,
+.tone-agent .os-titlebar {
+  background: linear-gradient(
+    180deg,
+    var(--tb-hi) 0%,
+    var(--tb-from) 7%,
+    var(--tb-to) 62%,
+    var(--tb-to) 88%,
+    var(--tb-lip) 100%
+  );
+  border-bottom-color: var(--tb-edge);
+  color: #fff;
+}
+
 .os-titlebar__icon {
   font-size: 11px;
   opacity: 0.95;
@@ -508,20 +1038,29 @@ pre {
   flex-shrink: 0;
 }
 
+/* Кнопки окна Luna — выпуклые, со скруглением 2px и собственным бликом */
 .os-titlebar__btn {
   width: 16px;
   height: 14px;
   display: grid;
   place-items: center;
-  font-family: var(--font-mono);
+  font-family: var(--font-chrome);
   font-size: 9px;
   font-weight: 700;
   color: #1b2b3a;
-  background: var(--chrome);
-  border: 1px solid #fff;
-  border-right-color: var(--os-face-dark);
-  border-bottom-color: var(--os-face-dark);
+  background: linear-gradient(180deg, var(--btn-face) 0%, var(--btn-face-lo) 100%);
+  border: 1px solid var(--btn-line);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
   line-height: 1;
+}
+
+/* Закрыть — красная, как в Luna */
+.os-titlebar__btn:last-child {
+  background: linear-gradient(180deg, #f3a598 0%, #c0392b 100%);
+  border-color: #8f2a1f;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
 
 .os-statusbar {
@@ -531,9 +1070,10 @@ pre {
   flex-shrink: 0;
   min-height: var(--statusbar-h);
   padding: 0 10px;
-  background: var(--chrome);
+  background: linear-gradient(180deg, var(--chrome) 0%, var(--chrome-deep) 100%);
   border-top: 1px solid var(--chrome-line);
-  font-family: var(--font-mono);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  font-family: var(--font-chrome);
   font-size: 10px;
   letter-spacing: 0.02em;
   color: var(--muted);
@@ -543,10 +1083,13 @@ pre {
   display: flex;
   align-items: center;
   gap: 6px;
-  /* «Вдавленная» ячейка статус-бара — узнаваемая деталь Win9x */
+  /* «Вдавленная» ячейка статус-бара — узнаваемая деталь Win9x:
+     тёмная кромка сверху-слева, светлая снизу-справа. */
   border: 1px solid transparent;
-  border-top-color: var(--chrome-line);
-  border-left-color: var(--chrome-line);
+  border-top-color: var(--os-face-dark);
+  border-left-color: var(--os-face-dark);
+  border-bottom-color: rgba(255, 255, 255, 0.9);
+  border-right-color: rgba(255, 255, 255, 0.9);
   padding: 1px 6px;
 }
 
@@ -557,6 +1100,88 @@ pre {
 
 .os-statusbar__spacer {
   flex: 1;
+}
+
+/* ── Окно внутри слота картинки ──────────────────────────────────────────
+ * Лейауты image-left / image-right / image-top рисуют вокруг слота свою
+ * вдавленную рамку-превью. Если в слот кладут готовое окно (<Screenshot>,
+ * <BrowserFrame>, <MediaPlayer>), рамок становится две, а `overflow: hidden`
+ * у внешней срезает тайтлбар и статус-бар внутренней — окно есть в разметке,
+ * но его не видно. Поэтому при вложенном окне рамка лейаута отходит в сторону
+ * и отдаёт ему всю площадь.
+ *
+ * Правило живёт здесь, а не в scoped-стилях трёх лейаутов: селектор с
+ * `.slidev-layout` перебивает их по специфичности, и порядок подключения
+ * стилей перестаёт иметь значение.
+ */
+.slidev-layout .ir-figure__frame:has(.os-window),
+.slidev-layout .it-figure__frame:has(.os-window) {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  place-items: stretch;
+}
+
+.slidev-layout .ir-figure__frame > .os-window,
+.slidev-layout .it-figure__frame > .os-window {
+  width: 100%;
+  min-height: 0;
+}
+
+/* ── Панель навигации браузера ───────────────────────────────────────────
+ * Глобально, а не в scoped-стилях: этой панелью пользуются и <BrowserFrame>,
+ * и лейаут image-full, когда показывает не картинку, а сайт.
+ */
+.os-urlbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 4px 8px;
+  background: linear-gradient(180deg, var(--chrome) 0%, var(--chrome-deep) 100%);
+  border-bottom: 1px solid var(--chrome-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-align: left;
+}
+
+.os-urlbar__nav {
+  width: 16px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  font-size: 8px;
+  background: linear-gradient(180deg, var(--btn-face) 0%, var(--btn-face-lo) 100%);
+  border: 1px solid var(--btn-line);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.os-urlbar__url {
+  flex: 1;
+  min-width: 0;
+  padding: 2px 6px;
+  background: var(--window);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.14);
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-urlbar__year {
+  flex-shrink: 0;
+  padding: 2px 6px;
+  background: var(--legacy-pale);
+  border: 1px solid var(--legacy);
+  color: var(--legacy);
+  font-weight: 600;
 }
 
 /* ── Контентное окно ─────────────────────────────────────────────────────── */
@@ -639,13 +1264,15 @@ pre {
   color: var(--ink);
 }
 
+/* «Глава N» — в цвете главы: разделитель объявляет тон, в котором дальше
+   пойдут её окна. Без тона (пролог) остаётся синий цвет платформы. */
 .layout-section h1 {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--platform);
+  color: var(--tb-from, var(--platform));
   margin: 0 0 var(--space-3);
   border: none;
   padding: 0;
@@ -671,7 +1298,18 @@ pre {
   color: var(--legacy);
 }
 
-/* ── Statement — системное сообщение по центру ───────────────────────────── */
+/* ── Statement — системное сообщение по центру ───────────────────────────
+ * Уровень заголовка здесь кодирует РОЛЬ строки, а не «насколько важно»:
+ *
+ *   #     пик      — фраза, ради которой слайд существует (редко)
+ *   ##    тезис    — главная мысль слайда; так размечено большинство
+ *   ###   подпора  — развивает или уточняет тезис
+ *   ####  деталь   — факт, пример, оговорка
+ *
+ * Держать это соглашение важнее, чем подобрать размер: на 53 слайдах уровни
+ * выбирались на глаз, и одна и та же по роли строка выходила то крупной, то
+ * почти нечитаемой с задних рядов.
+ */
 .layout-statement h1 {
   font-size: var(--text-2xl);
   font-weight: 700;
@@ -700,6 +1338,12 @@ pre {
   font-weight: 500;
   color: var(--muted);
   margin: 0 0 var(--space-2);
+}
+
+/* Абзац на statement-слайде — это тоже тезис, просто без разметки заголовком.
+   На --text-base он читался мельче любой подписи и проваливался. */
+.layout-statement p {
+  font-size: var(--text-md);
 }
 
 .layout-statement p:last-child,
@@ -761,15 +1405,9 @@ pre {
   height: 36px;
 }
 
-/* сама «рельса» оси — чтобы пустые годы читались как расстояние */
-.lag-track::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  border-top: 1px dotted var(--chrome-line);
-}
+/* «Рельсы» у строк раньше шли пунктиром через всю ширину. Убраны: семь
+   пунктирных линий поверх семи отрезков давали лишний визуальный шум, а
+   расстояние и так читается по отрезку, годам на концах и шкале снизу. */
 
 .lag-bar {
   position: absolute;
@@ -832,9 +1470,15 @@ pre {
   height: 14px;
 }
 
+/* Линия остаётся только у самой шкалы — она несёт смысл, а не разлиновку.
+   Полное объявление здесь, потому что базовое правило для строк убрано. */
 .lag-axis .lag-track::before {
-  border-top: 1px solid var(--chrome-line);
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
   top: 0;
+  border-top: 1px solid var(--chrome-line);
 }
 
 .lag-tick {

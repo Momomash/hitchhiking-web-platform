@@ -11,7 +11,7 @@ const props = defineProps<{
   docNumber?: string
   unit?: string
   status?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   figNumber?: string | number
   figLabel?: string
   windowTitle?: string
@@ -22,7 +22,7 @@ const barText = useWindowTitle(props)
 </script>
 
 <template>
-  <div class="slidev-layout layout-window layout-image-top">
+  <div class="slidev-layout layout-window layout-image-top" :class="tone && `tone-${tone}`">
     <div class="os-window">
       <OsTitleBar :text="barText" :tone="tone" />
 

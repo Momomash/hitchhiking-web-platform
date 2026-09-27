@@ -13,7 +13,7 @@ import OsTitleBar from './OsTitleBar.vue'
 defineProps<{
   title?: string
   icon?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   status?: string
   align?: 'top' | 'center'
 }>()

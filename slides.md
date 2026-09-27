@@ -30,7 +30,7 @@ classification: HOLYJS AUTUMN 2026
 </template>
 
 <!--
-Всем привет! Меня зовут Мария Кондаурова, я из BIOCAD. Сегодня мы поговорим про самое большое легаси, с которым работает каждый в этом зале. Не про ваш монолит, не про проект, который вы боитесь трогать. Про веб-платформу. И к концу доклада я хочу, чтобы слово «легаси» перестало для вас звучать как ругательство.
+Всем привет! Сегодня мы поговорим про самое большое легаси, с которым работает каждый в этом зале. Не про ваш монолит, не про проект, который вы боитесь трогать. Про веб-платформу. И к концу доклада я хочу, чтобы слово «легаси» перестало для вас звучать как ругательство.
 -->
 
 ---
@@ -53,10 +53,10 @@ transition: fade
 
 ::right::
 
-  <img src="./assets/llama.png"/>
+  <Screenshot src="./assets/llama.png" title="llama.png" meta="Мария Кондаурова · BIOCAD" />
 
 <!--
-Всем привет! Как уже сказали меня зовут Маша, я занимаюсь руковожу разработкой интерфейсов для вычислительной биологии в BIOCAD. Биотех и вот это всё всё) 
+[click] Я руковожу разработкой интерфейсов для вычислительной биологии в BIOCAD. Биотех и вот это всё всё) 
 
 [click] Еще состою в программном комитете HolyJS.
 
@@ -107,7 +107,7 @@ title: Как растут продукты
 
 [click] Потом приходят новые команды, и в коде появляется фраза «это трогать нельзя, сломается».
 
-[click] А в какой-то момент вы обнаруживаете, что переписать это невозможно. Не потому что код плохой, а потому что им пользуются.
+[click] А в какой-то момент вы обнаруживаете, что переписать это невозможно. Потому что кода немеренно и юзеры постоянно пользуются продуктом.
 
 Знакомо? Так вот.
 -->
@@ -137,7 +137,7 @@ sectionNumber: 0-4
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/web.png" width="300" style="margin: 0 auto" />
+<Screenshot src="./assets/web.png" title="web.png" meta="Из чего состоит продукт" />
 
 <p v-click style="margin: 0 auto">Веб-платформа = Браузер + API + стандарты + тесты + комитеты</p>
 
@@ -151,6 +151,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: section
 docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 sectionNumber: '1'
+tone: origin
 ---
 
 # Глава 1
@@ -164,16 +165,17 @@ sectionNumber: '1'
 
 ---
 sectionNumber: 1-1
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 title: Масштаб за 80 лет
 ---
 
 ## На секунду — про масштаб
 
-<div class="grid grid-cols-2 gap-6 items-center mt-4">
+<div class="os-cols os-cols--band">
 
-<img src="./assets/first_comp.png" class="rounded-xl" />
-<img v-click src="./assets/actual_comp.png" class="rounded-xl" />
+<Screenshot src="./assets/first_comp.png" title="eniac.png" meta="ENIAC · 1946" />
+<Screenshot v-click src="./assets/actual_comp.png" title="iphone17.png" meta="iPhone 17 Pro · 2025" />
 
 </div>
 
@@ -202,6 +204,7 @@ title: Масштаб за 80 лет
 ---
 layout: statement
 sectionNumber: 1-2
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 ## World Wide Web
@@ -215,6 +218,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: image-right
 sectionNumber: 1-3
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 figNumber: 1-1
 figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
@@ -225,7 +229,7 @@ figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ## Создал первый браузер в **1990 году**
 
 <template v-slot:image>
-<img src="./assets/tim.png"  />
+<Screenshot src="./assets/tim.png" title="tim.jpg" meta="CERN · 1989" />
 </template>
 
 <!--
@@ -235,6 +239,7 @@ figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ---
 docNumber: "HOLYJS AUTUMN 2026"
 sectionNumber: 1-4
+tone: origin
 title: Первый в мире сайт
 status: "1 document · 0 images"
 ---
@@ -257,6 +262,7 @@ status: "1 document · 0 images"
 ---
 layout: statement
 sectionNumber: 1-5
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -277,6 +283,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: image-right
 sectionNumber: 1-6
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 figNumber: 1-2
 figLabel: EARLY WEB — TABLE-BASED LAYOUTS
@@ -293,7 +300,9 @@ figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 </v-clicks>
 
 <template v-slot:image>
-<img src="./assets/tablelayout.png"  />
+<BrowserFrame url="http://www.example.com/index.html" tab="Табличная вёрстка" year="1998" status="Готово" class="h-full">
+<img src="./assets/tablelayout.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 </template>
 
 <!--
@@ -308,14 +317,11 @@ figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 
 ---
 sectionNumber: 1-7
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/mac.png" height="80%"/>
-
-## ПК —> Веб стал доступен каждому
-
-### TODO: поменять картинку на кадр Apple II ad - Homemaker (1981)
+<Screenshot src="./assets/mac.png" title="apple-1981.png" meta="Реклама домашнего компьютера · 1981" />
 
 <!--
 А потом компьютер переехал из лаборатории на кухню. Посмотрите, как это продавали: реклама обещает, что графики дома теперь построит даже домохозяйка. Веб получил не сотни исследователей, а всех сразу — и с этого момента требования к нему формируют не инженеры.
@@ -324,6 +330,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 1-8
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -335,13 +342,16 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 1-9
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 title: Атмосфера раннего пользовательского веба
 ---
 
-<SlidevVideo autoplay>
-  <source src="./assets/mov/cameron1.mov"  />
-</SlidevVideo>
+<MediaPlayer title="early-web.mov" status="Geocities · гостевые книги · счётчики посещений" class="h-full">
+  <SlidevVideo autoplay autoreset="slide" muted>
+    <source src="./assets/mov/cameron1.mov" />
+  </SlidevVideo>
+</MediaPlayer>
 
 <!--
 Вот атмосфера того веба. Ярко, мигает, местами страшно — и абсолютно живое. Люди впервые получили площадку, на которой не нужно ничьё разрешение.
@@ -351,7 +361,11 @@ title: Атмосфера раннего пользовательского ве
 ---
 layout: image-full
 sectionNumber: 1-10
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
+title: Space Jam
+url: https://www.spacejam.com/1996/
+year: "1996"
 ---
 <template v-slot:image>
 <img src="./assets/jam.png"  />
@@ -366,7 +380,11 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: image-full
 sectionNumber: 1-11
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
+title: The Million Dollar Homepage
+url: http://www.milliondollarhomepage.com/
+year: "2005"
 ---
 
 <template v-slot:image>
@@ -382,6 +400,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 1-12
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -396,6 +415,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 1-13
+tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -416,6 +436,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: section
 sectionNumber: '2'
+tone: growth
 docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 
@@ -431,14 +452,15 @@ docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 layout: statement
 sectionNumber: 2-1
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-### "Фронтенд развивается скачкообразно"
+## "Фронтенд развивается скачкообразно"
 
 <v-click>
 
-#### Каждый скачок — это накопившееся давление **требований**
+### Каждый скачок — это накопившееся давление **требований**
 
 </v-click>
 
@@ -451,8 +473,9 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: image-full
 sectionNumber: 2-1a
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
-title: Динамика скачков
+title: since.png — Динамика скачков
 ---
 
 <template v-slot:image>
@@ -467,6 +490,7 @@ title: Динамика скачков
 
 ---
 sectionNumber: 2-2
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -474,31 +498,22 @@ docNumber: "HOLYJS AUTUMN 2026"
 <RequirementCard year="2004" demand="Взаимодействовать, а не читать"
   response="AJAX / XMLHttpRequest" effect="Состояние — вручную, спагетти-код" />
 
-<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
-  <div
-    v-click
-    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      До 2004
-    </div>
+<div class="os-cols os-cols--stretch">
 
-      - Каждое действие — новая страница
-      - Обновить статус — рефреш
+<OsGroupBox v-click legend="До 2004" tone="danger">
 
-  </div>
-  <div
-    v-click
-    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      Gmail + AJAX
-    </div>
+- Каждое действие — новая страница
+- Обновить статус — рефреш
 
-      - Частичное обновление страницы
-      - Мгновенные ответы
+</OsGroupBox>
 
-  </div>
+<OsGroupBox v-click legend="Gmail + AJAX" tone="success">
+
+- Частичное обновление страницы
+- Мгновенные ответы
+
+</OsGroupBox>
+
 </div>
 
 <!--
@@ -511,6 +526,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-3
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -545,6 +561,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-4
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -552,34 +569,25 @@ docNumber: "HOLYJS AUTUMN 2026"
 <RequirementCard year="2010" demand="Богатый UI и скорость разработки"
   response="SPA: Angular, React, Vue" effect="Тяжёлый клиент, SEO ломается" />
 
-<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
-  <div
-    v-click
-    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      Было (MPA)
-    </div>
+<div class="os-cols os-cols--stretch">
 
-      - Каждый экран — отдельный HTML
-      - Сервер рендерит всю страницу
-      - Ограниченная интерактивность
-      - Много кода
+<OsGroupBox v-click legend="Было (MPA)" tone="danger">
 
-  </div>
-  <div
-    v-click
-    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      Стало (SPA)
-    </div>
+- Каждый экран — отдельный HTML
+- Сервер рендерит всю страницу
+- Ограниченная интерактивность
+- Много кода
 
-      - Angular/React/Vue
-      - Клиент — UI-машина
-      - Сервер — только API
+</OsGroupBox>
 
-  </div>
+<OsGroupBox v-click legend="Стало (SPA)" tone="success">
+
+- Angular/React/Vue
+- Клиент — UI-машина
+- Сервер — только API
+
+</OsGroupBox>
+
 </div>
 
 <!--
@@ -593,74 +601,32 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: default
 sectionNumber: 2-5
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## Но телефоны не стояли на месте
 
-<div class="grid grid-cols-2 gap-12 mt-10 items-start">
+<div class="os-cols os-cols--stretch">
 
-  <div
-    v-click
-    class="flex flex-col gap-1"
-  >
-    <h2 class="text-2xl font-bold text-rose-400">
-      Кнопочные <span class="opacity-70">(2000–2007)</span>
-    </h2>
-    <div class="grid grid-cols-2 gap-1">
-      <img style="width: 100px; height: 100px"
-        src="./assets/nokia.png"
-        alt="Nokia 3310"
-        class="shadow-lg rounded-2xl"
-      />
-      <img
-        src="./assets/moto.png" style="width: 100px; height: 100px"
-        alt="Motorola Razr"
-        class="shadow-lg rounded-2xl"
-      />
-      <img
-        src="./assets/sams.png" style="width: 100px; height: 100px"
-        alt="Samsung clamshell phone"
-        class="shadow-lg rounded-2xl"
-      />
-      <img
-        src="./assets/burb.png" style="width: 100px; height: 100px"
-        alt="BlackBerry phone"
-        class="shadow-lg rounded-2xl"
-      />
-    </div>
-  </div>
+<OsGroupBox v-click legend="Кнопочные (2000–2007)" tone="legacy">
+<div class="os-thumbs">
+  <img src="./assets/nokia.png" alt="Nokia 3310" />
+  <img src="./assets/moto.png" alt="Motorola Razr" />
+  <img src="./assets/sams.png" alt="Samsung clamshell phone" />
+  <img src="./assets/burb.png" alt="BlackBerry phone" />
+</div>
+</OsGroupBox>
 
-  <div
-    v-click
-    class="flex flex-col gap-1"
-  >
-    <h2 class="text-2xl font-bold text-cyan-300">
-      Сенсорные <span class="opacity-70">(2007+)</span>
-    </h2>
-    <div class="grid grid-cols-2 gap-1">
-      <img
-        src="./assets/experia.png" style="width: 100px; height: 100px"
-        alt="Sony Ericsson Xperia"
-        class="shadow-lg rounded-2xl"
-      />
-      <img
-        src="./assets/iphone.png" style="width: 100px; height: 100px"
-        alt="iPhone"
-        class="shadow-lg rounded-2xl"
-      />
-      <img
-        src="./assets/lg.png" style="width: 100px; height: 100px"
-        alt="LG Android phone"
-        class="shadow-lg rounded-2xl"
-      />
-      <img
-        src="./assets/galaxy.png" style="width: 100px; height: 100px"
-        alt="Samsung Galaxy"
-        class="shadow-lg rounded-2xl"
-      />
-    </div>
-  </div>
+<OsGroupBox v-click legend="Сенсорные (2007+)" tone="platform">
+<div class="os-thumbs">
+  <img src="./assets/experia.png" alt="Sony Ericsson Xperia" />
+  <img src="./assets/iphone.png" alt="iPhone" />
+  <img src="./assets/lg.png" alt="LG Android phone" />
+  <img src="./assets/galaxy.png" alt="Samsung Galaxy" />
+</div>
+</OsGroupBox>
+
 </div>
 
 <!--
@@ -673,6 +639,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-6
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -701,6 +668,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-7
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -708,35 +676,26 @@ docNumber: "HOLYJS AUTUMN 2026"
 <RequirementCard year="2012" demand="Мир стал мобильным"
   response="Mobile-first, адаптивность 320px–4K" effect="Хочется нативности" />
 
-<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
-  <div
-    v-click
-    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      Десктоп-first (2010)
-    </div>
+<div class="os-cols os-cols--stretch">
 
-      - Фиксированная ширина 1024px
-      - Hover и курсор мыши
-      - Быстрый интернет (DSL)
-      - Мощные ПК
+<OsGroupBox v-click legend="Десктоп-first (2010)" tone="danger">
 
-  </div>
-  <div
-    v-click
-    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      Mobile-first (2012+)
-    </div>
+- Фиксированная ширина 1024px
+- Hover и курсор мыши
+- Быстрый интернет (DSL)
+- Мощные ПК
 
-      - Адаптивность 320px–4K
-      - Touch интерфейсы (Material UI)
-      - Производительность (lazy load)
-      - Сети 3G/4G
+</OsGroupBox>
 
-  </div>
+<OsGroupBox v-click legend="Mobile-first (2012+)" tone="success">
+
+- Адаптивность 320px–4K
+- Touch интерфейсы (Material UI)
+- Производительность (lazy load)
+- Сети 3G/4G
+
+</OsGroupBox>
+
 </div>
 
 <!--
@@ -749,6 +708,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-8
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -777,6 +737,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-9
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -784,35 +745,26 @@ docNumber: "HOLYJS AUTUMN 2026"
 <RequirementCard year="2015" demand="То же, что умеют нативные приложения"
   response="PWA: Service Workers, offline, push" effect="Рендерные боли — опять" />
 
-<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
-  <div
-    v-click
-    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      Обычный веб
-    </div>
+<div class="os-cols os-cols--stretch">
 
-      - Только онлайн
-      - Не устанавливается
-      - Нет push
-      - Зависит от сети
+<OsGroupBox v-click legend="Обычный веб" tone="danger">
 
-  </div>
-  <div
-    v-click
-    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      PWA
-    </div>
+- Только онлайн
+- Не устанавливается
+- Нет push
+- Зависит от сети
 
-      - Offline-first
-      - Установка без стора
-      - Push уведомления
-      - Кэш + Service Workers
+</OsGroupBox>
 
-  </div>
+<OsGroupBox v-click legend="PWA" tone="success">
+
+- Offline-first
+- Установка без стора
+- Push уведомления
+- Кэш + Service Workers
+
+</OsGroupBox>
+
 </div>
 
 <v-click>
@@ -835,6 +787,7 @@ Service Worker = прокси между сетью и кэшем
 
 ---
 sectionNumber: 2-10
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -863,6 +816,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-11
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -870,35 +824,26 @@ docNumber: "HOLYJS AUTUMN 2026"
 <RequirementCard year="2020" demand="Интерактив + скорость + SEO сразу"
   response="React Server Components" effect="Границы сервер/клиент размыты" />
 
-<div class="grid grid-cols-2 gap-6 mt-4 items-stretch">
-  <div
-    v-click
-    class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      Классика
-    </div>
+<div class="os-cols os-cols--stretch">
 
-      - Всё на клиенте (SPA)
-      - Или всё на сервере (MPA)
-      - Два кода
-      - SEO или скорость
+<OsGroupBox v-click legend="Классика" tone="danger">
 
-  </div>
-  <div
-    v-click
-    class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5"
-  >
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      RSC (React Server Components)
-    </div>
+- Всё на клиенте (SPA)
+- Или всё на сервере (MPA)
+- Два кода
+- SEO или скорость
 
-      - Серверный рендер статичного
-      - Клиентский только интерактив
-      - Один код (async/await)
-      - SEO + скорость + PWA
+</OsGroupBox>
 
-  </div>
+<OsGroupBox v-click legend="RSC (React Server Components)" tone="success">
+
+- Серверный рендер статичного
+- Клиентский только интерактив
+- Один код (async/await)
+- SEO + скорость + PWA
+
+</OsGroupBox>
+
 </div>
 
 <v-click>
@@ -922,6 +867,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: timeline
 sectionNumber: 2-12
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: ЭВОЛЮЦИЯ ВЕБА — ХРОНОЛОГИЯ
 direction: horizontal
@@ -987,6 +933,7 @@ direction: horizontal
 ---
 layout: statement
 sectionNumber: 2-13
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1007,6 +954,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 2-14
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1026,6 +974,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-15
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: Платформа догоняет библиотеки
 ---
@@ -1079,6 +1028,7 @@ title: Платформа догоняет библиотеки
 ---
 layout: statement
 sectionNumber: 2-16
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1103,6 +1053,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 2-16a
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1114,10 +1065,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-17
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/vk.png" />
+<BrowserFrame url="https://vk.com/id1" tab="Павел Дуров | ВКонтакте" year="2006" status="Готово" class="h-full">
+<img src="./assets/vk.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <!--
 Старый ВКонтакте, профиль Дурова, СПбГУ '06. Смотрите, какой он прямолинейный: слева синие ссылки в столбик, справа буквально таблица — пол, день рождения, родной город, политические взгляды, любимая музыка, любимые фильмы. Никакой ленты, никаких состояний, никакого «загружается». Страница одна, и она либо есть, либо её нет. А внизу счётчик неиспользованных голосов — два с половиной миллиона.
@@ -1125,10 +1079,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-18
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/gonki.png" />
+<BrowserFrame url="http://gonki.ru/garage.php" tab="Уличные гонки — Гараж" year="2007" status="Готово" class="h-full">
+<img src="./assets/gonki.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <!--
 Браузерные «Уличные гонки». Гараж, Mazda MX-3, восемьдесят восемь лошадиных сил, кнопка «Увеличить». И события текстом: «Станислав вызвал вас на гонку и выиграл» — с ссылкой «Вызвать в ответ». Вся игра — это форма и перезагрузка страницы. Затягивало при этом абсолютно.
@@ -1136,10 +1093,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-19
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/zaycev.png" />
+<BrowserFrame url="http://zaycev.net/" tab="Zaycev.net — музыка mp3" year="2011" status="Готово" class="h-full">
+<img src="./assets/zaycev.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <!--
 И zaycev.net, новогодняя шапка 2011 года: «2011 — год Зайца». Каталог по алфавиту, потому что нормального поиска нет. Капча на плетёном фоне и ссылка «Не вижу символы». Слева навигация, в которой мирно соседствуют новинки mp3, торренты и форум. Вот так выглядел интерфейс, в котором мы все жили. И, что важно, он работал.
@@ -1147,19 +1107,14 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-20
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<div style="width: 100%; border-radius: 12px; overflow: hidden;">
-  <video
-    src="./assets/mov/samokat.mov"
-    autoplay
-    muted
-    loop
-    playsinline
-    style="width: 100%; height: auto; display: block;"
-  ></video>
-</div>
+<BrowserFrame media url="https://museum.samokat.ru" tab="Музей Самоката" year="2026" status="3D музей в браузере · React и Three.js" class="h-full">
+  <video src="./assets/mov/samokat.mov" autoplay muted loop playsinline></video>
+</BrowserFrame>
+
 <p class="text-center">3D музей в браузере &#40;React и Three.js) <a href="https://museum.samokat.ru">https://museum.samokat.ru</a></p>
 
 <!--
@@ -1168,19 +1123,14 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-21
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<div style="width: 100%; border-radius: 12px; overflow: hidden;">
-  <video
-    src="./assets/mov/messanger.mov"
-    autoplay
-    muted
-    loop
-    playsinline
-    style="width: 100%; height: auto; display: block;"
-  ></video>
-</div>
+<BrowserFrame media url="https://messenger.abeto.co" tab="Messenger — abeto" year="2026" status="Многопользовательская игра · WebGL" class="h-full">
+  <video src="./assets/mov/messanger.mov" autoplay muted loop playsinline></video>
+</BrowserFrame>
+
 <p class="text-center">Многопользовательская игра в браузере (webGL) <a href="https://messenger.abeto.co">https://messenger.abeto.co</a></p>
 
 <!--
@@ -1189,20 +1139,15 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 2-22
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 
-<div style="width: 100%; border-radius: 12px; overflow: hidden;">
-  <video
-    src="./assets/mov/doom.mov"
-    autoplay
-    muted
-    loop
-    playsinline
-    style="width: 100%; height: auto; display: block;"
-  ></video>
-</div>
+<BrowserFrame media url="https://cssdoom.wtf/" tab="CSS DOOM" year="2026" status="DOOM, отрисованный CSS и JS" class="h-full">
+  <video src="./assets/mov/doom.mov" autoplay muted loop playsinline></video>
+</BrowserFrame>
+
 <p class="text-center">DOOM на CSS и JS <a href="https://cssdoom.wtf/">https://cssdoom.wtf/</a></p>
 
 <!--
@@ -1215,6 +1160,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 2-23
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: "Web API в действии"
 ---
@@ -1236,16 +1182,9 @@ title: "Web API в действии"
 
 <template v-slot:right>
 
-<div style="width: 100%;">
-  <video
-    src="./assets/mov/mdn.mov"
-    autoplay
-    muted
-    loop
-    playsinline
-    style="width: 100%; height: auto; display: block;"
-  ></video>
-</div>
+<BrowserFrame media url="https://developer.mozilla.org/en-US/docs/Web/API" tab="Web APIs | MDN" year="2026" status="Прокрутка списка Web API" class="h-full">
+  <video src="./assets/mov/mdn.mov" autoplay muted loop playsinline></video>
+</BrowserFrame>
 
 </template>
 
@@ -1264,6 +1203,7 @@ title: "Web API в действии"
 ---
 layout: statement
 sectionNumber: 2-24
+tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1278,6 +1218,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: section
 sectionNumber: '3'
+tone: craft
 docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 
@@ -1293,6 +1234,7 @@ docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 layout: statement
 sectionNumber: 3-1
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1313,6 +1255,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 3-2
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1337,14 +1280,15 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 3-3
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-# Арка 1 — Дизайн
+## Арка 1 — Дизайн
 
 <v-click>
 
-## От картинки к системе правил
+### От картинки к системе правил
 
 </v-click>
 
@@ -1357,6 +1301,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 3-4
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Дизайн = документ
 ---
@@ -1377,7 +1322,9 @@ title: Дизайн = документ
 </template>
 
 <template v-slot:right>
-<img src="./assets/tablelayout.png" />
+<BrowserFrame url="http://www.example.com/index.html" tab="Табличная вёрстка" year="1998" status="Готово" class="h-full">
+<img src="./assets/tablelayout.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 </template>
 
 <!--
@@ -1395,9 +1342,9 @@ title: Дизайн = документ
 ---
 layout: statement
 sectionNumber: 3-5
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Табличная вёрстка не умерла
-tone: legacy
 status: "RENDERER: MICROSOFT WORD"
 ---
 
@@ -1428,32 +1375,30 @@ status: "RENDERER: MICROSOFT WORD"
 
 ---
 sectionNumber: 3-6
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Дизайн начал рисовать состояния
 ---
 
 ## Шаг 2. Появилось поведение — и дизайн стал рисовать состояния
 
-<div class="grid grid-cols-2 gap-8 mt-8 items-stretch">
-  <div v-click class="rounded-2xl border border-red-200/60 bg-red-50/40 px-6 py-5">
-    <div class="text-sm uppercase tracking-widest text-red-500 font-bold mb-4">
-      Было
-    </div>
+<div class="os-cols os-cols--stretch">
 
-      - Один макет = один экран
-      - Страница либо есть, либо её нет
+<OsGroupBox v-click legend="Было" tone="danger">
 
-  </div>
-  <div v-click class="rounded-2xl border border-teal-200/60 bg-teal-50/40 px-6 py-5">
-    <div class="text-sm uppercase tracking-widest text-teal-600 font-bold mb-4">
-      Стало (после AJAX)
-    </div>
+- Один макет = один экран
+- Страница либо есть, либо её нет
 
-      - loading / empty / error / partial
-      - Переходы и анимации
-      - Оптимистичный UI
+</OsGroupBox>
 
-  </div>
+<OsGroupBox v-click legend="Стало (после AJAX)" tone="success">
+
+- loading / empty / error / partial
+- Переходы и анимации
+- Оптимистичный UI
+
+</OsGroupBox>
+
 </div>
 
 <v-clicks>
@@ -1478,6 +1423,7 @@ title: Дизайн начал рисовать состояния
 
 ---
 sectionNumber: 3-7
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Дизайн симулировал то, чего не было
 ---
@@ -1519,6 +1465,7 @@ title: Дизайн симулировал то, чего не было
 ---
 layout: statement
 sectionNumber: 3-8
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1543,6 +1490,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 3-9
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Mobile-first — макет перестал быть картинкой
 ---
@@ -1598,6 +1546,7 @@ title: Mobile-first — макет перестал быть картинкой
 
 ---
 sectionNumber: 3-10
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Ответ индустрии — дизайн-системы
 ---
@@ -1647,6 +1596,7 @@ title: Ответ индустрии — дизайн-системы
 ---
 layout: statement
 sectionNumber: 3-11
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1666,6 +1616,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 3-12
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1733,6 +1684,7 @@ flowchart TD
 
 ---
 sectionNumber: 3-13
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Решение отдали пользователю
 ---
@@ -1771,6 +1723,7 @@ title: Решение отдали пользователю
 ---
 layout: statement
 sectionNumber: 3-14
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -1791,14 +1744,15 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 3-15
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-# Арка 2 — Бэкенд
+## Арка 2 — Бэкенд
 
 <v-click>
 
-## От файлового сервера до edge
+### От файлового сервера до edge
 
 </v-click>
 
@@ -1810,6 +1764,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 3-16
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Сервер отдаёт файл
 ---
@@ -1847,6 +1802,7 @@ title: Сервер отдаёт файл
 
 ---
 sectionNumber: 3-17
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Сервер начал отдавать данные
 ---
@@ -1882,6 +1838,7 @@ title: Сервер начал отдавать данные
 ---
 layout: statement
 sectionNumber: 3-17a
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Побочные эффекты AJAX
 ---
@@ -1902,6 +1859,7 @@ title: Побочные эффекты AJAX
 
 ---
 sectionNumber: 3-18
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Один бэкенд — много клиентов
 ---
@@ -1947,6 +1905,7 @@ title: Один бэкенд — много клиентов
 
 ---
 sectionNumber: 3-19
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Мобильность как бэкенд-требование
 ---
@@ -1990,6 +1949,7 @@ title: Мобильность как бэкенд-требование
 
 ---
 sectionNumber: 3-20
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Сервер вернулся
 ---
@@ -2025,6 +1985,7 @@ title: Сервер вернулся
 ---
 layout: two-column
 sectionNumber: 3-21
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Веб навязал бэкенду свой API
 ---
@@ -2081,6 +2042,7 @@ export default {
 ---
 layout: statement
 sectionNumber: 3-22
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2101,6 +2063,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 3-23
+tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2121,6 +2084,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: section
 sectionNumber: '4'
+tone: standards
 docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 
@@ -2136,6 +2100,7 @@ docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 layout: statement
 sectionNumber: 4-1
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: Global architecture review
 status: "MERGE: PERMISSION DENIED"
@@ -2169,6 +2134,7 @@ status: "MERGE: PERMISSION DENIED"
 ---
 layout: chart-full
 sectionNumber: 4-2
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: КАРТА ВЛИЯНИЯ
 figNumber: 4-1
@@ -2287,6 +2253,7 @@ flowchart TD
 ---
 layout: chart-full
 sectionNumber: 4-3
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: СЛОЙ 1 — СТАНДАРТЫ
 figNumber: 4-2
@@ -2326,6 +2293,7 @@ WHATWG ведёт HTML Living Standard; TC39 отвечает за JavaScript; W
 ---
 layout: chart-full
 sectionNumber: 4-4
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: СЛОЙ 2 — W3C И ИНКУБАЦИЯ
 figNumber: 4-3
@@ -2395,10 +2363,11 @@ WICG — инкубатор новых веб-идей; внутри W3C мно�
 ---
 transition: slide-left
 sectionNumber: 4-5
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/pepe.png">
+<Screenshot src="./assets/pepe.png" title="standards.png" meta="Где именно решается твой вопрос" />
 
 <!--
 Примерно так это выглядит изнутри, когда пытаешься понять, где именно решается твой вопрос.
@@ -2408,6 +2377,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 4-6
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: Кухня стандартизации
 transition: fade
@@ -2429,7 +2399,7 @@ transition: fade
 </template>
 
 <template v-slot:right>
-<img src="./assets/game_of.png">
+<Screenshot src="./assets/game_of.png" title="game-of.png" meta="Кухня стандартизации" />
 </template>
 
 <!--
@@ -2447,6 +2417,7 @@ transition: fade
 ---
 layout: statement
 sectionNumber: 4-7
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2459,6 +2430,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 4-8
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2466,7 +2438,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 <v-click>
 
-### ...и не сбежал через минуту?
+## ...и не сбежал через минуту?
 
 </v-click>
 
@@ -2479,6 +2451,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 4-9
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: История HTML как стандарта
 transition: fade
@@ -2501,7 +2474,7 @@ transition: fade
 </template>
 
 <template v-slot:right>
-<img src="./assets/html.png">
+<Screenshot src="./assets/html.png" title="html5.png" meta="Living Standard · WHATWG" />
 </template>
 
 <!--
@@ -2520,10 +2493,13 @@ transition: fade
 
 ---
 sectionNumber: 4-10
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/html_spec_1.png">
+<BrowserFrame url="https://html.spec.whatwg.org/multipage/" tab="HTML Standard" year="2026" status="Готово" class="h-full">
+<img src="./assets/html_spec_1.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <!--
 Вот как выглядит спека. Это не введение, это середина обычного раздела.
@@ -2532,10 +2508,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 4-11
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/html_spec_2.png">
+<BrowserFrame url="https://html.spec.whatwg.org/multipage/" tab="HTML Standard" year="2026" status="Прокрутка…" class="h-full">
+<img src="./assets/html_spec_2.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <!--
 Скроллим дальше. И это всё ещё HTML.
@@ -2544,10 +2523,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 4-12
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<img src="./assets/html_spec_3.png">
+<BrowserFrame url="https://html.spec.whatwg.org/multipage/" tab="HTML Standard" year="2026" status="Прокрутка… и это всё ещё HTML" class="h-full">
+<img src="./assets/html_spec_3.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <!--
 И ещё дальше. Живой документ, который обновляется чаще, чем README в вашем проекте.
@@ -2556,12 +2538,15 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 4-13
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
 ## HTML Living Standard (Last Updated 11 May 2026) (TODO: обновить дату)
 
-<img v-click src="./assets/html_spec.png" class="mb-8">
+<BrowserFrame v-click url="https://html.spec.whatwg.org/multipage/introduction.html" tab="HTML Standard — How to read this specification" year="2026" status="Готово" class="mb-8">
+<img src="./assets/html_spec.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 
 <v-clicks>
 
@@ -2589,6 +2574,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 4-14
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2609,6 +2595,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 4-15
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: TC39 и proposal-driven JavaScript
 ---
@@ -2628,7 +2615,7 @@ title: TC39 и proposal-driven JavaScript
 </template>
 
 <template v-slot:right>
-  <img src="./assets/js_logo.png" height="70%" >
+<Screenshot src="./assets/js_logo.png" title="javascript.png" meta="ECMAScript · TC39" />
 </template>
 
 <!--
@@ -2646,9 +2633,11 @@ JavaScript пришёл к тому же, но своим путём.
 ---
 layout: statement
 sectionNumber: 4-16
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
-Все спецификации пришли к философии микрорелизов
+
+## Все спецификации пришли к философии микрорелизов
 
 <!--
 Вывод по слою стандартов: все три спецификации независимо пришли к одной философии — микрорелизы вместо больших версий. Потому что большая версия требует, чтобы все обновились одновременно, а в вебе это невозможно.
@@ -2657,12 +2646,12 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 4-17
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
-tone: legacy
 status: "INTEROPERABILITY: FAILED"
 ---
 
-Браузерные войны
+## Браузерные войны
 
 <!--
 Но чтобы прийти к этому, веб прошёл через браузерные войны.
@@ -2671,8 +2660,8 @@ status: "INTEROPERABILITY: FAILED"
 ---
 layout: two-column
 sectionNumber: 4-18
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
-tone: legacy
 status: "INTEROPERABILITY: FAILED"
 ---
 <template v-slot:left>
@@ -2684,7 +2673,7 @@ status: "INTEROPERABILITY: FAILED"
 </template>
 
 <template v-slot:right>
-<img src="./assets/war.png">
+<Screenshot src="./assets/war.png" title="wars.png" meta="Браузерные войны · 1995–2001" />
 </template>
 
 <!--
@@ -2694,13 +2683,15 @@ status: "INTEROPERABILITY: FAILED"
 ---
 layout: image-top
 sectionNumber: 4-19
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
-tone: legacy
 status: "FEATURE NOT AVAILABLE"
 ---
 
 <template v-slot:image>
-<img src="./assets/canI.png" />
+<BrowserFrame url="https://caniuse.com/" tab="Can I use… — Support tables" year="2026" status="Готово" class="h-full">
+<img src="./assets/canI.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 </template>
 
 <v-clicks>
@@ -2727,6 +2718,7 @@ status: "FEATURE NOT AVAILABLE"
 ---
 layout: statement
 sectionNumber: 4-20
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2746,6 +2738,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 4-21
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: JS без модулей
 ---
@@ -2786,6 +2779,7 @@ JavaScript.
 
 ---
 sectionNumber: 4-22
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: CSS без области видимости
 ---
@@ -2826,6 +2820,7 @@ title: CSS без области видимости
 
 ---
 sectionNumber: 4-23
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: HTML без компонентов
 ---
@@ -2867,6 +2862,7 @@ HTML, та же схема.
 ---
 layout: statement
 sectionNumber: 4-24
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2891,6 +2887,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 4-25
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2915,6 +2912,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 4-26
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2927,6 +2925,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: two-column
 sectionNumber: 4-27
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -2936,14 +2935,14 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 #### Google, Mozilla, Microsoft, Apple, Bocoup и Igalia — объединились для борьбы с проблемами несовместимости браузеров и стандартизации
 
-<v-click>
-<img src="./assets/inter_progress.png">
-</v-click>
+<Screenshot v-click src="./assets/inter_progress.png" title="progress.png" meta="Прогресс Interop по годам" />
 
 </template>
 
 <template v-slot:right>
-<img src="./assets/interop.png">
+<BrowserFrame url="https://wpt.fyi/interop-2026" tab="Interop 2026 Dashboard" year="2026" status="Готово" class="h-full">
+<img src="./assets/interop.png" class="mx-auto max-h-full" />
+</BrowserFrame>
 </template>
 
 <!--
@@ -2956,6 +2955,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: timeline
 sectionNumber: 4-27a
+tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: МЕХАНИЗМЫ КООРДИНАЦИИ, 1995–2026
 direction: horizontal
@@ -3039,6 +3039,7 @@ Baseline в 2023-м — единый ответ на «этим уже можн�
 ---
 layout: section
 sectionNumber: '5'
+tone: legacy
 docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 
@@ -3054,6 +3055,7 @@ docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 layout: statement
 sectionNumber: 5-1
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3067,6 +3069,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 layout: image-full
 sectionNumber: 5-2
 docNumber: "HOLYJS AUTUMN 2026"
+title: nelzy.png — Просмотр
 tone: legacy
 status: "REMOVAL STATUS: IMPOSSIBLE"
 ---
@@ -3306,7 +3309,6 @@ status: "HTTP 200 · 1996"
   tab="Space Jam"
   year="1996"
   status="Done — без единой правки"
-  tone="legacy"
 >
   <img src="./assets/jam.png" class="mx-auto" style="max-height: 190px" />
 </BrowserFrame>
@@ -3330,6 +3332,7 @@ status: "HTTP 200 · 1996"
 ---
 layout: statement
 sectionNumber: 5-10
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3342,7 +3345,9 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: image-full
 sectionNumber: 5-11
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
+title: library.jpg — Просмотр
 ---
 
 <template v-slot:image>
@@ -3424,6 +3429,7 @@ tone: legacy
 ---
 layout: statement
 sectionNumber: 5-14
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3443,6 +3449,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 5-15
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 title: На голой тройке писать нельзя
 ---
@@ -3484,6 +3491,7 @@ title: На голой тройке писать нельзя
 ---
 layout: statement
 sectionNumber: 5-16
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3504,6 +3512,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 5-17
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3531,6 +3540,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 5-18
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 title: Это не чья-то вина
 ---
@@ -3569,6 +3579,7 @@ title: Это не чья-то вина
 ---
 layout: statement
 sectionNumber: 5-19
+tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3589,6 +3600,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: section
 sectionNumber: '6'
+tone: agent
 docNumber: "САМОЕ БОЛЬШОЕ ЛЕГАСИ"
 ---
 
@@ -3725,6 +3737,7 @@ tone: agent
 layout: image-full
 sectionNumber: 6-5
 docNumber: "HOLYJS AUTUMN 2026"
+title: a2ui-schema.jpg — Просмотр
 tone: agent
 ---
 
@@ -3804,7 +3817,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
 ---
 
-JSON — как описание интерфейса
+## JSON — как описание интерфейса
 
 <!--
 То есть JSON становится описанием интерфейса. И если это кажется вам знакомым — да, мы это уже проходили: серверная вёрстка, BFF, схемы форм. Только теперь на другой стороне сидит модель.
@@ -3812,17 +3825,20 @@ JSON — как описание интерфейса
 
 ---
 sectionNumber: 6-8
+tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-<div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
-<div style="flex-grow: 1; width: 40%">
-<img src="./assets/msk_vue.jpg" class="rounded-xl shadow-lg" style="height: 250px" />
+<div class="os-cols os-cols--stretch text-center">
+<div>
+<Screenshot src="./assets/msk_vue.jpg" title="msk-vue.jpg" meta="MSK Vue" height="250px" />
+
 <a href="https://youtu.be/2btBC99seK4?si=jtrum7BTqGnK_E-K">Запись</a>
 </div>
 
-<div style="flex-grow: 1; width: 40%">
-<img src="./assets/holy.png" class="rounded-xl shadow-lg" style="height: 250px"  />
+<div>
+<Screenshot src="./assets/holy.png" title="holyjs.png" meta="HolyJS · AI-driven UI" height="250px" />
+
 <a href="https://holyjs.ru/archive/2026%20Spring/talks/20009814-ai-driven-ui-how-the-ui-will-look-like-in-the-age-of-agents/" target="_blank" rel="noreferrer">Доклад</a>
 </div>
 </div>
@@ -3838,7 +3854,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
 ---
 
-# Prompt API
+## Prompt API
 
 <v-clicks>
 
@@ -3890,6 +3906,7 @@ status: "CONCERN: INTEROPERABILITY"
 layout: image-full
 sectionNumber: 6-11
 docNumber: "HOLYJS AUTUMN 2026"
+title: chrome-vs-firefox.png — Просмотр
 tone: agent
 status: "VENDOR CONFLICT"
 ---
@@ -3934,7 +3951,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
 ---
 
-### Мы не хотели семантически верстать и писать документацию для кожаных мешков<v-click>, но хотим это делать для агентов </v-click>
+## Мы не хотели семантически верстать и писать документацию для кожаных мешков<v-click>, но хотим это делать для агентов </v-click>
 
 <!--
 И маленькая ирония напоследок. Тридцать лет мы не хотели семантически верстать и писать документацию для живых людей.
@@ -3970,6 +3987,7 @@ tone: agent
 ---
 layout: statement
 sectionNumber: 6-15
+tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -3989,6 +4007,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 sectionNumber: 6-16
+tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
@@ -4030,6 +4049,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 ---
 layout: statement
 sectionNumber: 6-17
+tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 

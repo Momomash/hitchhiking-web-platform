@@ -17,7 +17,9 @@ defineProps<{
 
 <template>
   <div class="ap">
-    <div class="os-titlebar os-titlebar--agent">
+    <!-- Тон берётся от слайда (класс tone-* на корне лейаута), как у всех
+         окон дека: глава агентов и так идёт в фиолетовом. -->
+    <div class="os-titlebar">
       <span class="os-titlebar__icon">◆</span>
       <span class="os-titlebar__text">{{ title ?? 'NEW USER DETECTED' }}</span>
       <span class="os-titlebar__spacer" />
@@ -43,8 +45,8 @@ defineProps<{
     </div>
 
     <div v-if="allow || deny" class="ap__buttons">
-      <span v-if="allow" class="ap__btn ap__btn--primary">{{ allow }}</span>
-      <span v-if="deny" class="ap__btn">{{ deny }}</span>
+      <span v-if="allow" class="os-btn ap__btn--primary">{{ allow }}</span>
+      <span v-if="deny" class="os-btn">{{ deny }}</span>
     </div>
   </div>
 </template>
@@ -91,13 +93,17 @@ defineProps<{
   color: var(--ink);
 }
 
+/* Чекбокс запроса прав — тот же, что у списков дека, но НЕ отмеченный:
+   разрешения ещё не выданы, решение принимает зал. */
 .ap__box {
   flex-shrink: 0;
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   background: var(--window);
-  border: 1px solid var(--line);
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14);
+  border: 1px solid var(--field-line);
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.13),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .ap__extra:not(:empty) {
@@ -113,22 +119,11 @@ defineProps<{
   padding: 0 var(--space-5) var(--space-4);
 }
 
-.ap__btn {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  padding: 3px 18px;
-  background: var(--chrome-deep);
-  border: 1px solid #fff;
-  border-right-color: var(--os-face-dark);
-  border-bottom-color: var(--os-face-dark);
-  color: var(--ink);
-}
-
+/* «Разрешить» — кнопка по умолчанию этого диалога, но в тоне агента,
+   а не платформы: решение про нового пользователя, а не про стандарт. */
 .ap__btn--primary {
-  background: var(--purple-pale);
-  border-right-color: #6c5b96;
-  border-bottom-color: #6c5b96;
+  border-color: var(--purple);
   color: var(--purple);
+  font-weight: 700;
 }
 </style>
