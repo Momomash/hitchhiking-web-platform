@@ -35,3 +35,14 @@ img.end-photo,
 .layout-end img {
   border-radius: 0 !important;
 }
+
+/* Плотный демо-код для узкой колонки two-column (6-6, JSON схемы A2UI):
+   29 строк даже в базовом размере кода не влезают в колонку по высоте —
+   колонка режет блок с обеих сторон. Уменьшаем шаг строки, не содержание.
+   !important: базовый размер кода ставится правилом, которое перебивает
+   и (0,2,1) — гонку специфичностей проигрываем, поэтому выигрываем важностью. */
+.slidev-layout .code-dense pre,
+.slidev-layout .code-dense .slidev-code {
+  font-size: 10px !important;
+  line-height: 13px !important;
+}

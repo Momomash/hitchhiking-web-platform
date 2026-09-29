@@ -172,7 +172,7 @@ title: Масштаб за 80 лет
 
 ## На секунду — про масштаб
 
-<div class="os-cols os-cols--band">
+<div class="os-cols os-cols--band" style="--band: 35%">
 
 <Screenshot src="./assets/first_comp.png" title="eniac.png" meta="ENIAC · 1946" />
 <Screenshot v-click src="./assets/actual_comp.png" title="iphone17.png" meta="iPhone 17 Pro · 2025" />
@@ -822,7 +822,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ## Нужны интерактив + скорость + SEO (2020)
 <RequirementCard year="2020" demand="Интерактив + скорость + SEO сразу"
-  response="React Server Components" effect="Границы сервер/клиент размыты" />
+  response="React Server Components" effect="Границы сервер/клиент размыты" style="flex-shrink: 0" />
 
 <div class="os-cols os-cols--stretch">
 
@@ -848,7 +848,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 <v-click>
 
-<p class="mt-16 text-center">
+<p class="pt-2 text-center">
 Сервер рендерит → Streaming → Клиент "оживляет"
 </p>
 
@@ -1473,18 +1473,58 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 <v-clicks>
 
-#### `<dialog>` — кроссбраузерно с **2022**. `popover` — с **2025**. `appearance: base-select` — только Chromium, **до сих пор нет**.
+#### `<dialog>` — модалку наконец не надо писать руками. Кроссбраузерно с **марта 2022**.
 
-### Двадцать лет индустрия писала свои селекты, потому что платформа не давала стилизовать нативный
+#### `popover` — с **января 2025**. Широко доступным станет только в **июле 2027**.
 
 </v-clicks>
 
 <!--
 И платформа догнала. Правда, с оговорками.
 
-[click] `<dialog>` стал кроссбраузерным в марте 2022-го. `popover` появился в Chrome в 2023-м, а во всех браузерах — только в январе 2025-го; широко доступным он станет вообще в июле 2027-го. А `appearance: base-select` есть только в Chromium с апреля 2025-го: в Safari — бета, в Firefox — за флагом.
+[click] `<dialog>` стал кроссбраузерным в марте 2022-го. То есть модальное окно — вещь, которую фронтенд писал руками с самого начала, — приехало в платформу двадцать с лишним лет спустя.
 
-[click] То есть двадцать лет индустрия писала свои селекты. И, утрируя, пишет до сих пор.
+[click] `popover` появился в Chrome в 2023-м, а во всех браузерах — только в январе 2025-го. И это ещё не «можно брать и пользоваться»: широко доступным, то есть Baseline widely available, он станет в июле 2027-го.
+-->
+
+---
+layout: image-left
+sectionNumber: 3-8a
+tone: craft
+docNumber: "HOLYJS AUTUMN 2026"
+title: Кастомные инпуты
+figNumber: 3-1
+figLabel: НАТИВНЫЙ SELECT — НЕ СТИЛИЗУЕТСЯ
+---
+
+<template v-slot:image>
+<Screenshot src="./assets/select.png" title="select.png" meta="НАТИВНЫЙ SELECT" />
+</template>
+
+## Двадцать лет индустрия писала свои селекты
+
+#### Платформа не давала стилизовать нативный — и мы прятали его и рисовали свой заново
+
+<v-click>
+
+### Стилизовать его стало можно в **апреле 2025** — `appearance: base-select`, Chrome 135. И до сих пор только в Chromium.
+
+</v-click>
+
+<v-click>
+
+<h3 class="is-danger">И до сих пор пишем</h3>
+
+</v-click>
+
+<!--
+Вот он — нативный селект. Открывается своим списком, который живёт по правилам операционной системы, а не вашего макета: не покрасить, не скруглить, не подставить иконку.
+
+Поэтому двадцать лет мы прятали нативный, чтобы форма продолжала сабмититься, и рисовали поверх свой: стрелочка — картинкой, список — своим `display: none`, ховер — руками. А дальше двести строк JS: клавиатура, Esc, скролл, позиция, чтобы не выпало за экран, и aria-атрибуты, про которые вспоминали в последнюю очередь.
+
+[click] А стилизовать сам нативный селект стало можно в апреле 2025-го — `appearance: base-select` в Chrome и Edge 135. В Safari 27 он показан на WWDC и есть в бете, стабильного релиза пока нет; в Firefox — выключен по умолчанию.
+
+[click] То есть возможность в платформе уже есть, но Baseline это ещё не стало — а значит, фолбэк всё равно надо писать. И, утрируя, свои селекты мы пишем до сих пор.
 -->
 
 ---
@@ -1571,7 +1611,7 @@ title: Ответ индустрии — дизайн-системы
 
 <v-click>
 
-<p class="text-center opacity-70">Дизайн-системы выросли не из моды. Они выросли из арифметики .</p>
+<p class="text-center opacity-70">Дизайн-системы выросли не от лени. Они выросли из арифметики.</p>
 
 </v-click>
 
@@ -2434,7 +2474,7 @@ tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-Кто из вас читал спецификации по JS/HTML/CSS?
+## Кто из вас читал спецификации по JS/HTML/CSS?
 
 <v-click>
 
@@ -2542,7 +2582,7 @@ tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## HTML Living Standard (Last Updated 11 May 2026) (TODO: обновить дату)
+## HTML Living Standard (Last Updated 28 September 2026)
 
 <BrowserFrame v-click url="https://html.spec.whatwg.org/multipage/introduction.html" tab="HTML Standard — How to read this specification" year="2026" status="Готово" class="mb-8">
 <img src="./assets/html_spec.png" class="mx-auto max-h-full" />
@@ -3310,12 +3350,12 @@ status: "HTTP 200 · 1996"
   year="1996"
   status="Done — без единой правки"
 >
-  <img src="./assets/jam.png" class="mx-auto" style="max-height: 190px" />
+  <img src="./assets/jam.png" class="mx-auto" style="max-height: 120px" />
 </BrowserFrame>
 
 #### Тот же HTML, тот же дизайн — работает в сегодняшнем Chrome. Страница, свёрстанная тридцать лет назад под браузер, которого больше нет.
 
-### Ни одна другая платформа в мире так не умеет. В этом одновременно её сила и её приговор.
+### Ни одна* другая платформа в мире так не умеет. В этом одновременно её сила и её приговор.
 
 </v-clicks>
 
@@ -3770,6 +3810,8 @@ tone: agent
 
 <template v-slot:right>
 
+<div class="code-dense">
+
 ```json
 {
   "surfaceId": "booking",
@@ -3801,6 +3843,8 @@ tone: agent
   ]
 }
 ```
+
+</div>
 
 </template>
 

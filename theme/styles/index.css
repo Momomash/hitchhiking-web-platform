@@ -105,15 +105,25 @@
 
   --slidev-font-family: var(--font-ui);
 
-  /* Шкала. Держим близко к прежней теме, чтобы контент 138 слайдов не поехал. */
-  --text-xs:    clamp(0.58rem, 0.85vw, 0.68rem);
-  --text-sm:    clamp(0.70rem, 1.05vw, 0.82rem);
-  --text-base:  clamp(0.85rem, 1.35vw, 1.02rem);
-  --text-md:    clamp(1.00rem, 1.55vw, 1.18rem);
-  --text-lg:    clamp(1.18rem, 1.95vw, 1.52rem);
-  --text-xl:    clamp(1.55rem, 2.65vw, 2.05rem);
-  --text-2xl:   clamp(1.95rem, 3.40vw, 2.80rem);
-  --text-3xl:   clamp(2.60rem, 4.70vw, 3.90rem);
+  /* Шкала.
+   *
+   * Поднята относительно прежней темы: жалоба с прогона — мелко с дальних
+   * рядов. Прибавка неравномерная и это намеренно. Мелкие ступени растут
+   * сильнее (+15% у --text-xs…--text-md): именно они несут подписи, листинги и
+   * основной текст, то есть всё, что не читается из глубины зала. Крупные
+   * растут слабее (+10% у --text-lg, +5% у --text-xl и выше): заголовки и так
+   * видно, а каждый их лишний процент отъедает высоту у контента под ними.
+   *
+   * После правки дек прогнан overflow-check'ом целиком (см. «Проверка»):
+   * переполнений нет. Менять ступени на глаз нельзя — гонять проверку заново. */
+  --text-xs:    clamp(0.67rem, 0.98vw, 0.78rem);
+  --text-sm:    clamp(0.81rem, 1.21vw, 0.94rem);
+  --text-base:  clamp(0.98rem, 1.55vw, 1.17rem);
+  --text-md:    clamp(1.15rem, 1.78vw, 1.36rem);
+  --text-lg:    clamp(1.30rem, 2.15vw, 1.67rem);
+  --text-xl:    clamp(1.63rem, 2.78vw, 2.15rem);
+  --text-2xl:   clamp(2.05rem, 3.57vw, 2.94rem);
+  --text-3xl:   clamp(2.73rem, 4.94vw, 4.10rem);
 
   /* Отступы */
   --space-1: 0.25rem;
@@ -208,6 +218,21 @@
   text-wrap: balance;
 }
 
+/* Заголовок с инлайновым кодом. Чип кода — это рамка плюс вертикальный
+   паддинг, но у инлайнового элемента ни то, ни другое не раздвигает строку:
+   на плотном 1.15 чипы соседних строк налезают друг на друга (3-8: `<dialog>`
+   и `appearance: base-select`). Даём заголовку воздух под высоту чипа.
+   Таких заголовков в деке три — 3-5, 3-8, 5-5 — остальные не трогаем. */
+.slidev-layout h1:has(code),
+.slidev-layout h2:has(code),
+.slidev-layout h3:has(code),
+.slidev-layout h4:has(code) {
+  line-height: 1.6;
+  /* Рамка чипа на последней строке съедает нижний отступ заголовка —
+     возвращаем его паддингом, чтобы не переопределять margin на каждом уровне. */
+  padding-bottom: var(--space-2);
+}
+
 .slidev-layout h1 {
   font-size: var(--text-xl);
   font-weight: 700;
@@ -254,6 +279,16 @@ strong {
   color: var(--platform);
 }
 
+/* Строка «сломано / всё ещё больно» — тот же красный, что у ✕-чекбокса,
+   danger-групбокса и номера секции в статус-баре. Класс, а не инлайновый
+   цвет: в этом деке цвет кодирует смысл, и красный значит одно и то же
+   везде. `strong` внутри перекрашиваем тоже, иначе выделение внутри такой
+   строки уезжает обратно в синий. */
+.slidev-layout .is-danger,
+.slidev-layout .is-danger strong {
+  color: var(--danger);
+}
+
 a {
   color: var(--platform);
   text-decoration: underline;
@@ -281,10 +316,31 @@ a:visited {
   padding-left: var(--space-6);
 }
 
+/* Вертикальная посадка маркера.
+ *
+ * Чекбокс — фиксированные 13px, а строка тянется вместе с clamp() в --text-base
+ * (13.6px на узком экране, 16.3px на проекторе). Значит отступ сверху — не
+ * константа, а половина разницы между высотой строки и высотой поля.
+ *
+ * Считать это прямо в `::before` нельзя: там свои `font-size: 10px` и
+ * `line-height: 1`, поэтому и `em`, и `lh` меряются от глифа галочки, а не от
+ * текста пункта. Из-за этого прежние `top: 0.22em` были намертво равны 2.2px —
+ * на мелком кегле почти совпадало, на крупном чекбокс уезжал вверх.
+ *
+ * Поэтому считаем на самом `li` и передаём готовую длину вниз: у
+ * зарегистрированного свойства с `syntax: '<length>'` значение вычисляется там,
+ * где объявлено, и наследуется уже числом. */
+@property --marker-top {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
+}
+
 .slidev-layout ul li {
   margin-bottom: var(--space-2);
   list-style: none;
   position: relative;
+  --marker-top: calc((1lh - 13px) / 2);
 }
 
 .slidev-layout ul li:last-child {
@@ -295,7 +351,7 @@ a:visited {
   content: '✔';
   position: absolute;
   left: -1.72em;
-  top: 0.22em;
+  top: var(--marker-top);
   width: 13px;
   height: 13px;
   display: grid;
@@ -358,7 +414,8 @@ a:visited {
    спорит с первым за внимание. */
 .slidev-layout ul ul li::before {
   content: '';
-  top: 0.48em;
+  /* Точка 5px вместо поля 13px — центр тот же, поправка на разницу высот. */
+  top: calc(var(--marker-top) + 4px);
   width: 5px;
   height: 5px;
   background: var(--line);
@@ -407,6 +464,14 @@ pre {
   box-shadow:
     inset 1px 1px 2px rgba(0, 0, 0, 0.15),
     inset -1px -1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Листинг всегда по левому краю, даже внутри центрированного statement
+   (3-8, 5-5): отступы в коде значат структуру, центрирование её ломает —
+   и «содержимое файла» перестаёт читаться как содержимое файла. */
+.slidev-layout .slidev-code,
+.slidev-layout pre {
+  text-align: left;
 }
 
 /* ── Таблицы — «list view» файлового менеджера ───────────────────────────
@@ -727,8 +792,11 @@ pre {
 .os-thumbs {
   display: grid;
   /* Две колонки, а не auto-fit: при автоподборе четыре миниатюры вставали
-     в один ряд и с последнего ряда уже не читались. */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+     в один ряд и с последнего ряда уже не читались.
+     Фиксированные 150px, а не 1fr: при полной ширине квадраты получались
+     по 190px и плитка 2×2 не влезала в окно по высоте (2-5). */
+  grid-template-columns: repeat(2, minmax(0, 150px));
+  justify-content: center;
   gap: var(--space-2);
 }
 
@@ -1380,7 +1448,10 @@ pre {
 
 .lag-row {
   display: grid;
-  grid-template-columns: 168px 1fr 62px;
+  /* 216px, а не уже: подпись .lag-sub в 168px переносилась на вторую строку,
+     и высота строки росла с 36 до ~51px — семь таких строк выталкивали
+     сноски за нижнюю границу окна (2-15). */
+  grid-template-columns: 216px 1fr 62px;
   align-items: center;
   gap: var(--space-3);
 }
@@ -1390,19 +1461,22 @@ pre {
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.15;
+  /* 1.05, а не 1.15: семь строк чарта + две сноски не влезали в окно (2-15) */
+  line-height: 1.05;
 }
 
 .lag-sub {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--muted);
-  line-height: 1.2;
+  line-height: 1.05;
 }
 
 .lag-track {
   position: relative;
-  height: 36px;
+  /* 28px, а не 36: высоту строки теперь задаёт блок «имя + подпись»,
+     трек лишь не должен быть выше него */
+  height: 28px;
 }
 
 /* «Рельсы» у строк раньше шли пунктиром через всю ширину. Убраны: семь
@@ -1495,7 +1569,7 @@ pre {
   font-size: var(--text-md);
   text-align: center;
   color: var(--ink);
-  margin: var(--space-3) 0 0;
+  margin: var(--space-2) 0 0;
 }
 
 .slidev-layout p.lag-median strong {
