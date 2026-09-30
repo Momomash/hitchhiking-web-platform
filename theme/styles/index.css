@@ -1717,3 +1717,12 @@ pre {
   flex-direction: column;
   justify-content: center;
 }
+
+/* ── Mermaid-диаграммы ──────────────────────────────────────────────────────
+ * Просьба прогона: жирнее стрелки. themeVariables 'line-width' покрывает
+ * большую часть рёбер, но часть путей мермэид рисует атрибутом stroke-width —
+ * CSS перебивает презентационные атрибуты, поэтому дублируем здесь. */
+.slidev-layout .mermaid .flowchart-link,
+.slidev-layout .mermaid .edgePath .path {
+  stroke-width: 3px;
+}

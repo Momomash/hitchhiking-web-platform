@@ -38,7 +38,6 @@ layout: two-column
 title: Обо мне
 sectionNumber: 0-1
 docNumber: "HOLYJS AUTUMN 2026"
-transition: fade
 ---
 
 ## Обо мне
@@ -1704,6 +1703,8 @@ flowchart TD
 
     style D fill:#1f5da8,stroke:#17436f,color:#fff
     style N fill:#177a42,stroke:#115c32,color:#fff
+
+    linkStyle default stroke-width:3px
 ```
 
 </v-click>
@@ -2179,7 +2180,6 @@ docNumber: "HOLYJS AUTUMN 2026"
 title: КАРТА ВЛИЯНИЯ
 figNumber: 4-1
 figLabel: КТО КОНТРИБЬЮТИТ В WEB PLATFORM
-transition: slide-left
 ---
 <template v-slot:chart>
 
@@ -2219,34 +2219,16 @@ flowchart TD
 
   subgraph ECO["ВЛИЯНИЕ РАЗРАБОТЧИКОВ"]
     WICG["WICG"]
-    VERCEL["Vercel / Next.js"]
     META["Meta / React"]
     OSS["Open source / community"]
     DEVS["Разработчики"]
+    VERCEL["Vercel / Next.js"]
     ANTH["Anthropic / AI use-cases"]
   end
 
-  WEB --> W3C
-  WEB --> WHATWG
-  WEB --> TC39
-  WEB --> IETF
-  WEB --> KHR
-  WEB --> WINTER
+  WEB --> STDS
 
-  W3C --> CHROME
-  W3C --> WEBKIT
-  W3C --> MOZ
-  W3C --> EDGE
-
-  WHATWG --> CHROME
-  WHATWG --> WEBKIT
-  WHATWG --> MOZ
-  WHATWG --> EDGE
-
-  TC39 --> CHROME
-  TC39 --> WEBKIT
-  TC39 --> MOZ
-  TC39 --> EDGE
+  STDS --> IMPL
 
   W3C --> WPT
   WHATWG --> WPT
@@ -2258,24 +2240,24 @@ flowchart TD
   DEVS --> OSS
   OSS --> WICG
   META --> TC39
-  VERCEL --> WEB
-  ANTH --> WEB
   WINTER --> NODE
   WINTER --> DENO
   WINTER --> CF
   WINTER --> BUN
 
   classDef main fill:#1f5da8,stroke:#17436f,color:#fff,stroke-width:2px;
-  classDef standards fill:#e8edf2,stroke:#7d8b99,color:#17212b;
-  classDef impl fill:#f7f4ed,stroke:#98a8b6,color:#17212b;
-  classDef tests fill:#d8e6f4,stroke:#5d84ad,color:#17212b;
-  classDef eco fill:#f2e8d8,stroke:#c57712,color:#17212b;
+  classDef standards fill:#c8d7e5,stroke:#5a6b7a,color:#17212b;
+  classDef impl fill:#e6dfc8,stroke:#748596,color:#17212b;
+  classDef tests fill:#b5d2ea,stroke:#3f6f9f,color:#17212b;
+  classDef eco fill:#e9d4ae,stroke:#a3660e,color:#17212b;
 
   class WEB main;
   class W3C,WHATWG,TC39,IETF,KHR,WINTER standards;
   class CHROME,WEBKIT,MOZ,EDGE,NODE,DENO,CF,BUN impl;
   class WPT,TEST262,INTEROP,MDNBCD tests;
   class WICG,VERCEL,META,OSS,DEVS,ANTH eco;
+
+  linkStyle default stroke-width:3px
 ```
 
 </template>
@@ -2298,7 +2280,6 @@ docNumber: "HOLYJS AUTUMN 2026"
 title: СЛОЙ 1 — СТАНДАРТЫ
 figNumber: 4-2
 figLabel: ОСНОВНЫЕ ПЛОЩАДКИ СТАНДАРТИЗАЦИИ
-transition: slide-left
 ---
 
 <template v-slot:chart>
@@ -2314,10 +2295,12 @@ flowchart LR
   WINTER["WinterCG"] -->|server runtimes| WEB
 
   classDef web fill:#1f5da8,stroke:#17436f,color:#fff,stroke-width:2px;
-  classDef org fill:#e8edf2,stroke:#7d8b99,color:#17212b;
+  classDef org fill:#c8d7e5,stroke:#5a6b7a,color:#17212b;
 
   class WEB web;
   class W3C,WHATWG,TC39,IETF,WINTER org;
+
+  linkStyle default stroke-width:3px
 ```
 
 </template>
@@ -2338,13 +2321,12 @@ docNumber: "HOLYJS AUTUMN 2026"
 title: СЛОЙ 2 — W3C И ИНКУБАЦИЯ
 figNumber: 4-3
 figLabel: ВНУТРЕННЯЯ СТРУКТУРА W3C
-transition: slide-left
 ---
 
 <template v-slot:chart>
 
 ```mermaid
-%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 15, 'rankSpacing': 15}}}%%
+%%{init: {'flowchart': {'curve': 'basis', 'nodeSpacing': 15, 'rankSpacing': 45}}}%%
 
 flowchart TD
 
@@ -2381,13 +2363,26 @@ flowchart TD
   WICG --> DAS
   WICG --> WEBRTCWG
 
+  %% ярусы: невидимые связи (~~~) переносят половину групп на вторую строку,
+  %% а community-группы — на третью. Без них всё в одну строку на 2000px
+  %% и схема ужимается в полтора раза.
+  BTT ~~~ WEBRTCWG
+  BTT ~~~ APA
+  BTT ~~~ WAI
+  BTT ~~~ PATWG
+  BTT ~~~ MEIG
+  MEIG ~~~ WICG
+  MEIG ~~~ WASMCG
+
   classDef core fill:#1f5da8,stroke:#17436f,color:#fff,stroke-width:2px;
-  classDef group fill:#e8edf2,stroke:#7d8b99,color:#17212b;
-  classDef incubator fill:#ece5f5,stroke:#7055a8,color:#17212b,stroke-width:2px;
+  classDef group fill:#c8d7e5,stroke:#5a6b7a,color:#17212b;
+  classDef incubator fill:#d8c9ee,stroke:#7055a8,color:#17212b,stroke-width:2px;
 
   class W3C core;
   class TAG,WEBAPPS,CSSWG,BTT,DAS,WEBRTCWG,APA,WAI,PATWG,MEIG,WASMCG group;
   class WICG incubator;
+
+  linkStyle default stroke-width:3px
 ```
 
 </template>
@@ -2401,7 +2396,6 @@ WICG — инкубатор новых веб-идей; внутри W3C мно�
 -->
 
 ---
-transition: slide-left
 sectionNumber: 4-5
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
@@ -2420,7 +2414,6 @@ sectionNumber: 4-6
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: Кухня стандартизации
-transition: fade
 ---
 
 <template v-slot:left>
@@ -2494,7 +2487,6 @@ sectionNumber: 4-9
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: История HTML как стандарта
-transition: fade
 ---
 
 <template v-slot:left>
@@ -3794,7 +3786,6 @@ layout: two-column
 title: A2UI как JSON-интерфейс
 sectionNumber: 6-6
 docNumber: "HOLYJS AUTUMN 2026"
-transition: fade
 tone: agent
 ---
 
@@ -3892,10 +3883,10 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-layout: statement
 sectionNumber: 6-9
 docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
+title: Prompt API
 ---
 
 ## Prompt API
@@ -4060,13 +4051,9 @@ docNumber: "HOLYJS AUTUMN 2026"
 <v-clicks>
 
 - веб — самый большой живой **legacy-продукт** в мире
-- он рос как любой продукт: сначала просто, потом срочно, потом сложно, потом легаси — только в масштабе всей планеты
-- рост требований изменил не только фронт, но и **дизайн**, и **бэкенд**
-- ownership дробится, потому что продукт огромный — **комитеты это следствие, а не причина**
-- разработчики всегда впереди платформы: всё, что мы называем фронтендом — **протезы** отсутствующей модульности
-- плохой DX — это **счёт за обратную совместимость**, и он выставлен нам
-- устаревание в вебе не удаляют — его документируют и поддерживают вечно
-- и всё же система живёт **36+ лет** и развивается — legacy как цена успеха
+- рос как любой продукт — только в масштабе всей планеты
+- требования переписали не только фронт, но и **дизайн** и **бэкенд**
+- **комитеты — следствие** масштаба, а не причина
 
 </v-clicks>
 
@@ -4080,7 +4067,26 @@ docNumber: "HOLYJS AUTUMN 2026"
 [click] Рост требований переписал не только фронт, но и дизайн, и бэкенд.
 
 [click] Ownership дробится потому, что продукт огромный: комитеты — следствие, а не причина.
+-->
 
+---
+sectionNumber: 6-16a
+tone: agent
+docNumber: "HOLYJS AUTUMN 2026"
+---
+
+### Выводы
+
+<v-clicks>
+
+- наш тулинг — **протезы** отсутствующей модульности
+- плохой DX — **счёт за обратную совместимость**
+- устаревание не удаляют — его **документируют и поддерживают вечно**
+- система живёт **36+ лет** — legacy как цена успеха
+
+</v-clicks>
+
+<!--
 [click] Разработчики всегда впереди платформы, и почти весь наш инструментарий — протезы отсутствующей модульности.
 
 [click] Плохой DX — это счёт за обратную совместимость, и он выставлен нам.
@@ -4109,6 +4115,27 @@ docNumber: "HOLYJS AUTUMN 2026"
 И последнее, что я хочу оставить.
 
 [click] Обычный продукт делает одна компания, веб — весь мир, и разница между ними только в масштабе. А значит, когда вы в следующий раз скажете про свой проект «это легаси», попробуйте услышать в этом не приговор, а то, что им слишком долго пользуются.
+-->
+
+---
+layout: statement
+sectionNumber: 6-18
+tone: agent
+docNumber: "HOLYJS AUTUMN 2026"
+---
+
+## Не всё так плохо
+
+<v-click>
+
+### Всё меняется — значит, всё живёт. Отличной конференции!
+
+</v-click>
+
+<!--
+И самое последнее — не всё так плохо.
+
+[click] Да, изменений много, и они не остановятся. Но это признак жизни, а не конец света: веб меняется тридцать шесть лет — и до сих пор работает. Не впадайте в уныние. Отличной всем конференции!
 -->
 
 ---
