@@ -5,12 +5,13 @@
 <script setup lang="ts">
 import OsTitleBar from '../components/OsTitleBar.vue'
 
+// Фото и QR приходят слотами, а не пропами: путь к картинке обязан пройти
+// через markdown слайда, иначе vite не резолвит `./assets/...` и в сборке
+// получается битый src.
 defineProps<{
   classification?: string
   docNumber?: string
   unit?: string
-  contact?: string
-  photo?: string
 }>()
 </script>
 
@@ -30,8 +31,13 @@ defineProps<{
           </div>
         </div>
 
-        <div class="end-contact">
-          <slot name="contact" />
+        <div class="end-side">
+          <div v-if="$slots.photo" class="end-photo">
+            <slot name="photo" />
+          </div>
+          <div v-if="$slots.contact" class="end-contact">
+            <slot name="contact" />
+          </div>
         </div>
       </div>
 
@@ -83,6 +89,22 @@ defineProps<{
 
 .end-unit {
   color: var(--platform);
+}
+
+.end-side {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+/* Тот же аватар, что на титуле: круг в тонкой оконной рамке.
+   Квадратить его нельзя — рамка ниже рисуется только вокруг QR. */
+.end-photo :deep(img) {
+  display: block;
+  border-radius: 50%;
+  border: 1px solid var(--chrome-line);
+  box-shadow: 2px 2px 0 rgba(45, 63, 79, 0.14);
 }
 
 .end-contact {

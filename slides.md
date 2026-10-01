@@ -52,7 +52,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ::right::
 
-  <Screenshot src="./assets/llama.png" title="llama.png" meta="Мария Кондаурова · BIOCAD" />
+  <Screenshot src="./assets/llaba.jpg" title="Я в лаборатории" meta="Мария Кондаурова · BIOCAD" />
 
 <!--
 [click] Я руковожу разработкой интерфейсов для вычислительной биологии в BIOCAD. Биотех и вот это всё всё) 
@@ -174,11 +174,13 @@ title: Масштаб за 80 лет
 <div class="os-cols os-cols--band" style="--band: 35%">
 
 <Screenshot src="./assets/first_comp.png" title="eniac.png" meta="ENIAC · 1946" />
-<Screenshot v-click src="./assets/actual_comp.png" title="iphone17.png" meta="iPhone 17 Pro · 2025" />
+<Screenshot v-click="1" src="./assets/actual_comp.png" title="iphone17.png" meta="iPhone 17 Pro · 2025" />
 
 </div>
 
-<v-click>
+<!-- Таблица приходит тем же кликом, что и вторая картинка: сравнение читается
+     только вместе с ней. Поэтому клики здесь заданы номерами, а не '+1'. -->
+<v-click at="1">
 
 | Параметр            | ENIAC (1946)                              | iPhone 17 Pro (2025)            |
 |:--------------------|:------------------------------------------|:--------------------------------|
@@ -188,41 +190,26 @@ title: Масштаб за 80 лет
 
 </v-click>
 
-<p v-click class="text-center">Но железо — это половина истории...</p>
+<p v-click="2" class="text-center">Но железо — это половина истории...</p>
 
 <!--
 Один флэшбек для масштаба. Вот первый компьютер — ENIAC, 1946 год. Комната, тридцать тонн, и под каждую новую задачу его перекоммутировали проводами. Руками, физически.
 
 [click] А вот то, что лежит у вас в кармане. Восемьдесят лет разницы.
 
-[click] И теперь цифры. ENIAC — пять тысяч сложений в секунду, телефон — шесть триллионов операций. Памяти у ENIAC — двадцать слов. Не килобайт, не гигабайт: двадцать чисел одновременно. И киловатты против ватт: под ENIAC строили отдельное питание, ваш телефон заряжается от повербанка.
+И теперь цифры. ENIAC — пять тысяч сложений в секунду, телефон — шесть триллионов операций. Памяти у ENIAC — двадцать слов. Не килобайт, не гигабайт: двадцать чисел одновременно. И киловатты против ватт: под ENIAC строили отдельное питание, ваш телефон заряжается от повербанка.
 
 [click] Но железо — это только половина истории. Вторая половина — как мы этим железом обмениваемся информацией.
 -->
 
 ---
-layout: statement
-sectionNumber: 1-2
-tone: origin
-docNumber: "HOLYJS AUTUMN 2026"
----
-## World Wide Web
-
-<!--
-1989 год, Задача, с которой всё началось, была скучной и внутренней и вы слышали её на уроках информатики про ученых, которым нужно было обмениваться информацией. Кратко и утрированно. 
-
-И сразу оговорка. К 1989-му интернет существует уже двадцать лет: TCP/IP, DNS — всё это построено до веба и другими людьми.
--->
-
----
 layout: image-right
-sectionNumber: 1-3
+sectionNumber: 1-2
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 figNumber: 1-1
 figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 ---
-
 # Тим Бернерс-Ли
 
 ## Создал первый браузер в **1990 году**
@@ -232,12 +219,16 @@ figLabel: TIM BERNERS-LEE — CREATOR OF THE WORLD WIDE WEB
 </template>
 
 <!--
+1989 год, Задача, с которой всё началось, была скучной и внутренней и вы слышали её на уроках информатики про ученых, которым нужно было обмениваться информацией. Кратко и утрированно. 
+
+И сразу оговорка. К 1989-му интернет существует уже двадцать лет: TCP/IP, DNS — всё это построено до веба и другими людьми.
+
 90-ый год — появился первый браузер. 
 -->
 
 ---
 docNumber: "HOLYJS AUTUMN 2026"
-sectionNumber: 1-4
+sectionNumber: 1-3
 tone: origin
 title: Первый в мире сайт
 status: "1 document · 0 images"
@@ -260,7 +251,7 @@ status: "1 document · 0 images"
 
 ---
 layout: statement
-sectionNumber: 1-5
+sectionNumber: 1-4
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -281,7 +272,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: image-right
-sectionNumber: 1-6
+sectionNumber: 1-5
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 figNumber: 1-2
@@ -315,7 +306,7 @@ figLabel: EARLY WEB — TABLE-BASED LAYOUTS
 -->
 
 ---
-sectionNumber: 1-7
+sectionNumber: 1-6
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -323,12 +314,16 @@ docNumber: "HOLYJS AUTUMN 2026"
 <Screenshot src="./assets/mac.png" title="apple-1981.png" meta="Реклама домашнего компьютера · 1981" />
 
 <!--
-А потом компьютер переехал из лаборатории на кухню. Посмотрите, как это продавали: реклама обещает, что графики дома теперь построит даже домохозяйка. Веб получил не сотни исследователей, а всех сразу — и с этого момента требования к нему формируют не инженеры.
+А ещё раньше, задолго до всякого веба, компьютер уже стоял на столе у каждой домохозяйки. Посмотрите, как это продавали: реклама обещает, что графики дома теперь построит даже она.
+
+Так что браузер не приводил людей к компьютерам — они уже за ними сидели. Он просто дал возможность видеть чужой контент и делиться своим.
+
+Веб получил не сотни исследователей, а всех сразу — и с этого момента требования к нему формируют не инженеры.
 -->
 
 ---
 layout: statement
-sectionNumber: 1-8
+sectionNumber: 1-7
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -340,7 +335,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 1-9
+sectionNumber: 1-8
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 title: Атмосфера раннего пользовательского веба
@@ -359,7 +354,7 @@ title: Атмосфера раннего пользовательского ве
 
 ---
 layout: image-full
-sectionNumber: 1-10
+sectionNumber: 1-9
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 title: Space Jam
@@ -378,7 +373,7 @@ year: "1996"
 
 ---
 layout: image-full
-sectionNumber: 1-11
+sectionNumber: 1-10
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 title: The Million Dollar Homepage
@@ -398,7 +393,7 @@ year: "2005"
 
 ---
 layout: statement
-sectionNumber: 1-12
+sectionNumber: 1-11
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -413,7 +408,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 1-13
+sectionNumber: 1-12
 tone: origin
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -457,21 +452,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ## "Фронтенд развивается скачкообразно"
 
-<v-click>
-
-### Каждый скачок — это накопившееся давление **требований**
-
-</v-click>
-
 <!--
 Есть известная страшилка: фронтенд развивается скачкообразно — рывками, а не плавно. Обычно его произносят с усталостью.
-
-[click] Но продуктово скачок — это не «вышла новая технология». Это накопившееся давление требований, которое наконец прорвало. Дальше я разберу пять таких требований: пользователи хотят X — веб отвечает Y. И у каждого ответа есть цена.
 -->
 
 ---
 layout: image-full
-sectionNumber: 2-1a
+sectionNumber: 2-2
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: since.png — Динамика скачков
@@ -482,13 +469,26 @@ title: since.png — Динамика скачков
 </template>
 
 <!--
-Вот та же мысль картинкой: ровных участков почти нет, есть ступеньки. Пройдёмся по ступенькам по очереди.
+Вот та же мысль картинкой: ровных участков почти нет, есть ступеньки.
+-->
+
+---
+layout: statement
+sectionNumber: 2-3
+tone: growth
+docNumber: "HOLYJS AUTUMN 2026"
+---
+
+## Каждый скачок — это накопившееся давление **требований**
+
+<!--
+Но продуктово скачок — это не «вышла новая технология». Это накопившееся давление требований, которое наконец прорвало. Дальше я разберу пять таких требований: пользователи хотят X — веб отвечает Y. И у каждого ответа есть цена.
 -->
 
 
 
 ---
-sectionNumber: 2-2
+sectionNumber: 2-4
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -524,7 +524,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-3
+sectionNumber: 2-5
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -559,7 +559,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 
 ---
-sectionNumber: 2-4
+sectionNumber: 2-6
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -599,7 +599,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: default
-sectionNumber: 2-5
+sectionNumber: 2-7
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -637,7 +637,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-6
+sectionNumber: 2-8
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -666,7 +666,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-7
+sectionNumber: 2-9
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -706,36 +706,44 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-8
+sectionNumber: 2-10
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## Mobile-first дал адаптивность, но хотелось нативности
+## Но захотели нативности
 
 <v-clicks>
 
-- App Store модерация (недели)
-- Обновления только через стор
-- Офлайн недоступен
-- Push только через натив
+- **Натив** умеет офлайн, пуши и иконку на экране
+- ...но релиз неделями ждёт модерации, а обновляется — когда захочет пользователь
+- **Веб** обновляется мгновенно и открывается по ссылке
+- ...но без сети он пустой
 
 </v-clicks>
 
+<v-click>
+
+### Захотелось возможностей приложений — но без стора
+
+</v-click>
+
 <!--
-Адаптивность получили — и сразу захотелось того, что умеет натив: иконка на экране, офлайн, пуши.
+Адаптивность получили — и сразу захотелось того, что умеет натив.
 
-[click] Только у нативного пути своя цена: релиз проходит модерацию неделями, и это ломает любую скорость доставки фич.
+[click] Иконка на экране, офлайн, пуши — у приложений всё это есть.
 
-[click] Плюс обновление зависит от пользователя — он может годами сидеть на версии, которую вы выпустили когда-то давно.
+[click] Только у нативного пути своя цена. Релиз проходит модерацию неделями, и это ломает любую скорость доставки фич. А дальше обновление зависит от пользователя — он может годами сидеть на версии, которую вы выпустили когда-то давно.
 
-[click] У веба ровно наоборот: обновление мгновенное, но без сети нет ничего.
+[click] У веба с доставкой ровно наоборот: выкатили — и у всех уже новая версия, устанавливать ничего не надо.
 
-[click] И пуши — только через натив. Так требование и сформулировалось: дайте нам возможности приложений, но без стора.
+[click] Но и с возможностями ровно наоборот: без сети нет ничего, и разбудить пользователя нечем.
+
+[click] Так требование и сформулировалось: дайте нам возможности приложений, но без стора.
 -->
 
 ---
-sectionNumber: 2-9
+sectionNumber: 2-11
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -751,7 +759,6 @@ docNumber: "HOLYJS AUTUMN 2026"
 - Только онлайн
 - Не устанавливается
 - Нет push
-- Зависит от сети
 
 </OsGroupBox>
 
@@ -760,7 +767,6 @@ docNumber: "HOLYJS AUTUMN 2026"
 - Offline-first
 - Установка без стора
 - Push уведомления
-- Кэш + Service Workers
 
 </OsGroupBox>
 
@@ -785,7 +791,7 @@ Service Worker = прокси между сетью и кэшем
 -->
 
 ---
-sectionNumber: 2-10
+sectionNumber: 2-12
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -814,7 +820,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-11
+sectionNumber: 2-13
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -865,7 +871,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: timeline
-sectionNumber: 2-12
+sectionNumber: 2-14
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: ЭВОЛЮЦИЯ ВЕБА — ХРОНОЛОГИЯ
@@ -931,7 +937,7 @@ direction: horizontal
 
 ---
 layout: statement
-sectionNumber: 2-13
+sectionNumber: 2-15
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -952,7 +958,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 2-14
+sectionNumber: 2-16
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -972,7 +978,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-15
+sectionNumber: 2-17
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: Платформа догоняет библиотеки
@@ -1026,7 +1032,7 @@ title: Платформа догоняет библиотеки
 
 ---
 layout: statement
-sectionNumber: 2-16
+sectionNumber: 2-18
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1051,7 +1057,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 2-16a
+sectionNumber: 2-19
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1063,7 +1069,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-17
+sectionNumber: 2-20
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1077,7 +1083,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-18
+sectionNumber: 2-21
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1091,7 +1097,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-19
+sectionNumber: 2-22
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1105,7 +1111,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-20
+sectionNumber: 2-23
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1121,7 +1127,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-21
+sectionNumber: 2-24
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1137,7 +1143,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 2-22
+sectionNumber: 2-25
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1158,7 +1164,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: two-column
-sectionNumber: 2-23
+sectionNumber: 2-26
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 title: "Web API в действии"
@@ -1201,7 +1207,7 @@ title: "Web API в действии"
 
 ---
 layout: statement
-sectionNumber: 2-24
+sectionNumber: 2-27
 tone: growth
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1488,7 +1494,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: image-left
-sectionNumber: 3-8a
+sectionNumber: 3-9
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Кастомные инпуты
@@ -1528,7 +1534,7 @@ figLabel: НАТИВНЫЙ SELECT — НЕ СТИЛИЗУЕТСЯ
 
 ---
 layout: two-column
-sectionNumber: 3-9
+sectionNumber: 3-10
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Mobile-first — макет перестал быть картинкой
@@ -1541,7 +1547,7 @@ title: Mobile-first — макет перестал быть картинкой
 <v-clicks>
 
 - **2010**, Ethan Marcotte, A List Apart — «Responsive Web Design»
-- Число экранов больше **не конечно**
+- Число экранов больше **не ограничено**
 - Комбинаторный взрыв: состояния × экраны × плотности × ориентации
 - Нарисовать все макеты стало **физически невозможно**
 
@@ -1561,7 +1567,7 @@ title: Mobile-first — макет перестал быть картинкой
 
 <v-click>
 
-<p class="pt-6">Это <strong>перелом арки</strong>. До этой точки дизайн мог нарисовать результат. После — уже нет.</p>
+<p class="pt-6"><strong>Раньше дизайн мог нарисовать результат — теперь нет. </strong></p>
 
 </v-click>
 
@@ -1580,11 +1586,11 @@ title: Mobile-first — макет перестал быть картинкой
 
 [click] Посчитайте сами: пять состояний, четыре брейкпоинта, две темы — сорок макетов. Не на приложение, а на один экран.
 
-[click] Это перелом арки. До этой точки дизайн мог нарисовать результат. После — уже нет.
+[click] Раньше дизайн мог нарисовать результат — теперь нет. 
 -->
 
 ---
-sectionNumber: 3-10
+sectionNumber: 3-11
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Ответ индустрии — дизайн-системы
@@ -1634,7 +1640,7 @@ title: Ответ индустрии — дизайн-системы
 
 ---
 layout: statement
-sectionNumber: 3-11
+sectionNumber: 3-12
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1654,12 +1660,12 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 3-12
+sectionNumber: 3-13
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## Тот же процесс — но в языке оформления
+## Тот же процесс — но в CSS
 
 <v-click>
 
@@ -1724,13 +1730,13 @@ flowchart TD
 -->
 
 ---
-sectionNumber: 3-13
+sectionNumber: 3-14
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Решение отдали пользователю
 ---
 
-## Шаг 5. Дизайн больше не решает, как это выглядит
+## Шаг 5. Дизайн контролирует не всё
 
 <v-clicks>
 
@@ -1763,12 +1769,12 @@ title: Решение отдали пользователю
 
 ---
 layout: statement
-sectionNumber: 3-14
+sectionNumber: 3-15
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## Дизайнер перестал рисовать результат — <br>и начал описывать правила
+## Дизайнер перестал рисовать результат — <br>он описывает <strong>правила</strong>
 
 <v-click>
 
@@ -1784,7 +1790,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 3-15
+sectionNumber: 3-16
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -1804,7 +1810,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 3-16
+sectionNumber: 3-17
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Сервер отдаёт файл
@@ -1842,7 +1848,7 @@ title: Сервер отдаёт файл
 -->
 
 ---
-sectionNumber: 3-17
+sectionNumber: 3-18
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Сервер начал отдавать данные
@@ -1860,7 +1866,7 @@ title: Сервер начал отдавать данные
 
 <v-click>
 
-<p class="text-center pt-8">Рендеринг уехал на клиент. Сессия → <strong>токен</strong>.</p>
+<p class="text-center pt-8"><strong>Сервер больше не собирает страницу — он отдаёт данные</strong></p>
 
 </v-click>
 
@@ -1878,7 +1884,7 @@ title: Сервер начал отдавать данные
 
 ---
 layout: statement
-sectionNumber: 3-17a
+sectionNumber: 3-19
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Побочные эффекты AJAX
@@ -1899,7 +1905,7 @@ title: Побочные эффекты AJAX
 -->
 
 ---
-sectionNumber: 3-18
+sectionNumber: 3-20
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Один бэкенд — много клиентов
@@ -1916,17 +1922,6 @@ title: Один бэкенд — много клиентов
 
 </v-clicks>
 
-<v-click>
-
-<p class="pt-4">Это буквально <strong>«не ломай веб»</strong>, только на уровне вашего API. Бэкенд получил ту же проблему обратной совместимости, что и браузеры.</p>
-
-</v-click>
-
-<v-click>
-
-<p class="text-center">Форму бэкенда теперь диктует клиент</p>
-
-</v-click>
 
 <!--
 Клиентов становится много — и это переписывает бэкенд.
@@ -1941,34 +1936,27 @@ title: Один бэкенд — много клиентов
 
 [click] А это уже «не ломай веб», только на уровне вашего API.
 
-[click] Форму бэкенда теперь диктует клиент.
 -->
 
 ---
-sectionNumber: 3-19
+sectionNumber: 3-21
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Мобильность как бэкенд-требование
 ---
 
-## Шаг 4. Мобильность — это тоже бэкенд-требование
+## Шаг 4. Мобильность — change request для бэкенда тоже
 
 <v-clicks>
 
 - Вес ответа стал **продуктовой метрикой**
 - `srcset` / `<picture>`: картинки по размерам, WebP, AVIF
 - CDN превращается из оптимизации в обязательный слой
-- **HTTP/2** (2015) и **HTTP/3** — работа IETF
+- **HTTP/2** (2015) и **HTTP/3** — работа одного из комитетов (IETF)
 - Brotli вместо gzip
-- Performance budgets прямо в CI
+- Погоня за метриками
 
 </v-clicks>
-
-<v-click>
-
-<p class="text-center pt-4">«Мир стал мобильным» — это был change request и для бэкенда тоже</p>
-
-</v-click>
 
 <!--
 «Мир стал мобильным» — это был change request и для бэкенда тоже.
@@ -1979,7 +1967,7 @@ title: Мобильность как бэкенд-требование
 
 [click] CDN превращается из оптимизации в обязательный слой.
 
-[click] HTTP/2 в 2015-м, потом HTTP/3 — и это работа IETF.
+[click] HTTP/2 в 2015-м, потом HTTP/3 — и это работа комитета IETF.
 
 [click] Brotli вместо gzip — экономия там, где раньше и так казалось хорошо.
 
@@ -1989,7 +1977,7 @@ title: Мобильность как бэкенд-требование
 -->
 
 ---
-sectionNumber: 3-20
+sectionNumber: 3-22
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Сервер вернулся
@@ -2025,7 +2013,7 @@ title: Сервер вернулся
 
 ---
 layout: two-column
-sectionNumber: 3-21
+sectionNumber: 3-23
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 title: Веб навязал бэкенду свой API
@@ -2040,7 +2028,7 @@ title: Веб навязал бэкенду свой API
 - В Node.js из коробки: `fetch`, `Request`, `Response`, `Headers`, `URL`, `AbortController`, Web Streams
 - Это API, спроектированные **для браузера** комитетом WHATWG
 - Deno, Bun, Cloudflare Workers построены на них **изначально**
-- Есть даже комитет, который договаривается, какие браузерные API обязан иметь серверный рантайм — **WinterCG**, теперь **Ecma TC55**
+- **WinterCG**(Ecma TC55) — комитет, который договаривается, какие браузерные API обязан иметь серверный рантайм
 
 </v-clicks>
 
@@ -2082,7 +2070,7 @@ export default {
 
 ---
 layout: statement
-sectionNumber: 3-22
+sectionNumber: 3-24
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2103,7 +2091,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 3-23
+sectionNumber: 3-25
 tone: craft
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2552,24 +2540,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 Скроллим дальше. И это всё ещё HTML.
 -->
 
-
 ---
 sectionNumber: 4-12
-tone: standards
-docNumber: "HOLYJS AUTUMN 2026"
----
-
-<BrowserFrame url="https://html.spec.whatwg.org/multipage/" tab="HTML Standard" year="2026" status="Прокрутка… и это всё ещё HTML" class="h-full">
-<img src="./assets/html_spec_3.png" class="mx-auto max-h-full" />
-</BrowserFrame>
-
-<!--
-И ещё дальше. Живой документ, который обновляется чаще, чем README в вашем проекте.
--->
-
-
----
-sectionNumber: 4-13
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2605,7 +2577,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 4-14
+sectionNumber: 4-13
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2626,7 +2598,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: two-column
-sectionNumber: 4-15
+sectionNumber: 4-14
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: TC39 и proposal-driven JavaScript
@@ -2664,7 +2636,7 @@ JavaScript пришёл к тому же, но своим путём.
 
 ---
 layout: statement
-sectionNumber: 4-16
+sectionNumber: 4-15
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2677,7 +2649,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 4-17
+sectionNumber: 4-16
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 status: "INTEROPERABILITY: FAILED"
@@ -2691,7 +2663,7 @@ status: "INTEROPERABILITY: FAILED"
 
 ---
 layout: two-column
-sectionNumber: 4-18
+sectionNumber: 4-17
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 status: "INTEROPERABILITY: FAILED"
@@ -2714,7 +2686,7 @@ status: "INTEROPERABILITY: FAILED"
 
 ---
 layout: image-top
-sectionNumber: 4-19
+sectionNumber: 4-18
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 status: "FEATURE NOT AVAILABLE"
@@ -2749,7 +2721,7 @@ status: "FEATURE NOT AVAILABLE"
 
 ---
 layout: statement
-sectionNumber: 4-20
+sectionNumber: 4-19
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2769,7 +2741,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 4-21
+sectionNumber: 4-20
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: JS без модулей
@@ -2810,7 +2782,7 @@ JavaScript.
 -->
 
 ---
-sectionNumber: 4-22
+sectionNumber: 4-21
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: CSS без области видимости
@@ -2851,7 +2823,7 @@ title: CSS без области видимости
 -->
 
 ---
-sectionNumber: 4-23
+sectionNumber: 4-22
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: HTML без компонентов
@@ -2893,7 +2865,7 @@ HTML, та же схема.
 
 ---
 layout: statement
-sectionNumber: 4-24
+sectionNumber: 4-23
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2918,7 +2890,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 4-25
+sectionNumber: 4-24
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2943,7 +2915,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 4-26
+sectionNumber: 4-25
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2956,7 +2928,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: two-column
-sectionNumber: 4-27
+sectionNumber: 4-26
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -2986,7 +2958,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: timeline
-sectionNumber: 4-27a
+sectionNumber: 4-27
 tone: standards
 docNumber: "HOLYJS AUTUMN 2026"
 title: МЕХАНИЗМЫ КООРДИНАЦИИ, 1995–2026
@@ -3286,7 +3258,7 @@ tone: legacy
 status: "COMPATIBILITY EXCEPTION"
 ---
 
-## И самое красивое: legacy, записанное **в стандарт**
+## Legacy, записанное **в стандарт**
 
 <v-clicks>
 
@@ -3332,7 +3304,7 @@ tone: legacy
 status: "HTTP 200 · 1996"
 ---
 
-## А ещё Space Jam 1996 года всё ещё открывается
+## Но Space Jam 1996 года всё ещё открывается
 
 <v-clicks>
 
@@ -3347,7 +3319,7 @@ status: "HTTP 200 · 1996"
 
 #### Тот же HTML, тот же дизайн — работает в сегодняшнем Chrome. Страница, свёрстанная тридцать лет назад под браузер, которого больше нет.
 
-### Ни одна* другая платформа в мире так не умеет. В этом одновременно её сила и её приговор.
+### В этом одновременно сила и приговор веб-платформы.
 
 </v-clicks>
 
@@ -3399,11 +3371,11 @@ docNumber: "HOLYJS AUTUMN 2026"
 tone: legacy
 ---
 
-## Legacy — это не про то, что команда плохо работала
+## Legacy — это не всегда ругательство
 
 <v-click>
 
-### Чаще это про то, что продукт слишком долго был нужен людям
+### Не умерло, значит нужно пользователям
 
 </v-click>
 
@@ -3420,8 +3392,6 @@ tone: legacy
 ---
 
 ### Принципы развития веб-платформы
-
-<p class="opacity-60">по сути — non-functional requirements зрелого продукта</p>
 
 <v-clicks>
 
@@ -3498,12 +3468,6 @@ title: На голой тройке писать нельзя
 
 </v-clicks>
 
-<v-click>
-
-### Developer experience веб-платформы — плохой. Это надо просто произнести вслух.
-
-</v-click>
-
 <!--
 Смотрите, из чего состоит этот счёт.
 
@@ -3527,28 +3491,7 @@ tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## Мы приезжаем на Порше к даче с трактором
-
-<v-click>
-
-### Тулинг оброс мощностью. Дорога под ним не менялась.
-
-</v-click>
-
-<!--
-Моя любимая метафора для этого состояния: мы приезжаем на Порше к даче с трактором.
-
-[click] Тулинг оброс мощностью: сборка, типы, линтеры, дев-серверы с хот-релоадом. А дорога под ним не менялась — там всё те же HTML, CSS и JS.
--->
-
----
-layout: statement
-sectionNumber: 5-17
-tone: legacy
-docNumber: "HOLYJS AUTUMN 2026"
----
-
-## Всё, что хайпует — это сахар вокруг тройки
+## Всё, что хайпует — это сахар вокруг HTML, CSS и JS
 
 <v-clicks>
 
@@ -3571,6 +3514,27 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
+layout: statement
+sectionNumber: 5-17
+tone: legacy
+docNumber: "HOLYJS AUTUMN 2026"
+---
+
+## Мы приезжаем на Порше к даче с трактором
+
+<v-click>
+
+### Тулинг оброс мощностью. Дорога под ним не менялась.
+
+</v-click>
+
+<!--
+Моя любимая метафора для этого состояния: мы приезжаем на Порше к даче с трактором.
+
+[click] Тулинг оброс мощностью: сборка, типы, линтеры, дев-серверы с хот-релоадом. А дорога под ним не менялась — там всё те же HTML, CSS и JS.
+-->
+
+---
 sectionNumber: 5-18
 tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
@@ -3588,11 +3552,6 @@ title: Это не чья-то вина
 
 </v-clicks>
 
-<v-click>
-
-### Плохой DX — это счёт за обратную совместимость. И он выставлен нам.
-
-</v-click>
 
 <!--
 И здесь важное: это не чья-то вина. Ни комитетов, ни вендоров.
@@ -3615,13 +3574,14 @@ tone: legacy
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## Некогда ждать милости от природы
+## Плохой Developer Experience — это счёт за обратную совместимость. 
 
-<v-click>
+<v-click> 
 
-### Живём как живём
+## ~~Но страдаем мы.~~
 
 </v-click>
+
 
 <!--
 Некогда ждать милости от природы.
@@ -3656,9 +3616,7 @@ tone: agent
 status: "NEW USER CLASS DETECTED"
 ---
 
-## В глобальный продукт пришёл новый пользователь
 
-<v-click>
 
 <AgentPrompt
   user="AGENT"
@@ -3668,222 +3626,84 @@ status: "NEW USER CLASS DETECTED"
   class="text-left"
 />
 
-</v-click>
 
-<v-click>
-
-### Не человек с браузером — а **агент**
-
-</v-click>
 
 <!--
 В этот огромный legacy-продукт приходит новый пользователь.
 
-[click] И у него другие запросы: прочитать семантику страницы, вызвать объявленное действие, отрендерить структурный UI. И форма знакомая — это диалог разрешений, ровно как когда-то у геолокации и камеры.
+[click] И у него другие запросы: прочитать семантику страницы, вызвать объявленное действие, отрендерить структурный UI. Форма, кстати, знакомая — это обычный диалог разрешений, ровно как когда-то у геолокации и камеры.
 
-[click] Это не человек с браузером. Это агент. И дальше всё начинается заново: новые API, новые споры о том, кто это стандартизирует, новые битвы за ownership. Посмотрим на три свежих примера.
+[click] Это не человек с браузером. Это агент. А дальше всё по той же схеме, которую мы разбирали пять глав подряд: пришло требование — платформа отвечает — и начинается спор о том, кто это стандартизирует.
 -->
 
 ---
-layout: statement
+layout: two-column
 sectionNumber: 6-2
 docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
+title: Ответ платформы на агентов
 ---
-
-## web MCP
-
-### (не путать с MCP)
-
-<!--
-Первое — WebMCP. И сразу оговорка: это не тот MCP, к которому вы привыкли в редакторах.
--->
-
----
-layout: two-column
-sectionNumber: 6-3
-docNumber: "HOLYJS AUTUMN 2026"
-title: WebMCP
-tone: agent
----
-
-### WebMCP (не путать просто с MCP)
 
 <template v-slot:left>
 
-#### без WebMCP
+## Платформа уже отвечает
 
 <v-clicks>
 
-- Робот/агент идет на сайт
-- парсит его
-- протыкивает все кнопки и добивается результата "стучась в каждую дверь"
--
-- ... хорошо если еще верстка семантическая
+- **WebMCP** — сайт сам объявляет агенту свои действия, вместо протыкивания кнопок вслепую
+- **A2UI** — агент описывает интерфейс JSON-ом, приложение собирает его из своих компонентов
+- **Prompt API** — "страница" обращается к модели через браузер
 
 </v-clicks>
+
+<v-click at="5">
+
+#### Но ничто еще не стандарт
+
+</v-click>
 
 </template>
 
 <template v-slot:right>
 
-#### WebMCP
+<v-click at="4">
 
-<v-clicks>
+<div class="os-popin flex flex-row gap-3 justify-center text-center">
 
-- Мы описываем декларативно/императивно агенту как пользоваться сайтом
-- Убираем хрупкую автоматизацию кликов
-- AI — как новый "потребитель" веб-интерфейсов
-- экономия токенов (профит)
-
-</v-clicks>
-
-</template>
-
-<!--
-Разница вот в чём.
-
-[click] Без WebMCP агент приходит на сайт как слепой пользователь: парсит разметку, угадывает, где здесь кнопка, и протыкивает всё подряд, стучась в каждую дверь, пока не добьётся результата. И хорошо, если вёрстка семантическая — а мы с вами знаем, какая она бывает.
-
-[click] С WebMCP мы сами описываем агенту, как пользоваться сайтом: какие есть действия и что они делают. Хрупкая автоматизация кликов уходит.
-
-[click] То есть AI становится новым потребителем веб-интерфейсов — наравне с браузером.
-
-[click] И побочный, но приятный эффект: экономия токенов, потому что агенту не нужно тащить в контекст всю страницу.
--->
-
----
-layout: statement
-sectionNumber: 6-4
-docNumber: "HOLYJS AUTUMN 2026"
-tone: agent
----
-
-## A2UI
-
-<!--
-Второе — A2UI. Идея звучит странно, пока не увидишь: интерфейс описывается не кодом, а данными.
--->
-
----
-layout: image-full
-sectionNumber: 6-5
-docNumber: "HOLYJS AUTUMN 2026"
-title: a2ui-schema.jpg — Просмотр
-tone: agent
----
-
-<template v-slot:image>
-<img src="./assets/A2UI.jpg"  />
-</template>
-
-<!--
-Вот схема. Агент отдаёт структуру, данные и действия, а клиент рендерит это своими компонентами — своей дизайн-системой, своими правилами доступности.
--->
-
----
-layout: two-column
-title: A2UI как JSON-интерфейс
-sectionNumber: 6-6
-docNumber: "HOLYJS AUTUMN 2026"
-tone: agent
----
-
-<template v-slot:left>
-
-### Идея
-
-- A2UI описывает UI **через JSON**, а не через JavaScript-код.
-- Агент отдаёт структуру, данные и действия, а клиент рендерит это своими компонентами.
-- Между агентом и клиентом передаётся **данные**, а не код.
-
-</template>
-
-<template v-slot:right>
-
-<div class="code-dense">
-
-```json
-{
-  "surfaceId": "booking",
-  "components": [
-    {
-      "id": "title",
-      "component": "Text",
-      "text": "Найдите билеты мечты",
-      "variant": "h1"
-    },
-    {
-      "id": "datetime",
-      "component": "DateTimeInput",
-      "value": {
-        "path": "/booking/date"
-      },
-      "enableDate": true
-    },
-    {
-      "id": "submit-btn",
-      "component": "Button",
-      "variant": "primary",
-      "action": {
-        "event": {
-          "name": "Искать"
-        }
-      }
-    }
-  ]
-}
-```
-
-</div>
-
-</template>
-
-<!--
-А вот как это выглядит на практике: JSON, в котором описаны заголовок, поле даты и кнопка со своим действием. Между агентом и клиентом передаются данные, а не код. И это принципиально: код пришлось бы исполнять, данные достаточно отрендерить.
-
-A2UI — открытый проект Google, не имеющий мажорной версии, чисто концепт, и за ним не стоит ни W3C, ни Ecma.
--->
-
----
-layout: statement
-sectionNumber: 6-7
-docNumber: "HOLYJS AUTUMN 2026"
-tone: agent
----
-
-## JSON — как описание интерфейса
-
-<!--
-То есть JSON становится описанием интерфейса. И если это кажется вам знакомым — да, мы это уже проходили: серверная вёрстка, BFF, схемы форм. Только теперь на другой стороне сидит модель.
--->
-
----
-sectionNumber: 6-8
-tone: agent
-docNumber: "HOLYJS AUTUMN 2026"
----
-
-<div class="os-cols os-cols--stretch text-center">
 <div>
-<Screenshot src="./assets/msk_vue.jpg" title="msk-vue.jpg" meta="MSK Vue" height="250px" />
+<Screenshot src="./assets/msk_vue.jpg" title="msk-vue.jpg" meta="MSK Vue" height="150px" />
 
 <a href="https://youtu.be/2btBC99seK4?si=jtrum7BTqGnK_E-K">Запись</a>
 </div>
 
 <div>
-<Screenshot src="./assets/holy.png" title="holyjs.png" meta="HolyJS · AI-driven UI" height="250px" />
+<Screenshot src="./assets/holy.png" title="holyjs.png" meta="HolyJS · AI-driven UI" height="150px" />
 
 <a href="https://holyjs.ru/archive/2026%20Spring/talks/20009814-ai-driven-ui-how-the-ui-will-look-like-in-the-age-of-agents/" target="_blank" rel="noreferrer">Доклад</a>
 </div>
+
 </div>
 
+</v-click>
+
+</template>
+
 <!--
-Если тема зацепила — про неё у меня есть отдельный доклад: запись с MSK Vue и выступление на HolyJS про AI-driven UI. Ссылки на слайде, можно сфотографировать.
+Три ответа, которые платформа уже успела дать. Коротко, потому что про первые два у меня есть отдельный доклад.
+
+[click] WebMCP: сайт сам объявляет, что на нём можно сделать. Агенту больше не нужно парсить разметку и стучаться в каждую дверь, пока что-нибудь не сработает. Заодно экономия токенов — в контекст не едет вся страница.
+
+[click] A2UI: агент отдаёт не код, а данные — структуру, значения и действия. Рендерит их ваш клиент: вашей дизайн-системой, с вашей доступностью. Если кажется знакомым — да, мы это проходили: серверная вёрстка, BFF, схемы форм. Только на другой стороне теперь сидит модель.
+
+[click] И Prompt API: модель можно вызвать прямо со страницы, без своего бэкенда с ключами.
+
+[click] Про первые две есть отдельный доклад — ссылки справа, можно сфотографировать.
+
+[click] А главное: ни одна из трёх пока не стандарт. Всё это происходит прямо сейчас, у нас на глазах. Дальше я разберу третью — она интересна не сама по себе, а как история про платформу.
 -->
 
 ---
-sectionNumber: 6-9
+sectionNumber: 6-3
 docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
 title: Prompt API
@@ -3893,31 +3713,31 @@ title: Prompt API
 
 <v-clicks>
 
-- предложен Google весной
-- возможность вызвать модель прямо на сайте при помощи js
-- быстродействие, одно "окно входа"
+- предложен Google весной, с мая 2026-го — в стабильном Chrome
+- вызов модели прямо на сайте при помощи js
+- быстродействие, одно «окно входа»
 - ...
 - можно использовать **только** Gemini Nano
 
 </v-clicks>
 
 <!--
-Третье — Prompt API.
+Итак, Prompt API.
 
-[click] Предложен Google и уже отгружен — с мая 2026-го он в стабильном Chrome, не за флагом.
+[click] Предложен Google и уже отгружен: с мая 2026-го он в стабильном Chrome, не за флагом.
 
-[click] Идея: вызвать модель прямо на сайте из JavaScript.
+[click] Идея понятная и полезная: вызвать модель прямо на сайте из JavaScript.
 
-[click] Плюсы очевидные: быстро и одно «окно входа» вместо своего бэкенда с ключами.
+[click] Плюсы очевидные: быстро и одно «окно входа» вместо собственного бэкенда с ключами.
 
 [click] Но есть нюанс.
 
-[click] Использовать можно только Gemini Nano. То есть API веб-платформы, привязанное к модели одного вендора.
+[click] Использовать можно только Gemini Nano. То есть в веб-платформу предлагается API, намертво привязанное к модели одного вендора.
 -->
 
 ---
 layout: statement
-sectionNumber: 6-10
+sectionNumber: 6-4
 docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
 status: "CONCERN: INTEROPERABILITY"
@@ -3932,14 +3752,14 @@ status: "CONCERN: INTEROPERABILITY"
 </v-click>
 
 <!--
-И вот здесь круг замыкается. У Mozilla по этому API официальная позиция — negative. У WebKit — oppose.
+И здесь включается то, что веб собирал тридцать лет. У Mozilla по этому API официальная позиция — negative. У WebKit — oppose.
 
-[click] И основной concern — interoperability. Та самая интероперабельность из принципов предыдущей главы. Это не новая проблема: это старая legacy-боль веба, просто проявившаяся в новом API. Показательная деталь: из всего семейства встроенных AI-интерфейсов рабочая группа W3C приняла только определение языка и переводчик. Prompt API — нет.
+[click] Concern ровно один, и он старый: interoperability. Та самая интероперабельность из принципов предыдущей главы — API веб-платформы не может работать у одного вендора. И это не осталось словами: из всего семейства встроенных AI-интерфейсов рабочая группа W3C приняла только определение языка и переводчик. Prompt API — нет.
 -->
 
 ---
 layout: image-full
-sectionNumber: 6-11
+sectionNumber: 6-5
 docNumber: "HOLYJS AUTUMN 2026"
 title: chrome-vs-firefox.png — Просмотр
 tone: agent
@@ -3950,78 +3770,51 @@ status: "VENDOR CONFLICT"
 </template>
 
 <!--
-Поэтому здесь снова расхождение вендоров: Chrome проталкивает, Firefox сопротивляется. Браузерные войны на новом витке — только на кону теперь не теги, а доступ к моделям.
--->
-
----
-sectionNumber: 6-12
-docNumber: "HOLYJS AUTUMN 2026"
-tone: agent
----
-
-### Совсем кратко
-
-<v-clicks>
-
-- **WebMCP** — сайт становится удобным для AI-агента
-- **A2UI** — интерфейс можно генерировать динамически под задачу на основе json
-- **Prompt API** — возможность вызова модели из браузера/js
-
-</v-clicks>
-
-<!--
-Соберём три технологии вместе.
-
-[click] WebMCP — сайт становится удобным для агента.
-
-[click] A2UI — интерфейс собирается под задачу из JSON.
-
-[click] Prompt API — модель вызывается прямо из браузера. И ни одна из трёх пока не стандарт: всё это происходит прямо сейчас, у нас на глазах.
+Браузерные войны на новом витке: Chrome проталкивает, Firefox и WebKit упираются. Только на кону теперь не теги, а доступ к моделям.
 -->
 
 ---
 layout: statement
-sectionNumber: 6-13
+sectionNumber: 6-6
 docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
+status: "VENDOR LOCK-IN: REJECTED"
 ---
 
-## Мы не хотели семантически верстать и писать документацию для кожаных мешков<v-click>, но хотим это делать для агентов </v-click>
+## И сообщество продавило: **не только Gemini**
+
+<v-click>
+
+### Другие вендоры и разработчики — <br>защита платформы от монополии
+
+</v-click>
 
 <!--
-И маленькая ирония напоследок. Тридцать лет мы не хотели семантически верстать и писать документацию для живых людей.
+И вот чем это закончилось: сообщество и другие вендоры продавили, чтобы API перестало быть привязано к одной модели.
 
-[click] А для агентов, кажется, готовы.
+[click] Ради этого и был предыдущий слайд. Вендор может отгрузить в свой браузер что угодно — но сделать это веб-платформой в одиночку он не может. Процесс, который мы полдоклада ругали за медленность, здесь работает как предохранитель: он не даёт одной компании приватизировать кусок платформы. Медленно — это и есть его фича.
 -->
 
 ---
+sectionNumber: 6-7
 layout: statement
-sectionNumber: 6-14
 docNumber: "HOLYJS AUTUMN 2026"
 tone: agent
+title: Best practices меняют адресата
 ---
 
-## А может, новый веб — это они?
+## Мы не хотели семантически верстать и писать документацию для кожаных мешков <v-click> — <br>а для агентов хотим. </v-click>
 
-<v-clicks>
+<v-click>
 
-#### Агенту не нужен наш developer experience. Не нужны фреймворки и сборка.
+### Best practices никуда не делись. 
 
-#### Ему нужна семантика и описание действий — ровно то, что мы тридцать лет не писали.
+</v-click>
 
-</v-clicks>
-
-<!--
-И на этой иронии — неожиданная мысль. А может, новый веб — это они?
-
-[click] Агенту не нужен наш developer experience: ни фреймворков, ни сборки, ни дев-сервера.
-
-[click] Ему нужна семантика и описание действий — ровно то, что мы тридцать лет не писали. То есть вся эта глава — очередной change request к тому же самому legacy-продукту. Просто теперь пользователь не человек.
--->
 
 ---
 layout: statement
-sectionNumber: 6-15
+sectionNumber: 6-8
 tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -4041,7 +3834,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 6-16
+sectionNumber: 6-9
 tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -4051,8 +3844,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 <v-clicks>
 
 - веб — самый большой живой **legacy-продукт** в мире
-- рос как любой продукт — только в масштабе всей планеты
-- требования переписали не только фронт, но и **дизайн** и **бэкенд**
+- только в масштабе всей планеты
+- менялся не только фронтенд, но и **дизайн** и **бэкенд**
 - **комитеты — следствие** масштаба, а не причина
 
 </v-clicks>
@@ -4070,7 +3863,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 -->
 
 ---
-sectionNumber: 6-16a
+sectionNumber: 6-10
 tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -4081,8 +3874,8 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 - наш тулинг — **протезы** отсутствующей модульности
 - плохой DX — **счёт за обратную совместимость**
-- устаревание не удаляют — его **документируют и поддерживают вечно**
-- система живёт **36+ лет** — legacy как цена успеха
+- legacy не удаляют — его **документируют и поддерживают вечно**
+- система живёт **36+ лет** (и развивается)
 
 </v-clicks>
 
@@ -4098,7 +3891,7 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 6-17
+sectionNumber: 6-11
 tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
@@ -4119,18 +3912,13 @@ docNumber: "HOLYJS AUTUMN 2026"
 
 ---
 layout: statement
-sectionNumber: 6-18
+sectionNumber: 6-12
 tone: agent
 docNumber: "HOLYJS AUTUMN 2026"
 ---
 
-## Не всё так плохо
+## Не поддавайтесь унынию :)
 
-<v-click>
-
-### Всё меняется — значит, всё живёт. Отличной конференции!
-
-</v-click>
 
 <!--
 И самое последнее — не всё так плохо.
@@ -4148,7 +3936,9 @@ unit: HQ, DEPT OF THE PRESENTATION
 ---
 
 <template v-slot:title>Спасибо</template>
-<template v-slot:contact>
+
+<template v-slot:photo>
+<img src="./assets/me.jpg" w-36 rounded-full border-5 border-white />
 </template>
 
 <!--
