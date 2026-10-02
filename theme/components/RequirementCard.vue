@@ -70,7 +70,10 @@ defineProps<{
   display: grid;
   grid-template-columns: 148px 1fr;
   gap: var(--space-3);
-  padding: var(--space-2) var(--space-4);
+  /* 5px вместо --space-2: после поднятия типографской шкалы карточка перестала
+     влезать на плотных слайдах главы 2 (rc + групбоксы + вывод, напр. 2-11) —
+     flex сжимала её и срезала строку «Side effect». Экономия: 3 ряда × 6px. */
+  padding: 5px var(--space-4);
   border-bottom: 1px solid rgba(183, 196, 207, 0.6);
 }
 

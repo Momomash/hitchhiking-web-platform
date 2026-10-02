@@ -14,7 +14,7 @@ const props = defineProps<{
   docNumber?: string
   unit?: string
   status?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   leftHeader?: string
   rightHeader?: string
   windowTitle?: string
@@ -25,7 +25,7 @@ const barText = useWindowTitle(props)
 </script>
 
 <template>
-  <div class="slidev-layout layout-window layout-two-column">
+  <div class="slidev-layout layout-window layout-two-column" :class="tone && `tone-${tone}`">
     <div class="os-window">
       <OsTitleBar :text="barText" :tone="tone" />
 
@@ -73,18 +73,25 @@ const barText = useWindowTitle(props)
   display: none;
 }
 
+/* align-items: stretch, а не start. Колонка обязана иметь ОПРЕДЕЛЁННУЮ высоту:
+   иначе `max-height: 100%` у картинки внутри окна резолвить не против чего, и
+   она вылезает в натуральную величину, обрезаясь рамкой окна. Содержимое
+   колонки и так центрируется по вертикали (justify-content: center), поэтому
+   визуально для текстовых колонок ничего не меняется. */
 .tc-grid {
   flex: 1;
   min-height: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
   gap: var(--space-5);
-  align-items: start;
+  align-items: stretch;
 }
 
 .tc-col {
   min-width: 0;
   min-height: 0;
+  height: 100%;
   max-height: 100%;
   display: flex;
   flex-direction: column;

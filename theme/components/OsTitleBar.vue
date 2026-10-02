@@ -10,7 +10,7 @@ withDefaults(
   defineProps<{
     text?: string
     icon?: string
-    tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+    tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
     controls?: boolean
   }>(),
   { controls: true },

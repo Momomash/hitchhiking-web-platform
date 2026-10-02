@@ -6,6 +6,7 @@
 <script setup lang="ts">
 import OsTitleBar from '../components/OsTitleBar.vue'
 import OsStatusBar from '../components/OsStatusBar.vue'
+import OsUrlBar from '../components/OsUrlBar.vue'
 import { useWindowTitle } from '../composables/windowTitle'
 
 const props = defineProps<{
@@ -15,8 +16,12 @@ const props = defineProps<{
   docNumber?: string
   unit?: string
   status?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   windowTitle?: string
+  /* Если слайд показывает сайт, а не изображение, — во фронтматтере задаётся
+     url (и обычно year), и окно получает адресную строку браузера. */
+  url?: string
+  year?: string
   frontmatter?: Record<string, any>
 }>()
 
@@ -24,9 +29,11 @@ const barText = useWindowTitle(props)
 </script>
 
 <template>
-  <div class="slidev-layout layout-window layout-image-full">
+  <div class="slidev-layout layout-window layout-image-full" :class="tone && `tone-${tone}`">
     <div class="os-window">
-      <OsTitleBar :text="barText" :tone="tone" />
+      <OsTitleBar :text="barText" :tone="tone" :icon="url ? '◱' : '▤'" />
+
+      <OsUrlBar v-if="url" :url="url" :year="year" />
 
       <div class="if-stage">
         <div class="if-image">
@@ -52,17 +59,24 @@ const barText = useWindowTitle(props)
 </template>
 
 <style scoped>
+/* Сцена — вдавленная область просмотра, а не «дырка» в слайде.
+   Светлое поле по краям нужно не для красоты: половина картинок здесь тёмные
+   (nelzy, library, Space Jam, A2UI), и без поля они растекались до рамки —
+   на проекторе это давало перепад яркости на каждом входе и выходе. */
 .if-stage {
   position: relative;
   flex: 1;
   min-height: 0;
-  background: var(--paper);
+  margin: var(--space-3);
+  background: var(--chrome-deep);
+  border: 1px solid var(--field-line);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
 .if-image {
   position: absolute;
-  inset: 0;
+  inset: 3px;
   display: grid;
   place-items: center;
 }

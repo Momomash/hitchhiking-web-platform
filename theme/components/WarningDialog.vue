@@ -19,7 +19,11 @@ defineProps<{
 
 <template>
   <div class="wd" :class="`wd--${tone ?? 'legacy'}`">
-    <div class="os-titlebar" :class="tone === 'platform' ? '' : 'os-titlebar--legacy'">
+    <!-- Тон тайтлбара не задаём: диалог берёт тон слайда (класс tone-* на
+         корне лейаута). Раньше он всегда был янтарным и на сером слайде
+         выглядел как смена режима без причины. Проп `tone` остался — он
+         красит иконку. -->
+    <div class="os-titlebar">
       <span class="os-titlebar__icon">⚠</span>
       <span class="os-titlebar__text">{{ title ?? 'WARNING' }}</span>
       <span class="os-titlebar__spacer" />
@@ -36,10 +40,14 @@ defineProps<{
     </div>
 
     <div v-if="ok || cancel" class="wd__buttons">
-      <span v-if="ok" class="wd__btn" :class="{ 'wd__btn--disabled': okDisabled }">
+      <span
+        v-if="ok"
+        class="os-btn"
+        :class="okDisabled ? 'os-btn--disabled' : 'os-btn--default'"
+      >
         {{ ok }}
       </span>
-      <span v-if="cancel" class="wd__btn">{{ cancel }}</span>
+      <span v-if="cancel" class="os-btn">{{ cancel }}</span>
     </div>
   </div>
 </template>
@@ -97,24 +105,7 @@ defineProps<{
   background: var(--chrome);
 }
 
-.wd__btn {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  padding: 3px 18px;
-  background: var(--chrome-deep);
-  border: 1px solid #fff;
-  border-right-color: var(--os-face-dark);
-  border-bottom-color: var(--os-face-dark);
-  color: var(--ink);
-}
-
-/* Задизейбленная кнопка — «ни у кого нет права нажать Merge» */
-.wd__btn--disabled {
-  color: #9aa6b1;
-  text-shadow: 1px 1px 0 #fff;
-  border-color: #cfd7de;
-  border-right-color: #aab5bf;
-  border-bottom-color: #aab5bf;
-}
+/* Кнопки — общий .os-btn из кита темы: у диалога не может быть своей,
+   отдельной от системы, кнопки. Вариант --disabled это «ни у кого нет
+   права нажать Merge». */
 </style>

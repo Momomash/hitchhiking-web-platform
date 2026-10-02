@@ -8,12 +8,18 @@
   </BrowserFrame>
 -->
 <script setup lang="ts">
+import OsUrlBar from './OsUrlBar.vue'
+
 defineProps<{
   url?: string
   tab?: string
   year?: string
   status?: string
-  tone?: 'platform' | 'legacy'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent'
+  /* media — содержимое занимает всю область просмотра без внутренних полей.
+     Для видео и скриншотов «во весь экран браузера»: со стандартными полями
+     видео сидело бы в белой рамке, которой в настоящем браузере нет. */
+  media?: boolean
 }>()
 </script>
 
@@ -33,15 +39,13 @@ defineProps<{
       </span>
     </div>
 
-    <div class="bf-toolbar">
-      <span class="bf-nav">◀</span>
-      <span class="bf-nav">▶</span>
-      <span class="bf-nav">⟳</span>
-      <span class="bf-url">{{ url ?? 'about:blank' }}</span>
-      <span v-if="year" class="bf-year">{{ year }}</span>
+    <OsUrlBar :url="url" :year="year" />
+
+    <div v-if="media" class="bf-stage">
+      <slot />
     </div>
 
-    <div class="os-window__body os-window__body--top bf-body">
+    <div v-else class="os-window__body os-window__body--top bf-body">
       <slot />
     </div>
 
@@ -59,56 +63,36 @@ defineProps<{
   text-align: left;
 }
 
-.bf-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-  padding: 4px 8px;
-  background: var(--chrome);
-  border-bottom: 1px solid var(--chrome-line);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
-}
-
-.bf-nav {
-  width: 15px;
-  height: 14px;
-  display: grid;
-  place-items: center;
-  font-size: 8px;
-  background: var(--chrome-deep);
-  border: 1px solid #fff;
-  border-right-color: var(--os-face-dark);
-  border-bottom-color: var(--os-face-dark);
-  color: var(--ink-soft);
-  flex-shrink: 0;
-}
-
-.bf-url {
-  flex: 1;
-  min-width: 0;
-  padding: 2px 6px;
-  background: var(--window);
-  border: 1px solid var(--line);
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14);
-  color: var(--ink);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.bf-year {
-  flex-shrink: 0;
-  padding: 2px 6px;
-  background: var(--legacy-pale);
-  border: 1px solid var(--legacy);
-  color: var(--legacy);
-  font-weight: 600;
-}
-
 .bf-body {
   padding: var(--space-3) var(--space-4);
+}
+
+/* Область просмотра для медиа — та же вдавленная сцена, что у <Screenshot>
+   и <MediaPlayer>, чтобы все три окна читались как одна система. */
+/* flex, а НЕ grid: у grid-строки размер авто, и проценты у медиа внутри
+   резолвились против неопределённой высоты — видео вылезало в натуральную
+   величину и обрезалось рамкой окна. */
+.bf-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  padding: 3px;
+  background: var(--chrome-deep);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.bf-stage :deep(video),
+.bf-stage :deep(img) {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+  object-fit: contain;
+  display: block;
+  /* рамку даёт сцена — своя у медиа дала бы двойной кант */
+  border: none;
+  box-shadow: none;
 }
 </style>

@@ -11,7 +11,7 @@ const props = defineProps<{
   docNumber?: string
   unit?: string
   status?: string
-  tone?: 'platform' | 'legacy' | 'agent' | 'muted'
+  tone?: 'origin' | 'growth' | 'craft' | 'standards' | 'legacy' | 'agent' | 'muted'
   figNumber?: string | number
   figLabel?: string
   windowTitle?: string
@@ -22,7 +22,7 @@ const barText = useWindowTitle(props)
 </script>
 
 <template>
-  <div class="slidev-layout layout-window layout-image-left">
+  <div class="slidev-layout layout-window layout-image-left" :class="tone && `tone-${tone}`">
     <div class="os-window">
       <OsTitleBar :text="barText" :tone="tone" />
 
@@ -63,12 +63,18 @@ const barText = useWindowTitle(props)
   min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
   gap: var(--space-5);
-  align-items: center;
+  /* stretch, а не center: фигуре нужна ОПРЕДЕЛЁННАЯ высота, иначе окно
+     внутри неё не может ограничить картинку процентами. */
+  align-items: stretch;
 }
 
 .ir-text {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ir-figure {
