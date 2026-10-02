@@ -347,6 +347,19 @@ a:visited {
   margin-bottom: 0;
 }
 
+/* Подстрочная справка внутри пункта: раскрывает его, но не спорит с ним по
+ * весу. Живёт внутри <li>, а не отдельным элементом <v-clicks>, поэтому
+ * приходит тем же кликом, что и сам пункт.
+ *
+ * Селектор с `p`, а не одиночный класс: `.slidev-layout p` задаёт
+ * `font-size: var(--text-base)` и перебил бы `.li-note` по специфичности. */
+.slidev-layout li p.li-note {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  line-height: 1.35;
+  margin: var(--space-1) 0 0;
+}
+
 .slidev-layout ul li::before {
   content: '✔';
   position: absolute;
