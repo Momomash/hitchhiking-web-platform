@@ -544,6 +544,101 @@ pre {
   background: rgba(232, 237, 242, 0.55);
 }
 
+/* ── Таблица, которая растёт по столбцам (8, «Масштаб за 80 лет») ──────────
+ * Штатная прозрачность Slidev оставляет на месте скрытой ячейки дырку, и до
+ * последнего клика таблица выглядит как недогруженный список. Поэтому здесь
+ * скрытый столбец выключается из потока целиком: таблица сужается до тех
+ * столбцов, которые уже пришли, и каждый клик пристраивает следующий справа.
+ *
+ * Ширина по содержимому, а не 100%: иначе единственный столбец растягивался
+ * бы на всё окно и на каждом клике ужимался — текст бы прыгал. С auto колонка
+ * встаёт один раз и дальше стоит, двигается только правый край таблицы.
+ *
+ * display: none не умеет transition, поэтому проявление задано анимацией —
+ * она отыгрывает в момент, когда ячейка впервые попадает в поток. */
+.slidev-layout table.cols-grow {
+  width: auto;
+  /* Тело окна — колоночный flex, а он растягивает детей на всю ширину:
+     без align-self таблица снова заняла бы окно целиком и ужималась бы
+     не она, а её столбцы. */
+  align-self: start;
+  /* Ширина столбцов задана, а не выведена из содержимого: по содержимому
+     таблица в финале занимала бы две трети окна и висела бы у левого края.
+     Сумма 184 + 342 + 342 = ширина тела окна при canvasWidth: 960, поэтому
+     последний клик дотягивает таблицу ровно до краёв — и до этого момента
+     ничего не дёргается, столбцы приходят на свои места сразу. */
+  table-layout: fixed;
+}
+
+/* Первому столбцу — ровно столько, чтобы «Операций в секунду» встало
+   в одну строку: при переносе первая строка таблицы становится выше
+   остальных и ряды перестают читаться как ряды. */
+.slidev-layout table.cols-grow th:first-child {
+  width: 184px;
+}
+
+.slidev-layout table.cols-grow th:not(:first-child) {
+  width: 342px;
+}
+
+.slidev-layout table.cols-grow .slidev-vclick-hidden {
+  display: none;
+}
+
+.slidev-layout table.cols-grow th.slidev-vclick-target:not(.slidev-vclick-hidden),
+.slidev-layout table.cols-grow td.slidev-vclick-target:not(.slidev-vclick-hidden) {
+  animation: col-grow-in 200ms ease-out;
+}
+
+@keyframes col-grow-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slidev-layout table.cols-grow th.slidev-vclick-target:not(.slidev-vclick-hidden),
+  .slidev-layout table.cols-grow td.slidev-vclick-target:not(.slidev-vclick-hidden) {
+    animation: none;
+  }
+}
+
+/* ── Карточки докладов со ссылками (6-2) ──────────────────────────────────
+ * Столбец превью, где ссылка — сама картинка. Раскиданы по высоте колонки
+ * так, чтобы вставать примерно напротив пунктов списка слева.
+ *
+ * Столбец стоит по центру колонки, а карточки в нём — одной ширины, поэтому
+ * края ровные. Ширину окно считает само, от высоты: пока у всех трёх превью
+ * высота одна, одинаковой будет и ширина. Если превью заметно другой
+ * пропорции — край снова станет рваным, тогда выравнивать его придётся явно.
+ */
+.slidev-layout .talks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  height: 100%;
+}
+
+.slidev-layout .talks__card {
+  display: block;
+  flex: 0 0 auto;
+  width: fit-content;
+  border: none;
+}
+
+.slidev-layout .talks__card .shot {
+  margin-inline: 0;
+}
+
+/* Карточка — кликабельная: на наведении окно подсвечивается тем же синим,
+   что выделение в списке, чтобы было видно, что это ссылка, а не иллюстрация. */
+.slidev-layout .talks__card:hover .shot,
+.slidev-layout .talks__card:focus-visible .shot {
+  outline: 2px solid var(--sel);
+  outline-offset: 2px;
+}
+
 /* Цитата — информационная панель системы: иконка (i) слева, тело в тоне
    диалога. Так цитата перестаёт быть «версткой из блога». */
 .slidev-layout blockquote {
